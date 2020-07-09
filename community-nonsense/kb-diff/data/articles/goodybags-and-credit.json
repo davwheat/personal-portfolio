@@ -1,0 +1,32 @@
+{
+  "categoryName": "goodybags and credit",
+  "articleList": [
+    { "title": "What’s a recurring goodybag?", "url": "whats-a-recurring-goodybag", "visible": true },
+    { "title": "What’s a queued goodybag?", "url": "whats-a-queued-goodybag", "visible": true },
+    { "title": "Why is my credit going down when I have a goodybag?", "url": "credit-going-down-when-i-have-a-goodybag", "visible": true },
+    { "title": "Why hasn’t my auto top up worked?", "url": "why-hasnt-my-auto-top-up-worked", "visible": true },
+    { "title": "What are free giffgaff-to-giffgaff calls and texts?", "url": "free-giffgaff-to-giffgaff-calls-and-texts", "visible": true },
+    { "title": "How do I buy a goodybag with a voucher?", "url": "buy-a-goodybag-with-a-voucher", "visible": true },
+    { "title": "How do I add credit to my account?", "url": "add-credit-to-my-account", "visible": true },
+    { "title": "Why can’t I buy a goodybag?", "url": "why-cant-i-buy-a-goodybag", "visible": true },
+    { "title": "What numbers are included in my goodybag?", "url": "numbers-included-in-my-goodybag", "visible": true },
+    { "title": "How do I cancel a queued goodybag?", "url": "cancel-a-queued-goodybag", "visible": true },
+    { "title": "What’s the minimum or maximum amount of credit I can add?", "url": "minimum-maximum-amount-of-credit", "visible": true },
+    { "title": "How do I add credit with a voucher?", "url": "add-credit-with-a-voucher", "visible": true },
+    { "title": "What’s the best goodybag for me?", "url": "the-best-goodybag-for-me", "visible": true },
+    { "title": "How do I cancel my account within 14 days of joining giffgaff?", "url": "cancel-within-14-days-of-joining", "visible": true },
+    { "title": "Where can I buy a giffgaff top up voucher?", "url": "where-can-i-buy-a-giffgaff-top-up-voucher", "visible": true },
+    { "title": "How can I start a goodybag early?", "url": "dont-have-any-data-or-minutes-left", "visible": true },
+    { "title": "How does the +1 GB of extra data work?", "url": "whats-the-1gb-extra-data", "visible": true },
+    { "title": "What does “Always On” mean?", "url": "what-does-always-on-mean", "visible": true },
+    { "title": "Why do I need credit?", "url": "why-do-i-need-credit", "visible": true },
+    { "title": "How do I add credit automatically?", "url": "how-do-i-add-credit-automatically", "visible": true },
+    { "title": "How do I check my credit balance?", "url": "check-my-credit-balance", "visible": true },
+    { "title": "Why can’t I add credit?", "url": "why-cant-i-add-credit", "visible": true },
+    { "title": "How do I add credit over the phone?", "url": "add-credit-over-the-phone", "visible": true },
+    { "title": "What’s a goodybag?", "url": "whats-a-goodybag", "visible": true },
+    { "title": "What’s the difference between goodybags and credit?", "url": "difference-between-goodybags-and-credit", "visible": true },
+    { "title": "How can I change my recurring goodybag?", "url": "change-my-recurring-goodybag", "visible": true },
+    { "title": "Can I buy a goodybag with my credit?", "url": "buy-a-goodybag-with-credit", "visible": true }
+  ]
+}

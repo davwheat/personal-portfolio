@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>giffgaff activation journeys</title>
+
+    <!-- Internally used page, so shouldn't be indexed -->
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="Loads of members get confused when activating a SIM, either accidentally topping up credit instead of a goodybag or activating a new SIM instead of performing a SIM swap."
+    />
+    <link rel="canonical" href="https://giffgaff.davwheat.dev/examples/sim-swap" />
+
+    <script src="/js/redirect-script.js" async></script>
+
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
+
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js" as="script" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js" as="script" />
+
+    <link rel="stylesheet" href="/examples/sim-swap/css/styles.css" />
+    <script src="/examples/sim-swap/js/custom-components.min.js" async></script>
+    <script src="/examples/sim-swap/js/modernizr-custom.min.js" async defer></script>
+    <script src="/examples/sim-swap/js/viewer.js" defer></script>
+  </head>
+  <body>
+    <gg-header></gg-header>
+    <main id="main-content">
+      <div class="viewer-container">
+        <header class="gg-c-masthead-minor">
+          <div class="gg-c-masthead-minor__content">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-blue"> Activation</mark>
+              flow redesign
+            </h1>
+            <p class="gg-c-masthead-minor__page-subtitle">
+              This page doesn't send any data to any servers. Any percieved loading time is artificially created. You can use any details you
+              want to work through the activation flow.
+              <strong>They will not be saved.</strong>
+            </p>
+          </div>
+        </header>
+        <div class="gg-t-light-blue">
+          <section class="gg-o-page-section">
+            <h2 class="gg-u-text-louder" id="page-title" style="margin-bottom: 0.25em;"></h2>
+            <p class="gg-u-text-loud" id="page-description"></p>
+          </section>
+        </div>
+        <div class="gg-t-wild-sand viewer-main">
+          <section class="gg-o-page-section">
+            <p class="gg-u-text-speak">
+              <span class="gg-u-text-speak-up"> It's recommended to only use the Desktop viewport size on mobile devices.</span>
+              Scrolling seems to be pretty glitchy if you use Mobile.
+            </p>
+            <fieldset class="gg-c-chunky-buttons gg-c-chunky-buttons--no-gap">
+              <legend class="gg-c-chunky-buttons__legend">
+                Viewport size
+              </legend>
+              <ol class="gg-c-chunky-buttons__list">
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="viewport" type="radio" id="viewport-0" class="gg-c-chunky-buttons__radio" checked="checked" value="1" />
+                  <label class="gg-c-chunky-buttons__button" for="viewport-0">
+                    <span class="gg-c-chunky-buttons__text">
+                      Desktop
+                    </span>
+                  </label>
+                </li>
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="viewport" type="radio" id="viewport-1" class="gg-c-chunky-buttons__radio" value="2" />
+                  <label class="gg-c-chunky-buttons__button" for="viewport-1">
+                    <span class="gg-c-chunky-buttons__text">
+                      Mobile
+                    </span>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+
+            <fieldset class="gg-c-chunky-buttons gg-c-chunky-buttons--no-gap gg-c-chunky-buttons--4-col hidden" id="device-select">
+              <legend class="gg-c-chunky-buttons__legend">Device type</legend>
+              <ol class="gg-c-chunky-buttons__list">
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="mobile-size" type="radio" id="mobile-size-0" class="gg-c-chunky-buttons__radio" value="320x568" />
+                  <label class="gg-c-chunky-buttons__button" for="mobile-size-0">
+                    <span class="gg-c-chunky-buttons__text">
+                      iPhone 5s
+                    </span>
+                  </label>
+                </li>
+                <li class="gg-c-chunky-buttons__option">
+                  <input
+                    name="mobile-size"
+                    type="radio"
+                    id="mobile-size-1"
+                    class="gg-c-chunky-buttons__radio"
+                    value="375x667"
+                    checked="checked"
+                  />
+                  <label class="gg-c-chunky-buttons__button" for="mobile-size-1">
+                    <span class="gg-c-chunky-buttons__text">
+                      iPhone 6/7/8
+                    </span>
+                  </label>
+                </li>
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="mobile-size" type="radio" id="mobile-size-2" class="gg-c-chunky-buttons__radio" value="375x812" />
+                  <label class="gg-c-chunky-buttons__button" for="mobile-size-2">
+                    <span class="gg-c-chunky-buttons__text">
+                      iPhone XS
+                    </span>
+                  </label>
+                </li>
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="mobile-size" type="radio" id="mobile-size-3" class="gg-c-chunky-buttons__radio" value="360x800" />
+                  <label class="gg-c-chunky-buttons__button" for="mobile-size-3">
+                    <span class="gg-c-chunky-buttons__text">
+                      Google Pixel 4
+                    </span>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+
+            <fieldset class="gg-c-chunky-buttons gg-c-chunky-buttons--3-col">
+              <legend class="gg-c-chunky-buttons__legend">Scaling</legend>
+              <ol class="gg-c-chunky-buttons__list">
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="mobile-zoom" type="radio" id="mobile-zoom-0" class="gg-c-chunky-buttons__radio" value="0.75" checked="" />
+                  <label class="gg-c-chunky-buttons__button" for="mobile-zoom-0">
+                    <span class="gg-c-chunky-buttons__text">
+                      0.75x
+                    </span>
+                  </label>
+                </li>
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="mobile-zoom" type="radio" id="mobile-zoom-1" class="gg-c-chunky-buttons__radio" value="1" checked="checked" />
+                  <label class="gg-c-chunky-buttons__button" for="mobile-zoom-1">
+                    <span class="gg-c-chunky-buttons__text">
+                      1x
+                    </span>
+                  </label>
+                </li>
+                <li class="gg-c-chunky-buttons__option">
+                  <input name="mobile-zoom" type="radio" id="mobile-zoom-2" class="gg-c-chunky-buttons__radio" value="1.25" />
+                  <label class="gg-c-chunky-buttons__button" for="mobile-zoom-2">
+                    <span class="gg-c-chunky-buttons__text">
+                      1.25x
+                    </span>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+
+            <div id="viewer-frame-container" data-size="375x667">
+              <div class="viewer-frame-container2">
+                <iframe src="" id="viewer-frame" frameborder="0"></iframe>
+              </div>
+            </div>
+
+            <a href="" id="viewer-link" target="_blank" class="gg-u-link gg-u-link--arrow">View in new tab</a>
+          </section>
+        </div>
+      </div>
+    </main>
+    <gg-footer></gg-footer>
+
+    <script>
+      function desktopViewportChanged(e) {
+        if (e.target.checked) {
+          document.getElementById('viewer-frame-container').classList.remove('mobile');
+          document.getElementById('device-select').classList.add('hidden');
+        }
+      }
+
+      function mobileViewportChanged(e) {
+        if (e.target.checked) {
+          document.getElementById('viewer-frame-container').classList.add('mobile');
+          document.getElementById('device-select').classList.remove('hidden');
+        }
+      }
+
+      document.getElementById('viewport-0').addEventListener('change', desktopViewportChanged);
+      document.getElementById('viewport-1').addEventListener('change', mobileViewportChanged);
+
+      function mobileSizeChanged(e) {
+        if (e.target.checked) {
+          document.getElementById('viewer-frame-container').setAttribute('data-size', e.target.getAttribute('value'));
+        }
+      }
+
+      document.querySelectorAll('input[name=mobile-size]').forEach(function (n, _) {
+        n.addEventListener('change', mobileSizeChanged);
+      });
+
+      function scalingChanged(e) {
+        if (e.target.checked) {
+          document.getElementById('viewer-frame-container').style.transform = `scale(${e.target.getAttribute('value')})`;
+
+          switch (e.target.getAttribute('value')) {
+            case '1.25':
+              document.getElementById('viewer-frame-container').style.marginBottom = `25%`;
+              break;
+            case '0.75':
+              document.getElementById('viewer-frame-container').style.marginBottom = `-15%`;
+              break;
+            default:
+              document.getElementById('viewer-frame-container').style.marginBottom = '';
+              break;
+          }
+        }
+      }
+
+      document.querySelectorAll('input[name=mobile-zoom]').forEach(function (n, _) {
+        n.addEventListener('change', scalingChanged);
+      });
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAT0fbey8ETQULa-SSIyBEfsVmIjtToh48',
+        authDomain: 'gg-help.firebaseapp.com',
+        databaseURL: 'https://gg-help.firebaseio.com',
+        projectId: 'gg-help',
+        storageBucket: 'gg-help.appspot.com',
+        messagingSenderId: '441453803789',
+        appId: '1:441453803789:web:c6e2cd6b1a07c3c6999844',
+        measurementId: 'G-0TVVBKR3LE',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "categoryName": "SIM and number",
+  "articleList": [
+    {
+      "title": "iMessage isn't working after I transferred my number to giffgaff",
+      "url": "imessage-isnt-working-after-i-transferred-my-number",
+      "visible": true
+    },
+    {
+      "title": "I’m having problems after transferring my number to giffgaff",
+      "url": "im-having-problems-after-transferring-my-number-to-giffgaff",
+      "visible": true
+    },
+    { "title": "I blocked my SIM, what can I do?", "url": "i-blocked-my-sim-what-can-i-do", "visible": true },
+    { "title": "Can I change my giffgaff number?", "url": "can-i-change-my-giffgaff-number", "visible": true },
+    {
+      "title": "How do I take my current mobile number with me to another network?",
+      "url": "how-do-i-take-my-current-mobile-number-with-me-to-another-network",
+      "visible": true
+    },
+    { "title": "I’m getting spam calls or texts. What can I do?", "url": "im-getting-spam-calls-or-texts-what-can-i-do", "visible": true },
+    { "title": "How do I get a PAC or STAC from my old network?", "url": "how-do-i-get-a-pac-or-stac-from-my-old-network", "visible": true },
+    { "title": "Will a giffgaff SIM fit my phone?", "url": "will-a-giffgaff-sim-fit-my-phone", "visible": true },
+    { "title": "What’s my giffgaff number?", "url": "whats-my-giffgaff-number", "visible": true },
+    { "title": "I lost my 6 digit activation code", "url": "i-lost-my-6-digit-activation-code", "visible": true },
+    { "title": "What’s the default PIN for my giffgaff SIM?", "url": "whats-the-default-pin-for-my-giffgaff-sim", "visible": true },
+    { "title": "I lost my SIM", "url": "i-lost-my-sim", "visible": true },
+    { "title": "I can’t activate my SIM", "url": "i-cant-activate-my-sim", "visible": true },
+    { "title": "Can I order a SIM from outside the UK?", "url": "can-i-order-a-sim-from-outside-the-uk", "visible": true },
+    {
+      "title": "How do I keep my current mobile number when I join giffgaff?",
+      "url": "how-do-i-keep-my-current-mobile-number-when-i-join-giffgaff",
+      "visible": true
+    },
+    { "title": "How do I get a PAC code to leave giffgaff?", "url": "how-do-i-get-a-pac-code-to-leave-giffgaff", "visible": true },
+    { "title": "I lost my SIM. What should I do?", "url": "i-lost-my-sim-what-should-i-do", "visible": true },
+    { "title": "I need a different size SIM", "url": "i-need-a-different-size-sim", "visible": true },
+    { "title": "How do I activate my SIM?", "url": "how-do-i-activate-my-sim", "visible": true },
+    { "title": "Can I order more than 3 SIMs?", "url": "can-i-order-more-than-three-sims", "visible": true },
+    { "title": "What’s the default PIN2 for my giffgaff SIM?", "url": "whats-the-default-pin-two-for-my-giffgaff-sim", "visible": true },
+    { "title": "Do I have to transfer my number straight away?", "url": "do-i-have-to-transfer-my-number-straight-away", "visible": true },
+    { "title": "What’s a triple-SIM?", "url": "whats-a-triple-sim", "visible": true },
+    { "title": "How do I change my giffgaff number?", "url": "how-do-i-change-my-giffgaff-number", "visible": true },
+    { "title": "How do I get a STAC code to leave giffgaff?", "url": "how-do-i-get-a-stac-code-to-leave-giffgaff", "visible": true },
+    { "title": "My SIM is broken", "url": "my-sim-is-broken", "visible": true }
+  ]
+}

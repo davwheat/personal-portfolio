@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
+
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js" as="script" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js" as="script" />
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="/examples/sim-swap/css/activate.css" />
+
+    <link href="https://www.giffgaff.com/favicon-gg.ico?v=1" rel="icon" />
+    <link href="https://www.giffgaff.com/gfx/icons/iphone-icon.png" rel="apple-touch-icon" />
+
+    <!-- Plugin JS -->
+    <script type="text/javascript" src="/examples/sim-swap/js/OverlayScrollbars.min.js"></script>
+    <script src="/examples/sim-swap/js/activate.js" async defer></script>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script async src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min .js"></script>
+    <![endif]-->
+  </head>
+  <body class="font-giffgaff">
+    <div>
+      <nav>
+        <ul class="gg-c-skip-links">
+          <li>
+            <a class="gg-c-skip-links__link gg-u-screen-reader-only" href="#main-content">Skip to main content</a>
+          </li>
+        </ul>
+      </nav>
+      <header class="gg-c-website-header">
+        <div class="gg-c-website-header__bar">
+          <a
+            class="gg-c-website-header__logo"
+            onclick="window.alert('This would link to the giffgaff home page, but that kinda breaks the example page.')"
+          >
+            <svg height="56px" xmlns="http://www.w3.org/2000/svg" viewBox="-329.5 610.9 889.1 282.2">
+              <g fill="#FFF">
+                <path
+                  d="M333.9 716.9h-4.5v-20.8H326v-4.5h3.5v-8.4h4.5v8.4h4v4.5h-4v20.8zM358.6 716.9v-13.4c0-2 0-7.9-5.9-7.9-4 0-6.4 3-6.4 7.9v13.4h-4.5v-33.2h4.5v10.9c2.5-3.5 5.9-3.5 6.9-3.5 4 0 6.9 1.5 8.9 4.5 1 1.5 1.5 3.5 1.5 6.4v14.9h-5zM372.5 706.5c1 5 5 6.9 7.9 6.9 3.5 0 5.9-2 6.9-4h4.5c-2.5 6.4-7.9 8.4-11.9 8.4-6.9 0-12.9-5.9-12.9-12.9 0-7.4 5.9-12.9 12.9-12.9 6.9 0 12.4 5.4 12.9 12.9v2.5c.5-.9-20.3-.9-20.3-.9zm15.8-4c0-3.5-3.5-7.4-7.9-7.4-4.5 0-7.9 3.5-7.9 7.4h15.8zM443.3 716.9V703c0-2-.5-7.4-5.9-7.4-5.9 0-5.9 5.4-5.9 7.4v13.9H427V703c0-2 0-3.5-1-5-1-2-3-2.5-4.5-2.5-5.9 0-5.9 5.4-5.9 7.4v13.9h-4.5V692h4.5v2.5c1-1 2.5-3.5 6.9-3.5 3 0 6.4 1.5 7.9 4 1-1.5 2.5-4 8.4-4 4 0 6.9 1.5 8.9 4.5 1 1.5 1.5 3.5 1.5 5.9v14.9l-5.9.6zM466.1 717.3c-8.4 0-13.4-6.9-13.4-13.4 0-6.9 5.4-12.9 13.4-12.9 7.4 0 13.4 5.9 13.4 12.9-.1 6.5-5 13.4-13.4 13.4zm0-21.7c-5.4 0-8.9 4.5-8.9 8.9s3.5 8.9 8.9 8.9c5 0 8.9-4 8.9-8.9-.5-5-4-8.9-8.9-8.9zM483.9 716.9v-33.2h4.5v11.9c2-3 5-4 8.4-4 6.4 0 12.9 5.4 12.9 12.9 0 6.9-5.4 12.9-12.9 12.9-2.5 0-5.9-1-8.4-4.5v3.5l-4.5.5zm12.9-4c4.5 0 8.4-4 8.4-8.9 0-4.5-3.5-8.9-8.4-8.9s-8.4 4.5-8.4 8.9c-.1 5.9 4.4 8.9 8.4 8.9zM519.5 689.1H515v-5.4h4.5v5.4zm0 27.8H515v-24.8h4.5v24.8zM529.9 716.9h-4.5v-33.2h4.5v33.2zM539.3 706.5c1 5 5 6.9 7.9 6.9 3.5 0 5.9-2 6.9-4h4.5c-2.5 6.4-7.9 8.4-11.9 8.4-6.9 0-12.9-5.9-12.9-12.9 0-7.4 5.9-12.9 12.9-12.9 6.9 0 12.4 5.4 12.9 12.9v2.5c.5-.9-20.3-.9-20.3-.9zm16.4-4c0-3.5-3.5-7.4-7.9-7.4s-7.9 3.5-7.9 7.4h15.8zM346.3 766.4V753c0-2 0-7.9-5.9-7.9-4 0-6.4 3-6.4 7.9v13.4h-4.5v-24.8h4.5v2.5c2.5-3.5 6.4-3.5 7.4-3.5 4 0 6.9 1.5 8.9 4.5 1 1.5 1.5 3.5 1.5 6.4v14.9h-5.5zM361.6 756c1 5 5 6.9 7.9 6.9 3.5 0 5.9-2 6.9-4h4.5c-2.5 6.4-7.9 8.4-11.9 8.4-6.9 0-12.9-5.9-12.9-12.9 0-7.4 5.9-12.9 12.9-12.9 6.9 0 12.4 5.4 12.9 12.9v2.5c0-.9-20.3-.9-20.3-.9zm15.8-3.5c0-3.5-3.5-7.4-7.9-7.4-4.5 0-7.9 3.5-7.9 7.4h15.8zM393.3 766.4h-4.5v-20.8h-3.5v-4.5h3.5v-8.4h4.5v8.4h4v4.5h-4v20.8zM425 766.4h-2.5l-5.4-16.8-5.4 16.8h-2.5l-9.4-24.8h5l5.4 16.3 5-16.3h3l5 16.3 5.4-16.3h5l-8.6 24.8zM449.7 766.9c-8.4 0-13.4-6.9-13.4-13.4 0-6.9 5.4-12.9 13.4-12.9 7.4 0 13.4 5.9 13.4 12.9 0 6.4-5 13.4-13.4 13.4zm0-21.8c-5.4 0-8.9 4.5-8.9 8.9 0 4.5 3.5 8.9 8.9 8.9 5 0 8.9-4 8.9-8.9 0-4.5-3.9-8.9-8.9-8.9zM469 766.4v-24.8h4.5v2.5c2-3 5-3 6.4-3v5c-.5 0-2.5.5-3.5 1-1.5 1-3 2.5-3 6.4v13.4c.6-.5-4.4-.5-4.4-.5zM505.2 741.6l-8.9 11.9 10.4 13.4h-5.9l-9.9-12.9v12.9h-4.5v-33.2h4.5V754l8.9-11.9 5.4-.5zM328.4 816.4v-24.8h4.5v2.5c2-3 5-3 6.4-3v5c-.5 0-2.5.5-3.5 1-1.5 1-3 2.5-3 6.4v13.4c.1-.5-4.4-.5-4.4-.5zM348.2 791.6V805c0 5.9 3 7.9 5.9 7.9 4 0 6.4-2.5 6.4-7.9v-13.4h4.5v24.8h-4.5v-2.5c-1.5 2-4 3.5-7.4 3.5-3 0-5.4-1-6.9-2.5-2-2-3.5-4.5-3.5-9.4v-13.4h5.4v-.5zM388.8 816.4V803c0-2 0-7.9-5.9-7.9-4 0-6.4 3-6.4 7.9v13.4H372v-24.8h4.5v2.5c2.5-3.5 6.4-3.5 7.4-3.5 4 0 6.9 1.5 8.9 4.5 1 1.5 1.5 3.5 1.5 6.4v14.9h-5.5zM412.1 816.4v-33.2h4.5v11.9c2-3 5-4 8.4-4 6.4 0 12.9 5.4 12.9 12.9 0 6.9-5.4 12.9-12.9 12.9-2.5 0-5.9-1-8.4-4.5v3.5l-4.5.5zm12.9-4c4.5 0 8.4-4 8.4-8.9 0-4.5-3.5-8.9-8.4-8.9-5 0-8.4 4.5-8.4 8.9 0 5.9 3.9 8.9 8.4 8.9zM450.2 824.3h-5l3.5-8.9-9.9-24.3h5l7.4 19.3 7.4-19.3h5l-13.4 33.2zM488.3 824.3h-5l3.5-8.9-9.9-24.3h5l7.4 19.3 7.4-19.3h5l-13.4 33.2zM516.6 816.9c-8.4 0-13.4-6.9-13.4-13.4 0-6.9 5.4-12.9 13.4-12.9 7.4 0 13.4 5.9 13.4 12.9-.1 6.4-5 13.4-13.4 13.4zm0-21.8c-5.4 0-8.9 4.5-8.9 8.9 0 4.5 3.5 8.9 8.9 8.9 5 0 8.9-4 8.9-8.9-.5-4.5-4-8.9-8.9-8.9zM539.3 791.6V805c0 5.9 3 7.9 5.9 7.9 4 0 6.4-2.5 6.4-7.9v-13.4h4.5v24.8h-4.5v-2.5c-1.5 2-4 3.5-7.4 3.5-3 0-5.4-1-6.9-2.5-2-2-3.5-4.5-3.5-9.4v-13.4h5.4v-.5z"
+                />
+              </g>
+              <g fill="#FFF">
+                <path
+                  d="M220.5 671.3c-2-.5-5-.5-7.4-.5-9.4 0-17.3 2-23.8 5.9-8.9 5.9-13.9 15.3-13.9 28.2v2.5h-30.2V706c0-10.4 5.9-15.3 17.8-15.3l4.5.5v-19.3c-2-.5-4.5-.5-7.9-.5-9.4 0-16.8 2-23.3 5.9-9.4 5.9-13.9 14.9-13.9 28.2v73.8h-15.3c-2.5 0-4-1.5-4-4v-34.2c0-24.3-12.9-36.6-39.6-36.6-7.9 0-14.4 1-20.3 3.5-8.4 3-13.4 7.9-13.4 15.3v9.4h20.8v-5c0-2 1.5-4 4.5-5 2-1 4.5-1.5 7.4-1.5 5.9 0 10.4 1.5 12.9 4s4 7.4 4 13.9v.5h-3c-12.9 0-23.8 1.5-32.7 5-14.4 5-21.3 13.9-21.3 25.7 0 8.9 3 15.8 9.4 20.8 5.9 5 13.4 7.4 21.8 7.4s15.3-2.5 21.3-7.9c2.5-2.5 5-5.4 5.9-8.4h.5l-.5 4c0 3 1 5.4 2.5 7.4 2 2 5 3 8.9 3h51v-72.8h30.2v72.8h22.3v-72.8H216v-18.3h-20.3V704c0-10.4 5.9-15.3 17.8-15.3l5 .5 2-17.9zM77.4 756.5h4v2.5c0 5.4-2 11.4-5.9 15.8-4 5-8.9 7.9-14.9 7.9-4.5 0-7.9-1-10.4-3.5-2-2.5-3.5-5.4-3.5-8.4.5-9.4 10.4-14.3 30.7-14.3M-9.2 715.4v2.5h-.5c-1-2-3.5-4.5-6.4-6.4-5.9-4.5-12.9-6.9-21.8-6.9-12.9 0-22.8 4.5-30.2 13.4-6.9 7.9-10.4 19.3-10.4 32.2 0 13.4 3.5 23.8 10.9 32.2 7.4 8.9 17.8 13.4 30.2 13.4 11.4 0 19.8-4 25.7-11.4v9.4c0 7.4-2.5 13.4-7.4 17.3-4.5 3.5-10.4 5-17.8 5-5.9 0-11.9-1-18.3-3.5l-7.4-3-6.9 17.8c9.9 5 20.3 7.9 32.2 7.9 13.4 0 24.3-3.5 33.2-9.9 9.9-7.4 15.3-18.3 15.3-33.2v-62.4c0-2.5 1.5-4 4-4H22v-19.3H.7c-3.5 0-5.4 1-7.4 2.5-1.5 2.4-2.5 4.4-2.5 6.4m-40.6 15.8c4-4.5 8.9-6.4 15.8-6.4 15.3 0 22.8 8.9 22.8 26.2 0 9.4-2 16.3-6.4 20.8-4 4-8.9 5.4-14.9 5.4-7.4 0-12.9-3-16.8-7.9s-5.9-11.9-5.9-19.8 2-13.8 5.4-18.3M-81 724.8V707h-19.8v-1.5c0-10.4 5.4-15.3 17.3-15.3l4.5.5v-19.3c-2-.5-4.5-.5-7.4-.5-9.4 0-17.3 2-23.8 5.4-8.9 5.9-13.9 15.3-13.9 28.2v2.5h-30.2v-1.5c0-10.4 5.4-15.3 17.8-15.3l5 .5v-19.3c-2-.5-5-.5-7.9-.5-9.4 0-16.8 2-23.3 5.4-9.4 5.9-13.9 15.3-13.9 28.2v74.3h-16.8c-2.5 0-4-1-4-4v-55.9c0-4.5-1-7.4-3-9.4-2-1.5-4.5-2.5-8.9-2.5h-42.1c-3.5 0-5.9 1-7.4 2.5s-2 3.5-2 5.9c-.5 1-.5 1.5 0 2h-.5c-1.5-2-3.5-4.5-5.9-6.4-5.9-4-12.9-6.4-21.8-6.4-12.9 0-22.8 4.5-30.2 13.4-6.9 7.9-9.9 18.8-10.4 31.7.5 12.9 4 23.8 10.9 32.7 7.4 8.9 17.3 13.4 30.2 13.4 11.4 0 19.8-4 25.2-11.4v8.9c0 7.9-2.5 13.4-7.4 17.3-4.5 3.5-10.4 5-18.3 5-5.9 0-11.9-1-17.8-3l-7.4-3-6.9 17.8c9.9 5 20.8 7.9 32.2 7.9 13.4 0 23.8-3.5 32.7-9.9 9.9-7.4 15.3-18.8 15.3-33.2v-62.4c0-2 1.5-3.5 4-3.5h13.4c2.5 0 4 1 4 4v55.4c0 4.5 1 7.4 3 8.9 1.5 2 4.5 3 8.9 3h54v-72.8h30.2V798h22.8v-73.3H-81zm-219.8 6.4c4-4.5 8.9-6.9 16.3-6.9 15.3 0 22.8 8.9 22.8 26.2 0 9.4-2 16.8-6.9 21.3-3.5 3.5-8.4 5.4-14.9 5.4-6.9 0-12.9-3-16.8-7.9s-5.9-11.9-5.9-19.8 1.5-13.8 5.4-18.3"
+                />
+                <path d="M-219.6 670.8h22.8v22.8h-22.8z" />
+              </g>
+              <path fill="#FFF" d="M270.5 610.9h5v282.2h-5z" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <div class="gg-u-digital-noise-chunky gg-t-white">
+          <header class="gg-c-masthead gg-c-masthead--digital-noise">
+            <div class="gg-c-masthead__content">
+              <div class="gg-c-masthead__text">
+                <h1 class="gg-u-text-megaphone">
+                  <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Let's</mark>
+                  activate your SIM
+                </h1>
+                <p class="gg-c-masthead__page-subtitle">
+                  We'll knock your socks off with our buzzing community of members, and free calls and texts to all your mates on giffgaff
+                </p>
+              </div>
+              <picture class="gg-c-masthead__picture">
+                <source media="(min-width: 992px)" srcset="/examples/sim-swap/img/celebrate-lady.png" />
+                <img src="/examples/sim-swap/img/celebrate-lady.mobile.png" />
+              </picture>
+            </div>
+          </header>
+          <div class="gg-t-wild-sand">
+            <section class="gg-o-page-section">
+              <h1 class="gg-u-text-shout">
+                Joining
+                <mark class="gg-u-doodle-end-boing gg-u-doodle-end-boing--light-pink">
+                  giffgaff?
+                </mark>
+              </h1>
+              <p class="gg-u-text-louder">
+                Nice one. You've come to the right place.
+              </p>
+              <p class="gg-u-text-speak">
+                Pop in your SIM activation code below to get started.
+              </p>
+              <p class="gg-u-text-speak">
+                Trying to replace your current giffgaff SIM?
+                <a onclick="window.alert('this would link to the new sim swap page i\'ve designed')" class="gg-u-link gg-u-link--arrow"
+                  >Perform a SIM swap</a
+                >
+              </p>
+            </section>
+          </div>
+          <a id="invisScroller"></a>
+          <div class="gg-t-light-pink">
+            <section class="gg-o-page-section">
+              <div id="step1" class="activation-form--container">
+                <form class="gg-c-form gg-t-white activation-form gg-u-digital-noise-parallel">
+                  <section class="hidden woohoo-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        d="M22.4 5.7l-.1-.3-2.4-2.1h-1c-.2 0-1.1 1.2-1.3 1.4l-1.5 1.6-2 2L8 14l-.1.2-2.8-3h-.8l-2.7 2.6v.8l.6.7.6.6 2 2v.3l2.8 2.6h.7l1-1.1a48.5 48.5 0 004.6-4.5c1.3-1.3 1.6-1.4 2.8-2.8s2.6-2.6 3.8-3.8c.3-.4 1.8-1.7 1.8-2.2z"
+                      />
+                    </svg>
+                    <p class="gg-u-text-shout">Woohoo</p>
+                  </section>
+                  <label for="activationCodeInput" class="gg-c-form__label">SIM activation code</label>
+                  <div class="gg-c-form__element">
+                    <input
+                      type="text"
+                      id="activationCodeInput"
+                      class="gg-c-form__input"
+                      aria-describedby="textinput-message"
+                      placeholder="XXXXXX"
+                      autocomplete="off"
+                      maxlength="19"
+                    />
+                    <p id="activationCodeInputError" class="gg-c-form__element-message gg-c-form__element-message--invalid"></p>
+                  </div>
+                  <button id="step1nextbtn" class="gg-c-btn gg-c-btn--primary gg-c-btn--center">
+                    <span class="gg-c-btn__switch">Activate my SIM</span>
+                  </button>
+                  <div>
+                    <dialog class="gg-c-modal" id="find-code-dialog">
+                      <div class="gg-c-modal__header">
+                        <h2 class="gg-c-modal__main-title">
+                          I can't find my activation code
+                        </h2>
+                        <button class="gg-c-modal__close-button">
+                          <svg class="gg-c-modal__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.22 13.15">
+                            <path
+                              d="M7.64,6.6l1.1-1.1a41.63,41.63,0,0,0,4.2-4.2c.3-.4.4-.4.1-.9a.71.71,0,0,0-1-.3c-.1,0-.1.1-.2.1l-.2.3c-1.8,1.8-3.3,3.3-5,5.1l-1-1c-1.2-1.1-2.3-2.4-3.5-3.4C1.84.9,1.24-.1.64.3a.8.8,0,0,0-.3,1.1l.1.1Q3,4.2,5.54,6.6L4.14,8a35.9,35.9,0,0,0-3.9,3.9c-.7.8.3,1.7,1,1A47.8,47.8,0,0,0,5.14,9a18.48,18.48,0,0,1,1.4-1.4c.6.6,1.2,1.1,1.7,1.7.9,1,2.6,2.8,3.4,3.5s1.9-.3,1-1.1C11.24,10.4,9.34,8.4,7.64,6.6Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="gg-c-modal__content">
+                        <p>
+                          You can find your activation code on the small plactic card that came with your SIM. If you haven't got that, you can
+                          also use the 13, 16 or 19 digit SIM serial number on the back of your SIM.
+                        </p>
+                        <img
+                          src="/examples/sim-swap/img/sim-code.png"
+                          alt="Your 6 letter activation code on on the plastic card that came with your SIM. You can also use the long 16 or 19 digit SIM serial number on the back of your new SIM."
+                        />
+                      </div>
+                    </dialog>
+                    <a id="code-modal-btn" class="gg-u-link gg-u-link--center">Can't find your activation code?</a>
+                  </div>
+                </form>
+              </div>
+              <div id="step2" class="activation-form--container hidden">
+                <div class="gg-t-white activation-form gg-u-digital-noise-parallel">
+                  <section class="hidden woohoo-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        d="M22.4 5.7l-.1-.3-2.4-2.1h-1c-.2 0-1.1 1.2-1.3 1.4l-1.5 1.6-2 2L8 14l-.1.2-2.8-3h-.8l-2.7 2.6v.8l.6.7.6.6 2 2v.3l2.8 2.6h.7l1-1.1a48.5 48.5 0 004.6-4.5c1.3-1.3 1.6-1.4 2.8-2.8s2.6-2.6 3.8-3.8c.3-.4 1.8-1.7 1.8-2.2z"
+                      />
+                    </svg>
+                    <p class="gg-u-text-shout">Nice one</p>
+                  </section>
+                  <div class="repeat-code-container gg-t-wild-sand gg-u-texture-softer">
+                    <div>
+                      <p class="gg-u-text-speak-up">
+                        SIM activation code:
+                        <span class="gg-u-text-speak" id="activationCodeInput2"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path
+                            d="M22.41 5.66l-.14-.29-2.4-2.11h-.95c-.27 0-1.12 1.25-1.32 1.46-.51.51-1 1-1.51 1.54-1 1-1 1-2 2.07-1.93 1.94-4 3.76-6 5.69l-.09.17-2.81-2.9h-.77l-2.67 2.47v.84l.57.72.57.57 2 2.1v.16l2.82 2.68h.69l1.06-1.13A48.51 48.51 0 0014 15.2c1.27-1.32 1.64-1.44 2.84-2.81s2.6-2.57 3.79-3.82c.3-.33 1.76-1.7 1.76-2.15z"
+                          />
+                        </svg>
+                      </p>
+                    </div>
+                  </div>
+                  <section class="gg-u-grid gg-u-@m:grid--2-col">
+                    <div>
+                      <h3 class="gg-u-text-louder">Create an account</h3>
+                      <p class="gg-u-speak">
+                        It's a doddle. Enter your email and password below and we'll set you up.
+                      </p>
+                      <form class="gg-c-form">
+                        <label for="newEmail" class="gg-c-form__label">Email</label>
+                        <div class="gg-c-form__element">
+                          <input
+                            type="email"
+                            autocomplete="email"
+                            id="newEmail"
+                            class="gg-c-form__input"
+                            maxlength="320"
+                            placeholder="hello@example.com"
+                          />
+                          <p class="gg-c-form__element-message gg-c-form__element-message--invalid">
+                            Uh-oh, that's not a valid email address
+                          </p>
+                        </div>
+
+                        <label for="newPwd" class="gg-c-form__label">Password</label>
+                        <div class="gg-c-form__element gg-c-input-with-button">
+                          <input
+                            type="password"
+                            autocomplete="new-password"
+                            id="newPwd"
+                            class="gg-c-form__input gg-c-input-with-button__input"
+                          />
+                          <button class="gg-c-input-with-button__btn" type="submit" id="toggle-pwd-visibility-1">
+                            <span class="hidden" id="show-pwd1">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                  d="M22.4 12a.7.7 0 00-.1-.6C19.9 8.6 16 5 12 5S4.2 8.6 1.8 11.4a.7.7 0 00-.2.6.7.7 0 00.2.6C4.2 15.3 8 18.9 12 18.9s7.8-3.6 10.3-6.4a.6.6 0 00.1-.5zM12 17.6c-3.4 0-6.7-3.1-9-5.6C5.2 9.5 8.6 6 12 6.2s6.7 3.2 9 5.8c-2.2 2.4-5.6 5.6-9 5.6z"
+                                />
+                                <path
+                                  d="M13.8 8c-2-.7-5 .4-5.8 2.5a3.9 3.9 0 001.4 4.8c2 .9 5.4.8 6.4-1.7a4.2 4.2 0 00.3-3A4.9 4.9 0 0013.8 8zm.9 4.4a2.6 2.6 0 01-1.7 2 4 4 0 01-2.9-.3 2.2 2.2 0 01-1-2.5 3.1 3.1 0 013.3-2.4 2.5 2.5 0 012.3 3.2z"
+                                />
+                                <path
+                                  d="M12.9 10.6a2 2 0 00-1.4-.2 1.5 1.5 0 00-1 .7 1.4 1.4 0 00.7 2.2 1.7 1.7 0 002-.2 1.6 1.6 0 00-.3-2.5z"
+                                />
+                              </svg>
+                            </span>
+                            <span id="hide-pwd1">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                  d="M4.7 15.4l.5.2a.8.8 0 01.2 0l.3-.2a.4.4 0 010-.1 1 1 0 000-.7A30.4 30.4 0 013 12c2.2-2.5 5.5-5.8 9-5.8a7 7 0 012.3.5 1.7 1.7 0 00.7-.4.8.8 0 00.2-.3 1.3 1.3 0 000-.4 8 8 0 00-3.3-.7c-4 0-7.8 3.7-10.2 6.5a.7.7 0 00-.2.6.7.7 0 00.2.6 32.6 32.6 0 002.8 2.9zm17.6-4a32.3 32.3 0 00-3-3 .9.9 0 00-.8.1 1.1 1.1 0 00-.3.6.5.5 0 01.1.2A32.8 32.8 0 0121 12c-2.2 2.5-5.6 5.7-9 5.6a7 7 0 01-2.1-.4h-.1a2.8 2.8 0 01-.4 0l-.4.4a.6.6 0 010 .2v.1a.5.5 0 010 .1v.3a8 8 0 003 .6c4 0 7.9-3.6 10.3-6.4a.6.6 0 00.2-.5.7.7 0 00-.2-.6zm-2.6-7.9L18 5.2c-3.8 3.7-11 10.4-14.5 14-.6.6.3 1.6 1 1l1.6-1.7 14.5-14c.6-.6-.4-1.6-1-1z"
+                                />
+                                <path
+                                  d="M15.8 11.1l-1 .9a1.4 1.4 0 01-.1.4 2.6 2.6 0 01-1.7 2 3.3 3.3 0 01-.7.1h-.1l-.6.6a.4.4 0 01-.1.2c-.2.1-.3.3-.1.4 1.8.2 3.7-.3 4.4-2.1a6.2 6.2 0 00.5-2.1.7.7 0 010-.1c0-.2-.2-.4-.5-.3zM8 10.5a4.6 4.6 0 00-.3 2c.3.3.7.2 1 0v-.2a1.4 1.4 0 00.4-.6v-.1A3 3 0 0112 9.2a1 1 0 00.2-.1l.1-.1.7-.7a.3.3 0 000-.4c-2-.3-4.4.8-5 2.6z"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                          <div style="flex-basis: 100%; height: 0;"></div>
+                          <p class="gg-c-form__element-message gg-c-form__element-message--invalid">
+                            Uh-oh, your password needs at least one: uppercase letter, lowercase letter, number, andspecial character
+                          </p>
+                        </div>
+
+                        <section id="email-confirmation-msg" class="gg-t-wild-sand">
+                          <p class="gg-u-text-speak">
+                            Your email confirmation will be sent to:
+                          </p>
+                          <p id="email-confirm" class="gg-u-text-loud"></p>
+                        </section>
+
+                        <fieldset class="gg-c-chunky-buttons" id="communications-container">
+                          <legend class="gg-c-chunky-buttons__legend">
+                            Happy to hear from us? We'll help you save money with phone deals sent only to members and goodybag advice based on
+                            your usage. Opt-out anytime.
+                          </legend>
+                          <ol class="gg-c-chunky-buttons__list">
+                            <li class="gg-c-chunky-buttons__option">
+                              <input name="communications" type="radio" id="communications-0" class="gg-c-chunky-buttons__radio" value="yes" />
+                              <label class="gg-c-chunky-buttons__button" for="communications-0">
+                                <svg class="gg-c-chunky-buttons__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path
+                                    d="M21.09 16.24a1.64 1.64 0 00-.57-1.24 1.51 1.51 0 00.48-1.1 1.64 1.64 0 00-.89-1.53 1.18 1.18 0 00.53-1 2.35 2.35 0 00-1.57-1.87 9.88 9.88 0 00-4.66-.32c.66-2 1.13-4.19-.76-5.9a2.45 2.45 0 00-1.87-.69 1.57 1.57 0 00-1.11.82 2.29 2.29 0 00-.1 1.69 5 5 0 01.1.82 3.44 3.44 0 01-2.54 3.33v-.61a.62.62 0 00-.29-.55.63.63 0 00-.42-.15H4.14a.71.71 0 00-.7.7V21a.72.72 0 00.7.71h3.25a.72.72 0 00.7-.71v-.3l.95.07c2.56.2 5.22.41 7.85.45a3.9 3.9 0 002.54-1.09 1.7 1.7 0 00.25-2.13 2 2 0 001.41-1.76zm-14.4 4h-2l-.1-11h2.08c-.05 3.66.07 7.38.02 11.03zm13.11-3.85c-.12.32-.52.59-1.17.78a.58.58 0 00-.37.29.63.63 0 00-.05.45s.16.27.24.4a.49.49 0 01.14.17.66.66 0 01.06.45.29.29 0 010 .14c-.16.47-1.24.84-1.76.86-2.62-.05-5.27-.25-7.84-.45l-.77-.06h-.17v-8.89H8.4A4.43 4.43 0 0011.46 8 5.48 5.48 0 0012 5.65c0-.14 0-.31-.06-.52-.06-.45-.15-1.13.07-1.3s.38 0 .57.08c2.13 1 1.17 3.67.54 5.43l-.14.38a.53.53 0 00.1.57.66.66 0 00.62.19.6.6 0 00.23 0 13.72 13.72 0 012.57-.1h.61a6.35 6.35 0 011.07.09h.13c.59 0 1.55.5.89 1.14a.26.26 0 01-.11.07h-.05l-.11.05-.5.11a.63.63 0 00-.29.65.6.6 0 00.47.49h.1a2.41 2.41 0 01.55 0 .41.41 0 01.3.05.67.67 0 01.19.14.49.49 0 01.12.47.46.46 0 01-.22.52c-.35.17-.78.15-1.12.32a.63.63 0 00-.15.45.6.6 0 00.6.58 1.17 1.17 0 01.88.35.4.4 0 01-.06.53z"
+                                  />
+                                </svg>
+                                <span class="gg-c-chunky-buttons__text">
+                                  Yes, please
+                                </span>
+                                <div class="gg-c-chunky-buttons__radio-circle"></div>
+                              </label>
+                            </li>
+                            <li class="gg-c-chunky-buttons__option">
+                              <input name="communications" type="radio" id="communications-1" class="gg-c-chunky-buttons__radio" value="no" />
+                              <label class="gg-c-chunky-buttons__button" for="communications-1">
+                                <svg class="gg-c-chunky-buttons__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path
+                                    transform="scale(1, -1) translate(0, -24)"
+                                    d="M21.09 16.24a1.64 1.64 0 00-.57-1.24 1.51 1.51 0 00.48-1.1 1.64 1.64 0 00-.89-1.53 1.18 1.18 0 00.53-1 2.35 2.35 0 00-1.57-1.87 9.88 9.88 0 00-4.66-.32c.66-2 1.13-4.19-.76-5.9a2.45 2.45 0 00-1.87-.69 1.57 1.57 0 00-1.11.82 2.29 2.29 0 00-.1 1.69 5 5 0 01.1.82 3.44 3.44 0 01-2.54 3.33v-.61a.62.62 0 00-.29-.55.63.63 0 00-.42-.15H4.14a.71.71 0 00-.7.7V21a.72.72 0 00.7.71h3.25a.72.72 0 00.7-.71v-.3l.95.07c2.56.2 5.22.41 7.85.45a3.9 3.9 0 002.54-1.09 1.7 1.7 0 00.25-2.13 2 2 0 001.41-1.76zm-14.4 4h-2l-.1-11h2.08c-.05 3.66.07 7.38.02 11.03zm13.11-3.85c-.12.32-.52.59-1.17.78a.58.58 0 00-.37.29.63.63 0 00-.05.45s.16.27.24.4a.49.49 0 01.14.17.66.66 0 01.06.45.29.29 0 010 .14c-.16.47-1.24.84-1.76.86-2.62-.05-5.27-.25-7.84-.45l-.77-.06h-.17v-8.89H8.4A4.43 4.43 0 0011.46 8 5.48 5.48 0 0012 5.65c0-.14 0-.31-.06-.52-.06-.45-.15-1.13.07-1.3s.38 0 .57.08c2.13 1 1.17 3.67.54 5.43l-.14.38a.53.53 0 00.1.57.66.66 0 00.62.19.6.6 0 00.23 0 13.72 13.72 0 012.57-.1h.61a6.35 6.35 0 011.07.09h.13c.59 0 1.55.5.89 1.14a.26.26 0 01-.11.07h-.05l-.11.05-.5.11a.63.63 0 00-.29.65.6.6 0 00.47.49h.1a2.41 2.41 0 01.55 0 .41.41 0 01.3.05.67.67 0 01.19.14.49.49 0 01.12.47.46.46 0 01-.22.52c-.35.17-.78.15-1.12.32a.63.63 0 00-.15.45.6.6 0 00.6.58 1.17 1.17 0 01.88.35.4.4 0 01-.06.53z"
+                                  />
+                                </svg>
+                                <span class="gg-c-chunky-buttons__text">
+                                  No, thanks
+                                </span>
+                                <div class="gg-c-chunky-buttons__radio-circle"></div>
+                              </label>
+                            </li>
+                          </ol>
+                          <p class="gg-c-form__element-message gg-c-form__element-message--invalid">
+                            Please fill in this field
+                          </p>
+                        </fieldset>
+                      </form>
+                      <div>
+                        <p class="gg-u-text-whisper" style="margin: 1em 0;">
+                          You accept our
+                          <a class="gg-u-link" id="terms-modal-btn">terms and conditions</a>
+                          and
+                          <a class="gg-u-link" id="privacy-modal-btn">privacy policy</a>
+                          by clicking "Activate".
+                        </p>
+                        <dialog class="gg-c-modal" id="terms-modal">
+                          <div class="gg-c-modal__header">
+                            <h2 class="gg-c-modal__main-title">
+                              Terms and conditions
+                            </h2>
+                            <button class="gg-c-modal__close-button">
+                              <svg class="gg-c-modal__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.22 13.15">
+                                <path
+                                  d="M7.64,6.6l1.1-1.1a41.63,41.63,0,0,0,4.2-4.2c.3-.4.4-.4.1-.9a.71.71,0,0,0-1-.3c-.1,0-.1.1-.2.1l-.2.3c-1.8,1.8-3.3,3.3-5,5.1l-1-1c-1.2-1.1-2.3-2.4-3.5-3.4C1.84.9,1.24-.1.64.3a.8.8,0,0,0-.3,1.1l.1.1Q3,4.2,5.54,6.6L4.14,8a35.9,35.9,0,0,0-3.9,3.9c-.7.8.3,1.7,1,1A47.8,47.8,0,0,0,5.14,9a18.48,18.48,0,0,1,1.4-1.4c.6.6,1.2,1.1,1.7,1.7.9,1,2.6,2.8,3.4,3.5s1.9-.3,1-1.1C11.24,10.4,9.34,8.4,7.64,6.6Z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="gg-c-modal__content">
+                            <p>
+                              This would show the T's & C's but it's way too much effort to get them to show up here.
+                            </p>
+                            <p>
+                              Bob's your uncle. Woohoo. Payback. Nice one. goodybags. We do things differently. We do things differently. Bonnie
+                              to our Clyde. Embrace life with no contracts. Come join us. Save yourself a few bob. Super Recruiter. We're chuffed
+                              to be uSwitch Network of the Year.
+                            </p>
+                            <p>
+                              Chuffed. We do things differently. Easy as pie. Our super helpful members are available to offer support around the
+                              clock. We do things differently. Hi there. Save yourself a few bob. You're all that and a bag of chips. Change
+                              month to month or cancel anytime.
+                            </p>
+                            <p>
+                              Nice one. Nice one. Join an award-winning network. We believe that together, with our members, anything is
+                              possible. Enjoy life with no contracts. Join an award-winning network. Choose giffgaff. Thanks a bunch. You’re
+                              always in control. Super Recruiter.
+                            </p>
+                            <p>
+                              Come join us. Bonnie to our Clyde. Super Recruiter. Save yourself a few bob. Bonnie to our Clyde. Join an
+                              award-winning network. You're all that and a bag of chips. Hi there. Bonnie to our Clyde. Save yourself a few bob.
+                              Great value flexible plans where you're in control.
+                            </p>
+                            <p>
+                              Pleased as punch. You're all that and a bag of chips. We believe that together, with our members, anything is
+                              possible. Easy as pie. Super Recruiter. Bonnie to our Clyde. Run by you. We believe that together, with our
+                              members, anything is possible.
+                            </p>
+                            <p>
+                              Order your Free SIM. Award winning. Community. Save yourself a few bob. Payback. Great value flexible plans where
+                              you're in control. Nice one. Community. Nice one. Super Recruiter. No contracts. Save yourself a few bob. Order
+                              your Free SIM. Choose giffgaff.
+                            </p>
+                            <p>
+                              Super Recruiter. No contracts. Bob's your uncle. Pleased as punch. Choose giffgaff. Hi there. ooops... seems like
+                              we've got gremlins. ooops... seems like we've got gremlins. Save yourself a few bob. You're all that and a bag of
+                              chips.
+                            </p>
+                            <p>
+                              Our super helpful members are available to offer support around the clock. We do things differently. Great value
+                              flexible plans where you're in control. No contracts. Order your Free SIM. We do things differently. We do things
+                              differently. ooops... seems like we've got gremlins.
+                            </p>
+                            <p>
+                              No contracts. Woohoo. Payback. Easy peasy. Change month to month or cancel anytime. Woohoo. Enjoy life with no
+                              contracts. We're chuffed to be uSwitch Network of the Year. We have members, not customers. Order your Free SIM.
+                              Bonnie to our Clyde. Bonnie to our Clyde.
+                            </p>
+                            <p>
+                              Woohoo. Easy as pie. Order your Free SIM. We have members, not customers. Community. Save yourself a few bob. Bob's
+                              your uncle. No contracts. Community. Order your Free SIM. Great value flexible plans where you're in control. Come
+                              join us. Thanks a bunch.
+                            </p>
+                          </div>
+                        </dialog>
+                        <dialog class="gg-c-modal" id="privacy-modal">
+                          <div class="gg-c-modal__header">
+                            <h2 class="gg-c-modal__main-title">
+                              Privacy policy
+                            </h2>
+                            <button class="gg-c-modal__close-button">
+                              <svg class="gg-c-modal__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.22 13.15">
+                                <path
+                                  d="M7.64,6.6l1.1-1.1a41.63,41.63,0,0,0,4.2-4.2c.3-.4.4-.4.1-.9a.71.71,0,0,0-1-.3c-.1,0-.1.1-.2.1l-.2.3c-1.8,1.8-3.3,3.3-5,5.1l-1-1c-1.2-1.1-2.3-2.4-3.5-3.4C1.84.9,1.24-.1.64.3a.8.8,0,0,0-.3,1.1l.1.1Q3,4.2,5.54,6.6L4.14,8a35.9,35.9,0,0,0-3.9,3.9c-.7.8.3,1.7,1,1A47.8,47.8,0,0,0,5.14,9a18.48,18.48,0,0,1,1.4-1.4c.6.6,1.2,1.1,1.7,1.7.9,1,2.6,2.8,3.4,3.5s1.9-.3,1-1.1C11.24,10.4,9.34,8.4,7.64,6.6Z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="gg-c-modal__content">
+                            <p>
+                              This would show the privacy policy but it's way too much effort to get them to show up here.
+                            </p>
+                            <p>
+                              Bob's your uncle. Woohoo. Payback. Nice one. goodybags. We do things differently. We do things differently. Bonnie
+                              to our Clyde. Embrace life with no contracts. Come join us. Save yourself a few bob. Super Recruiter. We're chuffed
+                              to be uSwitch Network of the Year.
+                            </p>
+                            <p>
+                              Chuffed. We do things differently. Easy as pie. Our super helpful members are available to offer support around the
+                              clock. We do things differently. Hi there. Save yourself a few bob. You're all that and a bag of chips. Change
+                              month to month or cancel anytime.
+                            </p>
+                            <p>
+                              Nice one. Nice one. Join an award-winning network. We believe that together, with our members, anything is
+                              possible. Enjoy life with no contracts. Join an award-winning network. Choose giffgaff. Thanks a bunch. You’re
+                              always in control. Super Recruiter.
+                            </p>
+                            <p>
+                              Come join us. Bonnie to our Clyde. Super Recruiter. Save yourself a few bob. Bonnie to our Clyde. Join an
+                              award-winning network. You're all that and a bag of chips. Hi there. Bonnie to our Clyde. Save yourself a few bob.
+                              Great value flexible plans where you're in control.
+                            </p>
+                            <p>
+                              Pleased as punch. You're all that and a bag of chips. We believe that together, with our members, anything is
+                              possible. Easy as pie. Super Recruiter. Bonnie to our Clyde. Run by you. We believe that together, with our
+                              members, anything is possible.
+                            </p>
+                            <p>
+                              Order your Free SIM. Award winning. Community. Save yourself a few bob. Payback. Great value flexible plans where
+                              you're in control. Nice one. Community. Nice one. Super Recruiter. No contracts. Save yourself a few bob. Order
+                              your Free SIM. Choose giffgaff.
+                            </p>
+                            <p>
+                              Super Recruiter. No contracts. Bob's your uncle. Pleased as punch. Choose giffgaff. Hi there. ooops... seems like
+                              we've got gremlins. ooops... seems like we've got gremlins. Save yourself a few bob. You're all that and a bag of
+                              chips.
+                            </p>
+                            <p>
+                              Our super helpful members are available to offer support around the clock. We do things differently. Great value
+                              flexible plans where you're in control. No contracts. Order your Free SIM. We do things differently. We do things
+                              differently. ooops... seems like we've got gremlins.
+                            </p>
+                            <p>
+                              No contracts. Woohoo. Payback. Easy peasy. Change month to month or cancel anytime. Woohoo. Enjoy life with no
+                              contracts. We're chuffed to be uSwitch Network of the Year. We have members, not customers. Order your Free SIM.
+                              Bonnie to our Clyde. Bonnie to our Clyde.
+                            </p>
+                            <p>
+                              Woohoo. Easy as pie. Order your Free SIM. We have members, not customers. Community. Save yourself a few bob. Bob's
+                              your uncle. No contracts. Community. Order your Free SIM. Great value flexible plans where you're in control. Come
+                              join us. Thanks a bunch.
+                            </p>
+                          </div>
+                        </dialog>
+                      </div>
+                      <button id="step2activatebtn" class="gg-c-btn gg-c-btn--primary gg-c-btn--center">
+                        <span class="gg-c-btn__switch">Activate</span>
+                      </button>
+                    </div>
+                    <div>
+                      <h3 class="gg-u-text-louder">Already a member?</h3>
+                      <p class="gg-u-speak">
+                        Nice one. Log in with your existing membername and password.
+                      </p>
+                      <form class="gg-c-form">
+                        <label for="currentMembername" class="gg-c-form__label">Email or membername</label>
+                        <div class="gg-c-form__element">
+                          <input type="text" autocomplete="username" id="currentMembername" class="gg-c-form__input" />
+                        </div>
+
+                        <label for="currentPwd" class="gg-c-form__label">Password</label>
+                        <div class="gg-c-form__element gg-c-input-with-button">
+                          <input
+                            type="password"
+                            autocomplete="current-password"
+                            id="currentPwd"
+                            class="gg-c-form__input gg-c-input-with-button__input"
+                            aria-describedby="email-message"
+                          />
+                          <button class="gg-c-input-with-button__btn" type="submit" id="toggle-pwd-visibility-2">
+                            <span class="hidden" id="show-pwd2">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                  d="M22.4 12a.7.7 0 00-.1-.6C19.9 8.6 16 5 12 5S4.2 8.6 1.8 11.4a.7.7 0 00-.2.6.7.7 0 00.2.6C4.2 15.3 8 18.9 12 18.9s7.8-3.6 10.3-6.4a.6.6 0 00.1-.5zM12 17.6c-3.4 0-6.7-3.1-9-5.6C5.2 9.5 8.6 6 12 6.2s6.7 3.2 9 5.8c-2.2 2.4-5.6 5.6-9 5.6z"
+                                />
+                                <path
+                                  d="M13.8 8c-2-.7-5 .4-5.8 2.5a3.9 3.9 0 001.4 4.8c2 .9 5.4.8 6.4-1.7a4.2 4.2 0 00.3-3A4.9 4.9 0 0013.8 8zm.9 4.4a2.6 2.6 0 01-1.7 2 4 4 0 01-2.9-.3 2.2 2.2 0 01-1-2.5 3.1 3.1 0 013.3-2.4 2.5 2.5 0 012.3 3.2z"
+                                />
+                                <path
+                                  d="M12.9 10.6a2 2 0 00-1.4-.2 1.5 1.5 0 00-1 .7 1.4 1.4 0 00.7 2.2 1.7 1.7 0 002-.2 1.6 1.6 0 00-.3-2.5z"
+                                />
+                              </svg>
+                            </span>
+                            <span id="hide-pwd2">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                  d="M4.7 15.4l.5.2a.8.8 0 01.2 0l.3-.2a.4.4 0 010-.1 1 1 0 000-.7A30.4 30.4 0 013 12c2.2-2.5 5.5-5.8 9-5.8a7 7 0 012.3.5 1.7 1.7 0 00.7-.4.8.8 0 00.2-.3 1.3 1.3 0 000-.4 8 8 0 00-3.3-.7c-4 0-7.8 3.7-10.2 6.5a.7.7 0 00-.2.6.7.7 0 00.2.6 32.6 32.6 0 002.8 2.9zm17.6-4a32.3 32.3 0 00-3-3 .9.9 0 00-.8.1 1.1 1.1 0 00-.3.6.5.5 0 01.1.2A32.8 32.8 0 0121 12c-2.2 2.5-5.6 5.7-9 5.6a7 7 0 01-2.1-.4h-.1a2.8 2.8 0 01-.4 0l-.4.4a.6.6 0 010 .2v.1a.5.5 0 010 .1v.3a8 8 0 003 .6c4 0 7.9-3.6 10.3-6.4a.6.6 0 00.2-.5.7.7 0 00-.2-.6zm-2.6-7.9L18 5.2c-3.8 3.7-11 10.4-14.5 14-.6.6.3 1.6 1 1l1.6-1.7 14.5-14c.6-.6-.4-1.6-1-1z"
+                                />
+                                <path
+                                  d="M15.8 11.1l-1 .9a1.4 1.4 0 01-.1.4 2.6 2.6 0 01-1.7 2 3.3 3.3 0 01-.7.1h-.1l-.6.6a.4.4 0 01-.1.2c-.2.1-.3.3-.1.4 1.8.2 3.7-.3 4.4-2.1a6.2 6.2 0 00.5-2.1.7.7 0 010-.1c0-.2-.2-.4-.5-.3zM8 10.5a4.6 4.6 0 00-.3 2c.3.3.7.2 1 0v-.2a1.4 1.4 0 00.4-.6v-.1A3 3 0 0112 9.2a1 1 0 00.2-.1l.1-.1.7-.7a.3.3 0 000-.4c-2-.3-4.4.8-5 2.6z"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                      </form>
+                      <button id="step2loginbtn" class="gg-c-btn gg-c-btn--primary gg-c-btn--center">
+                        <span class="gg-c-btn__switch">Log in</span>
+                      </button>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <div id="step3" class="activation-form--container hidden">
+                <div class="gg-t-white activation-form gg-u-digital-noise-parallel">
+                  <div class="repeat-code-container gg-t-wild-sand gg-u-texture-softer">
+                    <div>
+                      <p class="gg-u-text-speak-up">
+                        SIM activation code:
+                        <span class="gg-u-text-speak" id="activationCodeInput3"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path
+                            d="M22.41 5.66l-.14-.29-2.4-2.11h-.95c-.27 0-1.12 1.25-1.32 1.46-.51.51-1 1-1.51 1.54-1 1-1 1-2 2.07-1.93 1.94-4 3.76-6 5.69l-.09.17-2.81-2.9h-.77l-2.67 2.47v.84l.57.72.57.57 2 2.1v.16l2.82 2.68h.69l1.06-1.13A48.51 48.51 0 0014 15.2c1.27-1.32 1.64-1.44 2.84-2.81s2.6-2.57 3.79-3.82c.3-.33 1.76-1.7 1.76-2.15z"
+                          />
+                        </svg>
+                      </p>
+                    </div>
+                  </div>
+                  <form id="goodybags" class="gg-c-form">
+                    <section>
+                      <h3 class="gg-u-text-louder">Choose your monthly plan</h3>
+                      <p class="gg-u-speak">
+                        Packed to the brim with data, minutes and texts, choose a plan that suits you.
+                      </p>
+                      <fieldset id="goodybag-buttons" class="gg-c-chunky-buttons">
+                        <legend class="gg-c-chunky-buttons__legend">
+                          Pick whichever plan you'd like:
+                        </legend>
+                        <ol class="gg-c-chunky-buttons__list">
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <input name="reason" type="radio" id="goodybag-6" class="gg-c-chunky-buttons__radio" value="6" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-6">
+                              <img src="/img/svg/goodybags/goodybag-6.svg" alt="£6 goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/data-world-map.svg" alt="" class="goodybag--inline_icon" />
+                                  Data:
+                                  <span class="goodybag--allowance_value">
+                                    500 MB
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/phone-call.svg" alt="" class="goodybag--inline_icon" />
+                                  Mins:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/speech-bubble-text.svg" alt="" class="goodybag--inline_icon" />
+                                  Texts:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                              </span>
+                            </label>
+                          </li>
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <input name="reason" type="radio" id="goodybag-8" class="gg-c-chunky-buttons__radio" value="8" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-8">
+                              <img src="/img/svg/goodybags/goodybag-8.svg" alt="£8 goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/data-world-map.svg" alt="" class="goodybag--inline_icon" />
+                                  Data:
+                                  <span class="goodybag--allowance_value">
+                                    2 GB
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/phone-call.svg" alt="" class="goodybag--inline_icon" />
+                                  Mins:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/speech-bubble-text.svg" alt="" class="goodybag--inline_icon" />
+                                  Texts:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                              </span>
+                            </label>
+                          </li>
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <input name="reason" type="radio" id="goodybag-10" class="gg-c-chunky-buttons__radio" value="10" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-10">
+                              <img src="/img/svg/goodybags/goodybag-10-reservetank.svg" alt="£10 goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/data-world-map.svg" alt="" class="goodybag--inline_icon" />
+                                  Data:
+                                  <span class="goodybag--allowance_value">
+                                    6 GB
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/phone-call.svg" alt="" class="goodybag--inline_icon" />
+                                  Mins:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/speech-bubble-text.svg" alt="" class="goodybag--inline_icon" />
+                                  Texts:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                              </span>
+                            </label>
+                          </li>
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <input name="reason" type="radio" id="goodybag-12" class="gg-c-chunky-buttons__radio" value="12" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-12">
+                              <img src="/img/svg/goodybags/goodybag-12-reservetank.svg" alt="£12 goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/data-world-map.svg" alt="" class="goodybag--inline_icon" />
+                                  Data:
+                                  <span class="goodybag--allowance_value">
+                                    10 GB
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/phone-call.svg" alt="" class="goodybag--inline_icon" />
+                                  Mins:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/speech-bubble-text.svg" alt="" class="goodybag--inline_icon" />
+                                  Texts:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                              </span>
+                            </label>
+                          </li>
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <input name="reason" type="radio" id="goodybag-15" class="gg-c-chunky-buttons__radio" value="15" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-15">
+                              <img src="/img/svg/goodybags/goodybag-15-reservetank.svg" alt="£15 goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/data-world-map.svg" alt="" class="goodybag--inline_icon" />
+                                  Data:
+                                  <span class="goodybag--allowance_value">
+                                    15 GB
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/phone-call.svg" alt="" class="goodybag--inline_icon" />
+                                  Mins:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/speech-bubble-text.svg" alt="" class="goodybag--inline_icon" />
+                                  Texts:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                              </span>
+                            </label>
+                          </li>
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <input name="reason" type="radio" id="goodybag-20" class="gg-c-chunky-buttons__radio" value="20" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-20">
+                              <img src="/img/svg/goodybags/goodybag-20-reservetank.svg" alt="£20 goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/data-world-map.svg" alt="" class="goodybag--inline_icon" />
+                                  Data:
+                                  <span class="goodybag--allowance_value">
+                                    <s class="gg-u-text-strikethrough">40 GB</s>
+                                    <span class="gg-u-text-speak-up">80 GB</span>
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/phone-call.svg" alt="" class="goodybag--inline_icon" />
+                                  Mins:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/speech-bubble-text.svg" alt="" class="goodybag--inline_icon" />
+                                  Texts:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                              </span>
+                            </label>
+                          </li>
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <input name="reason" type="radio" id="goodybag-25" class="gg-c-chunky-buttons__radio" value="25" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-25">
+                              <img src="/img/svg/goodybags/goodybag-25.svg" alt="£25 goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/data-world-map.svg" alt="" class="goodybag--inline_icon" />
+                                  Data:
+                                  <span class="goodybag--allowance_value">
+                                    Always On*
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/phone-call.svg" alt="" class="goodybag--inline_icon" />
+                                  Mins:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                                <span class="goodybag--allowance">
+                                  <img src="/img/svg/icons/speech-bubble-text.svg" alt="" class="goodybag--inline_icon" />
+                                  Texts:
+                                  <span class="goodybag--allowance_value">
+                                    Unlimited
+                                  </span>
+                                </span>
+                              </span>
+                            </label>
+                          </li>
+                          <li class="gg-c-chunky-buttons__option gg-c-chunky-buttons__option--icon">
+                            <dialog class="gg-c-modal" id="goodybag-helper-modal">
+                              <div class="gg-c-modal__header">
+                                <h2 class="gg-c-modal__main-title">
+                                  How much data do I need?
+                                </h2>
+                                <button class="gg-c-modal__close-button">
+                                  <svg class="gg-c-modal__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.22 13.15">
+                                    <path
+                                      d="M7.64,6.6l1.1-1.1a41.63,41.63,0,0,0,4.2-4.2c.3-.4.4-.4.1-.9a.71.71,0,0,0-1-.3c-.1,0-.1.1-.2.1l-.2.3c-1.8,1.8-3.3,3.3-5,5.1l-1-1c-1.2-1.1-2.3-2.4-3.5-3.4C1.84.9,1.24-.1.64.3a.8.8,0,0,0-.3,1.1l.1.1Q3,4.2,5.54,6.6L4.14,8a35.9,35.9,0,0,0-3.9,3.9c-.7.8.3,1.7,1,1A47.8,47.8,0,0,0,5.14,9a18.48,18.48,0,0,1,1.4-1.4c.6.6,1.2,1.1,1.7,1.7.9,1,2.6,2.8,3.4,3.5s1.9-.3,1-1.1C11.24,10.4,9.34,8.4,7.64,6.6Z"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                              <div class="gg-c-modal__content">
+                                <p>
+                                  This would embed the page found at the URL below (which seems to be broken at the moment).
+                                </p>
+                                <p>
+                                  <a href="https://www.giffgaff.com/how-much-data-do-i-need" class="gg-u-link" target="_blank">
+                                    https://www.giffgaff.com/how-much-data-do-i-need
+                                  </a>
+                                </p>
+                              </div>
+                            </dialog>
+                            <input name="reason" type="radio" id="goodybag-helper" class="gg-c-chunky-buttons__radio" value="helper" />
+                            <label class="gg-c-chunky-buttons__button" for="goodybag-helper">
+                              <img src="/img/svg/goodybags/goodybag.svg" alt="blank goodybag" class="gg-c-chunky-buttons__icon" />
+                              <span class="gg-c-chunky-buttons__text">
+                                Not sure? We'll help you choose.
+                              </span>
+                            </label>
+                          </li>
+                        </ol>
+                      </fieldset>
+                      <p class="gg-u-text-whisper goodybag--disclaimer">
+                        *Speed restrictions apply to our Always On data. After 80 GB of data used you'll experience a reduced data speed of
+                        384kbps from 8am to Midnight. You may notice that activities which require high amounts of data, like HD video streaming,
+                        will be slower.
+                        <a href="https://www.giffgaff.com/help/articles/traffic-flow-policy" target="_blank" class="gg-u-link">Traffic Flow</a>
+                        and
+                        <a href="https://giffgaff.com/fair-usage-while-roaming" target="_blank" class="gg-u-link">Fair Usage while roaming</a>
+                        applies. A 4G ready phone and coverage required to access 4G data speed.
+                      </p>
+                      <p class="gg-u-text-whisper">
+                        Once you’ve bought your 3rd goodybag, we’ll boost your data by 1 GB whenever you buy a £10, £12, £15 or £20 goodybag.
+                      </p>
+                    </section>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
+          <section class="gg-o-page-section">
+            <h2 class="gg-u-text-louder">FAQs</h2>
+            <ul class="gg-c-faqs">
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    What do I need to activate my SIM?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    <p>
+                      You'll need a credit/debit card or a top-up voucher.
+                    </p>
+                    <p>
+                      After your SIM's active, pop it into an unlocked phone and you're ready to go.
+                    </p>
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    How do I activate with a voucher?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    <p>
+                      It's a doddle! Pop in your activation code, follow the quick, easy steps to activate your SIM.
+                    </p>
+                    <p>
+                      On the payment page, select voucher and enter your 16 digit voucher code.
+                    </p>
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    Can I bring my number?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    Switching networks is easier than ever. Just text PAC to 65075 and have your PAC code ready to use after you’ve activated
+                    your giffgaff SIM.
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    I'm already with giffgaff but my SIM is faulty or the wrong size.
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    You want to perform a
+                    <a
+                      class="gg-u-link gg-u-link--arrow"
+                      onclick="alert('this would link to the new sim swap not logged in article ive prototyped')"
+                      >SIM swap instead</a
+                    >. That's where you keep your current giffgaff number, account, credit and goodybag but replace your SIM with a new one.
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    What's a goodybag?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    Simply, a goodybag is your monthly allowance of data, minutes and texts. Each month you choose which one is best for you, or
+                    you can have the same one recurring every month.
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    Extra GB on us
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    It’s never fun running out of data, especially when you really need some, which is why we’re giving members a little extra.
+                    really need some, which is why we’re giving members a little extra.<br />
+                    <br />
+                    Once you’ve bought your third goodybag, we’ll boost your data by 1 GB whenever you purchase a £10, £12, £15 or £20 goodybag.
+                    goodybag.
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    Is roaming included?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    Our plans can be used in the EU and selected destinations just like you use them at home and at no extra cost.
+                    <br />
+                    Enjoy our low rates when calling outside the EU and selected destinations. Happy travels.
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    What if I need help?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    You'll always have one of our members to support you through any issues 24 hours a day, 7 days a week. After all, we’re the
+                    mobile network run by you.
+                    <br />
+                    Pst. We might have a treat for you if you’re able to help out later on too.
+                  </div>
+                </details>
+              </li>
+
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    Can I get extra rewards?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    Earn Payback points by helping someone figure things out on the community or by bringing new members on-board, and many other
+                    things. It's our way of saying thank you for being one of our awesome members.
+                  </div>
+                </details>
+              </li>
+              <li class="gg-c-faqs__item">
+                <details class="gg-c-faqs__faq">
+                  <summary class="gg-c-faqs__q">
+                    <span class="gg-c-faqs__icon"></span>
+                    Can't find your activation code?
+                  </summary>
+                  <div class="gg-c-faqs__a">
+                    You can find your activation code on the small plactic card that came with your SIM. If you haven't got that, you can also
+                    use the 16 or 19 digit serial number on the back of your SIM. It should come just before "4Ggg6".
+                  </div>
+                </details>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+
+      <footer class="gg-t-black">
+        <div class="gg-o-page-section gg-u-grid gg-u-@m:grid--2-col">
+          <div>
+            <p class="gg-u-text-speak-up">giffgaff runs on the O2 network</p>
+            <p class="gg-u-text-whisper">Copyright © 2020 giffgaff</p>
+          </div>
+          <ul class="gg-c-social-links">
+            <li>
+              <a rel="noopener noreferrer" target="_blank" class="gg-c-social-links__link" href="https://twitter.com/giffgaff">
+                <svg class="gg-c-social-links__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.9 90.3">
+                  <title>Twitter</title>
+                  <path
+                    d="M111.9,10.8a40.67,40.67,0,0,1-13.2,3.3,23.43,23.43,0,0,0,9.9-12.3A39.61,39.61,0,0,1,93.9,7.5,22.73,22.73,0,0,0,54.3,22.8a29.11,29.11,0,0,0,.3,5.1A64.26,64.26,0,0,1,7.5,3.9a21.26,21.26,0,0,0-3,11.7A22.17,22.17,0,0,0,14.7,34.5a19.38,19.38,0,0,1-10.2-3v.3A22.55,22.55,0,0,0,22.8,54a36,36,0,0,1-6,.9,19.81,19.81,0,0,1-4.2-.3c3,9,11.1,15.3,21.3,15.9A46.64,46.64,0,0,1,5.7,80.4,36.31,36.31,0,0,1,0,80.1,65.67,65.67,0,0,0,34.8,90.3C77.1,90,99.9,55.2,99.9,25.2v-3A43.46,43.46,0,0,0,111.9,10.8Z"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a rel="noopener noreferrer" target="_blank" class="gg-c-social-links__link" href="https://www.facebook.com/giffgaffmobile">
+                <svg class="gg-c-social-links__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.8 124.2">
+                  <title>Facebook</title>
+                  <path
+                    d="M42.9,68.4c0-.3,0-.3.3-.3H61.5a.29.29,0,0,0,.3-.3c.3-2.7,2.7-21.9,2.7-22.2H43.2c-.3,0-.3,0-.3-.3v-15c0-1.2.3-3,.3-3.9.3-2.7,2.7-4.2,5.1-5.1a29.11,29.11,0,0,1,5.1-.3H64.8V.9C63.9.9,49.5,0,46.5,0A31.82,31.82,0,0,0,32.7,3c-5.7,3-9.3,7.2-12,13.2-.9,2.7-1.2,4.8-1.8,7.2a44.31,44.31,0,0,0-.3,6.3v15c0,.3,0,.3-.3.3H0V67.2H18.3c.3,0,.3,0,.3.3v56.7h24C42.9,124.2,42.9,85.8,42.9,68.4Z"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a rel="noopener noreferrer" target="_blank" class="gg-c-social-links__link" href="https://www.linkedin.com/company/giffgaff/">
+                <svg class="gg-c-social-links__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.6 86.4">
+                  <title>LinkedIn</title>
+                  <path
+                    d="M90.6,53.1V86.4H71.1V55.2c0-7.8-2.7-13.2-9.9-13.2-5.4,0-8.4,3.6-9.9,7.2a11.7,11.7,0,0,0-.6,4.8V86.4H31.2s.3-52.8,0-58.2H50.7v8.4c2.7-3.9,7.2-9.6,17.4-9.6C81,26.7,90.6,35.1,90.6,53.1ZM11.1,0C4.5,0,0,4.2,0,10.2c0,5.7,4.2,10.2,10.8,10.2,6.9,0,11.1-4.5,11.1-10.2S17.7,0,11.1,0ZM1.2,86.4H20.7V28.2H1.2Z"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a rel="noopener noreferrer" target="_blank" class="gg-c-social-links__link" href="https://www.youtube.com/user/giffgaffTV">
+                <svg class="gg-c-social-links__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106.8 75.9">
+                  <title>Youtube</title>
+                  <path
+                    d="M53.1,75.6h0ZM52.8,0h0Zm51.9,13.8c-2.1-8.1-6-11.1-12.9-12.3C87.9,1.2,68.1.3,53.1.3c-15.3,0-34.8.9-38.7,1.2C7.8,2.7,3.9,5.7,1.8,13.8.9,16.5,0,31.5,0,37.5v1.2c0,5.7.9,20.7,1.8,23.7,2.1,8.1,6,11.1,12.9,12.3,3.9.3,23.7,1.2,38.7,1.2,15.3,0,34.8-.9,38.7-1.2,6.9-1.2,10.8-4.2,12.9-12.3.9-2.7,1.8-17.7,1.8-23.7V37.5C106.5,31.5,105,16.5,104.7,13.8ZM42,52.5V21.9L70.2,36.6Z"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a rel="noopener noreferrer" target="_blank" class="gg-c-social-links__link" href="https://www.instagram.com/giffgaffmobile/">
+                <svg class="gg-c-social-links__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.6 108.6">
+                  <title>Instagram</title>
+                  <path
+                    d="M77.7,108.6H30.9A30.86,30.86,0,0,1,0,77.7V30.9A30.86,30.86,0,0,1,30.9,0H77.7a30.86,30.86,0,0,1,30.9,30.9V77.7a30.86,30.86,0,0,1-30.9,30.9ZM30.9,9.3A21.51,21.51,0,0,0,9.3,30.9V77.7A21.51,21.51,0,0,0,30.9,99.3H77.7A21.51,21.51,0,0,0,99.3,77.7V30.9A21.51,21.51,0,0,0,77.7,9.3ZM54.3,82.2A27.9,27.9,0,1,1,82.2,54.3,28,28,0,0,1,54.3,82.2Zm0-46.5A18.6,18.6,0,1,0,72.9,54.3,18.69,18.69,0,0,0,54.3,35.7ZM83.4,18.3A6.6,6.6,0,1,0,90,24.9,6.66,6.66,0,0,0,83.4,18.3Z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // dont need this in a final product
+
+      document.addEventListener('DOMContentLoaded', function () {
+        //The first argument are the elements to which the plugin shall be initialized
+        //The second argument has to be at least a empty object or a object with your desired options
+        OverlayScrollbars(document.querySelectorAll('body'), {
+          overflowBehavior: {
+            x: 'hidden',
+          },
+        });
+      });
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAT0fbey8ETQULa-SSIyBEfsVmIjtToh48',
+        authDomain: 'gg-help.firebaseapp.com',
+        databaseURL: 'https://gg-help.firebaseio.com',
+        projectId: 'gg-help',
+        storageBucket: 'gg-help.appspot.com',
+        messagingSenderId: '441453803789',
+        appId: '1:441453803789:web:c6e2cd6b1a07c3c6999844',
+        measurementId: 'G-0TVVBKR3LE',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "categoryName": "Network and service",
+  "articleList": [
+    { "title": "How do I block a number?", "url": "how-do-i-block-a-number", "visible": true },
+    { "title": "Why can’t I make a call?", "url": "why-cant-i-make-a-call", "visible": true },
+    { "title": "Picture messages (MMS) aren’t working", "url": "picture-messages-mms-arent-working", "visible": true },
+    { "title": "How do I tether from my phone?", "url": "how-do-i-tether-from-my-phone", "visible": true },
+    { "title": "MMS APN settings guide", "url": "mms-apn-settings-guide", "visible": true },
+    { "title": "How do I check my voicemail from another phone?", "url": "access-voicemail-from-another-phone", "visible": true },
+    { "title": "How do I turn voicemail on or off?", "url": "how-do-i-turn-voicemail-on-or-off", "visible": true },
+    { "title": "How do I manually select a network?", "url": "how-do-i-manually-select-a-network", "visible": true },
+    { "title": "How do I use WiFi Extra hotspots or get WiFi on the London Underground?", "url": "wifi-with-giffgaff", "visible": true },
+    { "title": "Why doesn’t anything work?", "url": "why-doesnt-anything-work", "visible": true },
+    { "title": "Why is my data slow?", "url": "why-is-my-data-slow", "visible": true },
+    { "title": "How do I access my voicemail?", "url": "how-do-i-get-onto-my-voicemail", "visible": true },
+    { "title": "How do I reset my voicemail PIN code?", "url": "how-do-i-reset-my-voicemail-password", "visible": true },
+    { "title": "Can I tether from my phone?", "url": "can-i-tether-from-my-phone", "visible": true },
+    { "title": "Why isn’t my data working?", "url": "why-isnt-my-data-working", "visible": true },
+    { "title": "Internet APN settings guide", "url": "internet-apn-settings-guide", "visible": true },
+    { "title": "Why can’t I send a text?", "url": "why-cant-i-send-a-text", "visible": true }
+  ]
+}

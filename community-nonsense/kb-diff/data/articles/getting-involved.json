@@ -1,0 +1,12 @@
+{
+  "categoryName": "Getting involved",
+  "articleList": [
+    { "title": "What are Reactions?", "url": "what-are-kudos", "visible": true },
+    { "title": "What’s Payback?", "url": "whats-payback", "visible": true },
+    { "title": "How can I earn Payback?", "url": "how-can-i-earn-payback", "visible": true },
+    { "title": "When do I get my Payback?", "url": "when-do-i-get-my-payback", "visible": true },
+    { "title": "What’s a Super Recruiter?", "url": "whats-a-super-recruiter", "visible": true },
+    { "title": "How much Payback have I earned?", "url": "how-much-payback-have-i-earned", "visible": true },
+    { "title": "What’s the community?", "url": "whats-the-community", "visible": true }
+  ]
+}

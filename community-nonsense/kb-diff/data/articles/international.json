@@ -1,0 +1,17 @@
+{
+  "categoryName": "International",
+  "articleList": [
+    { "title": "How do I call a foreign number?", "url": "how-do-i-call-a-foreign-number", "visible": true },
+    { "title": "How do I check my credit balance from abroad?", "url": "how-do-i-check-my-credit-balance-from-abroad", "visible": true },
+    { "title": "How much is international roaming?", "url": "how-much-is-international-roaming", "visible": true },
+    { "title": "Is roaming in the EU included?", "url": "is-roaming-in-the-eu-included", "visible": true },
+    { "title": "Can I use my phone abroad?", "url": "use-my-phone-abroad", "visible": true },
+    { "title": "How do I use my phone abroad?", "url": "how-do-i-use-my-phone-abroad", "visible": true },
+    { "title": "Where can I use my phone abroad?", "url": "where-can-i-use-my-phone-abroad", "visible": true },
+    { "title": "How much does it cost to use my phone abroad?", "url": "how-much-does-it-cost-to-use-my-phone-abroad", "visible": true },
+    { "title": "How do I stop accidental roaming?", "url": "how-do-i-stop-accidental-roaming", "visible": true },
+    { "title": "Where can I use my goodybag abroad?", "url": "where-can-i-use-my-goodybag-abroad", "visible": true },
+    { "title": "How do I save money when roaming abroad?", "url": "how-do-i-save-money-when-roaming-abroad", "visible": true },
+    { "title": "I’m having problems roaming abroad", "url": "im-having-problems-roaming-abroad", "visible": true }
+  ]
+}

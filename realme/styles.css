@@ -1,0 +1,165 @@
+html{scroll-padding-top:0}@media (min-width:992px){html{scroll-padding-top:56px}}.gg-u-hr{margin-top:16px;margin-bottom:16px}.gg-o-page-section p:not(:last-child)+hr{margin-top:0}.realme--hero-image_container{margin:auto;display:block}.realme--hero-image_container .realme--hero-image{max-height:420px;-o-object-fit:contain;object-fit:contain;-o-object-position:center;object-position:center;display:block;margin-left:auto;margin-right:auto}.gg-o-page-section h1+p,.gg-o-page-section h2+p,.gg-o-page-section h3+p,.gg-o-page-section ol+p,.gg-o-page-section ul+p,.gg-o-page-section h1:not(ol):not(ul)+ol,.gg-o-page-section h2:not(ol):not(ul)+ol,.gg-o-page-section h3:not(ol):not(ul)+ol,.gg-o-page-section ol:not(ol):not(ul)+ol,.gg-o-page-section ul:not(ol):not(ul)+ol,.gg-o-page-section h1:not(ol):not(ul)+ul,.gg-o-page-section h2:not(ol):not(ul)+ul,.gg-o-page-section h3:not(ol):not(ul)+ul,.gg-o-page-section ol:not(ol):not(ul)+ul,.gg-o-page-section ul:not(ol):not(ul)+ul{margin-top:var(--tiny)}.gg-o-page-section ol+h1,.gg-o-page-section ul+h1,.gg-o-page-section ol+h2,.gg-o-page-section ul+h2,.gg-o-page-section ol+h3,.gg-o-page-section ul+h3{margin-top:32px}ol.gg-c-list-ordered ol.gg-c-list-ordered,ul.gg-c-list ol.gg-c-list-ordered,ol.gg-c-list-ordered ul.gg-c-list,ul.gg-c-list ul.gg-c-list{margin-top:var(--tiny)}code{display:block;padding:2px 6px !important;font-family:'Consolas',monospace;width:-webkit-max-content;width:-moz-max-content;width:max-content;max-width:100%}code .token.entity{color:inherit}li>pre:last-child{margin-bottom:var(--small) !important}.unknown-step>.unknown-step__message{padding:var(--small);margin-bottom:var(--small);margin-top:var(--tiny);background-color:rgba(0,82,138,0.15);border-top:solid var(--tiny) var(--dark-blue)}.unknown-step>.unknown-step__message.important{background-color:rgba(214,0,0,0.1);border-top:solid var(--tiny) var(--red)}img.inline{height:1em;vertical-align:middle;margin-bottom:4px}body[data-version='10'] [data-version='9']{display:none}body[data-version='10'] .gg-c-minor-alert[data-version-warning]{display:none}body[data-version='9'] [data-version='10']{display:none}body[data-version='9'] .gg-c-minor-alert[data-version-waring]{display:none}body:not([data-version='9']):not([data-version='10']) [data-version='9']{display:none}body:not([data-version='9']):not([data-version='10']) .gg-c-minor-alert[data-version-message]{display:none}#contents{position:fixed;top:0;bottom:0;left:0;right:0;z-index:9999998;padding-left:48px;padding-top:72px;overflow-y:auto;transition:transform 250ms ease-out}@media (max-height:720px){#contents{padding-top:56px}}@media (max-height:640px){#contents{padding-top:32px}}#contents.in{transform:translateX(0%)}#contents.in+#toggle-contents{transform-origin:right 0;transform:translateX(calc(-100vw + 31px)) rotate(90deg);flex-direction:row-reverse;border:none !important}@media (min-width:900px){#contents.in+#toggle-contents{transform:translateX(calc(-100vw + 100%))}}#contents.in+#toggle-contents svg{transform:rotate(90deg);margin-left:8px;margin-right:0}@media (min-width:900px){#contents.in+#toggle-contents svg{transform:rotate(180deg);margin-left:4px;margin-right:0}}#contents.out,#contents{transform:translateX(100%)}#toggle-contents{position:fixed;right:0;background:#000;color:#fff;z-index:9999999;display:flex;transition:all 250ms ease-out;top:35%;padding:8px;padding-top:2px;padding-bottom:4px;padding-right:16px;transform:rotate(90deg);transform-origin:right 0;border:2px white solid;border-top:none}@media (max-height:480px){#toggle-contents{top:60%}}@media (max-height:300px){#toggle-contents{top:75%}}@media (min-width:900px){#toggle-contents{padding:8px;padding-right:16px;flex-direction:row;transform:none;transform-origin:center center;top:25%;border:2px white solid;border-right:none}}#toggle-contents svg{margin-right:8px;transform:rotate(-90deg);transition:all 250ms ease-in-out}@media (min-width:900px){#toggle-contents svg{transform:unset;margin-right:4px}}.gg-c-modal__close-icon{transform:scale(2)}.gg-c-modal__close-button--custom{position:relative;height:48px;width:auto;top:unset;right:unset}/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=bash+batch&plugins=line-numbers */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #f8f8f2;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+  color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #e6db74;
+}
+
+.token.keyword {
+  color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+  color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+/*# sourceMappingURL=./styles.css.map */

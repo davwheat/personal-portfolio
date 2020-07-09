@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>realme X2 Pro | Custom ROM & Unlocking</title>
+    <meta name="title" content="realme X2 Pro | Custom ROM & Unlocking" />
+    <meta name="description" content="An easy to follow guide for unlocking and flashing a custom ROM onto your realme X2 Pro." />
+    <link rel="canonical" href="https://giffgaff.davwheat.dev/realme/x2-pro" />
+
+    <script src="/js/redirect-script.js" async></script>
+
+    <!-- #region PRELOADS -->
+
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
+    <link rel="preload" href="/realme/styles.min.css" as="style" />
+    <link rel="preload" href="/css/styles.min.css" as="style" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
+
+    <link rel="preload" href="/realme/js/modals.js" as="script" />
+    <link rel="preload" href="/realme/js/bodyScrollLock.min.js" as="script" />
+    <link rel="preload" href="/realme/js/prism.js" as="script" />
+    <link rel="preload" href="/realme/js/script.js" as="script" />
+
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js" as="script" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js" as="script" />
+
+    <link rel="preload" href="/img/gg-img/aff-large.png" as="image" media="(min-width: 728px)" />
+    <link rel="preload" href="/img/gg-img/aff-med.png" as="image" media="(min-width: 550px and max-width: 727px)" />
+    <link rel="preload" href="/img/gg-img/aff-small.png" as="image" media="(max-width: 549px)" />
+
+    <!-- #endregion PRELOADS -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://giffgaff.davwheat.dev/realme/x2-pro" />
+    <meta property="og:title" content="realme X2 Pro | Custom ROM & Unlocking" />
+    <meta property="og:description" content="An easy to follow guide for unlocking and flashing a custom ROM onto your realme X2 Pro." />
+    <meta property="og:image" content="/realme/img/x2-pro-sharing-img.png?v=2" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://giffgaff.davwheat.dev/realme/x2-pro" />
+    <meta property="twitter:title" content="realme X2 Pro | Custom ROM & Unlocking" />
+    <meta property="twitter:description" content="An easy to follow guide for unlocking and flashing a custom ROM onto your realme X2 Pro." />
+    <meta property="twitter:image" content="/realme/img/x2-pro-sharing-img.png?v=2" />
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch%2CPromise%2CNodeList.prototype.forEach%2CArray.prototype.forEach%2CObject.values%2CReflect%2CReflect.construct"></script>
+    <script src="/js/modernizr-custom.min.js"></script>
+    <script data-ad-client="ca-pub-2701335557132384" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/js/custom-components.min.js" async></script>
+    <link rel="stylesheet" href="/css/styles.min.css" />
+    <link rel="stylesheet" href="/realme/styles.min.css" />
+  </head>
+  <body class="qa-page">
+    <gg-header></gg-header>
+    <main id="main-content">
+      <div class="gg-u-digital-noise-chunky">
+        <header class="gg-c-masthead gg-c-masthead--digital-noise">
+          <div class="gg-c-masthead__content">
+            <div class="gg-c-masthead__text">
+              <h1 class="gg-u-text-megaphone">
+                <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">realme</mark>
+                X2 Pro
+              </h1>
+              <p class="gg-c-masthead__page-subtitle">
+                Unlocking and custom ROM&nbsp;installation
+              </p>
+            </div>
+            <picture class="gg-c-masthead__picture" style="align-self: center;">
+              <source media="(min-width: 992px)" srcset="/realme/img/x2-pro.png" />
+              <img src="/realme/img/x2-pro_mobile.png" />
+            </picture>
+          </div>
+        </header>
+
+        <div class="gg-t-light-blue" id="intro">
+          <section class="gg-o-page-section homepage-hero-section">
+            <h2 class="homepage-hero-section__title gg-u-text-shout gg-u-doodle-squiggle gg-u-doodle-squiggle--white">
+              What's wrong with realme UI?
+            </h2>
+            <span class="homepage-hero-section__image-link realme--hero-image_container" aria-hidden="true">
+              <img alt="" class="homepage-hero-section__image realme--hero-image" src="/realme/img/realme-ui.jpg" />
+            </span>
+            <div class="gg-s-rich-text homepage-hero-section__text">
+              <p>
+                <strong>Everything.</strong> From battery bugs to memory leaks to stuttering in games to restricting features to their stock
+                launcher, realme's software is insanely&nbsp;unoptimised.
+              </p>
+              <p>
+                Furthermore, their
+                <a href="https://www.realme.com/eu/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="gg-u-link"
+                  >Privacy Policy</a
+                >
+                and
+                <a href="https://www.realme.com/eu/legal/user-agreement" target="_blank" rel="noopener noreferrer" class="gg-u-link"
+                  >User Agreement</a
+                >
+                states that they can (<a
+                  href="https://forum.xda-developers.com/realme-x2-pro/how-to/global-x2-pro-random-connections-to-t4086975"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="gg-u-link"
+                  >and do!</a
+                >) record everything you do on your device and send it to Chinese servers, and that you are not allowed to view or store
+                pornography on your&nbsp;device.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div class="gg-t-light-pink">
+          <section class="gg-o-page-section homepage-hero-section homepage-hero-section--reverse">
+            <h2 class="homepage-hero-section__title gg-u-text-shout gg-u-doodle-squiggle gg-u-doodle-squiggle--white">
+              How can we fix it?
+            </h2>
+            <span class="homepage-hero-section__image-link realme--hero-image_container" aria-hidden="true">
+              <img alt="" class="homepage-hero-section__image realme--hero-image" src="/examples/sim-swap/img/megaphone.png" />
+            </span>
+            <div class="gg-s-rich-text homepage-hero-section__text">
+              <p>
+                The easiest way to fix this for your device is taking back control and installing a custom ROM. Some manufacturers, like realme,
+                make this a pain to do, so you'll need some patience and the ability to read&nbsp;instructions.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <nav id="contents" class="gg-t-wild-sand">
+          <div class="gg-o-page-section">
+            <div class="gg-u-readable-width gg-u-mlr-auto">
+              <h2 class="gg-u-text-louder">Contents</h2>
+              <p>Tap a header below to skip to that&nbsp;section</p>
+              <ul class="gg-c-sidenav">
+                <li>
+                  <a class="gg-c-sidenav__item" href="#intro">
+                    Intro
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#info">
+                    Guide info
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#version">
+                    Choose your Android version
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#start">
+                    Before you start
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#unlock">
+                    Unlocking the bootloader
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#recovery">
+                    Flashing OrangeFox recovery
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#rom">
+                    Flashing the Custom ROM
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#complete">
+                    Completing installation
+                  </a>
+                </li>
+                <li>
+                  <a class="gg-c-sidenav__item" href="#revert">
+                    Reverting to ColorOS or realme UI
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <button id="toggle-contents">
+          <svg xmlns="http://www.w3.org/2000/svg" class="gg-u-icon gg-u-icon--medium" viewBox="0 0 24 24">
+            <path
+              d="M17.3 19.5L13.8 16a3.6 3.6 0 00-.6-.7c-.7-.7-1-1.2-1.8-1.8L9.8 12l.6-.6c2.4-2.1 4.4-4.7 6.7-7a.5.5 0 000-.7A7.7 7.7 0 0015.3 2l-.5.1c-.7.2-1.2 1-1.7 1.5l-4 4.1c-1.4 1.4-2.7 2.5-3.9 4a.5.5 0 000 .7l4.6 5 5 4.7a.5.5 0 00.6 0l2-1.9v-.6z"
+            />
+          </svg>
+          <span>Contents</span>
+        </button>
+
+        <div class="gg-t-white">
+          <section class="gg-o-page-section" id="info">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Guide</mark>
+              info
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <h2 class="gg-u-text-louder">Credit</h2>
+              <p>
+                Massive thanks to Gamr13 for the original guide which I spruced up into this fancy&nbsp;webpage.
+              </p>
+              <p>
+                Thanks to all the testers on the
+                <a href="https://discord.gg/96SJ7PU" rel="noopener noreferrer" class="gg-u-link" target="_blank">realme Discord server</a>
+                who made sure this actually&nbsp;worked.
+              </p>
+
+              <h2 class="gg-u-text-louder" id="disclaimer">Disclaimer</h2>
+
+              <div class="gg-c-minor-alert gg-u-mt-tiny gg-u-mb-small" role="alert">
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">
+                    Read this before continuing
+                  </p>
+                  <div>
+                    <p>
+                      No-one except yourself is responsible for bricked devices, dead NAND flash, thermonuclear war, or you getting fired because
+                      the alarm app failed. You are choosing to make these modifications, and if you point the finger at me for messing up your
+                      device, I will laugh at you (but probably still try to help). Your warranty might be void if you tamper with any part of
+                      your device/software.
+                    </p>
+                    <hr class="gg-u-hr" />
+                    <p>
+                      Via this method, it's almost impossible to brick your device. You may encounter bootloops, or maybe your device will boot
+                      straight to recovery, but you shouldn't brick as long as you don't lock your bootloader.
+                    </p>
+                    <p>
+                      If you have any issues, join the
+                      <a href="https://discord.gg/96SJ7PU" rel="noopener noreferrer" class="gg-u-link" target="_blank">realme Discord server</a>
+                      and we'll help you as best we can. Just don't blame it on us &mdash; you chose to modify your device, not us.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="gg-u-text-louder">Version and changelog</h2>
+              <p class="gg-u-text-speak-up">
+                This version: v2.2
+              </p>
+              <details class="gg-c-accordion">
+                <summary>
+                  <div class="gg-c-accordion__summary gg-u-text-speak-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="gg-c-accordion__marker gg-u-icon gg-u-icon--small">
+                      <path
+                        d="M15.5 6.1c-.7-.1-.7 0-2.2-.1-.7 0-1.1 0-1.8.1H9.6l-3.5-.2H4.5c-2.1.1-3.7.2-4.3.2l.1 3.1c1.7.1 2.2.3 4 .4l1.6.1 3.6.2h4.1c.8 0 .5 0 1.3.1.3 0 .4-.1.4-.1.5-.7.5-2.4.2-3.8z"
+                      />
+                      <path
+                        class="gg-c-accordion__marker-open"
+                        d="M6.1.5c-.1.7 0 .7-.1 2.2 0 .7 0 1.1.1 1.8v1.9l-.2 3.5v1.6c.1 2.1.2 3.7.2 4.3l3.1-.1c.1-1.7.3-2.2.4-4l.1-1.6.2-3.6V2.4c0-.8 0-.5.1-1.3 0-.3-.1-.4-.1-.4C9.2.2 7.5.2 6.1.5z"
+                      />
+                    </svg>
+                    Changelog
+                  </div>
+                </summary>
+                <div class="gg-c-accordion__content">
+                  <h3 class="gg-u-text-loud">Version 2.2</h3>
+                  <p class="gg-u-text-speak-up">3/7/20</p>
+                  <p>
+                    Make disclaimer big and red! Switch to using giffgaff minor alerts (rip off of my existing alerts).
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 2.1</h3>
+                  <p class="gg-u-text-speak-up">27/6/20</p>
+                  <p>
+                    Update OF img filename. Add step to allow OF to modify system. Add AOSiP to "supported" instructions. Switch to NikGApps from
+                    OpenGApps (don't want no bootloop, do we?!). Add missing "back" step after flashing&nbsp;complete.
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 2.0</h3>
+                  <p class="gg-u-text-speak-up">20/6/20</p>
+                  <p>
+                    Switch instructions to realmeUI firmware-based LineageOS instead of ColorOS-based AOSiP.
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 1.6</h3>
+                  <p class="gg-u-text-speak-up">10/6/20</p>
+                  <p>
+                    Move scripts to end of body, add missing ids, add contents section, fix mobile&nbsp;view.
+                  </p>
+                  <p class="gg-u-text-speak-up">Version 1.6.1 (12/6/20)</p>
+                  <p>
+                    Update fastboot flash success message. Fix mobile overflow again. Shrink down button on small&nbsp;viewports.
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 1.5</h3>
+                  <p class="gg-u-text-speak-up">10/6/20</p>
+                  <p>
+                    Replace firmware downloads with OZIP downloads after the AFH files were&nbsp;deleted.
+                  </p>
+                  <p class="gg-u-text-speak-up">Version 1.5.1 (10/6/20)</p>
+                  <p>
+                    Fix x-axis overflow due to code blocks, improve VoLTE fix wording, add changelog&nbsp;dates.
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 1.4</h3>
+                  <p class="gg-u-text-speak-up">5/6/20</p>
+                  <p>
+                    Add "completing installation" section, with info about Magisk, GCam, 90 Hz, fluid navigation gestures, and
+                    screen&nbsp;recording.
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 1.3</h3>
+                  <p class="gg-u-text-speak-up">4/6/20</p>
+                  <p>
+                    Clarify bootloader unlock command line&nbsp;steps.
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 1.2</h3>
+                  <p class="gg-u-text-speak-up">4/6/20</p>
+                  <p>
+                    Clarify that ADB and Fastboot should be downloaded to your PC, not&nbsp;phone.
+                  </p>
+                  <h3 class="gg-u-text-loud">Version 1.1</h3>
+                  <p class="gg-u-text-speak-up">3/6/20</p>
+                  <p>
+                    Added changelog, about guide section. Adds universal ADB/Fastboot driver info. Adds info about prepping your&nbsp;device.
+                  </p>
+                </div>
+              </details>
+            </section>
+          </section>
+        </div>
+
+        <div class="gg-t-light-blue">
+          <section class="gg-o-page-section" id="version">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing">Choose</mark>
+              your Android version
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <p>
+                Some instructions vary based on the version of Android that you are running on your device. Selecting the version your device is
+                running allows us to hide steps which don't apply to your version and add steps that do, so it is critical that you choose the
+                right&nbsp;option.
+              </p>
+
+              <fieldset class="gg-c-chunky-buttons">
+                <ol class="gg-c-chunky-buttons__list">
+                  <li class="gg-c-chunky-buttons__option">
+                    <input name="test-apk" type="radio" id="version--color-os" class="gg-c-chunky-buttons__radio" />
+                    <label class="gg-c-chunky-buttons__button" for="version--color-os">
+                      <span class="gg-c-chunky-buttons__text">
+                        Android 9 (ColorOS)
+                      </span>
+                    </label>
+                  </li>
+                  <li class="gg-c-chunky-buttons__option">
+                    <input name="test-apk" type="radio" id="version--realme-ui" class="gg-c-chunky-buttons__radio" />
+                    <label class="gg-c-chunky-buttons__button" for="version--realme-ui">
+                      <span class="gg-c-chunky-buttons__text">
+                        Android 10 (realme UI 1.0)
+                      </span>
+                    </label>
+                  </li>
+                </ol>
+              </fieldset>
+            </section>
+          </section>
+        </div>
+
+        <div class="gg-t-white">
+          <section class="gg-o-page-section" id="start">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Before</mark>
+              you start
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <div class="gg-c-minor-alert gg-c-minor-alert--info gg-u-mb-small" data-version-message>
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">You're running</p>
+                  <p>
+                    Not right?
+                    <a href="#version" class="gg-u-link">Change your selected&nbsp;version</a>
+                  </p>
+                </div>
+              </div>
+
+              <h2 class="gg-u-text-louder">Backing up your data</h2>
+              <p>This guide will involve completely wiping your device. If you have any data you wish to keep, <b>back it up&nbsp;now</b>.</p>
+
+              <h3 class="gg-u-text-loud">Photos</h3>
+              <p>
+                If you want an easy way to back up your photos and videos, take a look at
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.google.android.apps.photos"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="gg-u-link"
+                  >Google Photos</a
+                >. It keeps all your media synced to the cloud for free. If you choose "High Quality" then it won't even use your Google
+                Drive&nbsp;data.
+              </p>
+
+              <h3 class="gg-u-text-loud">2-factor authentication apps</h3>
+              <p>
+                If you use authenticator software, make sure you know how to reactivate it on your new device. Some apps don't allow for new
+                activations before enabling them on your old device. You don't want to get stuck out of your&nbsp;device.
+              </p>
+              <p>
+                <b>
+                  If you use Google Authenticator, you need to use another device as a go-between to back up your codes.
+                </b>
+                Open the Authenticator app on your phone and tap the three dots
+                <svg viewBox="0 0 24 24" class="gg-u-icon gg-u-icon--medium gg-u-icon--inline">
+                  <path
+                    d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
+                  />
+                </svg>
+                in the top right. Choose <b>Transfer accounts</b>, then <b>Export accounts</b>. Select all accounts you wish to transfer, then
+                tap <b>Next</b>. Take a photo of the generated QR code with another device, or use Authenticator on that device to import them.
+                Once your phone is set up with a Custom ROM, you can import them&nbsp;again.
+              </p>
+              <p>
+                Personally, I use
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.authy.authy"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="gg-u-link"
+                  >Authy</a
+                >
+                as it syncs between all my devices&nbsp;easily.
+              </p>
+
+              <h3 class="gg-u-text-loud">Documents</h3>
+              <p>
+                The easiest way to back up other data is by transferring it to another device via USB. You can plug in USB drives directly to
+                your phone via <b>USB C OTG connectors</b> (<a
+                  href="https://amzn.to/2Xs7OiY"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="gg-u-link"
+                  >Amazon&nbsp;UK</a
+                >).
+              </p>
+
+              <h2 class="gg-u-text-louder">Requirements</h2>
+              <ul class="gg-c-list">
+                <li>Charge your phone to 75% or more</li>
+                <li>Have a PC with Windows/Mac/Linux</li>
+                <li>
+                  Make sure you've got working ADB and fastboot drivers&nbsp;(Windows only)
+                  <ul class="gg-c-list">
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://mega.nz/file/jJxXQJDL#oxRhuCXk9YSl68LtloPyLRvnONrDpBexOAYYKMWg0oo"
+                        class="gg-u-link"
+                      >
+                        Download Clockwork's Universal ADB Drivers for&nbsp;Windows
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Ensure your brain is correctly inserted with no loose&nbsp;connections
+                </li>
+              </ul>
+
+              <h2 class="gg-u-text-louder">Final notes</h2>
+              <ul class="gg-c-list">
+                <li>
+                  For a few days after installing LineageOS or AOSiP you may see much lower battery life. This is normal and stops after around 2
+                  days. It's due to your phone performing extra setup steps in the background, like updating system apps (Google Apps, Play
+                  Store, etc), registering your device with Google,&nbsp;etc.
+                </li>
+                <li>
+                  AOSiP does not have facial unlock support, but LineageOS&nbsp;does.
+                </li>
+                <li>
+                  Don't burn your retinas: the setup screen is full white at 100% brightness.
+                </li>
+              </ul>
+            </section>
+          </section>
+        </div>
+
+        <div class="gg-t-wild-sand">
+          <section class="gg-o-page-section" id="unlock">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Unlocking</mark>
+              the bootloader
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <div class="gg-c-minor-alert gg-u-mb-small" data-version-warning role="alert">
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">No version selected</p>
+                  <p>
+                    You haven't selected which version of Android your device uses. These steps may be inaccurate or even brick your&nbsp;device.
+                  </p>
+                  <a href="#version" class="gg-u-link">Select your version</a>
+                </div>
+              </div>
+              <div class="gg-c-minor-alert gg-c-minor-alert--info gg-u-mb-small" data-version-message>
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">You're running</p>
+                  <p>
+                    Not right?
+                    <a href="#version" class="gg-u-link">Change your selected&nbsp;version</a>
+                  </p>
+                </div>
+              </div>
+
+              <ol class="gg-c-list-ordered">
+                <li data-version="9">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://mega.nz/file/fNhzkLha#ngkvpROVXqGBIDqY7FKFog7_ntrVCCxLEZjwI-3JrHI"
+                    class="gg-u-link"
+                  >
+                    Download</a
+                  >
+                  the in-depth testing APK for ColorOS&nbsp;6
+                </li>
+                <li data-version="10">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://mega.nz/file/CEgFXJRa#7unFaB-sHmuMDz737p5wiUYKPUwwNyGGrLIpLsmW10E"
+                    class="gg-u-link"
+                  >
+                    Download</a
+                  >
+                  the in-depth testing APK for realme&nbsp;UI&nbsp;1.0
+                </li>
+                <li>Install and run the APK you&nbsp;downloaded</li>
+                <li>In the app, tap <b>Start applying</b> and follow the on screen&nbsp;instructions</li>
+                <li>When you reach the <b>Application submitted</b> screen, press&nbsp;back</li>
+                <li data-version="9">
+                  Open <b>Settings</b> on your phone and go to <b>About phone</b>. Tap <b>Build number</b> 7 times until you see
+                  <b>You are now a developer</b>. Go back, and tap <b>Additional Settings</b>, then open <b>Developer Settings</b>.
+                </li>
+                <li data-version="10">
+                  Open <b>Settings</b> on your phone and go to <b>About phone</b> and then tap <b>Baseband & Kernel</b>. Tap <b>Version</b> 7
+                  times until you see <b>You are now a developer</b>. Go back, and tap <b>Additional Settings</b>, then open
+                  <b>Developer Settings</b>.
+                </li>
+                <li>In <b>Developer Settings</b>, enable <b>USB Debugging</b> and <b>OEM Unlock</b></li>
+                <li>
+                  Keep checking the status of your&nbsp;application.
+                  <ul class="gg-c-list">
+                    <li>
+                      It can take up to 30 minutes for your application to be&nbsp;accepted
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  When you see <b>Review successful</b>, tap
+                  <b>Start the in-depth test</b>
+                  <ul class="gg-c-list">
+                    <li>
+                      <strong>
+                        All data on your device will be deleted during this&nbsp;step.
+                      </strong>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <button data-modal="platform-tools-modal" class="gg-u-link">
+                    Download
+                  </button>
+                  the ADB and Fastboot zip to your PC and extract their contents to a&nbsp;folder
+                </li>
+                <li>
+                  Connect your device to your computer via a USB&nbsp;cable
+                </li>
+                <li>
+                  Open a command prompt or terminal and change directory to the extracted&nbsp;folder
+                  <ul class="gg-c-list">
+                    <li>
+                      On Windows, for example, if you extracted them to your downloads folder you could&nbsp;type
+                      <code class="language-bash">cd "%userprofile%\&#8203;Downloads\&#8203;extracted folder"</code>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  The phone should reboot and show in green text <b>START</b>. If it doesn't, run this&nbsp;command:
+                  <code class="language-bash">adb reboot bootloader</code>
+                </li>
+                <li>
+                  Unlock the bootloader by running this&nbsp;command:
+                  <code class="language-bash">fastboot flashing unlock</code>
+                </li>
+                <li data-version="10">
+                  Press Volume Down to highlight the
+                  <b>UNLOCK THE BOOTLOADER</b>
+                  option, then press Power to select&nbsp;it
+                </li>
+                <li data-version="9">
+                  Press Volume Up to choose the
+                  <b>UNLOCK THE BOOTLOADER</b>&nbsp;option
+                </li>
+                <li data-version="9">
+                  In your command prompt/terminal, enter the&nbsp;command
+                  <code class="language-bash">fastboot reboot</code>
+                </li>
+                <li>
+                  The phone will reboot, perform a factory reset, then show the setup&nbsp;screen
+                </li>
+              </ol>
+            </section>
+          </section>
+        </div>
+
+        <div class="gg-t-white">
+          <section class="gg-o-page-section" id="recovery">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Flashing</mark>
+              OrangeFox recovery
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <div class="gg-c-minor-alert gg-c-minor-alert--info gg-u-mb-small" data-version-message>
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">You're running</p>
+                  <p>
+                    Not right?
+                    <a href="#version" class="gg-u-link">Change your selected&nbsp;version</a>
+                  </p>
+                </div>
+              </div>
+
+              <ol class="gg-c-list-ordered">
+                <li>
+                  Unplug your phone, then turn it off&nbsp;fully
+                </li>
+                <li>
+                  Hold Volume Down and the Power button to boot the phone into Fastboot&nbsp;mode
+                </li>
+                <li>Plug the phone back into your&nbsp;computer</li>
+                <li>
+                  <a
+                    class="gg-u-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://mega.nz/file/7RoXBbxR#xUYydTHGYQHjDZDcETc9ubkYI7SzWinLrluvNoLZoxg"
+                  >
+                    Download OrangeFox Recovery
+                  </a>
+                  <ul class="gg-c-list">
+                    <li>
+                      OrangeFox is a skinned version of TWRP recovery with added features and a simpler UI. If you have issues, you're more
+                      likely to find a solution by using TWRP in your Google search than OrangeFox. Note that options are in different locations
+                      in OrangeFox and TWRP so solutions might not work without some looking&nbsp;around.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    class="gg-u-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://mega.nz/file/jE4V2bpR#vO0GEATB2UyBzQWaTjMDTZyXfQbgc_HXc-BdDGJpANs"
+                  >
+                    Download vbmeta.img
+                  </a>
+                </li>
+                <li>
+                  Move both of these files to the same directory as ADB and&nbsp;Fastboot
+                </li>
+                <li>
+                  In your command prompt, flash the recovery partition to install OrangeFox. It should say
+                  <b>OKAY</b> or&nbsp;<b>SUCCESS</b>.
+                  <br />
+                  <code class="language-bash">fastboot flash recovery OrangeFox-&#8203;R10.&#8203;1_2.img</code>
+                </li>
+                <li>
+                  Also flash the vbmeta partition. It should say
+                  <b>OKAY</b> or&nbsp;<b>SUCCESS</b>.
+                  <br />
+                  <code class="language-bash">fastboot flash vbmeta vbmeta.img</code>
+                </li>
+                <li>
+                  On your phone, press Volume Down until you see
+                  <b>RECOVERY MODE</b> at the top, then press&nbsp;Power
+                </li>
+                <li>
+                  If you see a screen saying
+                  <b>System Partition - Unmodified System Partition</b>, swipe the bar at the bottom to allow&nbsp;modifications.
+                </li>
+              </ol>
+            </section>
+          </section>
+        </div>
+
+        <div class="gg-t-wild-sand">
+          <section class="gg-o-page-section" id="rom">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Flashing</mark>
+              the Custom ROM
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <div class="gg-c-minor-alert gg-u-mb-small" data-version-warning role="alert">
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">No version selected</p>
+                  <p>
+                    You haven't selected which version of Android your device uses. These steps may be inaccurate or even brick your&nbsp;device.
+                  </p>
+                  <a href="#version" class="gg-u-link">Select your version</a>
+                </div>
+              </div>
+              <div class="gg-c-minor-alert gg-c-minor-alert--info gg-u-mb-small" data-version-message>
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">You're running</p>
+                  <p>
+                    Not right?
+                    <a href="#version" class="gg-u-link">Change your selected&nbsp;version</a>
+                  </p>
+                </div>
+              </div>
+              <h2 data-version="9" class="gg-u-text-loud">
+                Upgrading to realme UI firmware
+              </h2>
+              <p data-version="9">
+                Due to how most custom ROMs are made for the X2 Pro, you need to upgrade to the realme UI firmware and vendor files before being
+                able to run&nbsp;them.
+              </p>
+              <p data-version="9">
+                The easiest way to do this is by downloading a realme UI update file (OZIP) and installing it via your new custom recovery.
+              </p>
+              <ol data-version="9" class="gg-c-list-ordered">
+                <li>
+                  Download the appropriate realme UI OZIP file for your&nbsp;device
+                  <ul class="gg-c-list">
+                    <li>
+                      <b>Note:</b> these are hosted on my personal file sharing accounts. The links below will be randomised between Mega and
+                      Google Drive on each page&nbsp;load.
+                    </li>
+                    <li>
+                      <a target="_blank" rel="noopener noreferrer" class="gg-u-link gg-u-link--arrow ozip-download--realmemeui__global">
+                        Global devices
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" rel="noopener noreferrer" class="gg-u-link gg-u-link--arrow ozip-download--realmemeui__cn">
+                        Chinese devices
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Move this zip file to the same folder as your ADB and&nbsp;Fastboot
+                </li>
+                <li>
+                  Push this zip file to your&nbsp;phone:
+                  <code class="language-bash">adb push -p "&lt;FILE NAME&gt;" "/sdcard"</code>
+                </li>
+                <li>
+                  On your phone, scroll and tap the zip you just pushed. Swipe the bar to flash&nbsp;it.
+                </li>
+              </ol>
+              <h2 data-version="9" class="gg-u-text-loud">
+                Flashing LineageOS or AOSiP
+              </h2>
+              <p>
+                This guide will primarily focus on how to flash
+                <b>LineageOS</b> or <b>AOSiP</b> but you can also use this guide to flash any custom ROM based on realme UI
+                firmware/vendor&nbsp;files.
+              </p>
+
+              <ol class="gg-c-list-ordered">
+                <li>
+                  Download the latest build of the custom ROM you want to&nbsp;use
+
+                  <ul class="gg-c-list">
+                    <li>
+                      <a
+                        href="https://github.com/4j17h/AOSiP_OTA/releases/latest"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="gg-u-link gg-u-link--arrow"
+                      >
+                        AOSiP
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://sourceforge.net/projects/hyperteam/files/karthick111/RMX1931/lineage-17.1/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="gg-u-link gg-u-link--arrow"
+                      >
+                        LineageOS
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="https://mega.nz/file/yExlSCJT#egOO9qkc9zu4nc3h7WwE9cIvY8q9HaxUak23dIMhwuY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="gg-u-link gg-u-link--arrow"
+                  >
+                    Download Google&nbsp;apps
+                  </a>
+                  <ul class="gg-c-list">
+                    <li>
+                      This package is the "full" package, which includes all Google apps shown&nbsp;<a
+                        href="https://nikgapps.com/downloads#downloads"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="gg-u-link"
+                        >here</a
+                      >. You can download any of the packages here and they'll all work, but using Macro at the least is&nbsp;recommended.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Move both of these files to the same folder as ADB and&nbsp;Fastboot
+                </li>
+                <li>
+                  In your command prompt, enter this&nbsp;command:
+                  <code class="language-bash">adb push -p "&lt;LineageOS/AOSiP FILE&nbsp;NAME&gt;" "/sdcard"</code>
+                </li>
+                <li>
+                  Wait for this command to complete. This may take several minutes. The progress will be shown in your command
+                  prompt&nbsp;window.
+                </li>
+                <li>
+                  Scroll down and find your LineageOS or AOSiP zip file and tap it, then swipe the bar to flash the&nbsp;ROM
+                </li>
+                <li>
+                  After the flashing is complete, tap the back&nbsp;button
+                </li>
+                <li>
+                  On your phone, tap <b>Menu</b> > <b>Manage Partitions</b> > <b>Data</b> > <b>Format Data</b> > Type <b>yes</b> > Press
+                  <img class="inline" alt="" src="https://www.giffgaff.design/iconography/icons/library/tick-black-large.svg" />&nbsp;(tick)
+                  <div class="gg-c-minor-alert gg-c-minor-alert--warning gg-u-mt-tiny gg-u-mb-small">
+                    <div class="gg-c-minor-alert__icon"></div>
+                    <div class="gg-c-minor-alert__message">
+                      <p>If you see a red error, you <b>must</b> go to Menu > Reboot > Recovery, and try this step&nbsp;again.</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  Next, push the NikGApps zip file to your&nbsp;device:
+                  <code class="language-bash">adb push -p "&lt;NikGApps ZIP NAME&gt;" "/sdcard"</code>
+                  <div class="gg-c-minor-alert gg-c-minor-alert--warning gg-u-mt-tiny gg-u-mb-small">
+                    <div class="gg-c-minor-alert__icon"></div>
+                    <div class="gg-c-minor-alert__message">
+                      <p>If you see a red error, you <b>must</b> go to Menu > Reboot > Recovery, and try this step&nbsp;again.</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  On your phone, after the push is complete, scroll and find your NikGApps zip. Tap it, and swipe the bar to flash&nbsp;it.
+                </li>
+                <li>
+                  After the flash is complete, tap back at the bottom, then
+                  <b>Menu</b>, then <b>Reboot</b>, then&nbsp;<b>System</b>
+                </li>
+              </ol>
+            </section>
+          </section>
+        </div>
+
+        <div class="gg-t-white" id="complete">
+          <section class="gg-o-page-section">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Completing</mark>
+              installation
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <h2 class="gg-u-text-louder gg-u-mb-medium">
+                <mark class="gg-u-doodle-end-boing">Extra steps</mark>
+              </h2>
+
+              <details id="root" class="gg-c-accordion">
+                <summary>
+                  <div class="gg-c-accordion__summary gg-u-text-speak-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="gg-c-accordion__marker gg-u-icon gg-u-icon--small" viewBox="0 0 16 16">
+                      <path d="M15.5 6.1L13.3 6l-1.8.1H9.6l-3.5-.2H4.5l-4.3.2.1 3.1 4 .4 1.6.1 3.6.2h4.1l1.3.1.4-.1c.5-.7.5-2.4.2-3.8z" />
+                      <path
+                        d="M6.1.5L6 2.7l.1 1.8v1.9l-.2 3.5v1.6l.2 4.3 3.1-.1.4-4 .1-1.6.2-3.6V2.4l.1-1.3-.1-.4C9.2.2 7.5.2 6.1.5z"
+                        class="gg-c-accordion__marker-open"
+                      />
+                    </svg>
+                    Rooting with Magisk
+                    <img
+                      src="https://www.giffgaff.design/iconography/icons/library/unlocked-padlock.svg"
+                      alt=""
+                      class="gg-c-accordion__icon gg-u-icon gg-u-icon--medium"
+                    />
+                  </div>
+                </summary>
+                <div class="gg-c-accordion__content">
+                  <p>It's surprisingly simple to root with&nbsp;Magisk!</p>
+
+                  <div>
+                    <p>
+                      Just
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://mega.nz/file/yMBnTKYC#HTxcGQ58TbTXZIyennk3hxeRXFA-_LEzXkwcMLjHxLE"
+                        class="gg-u-link"
+                        >download Magisk 20.3</a
+                      >, then push and flash it like the other&nbsp;files.
+                    </p>
+
+                    <h3 class="gg-u-text-loud gg-u-mb-small">Method</h3>
+
+                    <ol class="gg-c-list-ordered">
+                      <li>
+                        Unplug and turn off your phone. Wait about 20&nbsp;seconds.
+                      </li>
+                      <li>
+                        Hold Volume Down and Power to boot the phone into the bootloader&nbsp;menu
+                      </li>
+                      <li>Use Volume Up and Down to select <b>Recovery Mode</b>, then press Power to select&nbsp;it</li>
+                      <li>
+                        Enter your passcode (if you have one) to decrypt your&nbsp;data
+                      </li>
+                      <li>
+                        Push
+                        <a
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href="https://mega.nz/file/yMBnTKYC#HTxcGQ58TbTXZIyennk3hxeRXFA-_LEzXkwcMLjHxLE"
+                          class="gg-u-link"
+                          >Magisk 20.3</a
+                        >
+                        to your phone via ADB (like you did with other files&nbsp;above)
+                      </li>
+                      <li>Tap <b>Files</b> again to refresh the list, then find your Magisk ZIP in the list and tap&nbsp;it</li>
+                      <li>
+                        Swipe the bar to flash&nbsp;Magisk
+
+                        <div class="gg-c-minor-alert gg-c-minor-alert--warning gg-u-mt-tiny gg-u-mb-small">
+                          <div class="gg-c-minor-alert__icon"></div>
+                          <div class="gg-c-minor-alert__message">
+                            <p class="gg-c-minor-alert__title">
+                              Do not update Magisk!
+                            </p>
+                            <p>
+                              If you do, your device gets stuck in a bootloop (soft brick) and you need to flash the
+                              <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href="https://mega.nz/file/aAQlySyB#aqeCZEpd-MQ5iLBDtTzPVCaYNGaCWje0UB13QIeqnS4"
+                                class="gg-u-link"
+                                >Magisk Uninstaller</a
+                              >, then reflash
+                              <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href="https://mega.nz/file/yMBnTKYC#HTxcGQ58TbTXZIyennk3hxeRXFA-_LEzXkwcMLjHxLE"
+                                class="gg-u-link"
+                                >Magisk&nbsp;20.3</a
+                              >.
+                            </p>
+                            <p>
+                              If this happens, your phone should automatically reboot to OrangeFox recovery. If it doesn't, just hold Power and
+                              Volume Up until it switches off, then quickly swap to holding Volume&nbsp;Down.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ol>
+
+                    <h3 class="gg-u-text-loud gg-u-mb-small">Notes</h3>
+
+                    <div class="gg-c-minor-alert gg-c-minor-alert--warning gg-u-mt-tiny gg-u-mb-small">
+                      <div class="gg-c-minor-alert__icon"></div>
+                      <div class="gg-c-minor-alert__message">
+                        <p>
+                          You don't need Magisk to pass SafetyNet on LineageOS, but you might on other ROMs. Note that Magisk is helpful for
+                          other things, like Substratum themes and Fluid Navigation&nbsp;Gestures.
+                        </p>
+                        <p>
+                          Some people have reported issues with flashing Magisk before booting once, so it's recommended that your boot at least
+                          once before flashing&nbsp;Magisk.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="gg-c-minor-alert gg-u-mt-tiny gg-u-mb-small">
+                      <div class="gg-c-minor-alert__icon"></div>
+                      <div class="gg-c-minor-alert__message">
+                        <p>If you see a red error, you <b>must</b> go to Menu > Reboot > Recovery, and try this step&nbsp;again.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <details id="gcam" class="gg-c-accordion">
+                <summary>
+                  <div class="gg-c-accordion__summary gg-u-text-speak-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="gg-c-accordion__marker gg-u-icon gg-u-icon--small" viewBox="0 0 16 16">
+                      <path d="M15.5 6.1L13.3 6l-1.8.1H9.6l-3.5-.2H4.5l-4.3.2.1 3.1 4 .4 1.6.1 3.6.2h4.1l1.3.1.4-.1c.5-.7.5-2.4.2-3.8z" />
+                      <path
+                        d="M6.1.5L6 2.7l.1 1.8v1.9l-.2 3.5v1.6l.2 4.3 3.1-.1.4-4 .1-1.6.2-3.6V2.4l.1-1.3-.1-.4C9.2.2 7.5.2 6.1.5z"
+                        class="gg-c-accordion__marker-open"
+                      />
+                    </svg>
+                    GCam Ports
+                    <img
+                      src="https://www.giffgaff.design/iconography/icons/library/holding-phone-sideways.svg"
+                      alt=""
+                      class="gg-c-accordion__icon gg-u-icon gg-u-icon--medium"
+                    />
+                  </div>
+                </summary>
+                <div class="gg-c-accordion__content">
+                  <p>
+                    There's a
+                    <a
+                      href="https://www.celsoazevedo.com/files/android/google-camera/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="gg-u-link"
+                      >huge repository full of different GCam ports</a
+                    >
+                    put together by celsoazevedo, but it can be difficult to choose which one to use, so I've done the hard work for&nbsp;you.
+                  </p>
+
+                  <div>
+                    <p>
+                      I recommend using using
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://mega.nz/file/DEZRhaTT#sS3S2p9RlW51yoEy35Gcj6Sa1YJupv0MoeHMOCQ4WNc"
+                        class="gg-u-link"
+                        >PixelCam Plus</a
+                      >. It's (fairly) stable and supports the ultrawide and telephoto&nbsp;lenses.
+                    </p>
+
+                    <p>
+                      Once you install, you'll want to change some settings. These will improve your photos <b>significantly</b> and you only
+                      have to do it&nbsp;once!
+                    </p>
+
+                    <div class="gg-c-minor-alert gg-c-minor-alert--warning gg-u-mt-tiny gg-u-mb-small">
+                      <div class="gg-c-minor-alert__icon"></div>
+                      <div class="gg-c-minor-alert__message">
+                        <ul class="gg-c-list">
+                          <li>
+                            You cannot record video with the telephoto camera: the viewfinder&nbsp;freezes.
+                          </li>
+                          <li>
+                            Slow motion does not work, but I haven't had it working on any other GCam port&nbsp;either.
+                          </li>
+                          <li>
+                            Wide angle has distortion at the edges of the&nbsp;image.
+                          </li>
+                          <li>
+                            Timelapse and HDR+ Enhanced work&nbsp;amazingly!
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <ul class="gg-c-list">
+                      <li><b>Advanced > Pixel AWB:</b> Pixel 3</li>
+                      <li><b>Advanced > HDR+ Enhanced Frames:</b> 15</li>
+                      <li><b>Advanced > Auxiliary camera:</b> all ON</li>
+                      <li><b>Ultra-high-resolution video:</b> ON</li>
+                      <li><b>4K TimeLapse:</b> ON</li>
+                      <li><b>Video stabilisation:</b> ON (OFF for optical)</li>
+                      <li><b>Bitrate:</b> 40 or higher</li>
+                      <li>
+                        <b>Advanced > Lib Patcher > Tone Curve</b>
+                        <ul class="gg-c-list">
+                          <li>Enable Tone Curve: ON</li>
+                          <li>Dark Point: 0.5</li>
+                          <li>White Point: 0.33</li>
+                          <li>Shadows: -4</li>
+                          <li>Highlights: 14</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <b>Advanced > Lib Patcher > Back Camera</b>
+                        <ul class="gg-c-list">
+                          <li>Sharpness: 1.125</li>
+                          <li>Luma denoise: 1.25</li>
+                          <li>Chroma denoise: 1.125</li>
+                          <li>Contrast: 1.0</li>
+                          <li>
+                            Saturation: your choice between 1.125 and 1.5 (I choose 1.375)
+                          </li>
+                          <li><b>First set</b></li>
+                          <li>Level 1: 1.125</li>
+                          <li>Level 2: 1.125</li>
+                          <li>Level 3: 1.125</li>
+                          <li>Level 4: 1.375</li>
+                          <li><b>Second set</b></li>
+                          <li>Level 1: 1.125</li>
+                          <li>Level 2: 1.25</li>
+                          <li>Level 3: 1.125</li>
+                          <li>Level 4: 1.25</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <b>Advanced > Lib Patcher > Telephoto lens</b>
+                        <ul class="gg-c-list">
+                          <li>Sharpness: 1.0</li>
+                          <li>Luma denoise: 0.5</li>
+                          <li>Chroma denoise: 0.375</li>
+                          <li>Contrast: 1.0</li>
+                          <li>
+                            Saturation: your choice between 1.0 and 1.5 (I choose 1.25)
+                          </li>
+                          <li>All others at default</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <b>Advanced > Lib Patcher > Wide lens</b>
+                        <ul class="gg-c-list">
+                          <li>Sharpness: 1.125</li>
+                          <li>Luma denoise: 1.0</li>
+                          <li>Chroma denoise: 1.0</li>
+                          <li>Contrast: 1.125</li>
+                          <li>
+                            Saturation: your choice between 1.0 and 1.5 (I choose 1.375)
+                          </li>
+                          <li><b>First set</b></li>
+                          <li>Level 1: 1.125</li>
+                          <li>Level 2: 1.125</li>
+                          <li>Level 3: 1.25</li>
+                          <li>Level 4: 1.25</li>
+                          <li><b>Second set</b></li>
+                          <li>Level 1: 1.125</li>
+                          <li>Level 2: 1.125</li>
+                          <li>Level 3: 1.125</li>
+                          <li>Level 4: 1.125</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </details>
+
+              <details id="90hz" class="gg-c-accordion">
+                <summary>
+                  <div class="gg-c-accordion__summary gg-u-text-speak-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="gg-c-accordion__marker gg-u-icon gg-u-icon--small" viewBox="0 0 16 16">
+                      <path d="M15.5 6.1L13.3 6l-1.8.1H9.6l-3.5-.2H4.5l-4.3.2.1 3.1 4 .4 1.6.1 3.6.2h4.1l1.3.1.4-.1c.5-.7.5-2.4.2-3.8z" />
+                      <path
+                        d="M6.1.5L6 2.7l.1 1.8v1.9l-.2 3.5v1.6l.2 4.3 3.1-.1.4-4 .1-1.6.2-3.6V2.4l.1-1.3-.1-.4C9.2.2 7.5.2 6.1.5z"
+                        class="gg-c-accordion__marker-open"
+                      />
+                    </svg>
+                    Enabling 90 Hz
+                    <img
+                      src="https://www.giffgaff.design/iconography/icons/library/refurb-phone-refresh.svg"
+                      alt=""
+                      class="gg-c-accordion__icon gg-u-icon gg-u-icon--medium"
+                    />
+                  </div>
+                </summary>
+                <div class="gg-c-accordion__content">
+                  <div>
+                    <p>You can enable a range of settings specific to the X2 Pro in <b>Realme&nbsp;Settings</b>.</p>
+
+                    <ol class="gg-c-list-ordered">
+                      <li>Open <b>Settings</b></li>
+                      <li>
+                        Scroll all the way down, and tap
+                        <b>Realme&nbsp;Settings</b>
+                      </li>
+                      <li>
+                        I recommend setting these:
+                        <ul class="gg-c-list">
+                          <li>DC-Dimming: ON</li>
+                          <li>Auto refresh mode: OFF</li>
+                          <li>Force 90Hz peak refresh rate: ON</li>
+                        </ul>
+                      </li>
+                    </ol>
+
+                    <div class="gg-c-minor-alert gg-c-minor-alert--warning gg-u-mt-tiny gg-u-mb-small">
+                      <div class="gg-c-minor-alert__icon"></div>
+                      <div class="gg-c-minor-alert__message">
+                        <p>
+                          90 Hz is disabled when Battery Saver is switched&nbsp;on.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <details id="record" class="gg-c-accordion">
+                <summary>
+                  <div class="gg-c-accordion__summary gg-u-text-speak-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="gg-c-accordion__marker gg-u-icon gg-u-icon--small" viewBox="0 0 16 16">
+                      <path d="M15.5 6.1L13.3 6l-1.8.1H9.6l-3.5-.2H4.5l-4.3.2.1 3.1 4 .4 1.6.1 3.6.2h4.1l1.3.1.4-.1c.5-.7.5-2.4.2-3.8z" />
+                      <path
+                        d="M6.1.5L6 2.7l.1 1.8v1.9l-.2 3.5v1.6l.2 4.3 3.1-.1.4-4 .1-1.6.2-3.6V2.4l.1-1.3-.1-.4C9.2.2 7.5.2 6.1.5z"
+                        class="gg-c-accordion__marker-open"
+                      />
+                    </svg>
+                    Built-in screen recorder
+                    <img
+                      src="https://www.giffgaff.design/iconography/icons/library/holding-phone-tick.svg"
+                      alt=""
+                      class="gg-c-accordion__icon gg-u-icon gg-u-icon--medium"
+                    />
+                  </div>
+                </summary>
+                <div class="gg-c-accordion__content">
+                  <div>
+                    <p>
+                      You can enable the built-in screen recorder via&nbsp;Settings.
+                    </p>
+
+                    <p class="gg-u-text-speak-up">
+                      Note: This option is only present in AOSiP
+                    </p>
+
+                    <ol class="gg-c-list-ordered">
+                      <li>Open&nbsp;<b>Settings</b></li>
+                      <li>Search for <b>Power</b> and choose the top&nbsp;result</li>
+                      <li>Toggle on&nbsp;<b>Screenrecord</b></li>
+                      <li>To record, just hold the power button and tap&nbsp;<b>Screenrecord</b></li>
+                    </ol>
+
+                    <div class="gg-c-minor-alert gg-c-minor-alert--warning gg-u-mt-tiny gg-u-mb-small">
+                      <div class="gg-c-minor-alert__icon"></div>
+                      <div class="gg-c-minor-alert__message">
+                        <p>
+                          The built-in screen recorder is fairly limited. If it doesn't do what you need, find a suitable replacement on the
+                          Play&nbsp;Store.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <details id="gestures" class="gg-c-accordion">
+                <summary>
+                  <div class="gg-c-accordion__summary gg-u-text-speak-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="gg-c-accordion__marker gg-u-icon gg-u-icon--small" viewBox="0 0 16 16">
+                      <path d="M15.5 6.1L13.3 6l-1.8.1H9.6l-3.5-.2H4.5l-4.3.2.1 3.1 4 .4 1.6.1 3.6.2h4.1l1.3.1.4-.1c.5-.7.5-2.4.2-3.8z" />
+                      <path
+                        d="M6.1.5L6 2.7l.1 1.8v1.9l-.2 3.5v1.6l.2 4.3 3.1-.1.4-4 .1-1.6.2-3.6V2.4l.1-1.3-.1-.4C9.2.2 7.5.2 6.1.5z"
+                        class="gg-c-accordion__marker-open"
+                      />
+                    </svg>
+                    realme UI like gestures
+                    <img
+                      src="https://www.giffgaff.design/iconography/icons/library/adjustable-control.svg"
+                      alt=""
+                      class="gg-c-accordion__icon gg-u-icon gg-u-icon--medium"
+                    />
+                  </div>
+                </summary>
+                <div class="gg-c-accordion__content">
+                  <div>
+                    <p>
+                      There's a great app on the Play Store called
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.fb.fluid"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="gg-u-link"
+                        >Fluid Navigation Guestures</a
+                      >. It adds gestures to your phone which are similar to the gestures found in realme&nbsp;UI.
+                    </p>
+
+                    <p>
+                      Here's how to set it up. For full functionality, you should be rooted with Magisk&nbsp;first.
+                    </p>
+
+                    <ol class="gg-c-list-ordered">
+                      <li>In LineageOS settings, make sure you are using the navigation bar and <b>not</b>&nbsp;gestures</li>
+                      <li>
+                        Install Fluid Navigation Gestures (FNG) from the Play&nbsp;Store
+                      </li>
+                      <li>Launch it!</li>
+                      <li>
+                        Swipe through the&nbsp;intro
+                      </li>
+                      <li>Toggle <b>Enabled</b> to&nbsp;<b>ON</b></li>
+                      <li>Enable the permissions that the app&nbsp;needs</li>
+                      <li>Tap <b>Hide navigation bar</b>, then tap <b>3 button navigation</b>, then select&nbsp;<b>Grant with Root</b></li>
+                      <li>Grant the superuser request with&nbsp;Magisk</li>
+                      <li>Select <b>3 button navigation</b>&nbsp;again</li>
+                      <li>
+                        Go back, then tap <b>Look and feel</b> and choose <b>Fluid</b> (or your preference) for&nbsp;<b>Sides animation</b>
+                      </li>
+                      <li>
+                        Go back and customise your edges the way you&nbsp;want
+                      </li>
+                    </ol>
+
+                    <div class="gg-c-minor-alert gg-u-mt-tiny gg-u-mb-small">
+                      <div class="gg-c-minor-alert__icon"></div>
+                      <div class="gg-c-minor-alert__message">
+                        <p>
+                          If you decide to remove this later on, make sure you disable it before uninstalling it, or your nav bar may
+                          remain&nbsp;hidden.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </section>
+          </section>
+        </div>
+
+        <div class="gg-t-wild-sand">
+          <section class="gg-o-page-section" id="revert">
+            <h1 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Reverting</mark>
+              to ColorOS or realme UI
+            </h1>
+            <section class="gg-u-mt-medium gg-u-readable-width gg-u-mlr-auto">
+              <div class="gg-c-minor-alert gg-c-minor-alert--info gg-u-mb-small" data-version-message>
+                <div class="gg-c-minor-alert__icon"></div>
+                <div class="gg-c-minor-alert__message">
+                  <p class="gg-c-minor-alert__title">You're running</p>
+                  <p>
+                    Not right?
+                    <a href="#version" class="gg-u-link">Change your selected&nbsp;version</a>
+                  </p>
+                </div>
+              </div>
+
+              <ol class="gg-c-list-ordered">
+                <li>
+                  Unplug your phone, then turn it off&nbsp;fully
+                </li>
+                <li>
+                  Hold Volume Down and the Power button to boot the phone into Fastboot&nbsp;mode
+                </li>
+                <li>Plug the phone back into your&nbsp;computer</li>
+                <li>
+                  On your phone, press Volume Down until you see
+                  <b>RECOVERY MODE</b> at the top, then press&nbsp;Power
+                </li>
+                <li>
+                  Download the OZIP file for the Android variant you want to&nbsp;use.
+                  <ul class="gg-c-list">
+                    <li>
+                      <b>Note:</b> these are hosted on my personal file sharing accounts. The links below will be randomised between Mega and
+                      Google Drive on each page&nbsp;load.
+                    </li>
+                    <li>
+                      Global:
+                      <a target="_blank" rel="noopener noreferrer" class="gg-u-link ozip-download--coloros__global">Android 9 (ColorOS)</a>,
+                      <a target="_blank" rel="noopener noreferrer" class="gg-u-link ozip-download--realmemeui__global">Android 10 (realme UI)</a>
+                    </li>
+                    <li>
+                      Chinese:
+                      <a target="_blank" rel="noopener noreferrer" class="gg-u-link ozip-download--coloros__cn">Android 9 (ColorOS)</a>,
+                      <a target="_blank" rel="noopener noreferrer" class="gg-u-link ozip-download--realmemeui__cn">Android 10 (realme UI)</a>
+                    </li>
+                  </ul>
+                  <div class="gg-c-minor-alert gg-c-minor-alert--info gg-u-mt-tiny gg-u-mb-small">
+                    <div class="gg-c-minor-alert__icon"></div>
+                    <div class="gg-c-minor-alert__message">
+                      <p>
+                        It's very likely possible to convert a Chinese device to Global via an OZIP, but it must first be modified to allow it to
+                        be installed on the other&nbsp;device.
+                      </p>
+                      <p>
+                        If you know how to do this, feel free, but I'm not going to say how are we can't guarantee this will work, and you could
+                        likely brick your&nbsp;device.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  In your command prompt, enter this command to "push" (transfer) the OZIP update file to your&nbsp;phone:
+                  <code class="language-bash">adb push -p "&lt;OZIP FILE NAME&gt;" "/sdcard"</code>
+                </li>
+
+                <li>
+                  In OrangeFox, after the push is complete, tap
+                  <b>Files</b> at the bottom (even if already&nbsp;selected)
+                </li>
+                <li>
+                  Scroll and tap on your OZIP file, then swipe the bar to flash&nbsp;it
+                </li>
+
+                <li>
+                  Tap <b>Menu</b> > <b>Manage Partitions</b> > <b>Data</b> > <b>Format Data</b> > Type <b>yes</b> > Press
+                  <img class="inline" alt="" src="https://www.giffgaff.design/iconography/icons/library/tick-black-large.svg" />&nbsp;(tick)
+                </li>
+
+                <li>Tap <b>Menu</b> > <b>Reboot</b> >&nbsp;<b>System</b></li>
+
+                <li>
+                  If you want to re-lock your bootloader, download the in-depth test APK (at the start of this guide), and press
+                  <b>Apply to exit in-depth test</b>. Follow the instructions in the&nbsp;app.
+
+                  <ul class="gg-c-list">
+                    <li>
+                      If you have an unlocked bootloader, you'll only have L3 Widevine DRM (no HD Netflix), and you may not pass SafetyNet (no
+                      Netflix or Google Pay at&nbsp;all)
+                    </li>
+                  </ul>
+
+                  <div class="gg-c-minor-alert gg-u-mt-tiny gg-u-mb-small">
+                    <div class="gg-c-minor-alert__icon"></div>
+                    <div class="gg-c-minor-alert__message">
+                      <p>
+                        This could brick your device if you still have traces of Magisk or OrangeFox on your&nbsp;device.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+            </section>
+          </section>
+        </div>
+      </div>
+    </main>
+    <gg-footer></gg-footer>
+
+    <dialog class="gg-c-modal" id="platform-tools-modal">
+      <div class="gg-c-modal__header">
+        <h2 class="gg-c-modal__main-title">ADB and Fastboot&nbsp;download</h2>
+        <button class="gg-c-modal__close-button">
+          <img alt="Close modal" class="gg-c-modal__close-icon" src="https://www.giffgaff.design/iconography/icons/library/cross-close.svg" />
+        </button>
+      </div>
+      <div class="gg-c-modal__content">
+        <p>
+          Download the correct platform tools for your operating&nbsp;system.
+        </p>
+        <br />
+        <fieldset class="gg-c-chunky-buttons gg-c-chunky-buttons--3-col">
+          <ol class="gg-c-chunky-buttons__list">
+            <li class="gg-c-chunky-buttons__option">
+              <input name="test-apk" type="radio" id="windows-platform-tools" class="gg-c-chunky-buttons__radio" />
+              <label class="gg-c-chunky-buttons__button" for="windows-platform-tools">
+                <span class="gg-c-chunky-buttons__text">
+                  Windows
+                </span>
+              </label>
+            </li>
+            <li class="gg-c-chunky-buttons__option">
+              <input name="test-apk" type="radio" id="mac-platform-tools" class="gg-c-chunky-buttons__radio" />
+              <label class="gg-c-chunky-buttons__button" for="mac-platform-tools">
+                <span class="gg-c-chunky-buttons__text">
+                  Mac
+                </span>
+              </label>
+            </li>
+            <li class="gg-c-chunky-buttons__option">
+              <input name="test-apk" type="radio" id="linux-platform-tools" class="gg-c-chunky-buttons__radio" />
+              <label class="gg-c-chunky-buttons__button" for="linux-platform-tools">
+                <span class="gg-c-chunky-buttons__text">
+                  Linux
+                </span>
+              </label>
+            </li>
+          </ol>
+        </fieldset>
+      </div>
+    </dialog>
+
+    <style>
+      #disclaimer-modal {
+        font-family: giffgaff, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #disclaimer-modal-close {
+        transition: opacity 0.4ms ease-out;
+      }
+
+      #disclaimer-modal-close.hidden {
+        opacity: 0;
+      }
+    </style>
+
+    <script src="/realme/js/bodyScrollLock.min.js" async defer></script>
+    <script src="/realme/js/modals.js" async defer></script>
+    <script src="/realme/js/script.js" async defer></script>
+    <script src="/realme/js/prism.js" async defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAT0fbey8ETQULa-SSIyBEfsVmIjtToh48',
+        authDomain: 'gg-help.firebaseapp.com',
+        databaseURL: 'https://gg-help.firebaseio.com',
+        projectId: 'gg-help',
+        storageBucket: 'gg-help.appspot.com',
+        messagingSenderId: '441453803789',
+        appId: '1:441453803789:web:c6e2cd6b1a07c3c6999844',
+        measurementId: 'G-0TVVBKR3LE',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>

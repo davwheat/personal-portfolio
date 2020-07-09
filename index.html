@@ -2,558 +2,184 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <link
-      rel="preload"
-      href="/HKGrotesk-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/HKGrotesk-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>davwheat.dev</title>
-    
-    <meta name="title" content="davwheat.dev | David Wheatley" />
-    <meta
-      name="description"
-      content="Howdy! I'm David, a 16 year old web developer, (mainly) focusing on my frontend design skills."
+    <title>giffgaff community help</title>
+    <meta name="description" content="The unofficial giffgaff community help page, featuring useful resources for members and helpers." />
+    <link rel="canonical" href="https://giffgaff.davwheat.dev" />
+
+    <script src="/js/redirect-script.js"></script>
+
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
     />
-    <meta
-      name="keywords"
-      content="programming,developer,frontend,css,html,react,gatsby,davwheat,mrjeeves,david wheatley"
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
     />
-    <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="2 days" />
-    <meta name="author" content="David Wheatley" />
-    
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=xQO2w5qy6G">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=xQO2w5qy6G">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=xQO2w5qy6G">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=xQO2w5qy6G">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=xQO2w5qy6G">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=xQO2w5qy6G">
-    <link rel="manifest" href="/site.webmanifest?v=xQO2w5qy6G">
-    <link rel="shortcut icon" href="/favicon.ico?v=xQO2w5qy6G">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
 
-    <style>
-      @font-face {
-        font-family: HKGrotesk;
-        src: url("/HKGrotesk-Regular.woff2") format("woff2"),
-          url("/HKGrotesk-Regular.woff") format("woff");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: HKGrotesk;
-        src: url("/HKGrotesk-Bold.woff2") format("woff2"),
-          url("/HKGrotesk-Bold.woff") format("woff");
-        font-weight: 700;
-      }
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js" as="script" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js" as="script" />
 
-      * {
-        box-sizing: border-box;
-      }
+    <link rel="preload" href="/img/gg-img/aff-large.png" as="image" media="(min-width: 728px)" />
+    <link rel="preload" href="/img/gg-img/aff-med.png" as="image" media="(min-width: 550px and max-width: 727px)" />
+    <link rel="preload" href="/img/gg-img/aff-small.png" as="image" media="(max-width: 549px)" />
 
-      ::-webkit-scrollbar {
-        width: 11px;
-        background: var(--scrollbar-background-color);
-      }
+    <link rel="stylesheet" href="/css/styles.css" />
 
-      ::-webkit-scrollbar-thumb {
-        border-radius: 20px;
-        background: var(--scrollbar-thumb-color);
-      }
-
-      html,
-      body {
-        font-family: HKGrotesk, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-          sans-serif;
-        margin: 0;
-        padding: 0;
-
-        background: var(--color-background);
-        color: var(--color-text);
-      }
-
-      body {
-        min-height: 100vh;
-        overflow-x: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      h1,
-      h2 {
-        display: block;
-        margin: 0;
-        text-align: center;
-        margin-bottom: 56px;
-        font-weight: 700;
-      }
-
-      h1 img,
-      h2 img {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        vertical-align: middle;
-        margin-top: -0.2em;
-      }
-
-      h1 {
-        font-size: 64px;
-      }
-
-      @keyframes wave {
-        from {
-          transform: rotate(-10deg);
-        }
-
-        to {
-          transform: rotate(25deg);
-        }
-      }
-
-      h1 img {
-        position: relative;
-        transform-origin: 60% 65%;
-        animation: wave 0.5s ease-in-out alternate infinite;
-        transform: rotate(-10deg);
-        z-index: 2;
-      }
-
-      #h2 {
-        margin-left: auto;
-        margin-right: auto;
-        width: max-content;
-      }
-
-      h2 {
-        display: inline-block;
-        position: relative;
-        font-size: 36px;
-        margin-top: 48px;
-        margin-bottom: 32px;
-      }
-
-      h2::before {
-        position: absolute;
-        right: 0;
-        z-index: 0;
-        content: "";
-        display: block;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.185em;
-        background-image: url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg viewBox='-100 0 300 512' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M5.7 275a6.2 6.2 0 011.4-9.7c22.4-12.6 42.3-16.4 59.4-11.1 10.8 3.2 17.5 9.2 24 14.8a66 66 0 0021 13.8 70.4 70.4 0 0045 .5 6.3 6.3 0 013.4 12 82.7 82.7 0 01-52.8-.8 79.6 79.6 0 01-24.8-16.1A51.2 51.2 0 0062.9 266c-13.7-4.2-30.5-.8-49.7 10a6.3 6.3 0 01-7.5-1zm-20.5-72a6.2 6.2 0 005.4 8.4c25.5 2.1 45.2-2.7 58.7-14.5 8.4-7.4 12.1-15.6 15.7-23.4 3.3-7.3 6.4-14.2 13.4-21.2a71 71 0 0140.8-19.1 6.3 6.3 0 00-1.7-12.3 83 83 0 00-48 22.5 78.4 78.4 0 00-15.8 24.9A52 52 0 0141 187.5C30.3 197 13.7 200.8-8.4 199a6.3 6.3 0 00-6.4 4z' fill='%23f9de8f'/%3E %3Cpath d='M50.6 363.1c-2-2-3.7-4-5.1-6.4-4.3-6.6-5.1-12.5-5.9-17.7-.4-3.4-.8-6.6-2-10-4.3-10.8-15.7-19.6-34.2-26.1A6.3 6.3 0 017.5 291c22.1 7.9 36.1 19.1 41.6 33.4 1.8 4.8 2.4 9 3 12.8.6 4.7 1.1 8.4 3.9 12.7 4.4 6.9 12.4 11.7 23.7 14.4a6.3 6.3 0 11-2.8 12.1 54 54 0 01-26.3-13.4z' fill='%23f09ea0'/%3E %3Cpath d='M87 330a6.2 6.2 0 013.7-10.7 64 64 0 0144.7 12.1 6.2 6.2 0 11-7.4 10 50.7 50.7 0 00-36-9.7 6.2 6.2 0 01-5-1.8zm-29-23.8a6.6 6.6 0 119.3-9.3 6.6 6.6 0 01-9.3 9.3z' fill='%2388e2e2'/%3E %3Cpath d='M132 252.8a6.6 6.6 0 119.4-9.3 6.6 6.6 0 01-9.3 9.3z' fill='%23f09ea0'/%3E %3Cpath d='M141.9 168.4a6.6 6.6 0 119.3-9.3 6.6 6.6 0 01-9.3 9.3zm50.5 113a6.6 6.6 0 119.3-9.2 6.6 6.6 0 01-9.4 9.3z' fill='%2388e2e2'/%3E %3Cpath d='M184 229.1a6.6 6.6 0 119.3-9.3 6.6 6.6 0 01-9.3 9.3z' fill='%23f9de8f'/%3E %3Cpath d='M96.7 176.6a6.6 6.6 0 119.3-9.3 6.6 6.6 0 01-9.3 9.3z' fill='%23f09ea0'/%3E %3Cpath d='M105.5 372a6.6 6.6 0 119.3-9.4 6.6 6.6 0 01-9.3 9.3zM15.3 172a6.6 6.6 0 119.3-9.3 6.6 6.6 0 01-9.3 9.4z' fill='%23f9de8f'/%3E %3C/svg%3E");
-        background-repeat: no-repeat;
-        transform: translateX(0.875em) scale(0);
-        opacity: 0;
-        transform-origin: -1em 50%;
-        animation: blast 2s 0s ease-in-out forwards infinite;
-      }
-
-      @keyframes blast {
-        from {
-          opacity: 0;
-          transform: translateX(0.875em) scale(0);
-        }
-        25% {
-          opacity: 1;
-          transform: translateX(0.875em) scale(1.1);
-        }
-        30% {
-          opacity: 1;
-          transform: translateX(0.875em) scale(1);
-        }
-        80% {
-          opacity: 1;
-          transform: translateX(0.875em) scale(1);
-        }
-        95%,
-        to {
-          opacity: 0;
-          transform: translateX(0.875em) scale(1);
-        }
-      }
-
-      @keyframes shake {
-        0% {
-          transform: translateY(0);
-        }
-
-        3.25% {
-          transform: translateY(-3px) rotate(-9deg);
-        }
-
-        9.25% {
-          transform: translateY(2.5px) rotate(7deg);
-        }
-
-        15.75% {
-          transform: translateY(-1.5px) rotate(-5deg);
-        }
-
-        21.75% {
-          transform: translateY(1px) rotate(3deg);
-        }
-
-        25% {
-          transform: translateY(0);
-        }
-      }
-
-      h2 img {
-        animation: shake 2s 0.1s ease-in-out forwards infinite;
-      }
-
-      main {
-        width: calc(100% - 64px);
-        height: calc(100% - 32px);
-
-        max-width: 720px;
-        margin-top: 32px;
-        margin-bottom: 32px;
-
-        padding: 48px;
-        border-radius: 72px;
-        background: linear-gradient(145deg, #d8d8d8, #ffffff);
-        box-shadow: 41px 41px 82px #b4b4b4, -41px -41px 82px #ffffff;
-      }
-
-      @media (max-width: 720px) {
-        main {
-          padding: 32px;
-          border-radius: 64px;
-        }
-      }
-
-      @media (max-width: 640px) {
-        h1 {
-          margin-bottom: 32px;
-        }
-
-        h2 {
-          margin-bottom: 24px;
-          margin-top: 32px;
-        }
-
-        main {
-          width: calc(100% - 48px);
-          padding: 24px 32px;
-          border-radius: 64px;
-        }
-      }
-
-      p {
-        font-size: 19px;
-        line-height: 1.6;
-      }
-
-      a {
-        position: relative;
-        color: var(--color-primary);
-        font-weight: 700;
-        display: table-cell;
-      }
-
-      a span:first-of-type {
-        color: var(--color-primary);
-        text-decoration: underline;
-      }
-
-      a span:last-child {
-        display: none;
-      }
-
-      @media (hover: hover) {
-        a {
-          display: inline-block;
-          text-decoration: none;
-          font-weight: 400;
-        }
-
-        a svg {
-          color: var(--color-text);
-          transition: color 350ms ease 0s;
-        }
-
-        a:hover svg {
-          color: var(--color-primary);
-        }
-
-        a:hover span:first-of-type {
-          clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-        }
-
-        a span:first-of-type {
-          display: inline-block;
-          position: relative;
-          z-index: 1;
-          color: var(--color-text);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-          transition: clip-path 350ms ease 0s;
-          text-decoration: none;
-        }
-
-        a span:not(:first-of-type) {
-          display: inline-block;
-          position: absolute;
-          right: 0px;
-          font-weight: inherit;
-          clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-          user-select: none;
-          transition: clip-path 350ms ease 0s;
-        }
-
-        a:hover span:not(:first-of-type) {
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-
-        a::after {
-          content: "";
-          position: absolute;
-          left: -2px;
-          right: -2px;
-          bottom: 0px;
-          height: 2px;
-          background-color: var(--color-primary);
-          border-radius: 2px;
-          transition: transform 200ms ease 150ms, opacity 350ms ease 150ms;
-        }
-
-        a:hover::after {
-          transform: translateY(-0.25em);
-          opacity: 0;
-          transition: transform 200ms ease 0s, opacity 350ms ease 0s;
-        }
-      }
-
-      #socials {
-        font-size: 18px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-      }
-
-      #socials div {
-        margin-top: 8px;
-        line-height: 1.6;
-      }
-
-      #socials a svg {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        vertical-align: middle;
-        margin-top: -0.2em;
-        margin-right: 4px;
-      }
-
-      :root {
-        --color-background: #f0f0f0;
-        --color-highlight: #f5f6f9;
-        --color-text: #000;
-        --color-primary: #ff0a78;
-
-        --scrollbar-thumb-color: #85858b;
-        --scrollbar-background-color: #3a3a4f67;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --color-background: #1b1b2f;
-          --color-highlight: #162447;
-          --color-text: #fff;
-
-          --scrollbar-thumb-color: #5b5b68;
-          --scrollbar-background-color: #242431;
-        }
-
-        main {
-          background: linear-gradient(145deg, #18182a, #1d1d32);
-          box-shadow: 36px 36px 72px #141423, -36px -36px 72px #22223b;
-        }
-      }
-
-      footer {
-        font-size: 12px;
-        color: var(--color-text);
-        margin-top: 32px;
-        margin-bottom: -16px;
-        text-align: center;
-      }
-    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch%2CPromise%2CNodeList.prototype.forEach%2CArray.prototype.forEach%2CObject.values%2CReflect%2CReflect.construct"></script>
+    <script src="/js/modernizr-custom.min.js"></script>
     <script data-ad-client="ca-pub-2701335557132384" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/js/custom-components.min.js" async></script>
   </head>
-  <body>
-    <main>
-      <h1>
-        Howdy! <img src="https://twemoji.maxcdn.com/2/svg/1f44b.svg" alt="👋" />
-      </h1>
-      <p>
-        I'm David, a 16 year old web developer, (mainly) focusing on my frontend
-        design&nbsp;skills.
-      </p>
-      <p>
-        I've worked with a wide range of web, desktop, and mobile technologies,
-        including
-        <nobr>
-          <a href="https://reactjs.org/" rel="noopener noreferrer">
-            <span>React</span>
-            <span>React</span>
-          </a></nobr
-        >,
-        <nobr>
-          <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer">
-            <span>Gatsby</span>
-            <span>Gatsby</span>
-          </a></nobr
-        >,
-        <nobr>
-          <a href="https://electronjs.com/" rel="noopener noreferrer">
-            <span>Electron</span>
-            <span>Electron</span>
-          </a></nobr
-        >, as well as plain old HTML, CSS/LESS, and&nbsp;Javascript.
-      </p>
-      <p>
-        I also love to fix styling bugs and add features to the
-        <nobr>
-          <a href="https://community.giffgaff.com/" rel="noopener noreferrer">
-            <span>giffgaff community</span>
-            <span>giffgaff community</span>
-          </a></nobr
-        >, the official forum of the multimillion member UK mobile
-        network&nbsp;<nobr
-          ><a href="https://giffgaff.com/" rel="noopener noreferrer"
-            ><span>giffgaff</span>
-            <span>giffgaff</span>
-          </a></nobr
-        >.
-      </p>
+  <body class="qa-page">
+    <gg-header></gg-header>
 
-      <div id="h2">
-        <h2>
-          Reach out!
-          <img src="https://twemoji.maxcdn.com/2/svg/1f4e3.svg" alt="📣" />
-        </h2>
+    <main id="main-content">
+      <div class="gg-u-digital-noise-chunky">
+        <header class="gg-c-masthead gg-c-masthead--digital-noise">
+          <div class="gg-c-masthead__content">
+            <div class="gg-c-masthead__text">
+              <h1 class="gg-u-text-megaphone">Community help page</h1>
+              <p class="gg-c-masthead__page-subtitle">
+                The community have put together a bunch of useful things to help you on your giffgaff journey
+              </p>
+            </div>
+            <picture draggable="false" class="gg-c-masthead__picture" style="align-self: center;">
+              <source type="image/webp" media="(max-width: 992px)" srcset="/img/books.mobile.webp" />
+              <source type="image/png" media="(max-width: 992px)" srcset="/img/books.mobile.png" />
+              <source type="image/webp" srcset="/img/books.webp" />
+              <source type="image/png" srcset="/img/books.png" />
+              <img draggable="false" src="/img/books.png" alt="Books" style="height: auto;" />
+            </picture>
+          </div>
+        </header>
+        <div class="gg-t-light-blue">
+          <section class="gg-o-page-section homepage-hero-section homepage-hero-section--reverse">
+            <h2 class="homepage-hero-section__title gg-u-text-shout gg-u-doodle-squiggle gg-u-doodle-squiggle--white">
+              <a href="/kb">Handy guides</a>
+            </h2>
+            <a href="/kb" class="homepage-hero-section__image-link" aria-hidden="true" tabindex="-1" draggable="false">
+              <picture>
+                <source type="image/webp" srcset="/img/bubbles-idea-question.webp" />
+                <source type="image/png" srcset="/img/bubbles-idea-question.png" />
+                <img draggable="false" alt="" class="homepage-hero-section__image" src="/img/bubbles-idea-question.png" />
+              </picture>
+            </a>
+
+            <div class="gg-s-rich-text homepage-hero-section__text">
+              <p>
+                The community has compiled some handy dandy guides for using your phone on giffgaff. If you're heading on holiday, why not check
+                out our guide for
+                <a href="/kb/roaming-in-eu" class="gg-u-link">Roaming in the EU</a>?
+              </p>
+
+              <p>
+                <a href="/kb" class="gg-u-link gg-u-link--arrow">See all handy guides</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div class="gg-t-light-pink">
+          <section class="gg-o-page-section gg-u-grid gg-u-@m:grid--2-col gg-u-@m:col-gap-small gg-u-@l:col-gap-large">
+            <div class="gg-u-readable-width gg-t-wild-sand gg-u-mlr-auto gg-u-p-medium gg-u-pl-large gg-u-pr-large">
+              <h2 class="gg-u-text-louder gg-u-mb-tiny">
+                Helper tools
+              </h2>
+              <p class="gg-u-text-speak">
+                <b>Helping on the community?</b> This is the place for you. Check out this great collection of tools and info that anyone would
+                be proud of.
+              </p>
+              <p class="gg-u-text-speak gg-u-mb-small">
+                We have everything from tools to make your answers more "giffgaffy", to pricing calculators for phone numbers.
+              </p>
+              <a href="/helper-tools" class="gg-c-btn gg-c-btn--primary gg-c-btn--center gg-u-mb-tiny">
+                <span class="gg-c-btn__switch">View tools</span>
+              </a>
+            </div>
+            <div class="gg-u-readable-width gg-t-wild-sand gg-u-mlr-auto gg-u-p-medium gg-u-pl-large gg-u-pr-large">
+              <h2 class="gg-u-text-louder gg-u-mb-tiny">
+                Page redesigns
+              </h2>
+              <p class="gg-u-text-speak">
+                <b>Think the website needs a refresh?</b> Well, so do I. Check out some of my example redesigns for the giffgaff website.
+              </p>
+              <p class="gg-u-text-speak gg-u-mb-small">
+                The
+                <a class="gg-u-link" href="https://www.giffgaff.com/offer" target="_blank" rel="noopener noreferrer">giffgaff my offers</a>
+                page is heavily outdated, still showing the iPhone 6S as a "flagship" option. Also, as a lot of members face issues trying to
+                perform a SIM swap, I've worked on a redesign of that, too.
+              </p>
+              <a href="/examples" class="gg-c-btn gg-c-btn--primary gg-c-btn--center gg-u-mb-tiny">
+                <span class="gg-c-btn__switch">View redesigns</span>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <div class="gg-t-white">
+          <section class="gg-o-page-section">
+            <h2 class="gg-u-text-louder">
+              realme Discord community
+            </h2>
+            <a
+              style="margin-top: 8px; margin-bottom: 16px; display: inline-block;"
+              href="https://discord.gg/96SJ7PU"
+              class="gg-u-link gg-u-link--arrow"
+            >
+              Join the realme Discord server
+            </a>
+            <h3 class="gg-u-text-loud">Unlocking and custom ROM flashing</h3>
+            <ul class="gg-o-tiles homepage-bits-and-bobs s-homepage-bits-and-bobs-tiles">
+              <li class="gg-o-tiles__item">
+                <a class="gg-o-tiles__tile homepage-bits-and-bobs__tile" href="/realme/x2-pro.html">
+                  <h3 class="gg-u-text-loud">Realme X2 Pro</h3>
+                  <p>
+                    How to unlock your bootloader, flash OrangeFox recovery, and install AOSiP.
+                  </p>
+                  <p class="homepage-bits-and-bobs__link gg-u-link gg-u-link--arrow">
+                    Read more
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
       </div>
-
-      <p>
-        Let's have a natter! You can catch me on any of my accounts below. Yes,
-        I do need to move to just one&nbsp;username.
-      </p>
-
-      <section id="socials">
-        <div>
-          <nobr>
-            <a
-              href="https://discord.com/channels/@me/227453448499625985/"
-              rel="noopener noreferrer"
-            >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"
-                ></path>
-              </svg>
-              <span>@MrJeeves</span>
-              <span>@MrJeeves</span>
-            </a>
-          </nobr>
-        </div>
-        <div>
-          <nobr>
-            <a
-              href="https://community.giffgaff.com/u/mrjeeves"
-              rel="noopener noreferrer"
-            >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 81.5 81.5"
-                style="width: 1.5em; transform: scale(1.5);"
-              >
-                <path
-                  fill="currentColor"
-                  d="M81.4 29a9.2 9.2 0 00-1.1 0 6.7 6.7 0 00-3.5.9 4.6 4.6 0 00-2 4.1v.4h-4.5v-.2c0-1.6.9-2.3 2.6-2.3h.7v-2.8a8.6 8.6 0 00-1.2 0 6.4 6.4 0 00-3.4.8 4.4 4.4 0 00-2 4.1v11h-2.3c-.4 0-.6-.2-.6-.6v-5c0-3.6-1.9-5.4-5.8-5.4a7.8 7.8 0 00-3 .5 2.4 2.4 0 00-2 2.3v1.4h3.1v-.7c0-.3.2-.6.7-.7a2.5 2.5 0 011.1-.2 2.6 2.6 0 012 .6 3 3 0 01.5 2v.2h-.4a14.5 14.5 0 00-4.8.7c-2.1.8-3.1 2-3.1 3.8a3.7 3.7 0 001.3 3.1 4.8 4.8 0 003.3 1 4.5 4.5 0 003.1-1 4.1 4.1 0 001-1.2v.6a1.4 1.4 0 00.4 1 1.7 1.7 0 001.3.5h7.6V37.1h4.4v10.8h3.3V37h3v-2.7h-3V34c0-1.5.9-2.2 2.6-2.2h.8zM60.2 41.8h.6v.3a3.4 3.4 0 01-.8 2.3 2.7 2.7 0 01-2.2 1.2 2.2 2.2 0 01-1.5-.5 1.8 1.8 0 01-.6-1.2q0-2.1 4.5-2.2M47.4 35.6v.4a3 3 0 00-1-1 5 5 0 00-3.2-1 5.5 5.5 0 00-4.4 2 7.2 7.2 0 00-1.6 4.8 7.2 7.2 0 001.6 4.8 5.5 5.5 0 004.5 2 4.5 4.5 0 003.8-1.8v1.4a3 3 0 01-1.2 2.6 4.3 4.3 0 01-2.6.7 8.4 8.4 0 01-2.7-.5l-1.1-.4-1 2.6a10.6 10.6 0 004.8 1.2 8 8 0 004.9-1.5 5.7 5.7 0 002.2-4.9v-9.2c0-.4.2-.6.6-.6h1v-2.8h-3.2a1.5 1.5 0 00-1 .4 1.1 1.1 0 00-.4.8m-6 2.3a2.9 2.9 0 012.3-1c2.2 0 3.4 1.3 3.4 4a4.5 4.5 0 01-1 3 3.2 3.2 0 01-4.7-.3 4.6 4.6 0 01-1-3 4.2 4.2 0 011-2.7M36.7 37v-2.6h-2.9V34c0-1.5.9-2.2 2.6-2.2h.7V29a9.2 9.2 0 00-1.1 0 7 7 0 00-3.5.8 4.6 4.6 0 00-2 4.2v.4H26v-.2c0-1.6.9-2.3 2.6-2.3h.7V29a10 10 0 00-1.1 0 6.8 6.8 0 00-3.5.8 4.5 4.5 0 00-2 4.2v11h-2.5c-.4 0-.6-.2-.6-.6v-8.2a1.8 1.8 0 00-.5-1.4 1.8 1.8 0 00-1.2-.4h-6.3a1.6 1.6 0 00-1 .4 1.1 1.1 0 00-.4.8.4.4 0 000 .3 3.7 3.7 0 00-1-1A5.5 5.5 0 006 34a5.5 5.5 0 00-4.5 2A7.4 7.4 0 000 40.7a7.8 7.8 0 001.6 4.8 5.5 5.5 0 004.5 2 4.3 4.3 0 003.8-1.7v1.3a3 3 0 01-1.2 2.6 4.5 4.5 0 01-2.6.8 8.3 8.3 0 01-2.7-.5l-1-.4-1 2.6A10.7 10.7 0 006 53.4a8 8 0 004.9-1.5 5.8 5.8 0 002.2-4.9v-9.3c0-.3.2-.5.6-.5h2c.3 0 .5.2.5.6V46a1.8 1.8 0 00.4 1.4 1.6 1.6 0 001.3.4h8V37h4.5v10.8h3.4V37zM4.2 38a3 3 0 012.4-1C9 37 10 38.1 10 40.7A4.4 4.4 0 019 44a3 3 0 01-2.2.8 3 3 0 01-2.5-1.2 4.6 4.6 0 01-1-2.9 4.1 4.1 0 011-2.7"
-                />
-                <path fill="currentColor" d="M16.2 29h3.4v3.4h-3.4z" />
-              </svg>
-              <span>@mrjeeves</span>
-              <span>@mrjeeves</span>
-            </a>
-          </nobr>
-        </div>
-        <div>
-          <nobr>
-            <a href="https://github.com/davwheat" rel="noopener noreferrer">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 496 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                ></path>
-              </svg>
-              <span>@davwheat</span>
-              <span>@davwheat</span>
-            </a>
-          </nobr>
-        </div>
-        <div>
-          <nobr>
-            <a href="https://twitter.com/davwheat_" rel="noopener noreferrer">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                />
-              </svg>
-              <span>@davwheat_</span>
-              <span>@davwheat_</span>
-            </a>
-          </nobr>
-        </div>
-      </section>
-      <footer>
-        <b>Note:</b> This is a temporary web page while I work on
-        something&nbsp;better.
-      </footer>
     </main>
+    <gg-footer></gg-footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAT0fbey8ETQULa-SSIyBEfsVmIjtToh48',
+        authDomain: 'gg-help.firebaseapp.com',
+        databaseURL: 'https://gg-help.firebaseio.com',
+        projectId: 'gg-help',
+        storageBucket: 'gg-help.appspot.com',
+        messagingSenderId: '441453803789',
+        appId: '1:441453803789:web:c6e2cd6b1a07c3c6999844',
+        measurementId: 'G-0TVVBKR3LE',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>

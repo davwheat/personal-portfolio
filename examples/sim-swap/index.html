@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redesigned activation journeys | giffgaff community help</title>
+    <meta
+      name="description"
+      content="Loads of members get confused when activating a SIM, either accidentally topping up credit instead of a goodybag or activating a new SIM instead of performing a SIM swap."
+    />
+    <link rel="canonical" href="https://giffgaff.davwheat.dev/examples/sim-swap" />
+
+    <script src="/js/redirect-script.js" async></script>
+
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
+
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js" as="script" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js" as="script" />
+
+    <link rel="stylesheet" href="/examples/sim-swap/css/styles.css" />
+    <script src="/examples/sim-swap/js/custom-components.min.js" async></script>
+    <script src="/examples/sim-swap/js/modernizr-custom.min.js" async defer></script>
+  </head>
+  <body class="qa-page">
+    <gg-header></gg-header>
+    <main id="main-content">
+      <div class="gg-u-digital-noise-chunky">
+        <header class="gg-c-masthead gg-c-masthead--digital-noise">
+          <div class="gg-c-masthead__content">
+            <div class="gg-c-masthead__text">
+              <h1 class="gg-u-text-megaphone">
+                <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Activation</mark>
+                journeys
+              </h1>
+              <p class="gg-c-masthead__page-subtitle">
+                An example of how the giffgaff SIM swap/activation journey could be improved.
+              </p>
+            </div>
+            <picture class="gg-c-masthead__picture" style="align-self: center;">
+              <source media="(min-width: 992px)" srcset="/examples/sim-swap/img/sim-fly-high.png" />
+              <img src="/examples/sim-swap/img/sim-fly-high.mobile.png" />
+            </picture>
+          </div>
+        </header>
+        <div class="gg-t-light-blue">
+          <section class="gg-o-page-section homepage-hero-section">
+            <h2 class="homepage-hero-section__title gg-u-text-shout gg-u-doodle-squiggle gg-u-doodle-squiggle--white">
+              What's the problem?
+            </h2>
+            <span class="homepage-hero-section__image-link" aria-hidden="true" tabindex="-1">
+              <img alt="" class="homepage-hero-section__image" src="/examples/sim-swap/img/bubbles-idea-question.png" />
+            </span>
+            <div class="gg-s-rich-text homepage-hero-section__text">
+              <p>
+                The community have noticed a significant issue during the activation flow, meaning members accidentally create new accounts
+                instead of swapping their SIM or they replace their SIM when activating multiple for children.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="gg-t-light-pink">
+          <section class="gg-o-page-section homepage-hero-section homepage-hero-section--reverse">
+            <h2 class="homepage-hero-section__title gg-u-text-shout gg-u-doodle-squiggle gg-u-doodle-squiggle--white">
+              How can we fix it?
+            </h2>
+            <span class="homepage-hero-section__image-link" aria-hidden="true" tabindex="-1">
+              <img alt="" class="homepage-hero-section__image" src="/examples/sim-swap/img/megaphone.png" />
+            </span>
+            <div class="gg-s-rich-text homepage-hero-section__text">
+              <p>
+                The activation flow needs a redesign to meet giffgaff's growing memberbase, and to reflect the confusion members face when trying
+                to perform a simple task.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div class="gg-t-white">
+          <section class="gg-o-page-section">
+            <div class="gg-u-readable-width">
+              <h2 class="gg-u-text-louder">
+                Example activation page redesigns
+              </h2>
+              <p>
+                I (<a class="gg-u-link" href="https://community.giffgaff.com/u/mrjeeves">mrjeeves</a>) have put together some simple redesigns
+                for the activation flow which could help to combat these common problems that clutter H&S.
+              </p>
+              <p>
+                Remember that these pages
+                <strong>do not send any data to any servers</strong>. You can enter any activation code you like (as long as it matches the right
+                format), and you can enter whatever details you like for your "account".
+              </p>
+            </div>
+            <ul class="gg-o-tiles homepage-bits-and-bobs s-homepage-bits-and-bobs-tiles">
+              <li class="gg-o-tiles__item">
+                <a class="gg-o-tiles__tile homepage-bits-and-bobs__tile" href="/examples/sim-swap/view.html#logged-out">
+                  <h3 class="gg-u-text-loud">Not logged in</h3>
+                  <p>
+                    Small notice added to the bottom of the activation section mentioning SIM swap.
+                  </p>
+                  <p class="homepage-bits-and-bobs__link gg-u-link gg-u-link--arrow">
+                    View
+                  </p>
+                </a>
+              </li>
+              <!-- <li class="gg-o-tiles__item">
+                <a
+                  class="gg-o-tiles__tile homepage-bits-and-bobs__tile"
+                  href="design-tokens"
+                >
+                  <h3 class="gg-u-text-loud">Design tokens</h3>
+                  <p>A reference list of all tokens in one handy place</p>
+                  <p
+                    class="homepage-bits-and-bobs__link gg-u-link gg-u-link--arrow"
+                  >
+                    View design tokens
+                  </p>
+                </a>
+              </li> -->
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+    <gg-footer></gg-footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAT0fbey8ETQULa-SSIyBEfsVmIjtToh48',
+        authDomain: 'gg-help.firebaseapp.com',
+        databaseURL: 'https://gg-help.firebaseio.com',
+        projectId: 'gg-help',
+        storageBucket: 'gg-help.appspot.com',
+        messagingSenderId: '441453803789',
+        appId: '1:441453803789:web:c6e2cd6b1a07c3c6999844',
+        measurementId: 'G-0TVVBKR3LE',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>

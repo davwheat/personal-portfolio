@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Check a number | giffgaff community help</title>
+    <meta
+      name="description"
+      content="Ever wondered how much it costs to call or text that phone number? Look no further as we have just the right thing to help."
+    />
+    <link rel="canonical" href="https://giffgaff.davwheat.dev/helper-tools/information/number-checker" />
+
+    <script src="/js/redirect-script.js"></script>
+
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js" as="script" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js" as="script" />
+
+    <link rel="preload" href="/img/gg-img/aff-large.png" as="image" media="(min-width: 728px)" />
+    <link rel="preload" href="/img/gg-img/aff-med.png" as="image" media="(min-width: 550px and max-width: 727px)" />
+    <link rel="preload" href="/img/gg-img/aff-small.png" as="image" media="(max-width: 549px)" />
+
+    <link rel="stylesheet" href="/css/styles.min.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch%2CPromise%2CNodeList.prototype.forEach%2CArray.prototype.forEach%2CObject.values%2CReflect%2CReflect.construct"></script>
+    <script src="/js/modernizr-custom.min.js"></script>
+    <script data-ad-client="ca-pub-2701335557132384" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/js/custom-components.min.js" async></script>
+    <script defer async src="https://unpkg.com/libphonenumber-js@1.7.26/bundle/libphonenumber-max.js" crossorigin="anonymous"></script>
+    <script defer async src="/helper-tools/information/number-checker/scripts.js"></script>
+  </head>
+  <body class="qa-section gg-t-white">
+    <gg-header></gg-header>
+    <main id="main-content">
+      <div class="gg-u-digital-noise-chunky">
+        <header class="gg-c-masthead-minor hasBreadcrumbs">
+          <div class="gg-c-masthead-minor__content">
+            <h1 class="gg-u-text-shout"><mark class="gg-u-doodle-squiggle gg-u-doodle-squiggle--light-pink"> Check</mark> a phone number</h1>
+            <p class="gg-c-masthead__page-subtitle">
+              You can double-check whether a phone number is included in your goodybag, or how much credit it costs to call.
+            </p>
+
+            <nav aria-label="breadcrumb">
+              <ol class="gg-c-breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <li class="gg-c-breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a class="gg-c-breadcrumbs__link" href="/" itemscope itemtype="http://schema.org/Thing" itemprop="item" itemid="/">
+                    <span itemprop="name">Home</span>
+                  </a>
+                  <meta itemprop="position" content="1" />
+                </li>
+
+                <li class="gg-c-breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a
+                    class="gg-c-breadcrumbs__link"
+                    href="/helper-tools"
+                    itemscope
+                    itemtype="http://schema.org/Thing"
+                    itemprop="item"
+                    itemid="/helper-tools"
+                  >
+                    <span itemprop="name">Helper tools</span>
+                  </a>
+                  <meta itemprop="position" content="2" />
+                </li>
+
+                <li class="gg-c-breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a
+                    class="gg-c-breadcrumbs__link"
+                    href="/helper-tools/number-checker"
+                    aria-current="page"
+                    itemscope
+                    itemtype="http://schema.org/Thing"
+                    itemprop="item"
+                    itemid="/helper-tools/number-checker"
+                  >
+                    <span itemprop="name">Number checker</span>
+                  </a>
+                  <meta itemprop="position" content="3" />
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </header>
+        <section class="gg-o-page-section">
+          <h1 class="gg-u-text-louder">
+            Enter a phone number
+          </h1>
+          <br />
+          <label for="phoneNumber" class="gg-c-form__label">Phone number</label>
+          <div class="gg-c-form__element">
+            <input type="text" id="phoneNumber" class="gg-c-form__input" />
+            <br />
+            <p class="gg-c-form__element-message gg-c-form__element-message--invalid" id="output1" style="padding: 0;">
+              An example error message
+            </p>
+            <p class="gg-u-text-loud gg-c-form__element-message gg-c-form__element-message--valid" id="output2" style="padding: 0;">
+              An example error message
+            </p>
+            <p class="gg-c-form__element-message gg-c-form__element-message--info" id="output3" style="padding: 0;">
+              An example error message
+            </p>
+          </div>
+        </section>
+
+        <section id="ggPrices" class="gg-t-light-pink gg-u-texture-gritty">
+          <div class="gg-o-page-section">
+            <h2 class="gg-u-text-shout">
+              <mark class="gg-u-doodle-end-boing">Pricing</mark>
+            </h2>
+            <p class="gg-u-text-speak gg-u-mt-tiny">
+              All prices listed are for calls only, unless otherwise stated.
+            </p>
+            <div class="gg-o-focus-panel__container gg-u-mlr-auto gg-u-mt-large">
+              <ul class="gg-o-tiles gg-o-tiles--columns">
+                <li class="gg-o-tiles__item">
+                  <div class="gg-o-tiles__tile">
+                    <h3 class="gg-u-text-loud gg-u-text-center gg-u-mt-small">
+                      <svg class="gg-u-icon gg-u-icon--large gg-u-icon--inline" viewBox="0 0 24 24">
+                        <path
+                          d="M20.7 17.6l.1-2.5c-.1-1.5-.4-2.9-1-4.2a6.5 6.5 0 00-4.4-3.4l.1-.5-.1-1.1.9-.8c.4-.3.4-.7.8-1.1.2-.2.2-.5.1-.7-.2-.5-.6-.8-1.1-1.1-.4-.1-.7.1-1 .3-.5-.5-1.1-.9-1.6-1-.6 0-1.2.4-1.6 1l-.3-.2c-.2-.1-.5-.1-.8 0a2 2 0 00-1.3 1.2c-.4 1.2 1 2.1 1.9 2.7v.7l.1.7c-1 .3-2 .7-2.8 1.4a6.3 6.3 0 00-2.4 4.8c0 .7 1.1.7 1.2 0 .2-3.1 2.7-5.2 5.7-5.3h.5l.9.1h.1c3.2.7 4.7 3.4 4.8 6.6v4.6l-1.9-.1h-6.1c-.3 0-.5.3-.5.7 0 .3.2.5.5.5H18c1.2 0 2.9.7 3-1.1l-.3-2.2zM14.1 7.2h-1.4v-.9h1.4c.1.2.2.8 0 .9zm.5-2.3l-.4.3h-2C11.8 4.9 11 4.5 11 4c-.1-.3 0-.6.4-.6.3 0 .4.2.4.4l.5.2c.2 0 .4-.1.5-.3l.2-.4.1-.3.1-.1c.2-.2.4-.2.5-.1l.2.2.1.1c-.1.3.1.6.4.7h.4l.5-.3c.4-.4 1.1.3.6.6l-1 .7-.3.1z"
+                        />
+                        <path
+                          d="M9.3 17.6H3.6c-.3 0-.5.3-.5.7 0 .3.2.5.5.5h5.7c.3 0 .5-.3.5-.7-.1-.3-.3-.5-.5-.5zm0 2.1H3.6c-.8 0-.8 1.2 0 1.2h5.7c.3 0 .5-.3.5-.7-.1-.2-.3-.5-.5-.5zm0-4.5H3.6c-.3 0-.5.3-.5.7 0 .3.2.5.5.5h5.7c.3 0 .5-.3.5-.7-.1-.3-.3-.5-.5-.5zm2.2 2.2h3.6c.3 0 .5-.3.5-.7 0-.3-.2-.5-.5-.5h-2v-1.1h1.4c.3 0 .5-.3.5-.7 0-.3-.2-.5-.5-.5h-1.4c0-.4 0-1.1.4-1.3.3-.1.7 0 .9.2.4.6 1.4 0 1-.6-.6-.9-1.9-1.1-2.8-.5l-.1.1c-.3.6-.5 1.2-.5 1.9v.3h-.5c-.3 0-.5.3-.5.7 0 .3.2.5.5.5h.5v1.1h-.5c-.7-.1-.7 1.1 0 1.1z"
+                        />
+                      </svg>
+                      Airtime Credit
+                    </h3>
+                    <p class="gg-u-text-speak gg-u-text-center gg-u-mt-medium gg-u-mb-medium" id="payg">
+                      Please enter a phone number.
+                    </p>
+                  </div>
+                </li>
+                <li class="gg-o-tiles__item">
+                  <div class="gg-o-tiles__tile">
+                    <h3 class="gg-u-text-loud gg-u-text-center gg-u-mt-small">
+                      <svg class="gg-u-icon gg-u-icon--large gg-u-icon--inline" viewBox="0 0 24 24">
+                        <path
+                          d="M18.6 6.8s-.1 0 0 0c-1.1 0-2.1 0-3.1-.2-.4-.2-.3-1.1-.8-2-.6-1.1-.7-1.8-2-2.1C10 2 8.4 3.7 8.2 6.6c0 .2-.1.3-.3.3H5.6c-.3 0-.6.2-.6.6v10.8c0 .6.4 1 1 1h12.2c.6 0 1-.4 1-1V7.4c0-.4-.3-.6-.6-.6zm-4.4 0h-1.5v-.4c-.1-.4-.1-.9-.5-1.2a1 1 0 00-1.2.2c-.4.4-.3.9-.3 1.4H9.3c.2-3.7 4.1-4.4 4.9 0zM17.9 9v8.8c0 .2-.3.2-.5.2h-4.5l-6.2-.1-.4-.1V8.4c-.3-.2-.1-.4.1-.4h11.1c.2 0 .3.1.3.2l.1.8z"
+                        />
+                        <path
+                          d="M14 15.2h-2.8v-1.5h2c.3 0 .6-.4.5-.7 0-.3-.3-.5-.5-.5h-2c0-.6 0-1.5.6-1.8.5-.1 1 0 1.4.3.5.6 1.6 0 1.1-.6a2.7 2.7 0 00-3.6-.5c-.5.6-.8 1.4-.8 2.2v.4h-.6c-.3 0-.6.4-.5.7 0 .3.3.5.5.5h.7v1.5h-.7c-.8 0-.8 1.3 0 1.2H14c.3 0 .6-.4.5-.7.1-.3-.2-.5-.5-.5zm2.6 5.4l-9.7.1c-.4 0-.7.3-.7.7 0 .4.3.7.7.7l9.7-.1c.4 0 .7-.3.7-.7 0-.3-.3-.7-.7-.7zM17 5.1c.3.2.8.1 1-.2l1-2.2c.2-.3.1-.8-.2-1a.8.8 0 00-1 .2V2l-1 2.2c-.3.3-.2.7.2.9zm4.4-2.6l-2.2 2.6c-.6.7.4 1.7 1 1l2.2-2.6c.5-.7-.5-1.7-1-1zm-16.2.2l1 2.2c.2.3.6.5.9.3h.1c.3-.2.5-.6.3-1L6.5 2c-.2-.3-.6-.5-1-.3s-.5.6-.3 1c0-.1 0 0 0 0zm-.1 2.4l-.5-.5-1.7-2.2c-.6-.7-1.6.3-1 1L4.1 6c.6.7 1.6-.2 1-.9z"
+                        />
+                      </svg>
+                      Goodybag
+                    </h3>
+                    <p class="gg-u-text-speak gg-u-text-center gg-u-mt-medium gg-u-mb-medium" id="goodybag">
+                      Please enter a phone number.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <!-- <p class="gg-u-text-speak gg-u-text-center gg-u-pt-small" style="margin-bottom: -16px;">
+                <svg class="gg-u-icon gg-u-icon--medium gg-u-icon--inline" viewBox="0 0 24 24">
+                  <path
+                    d="M12.7 15.6a1.1 1.1 0 01-1.3 1 1 1 0 01-.7-1.5 1.3 1.3 0 01.8-.6 1 1 0 011 .3 1 1 0 01.2.8zM12.2 6.7c.4.8.3 4.7.2 5.7 0 .6-1 .7-1.3.5-.7-.7-.4-2.6-.4-3.6 0-.6-.2-2.5.5-2.7a1.2 1.2 0 01.8 0 .2.2 0 01.2 0z"
+                  />
+                  <path
+                    d="M19.5 12a8.1 8.1 0 01-9 7.7C6.3 19.3 3 15.3 3 11.1s4.3-6.8 8.2-6.8c4.7 0 8 3 8.2 7.8a.6.6 0 001.2 0 8.8 8.8 0 00-9-9C7.2 2.9 2 5.9 2 11c0 4.8 3.6 9.4 8.5 10a9.4 9.4 0 0010.3-9c.1-.8-1.1-.8-1.2 0z"
+                  />
+                </svg>
+                Pay as you go pricing increased on 26 February 2020.
+                <a
+                  href="https://community.giffgaff.com/d/33064069-we-re-adding-more-to-some-goodybags-in-february"
+                  class="gg-u-link gg-u-link--arrow"
+                  target="_blank"
+                  style="display: inline-block;"
+                  >Learn more</a
+                >
+              </p> -->
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="gg-o-page-section">
+            <h2 class="gg-u-text-louder">Important notes</h2>
+            <ul class="gg-c-list gg-u-mt-small">
+              <li class="gg-c-list__item">
+                Information last updated 1 June 2020.
+              </li>
+              <li class="gg-c-list__item">
+                Information not guaranteed to be accurate. For up-to-date pricing info, please see
+                <a href="https://giffgaff.com/pricing" target="_blank" rel="noreferrer" class="gg-u-link">giffgaff's UK pricing page</a>
+                and
+                <a href="https://giffgaff.com/pricing" target="_blank" rel="noreferrer" class="gg-u-link">international calling page</a>.
+              </li>
+              <li class="gg-c-list__item">
+                Isle of Man, Jersey, Guernsey and other non-UK regions with UK-style phone numbers may have separate international calling
+                charges.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <gg-footer></gg-footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAT0fbey8ETQULa-SSIyBEfsVmIjtToh48',
+        authDomain: 'gg-help.firebaseapp.com',
+        databaseURL: 'https://gg-help.firebaseio.com',
+        projectId: 'gg-help',
+        storageBucket: 'gg-help.appspot.com',
+        messagingSenderId: '441453803789',
+        appId: '1:441453803789:web:c6e2cd6b1a07c3c6999844',
+        measurementId: 'G-0TVVBKR3LE',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>

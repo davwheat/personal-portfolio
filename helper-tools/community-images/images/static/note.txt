@@ -1,0 +1,1 @@
+"lost-sim-envelope.png" AND "start-goodybag-early.png" MUST remain for backwards compatibility

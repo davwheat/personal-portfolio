@@ -1,0 +1,311 @@
+@import (inline) 'style-guide.new.css';
+@import (inline) 'fonts/fonts.css';
+
+//#region optional scrollbar code
+
+// replaces scrollbar to make iphone 5
+// viewport on desktop not overflow horizontally
+
+@import (inline) 'OverlayScrollbars.min.css';
+
+.os-content {
+  border: none !important;
+}
+
+//#endregion
+
+.gg-c-masthead__text {
+  @media (min-width: 992px) {
+    padding: 0 !important;
+  }
+}
+
+html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+
+  overflow-y: auto;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  > div {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    > main {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      > .gg-u-digital-noise-chunky {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.gg-c-website-header {
+  background-color: #000;
+
+  &__bar {
+    max-width: 1140px;
+    margin-left: 8px;
+    margin-right: 8px;
+    display: flex;
+    height: 56px;
+
+    @media (min-width: 360px) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+    @media (min-width: 768px) {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+    @media (min-width: 992px) {
+      margin-left: 48px;
+      margin-right: 48px;
+    }
+    @media (min-width: 1236px) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 1140px;
+    }
+  }
+
+  &__logo {
+    height: 56px;
+    margin-right: auto;
+  }
+}
+
+.gg-o-page-section {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:not(.gg-c-modal__main-title) {
+      margin-bottom: 0.25em;
+    }
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}
+
+footer {
+  p {
+    padding: 0;
+  }
+
+  .gg-c-social-links {
+    // right align social links
+    margin-left: auto;
+
+    @media (max-width: 720px) {
+      // ...except when grid stops, then centre align
+      margin: auto;
+    }
+  }
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.activation-form--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .activation-form {
+    position: relative;
+
+    padding: 24px;
+    max-width: 512px;
+
+    .woohoo-message {
+      z-index: 10000;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(245, 245, 245, 0.85);
+      padding: 16px 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 150ms ease-out;
+
+      &.hidden {
+        display: block !important;
+        visibility: hidden;
+        opacity: 0 !important;
+      }
+
+      img,
+      svg {
+        fill: var(--dark-green);
+        flex: 1;
+        max-height: 225px;
+      }
+
+      max-height: 100%;
+      color: var(--dark-green);
+      text-align: center;
+    }
+
+    > .repeat-code-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: -24px;
+      margin-right: -24px;
+      margin-top: -24px;
+      padding: 24px;
+
+      span {
+        color: var(--dark-green);
+      }
+
+      svg {
+        fill: var(--dark-green);
+        height: 1em;
+        vertical-align: middle;
+        padding-left: 4px;
+      }
+    }
+
+    @media (min-width: 720px) {
+      max-width: 960px;
+    }
+
+    .gg-u-link {
+      margin-top: 16px;
+    }
+
+    .gg-c-modal {
+      img {
+        display: block;
+        width: 60%;
+        margin: auto;
+      }
+    }
+
+    .gg-c-input-with-button {
+      flex-wrap: wrap;
+
+      &__btn {
+        svg {
+          fill: #fff;
+          width: 24px;
+          height: 24px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .gg-u-grid > * {
+      padding: 24px;
+    }
+  }
+}
+
+#email-confirmation-msg {
+  padding: 16px;
+  margin-bottom: 16px;
+
+  p:first-child {
+    margin-bottom: 0;
+  }
+
+  #email-confirm {
+    word-break: break-all;
+  }
+}
+
+label[for='currentPwd'] {
+  // even up login form due to extra padding from register email error message
+  margin-top: var(--fine);
+}
+
+#goodybags {
+  padding: 24px;
+
+  #goodybag-buttons {
+    --column-count: 2;
+
+    @media (min-width: 720px) {
+      --column-count: 3;
+    }
+
+    ol li {
+      input {
+        + label {
+          .gg-c-chunky-buttons__icon {
+            height: 96px;
+            width: 96px;
+            margin-bottom: 12px;
+
+            @media (min-width: 720px) {
+              height: 112px;
+              width: 112px;
+            }
+
+            @media (min-width: 992px) {
+              height: 144px;
+              width: 144px;
+            }
+          }
+
+          .goodybag--allowance {
+            display: block;
+
+            .goodybag--inline_icon {
+              height: 1.25em;
+              vertical-align: middle;
+              display: inline-block;
+              margin-bottom: 3px;
+            }
+
+            .goodybag--allowance_value {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.goodybag--disclaimer {
+  margin-top: 1rem;
+}

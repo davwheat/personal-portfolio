@@ -1,0 +1,31 @@
+{
+  "categoryName": "My account",
+  "articleList": [
+    { "title": "I forgot my password or membername. What can I do?", "url": "forgot-my-password", "visible": true },
+    { "title": "How do I download a VAT receipt?", "url": "download-a-vat-receipt", "visible": true },
+    { "title": "Can I get an itemised bill?", "url": "can-i-get-an-itemised-bill", "visible": true },
+    { "title": "Why can't I call giffgaff to talk to someone?", "url": "can-i-call-giffgaff", "visible": true },
+    {
+      "title": "How do I cancel the account of someone who passed away?",
+      "url": "cancel-the-account-of-someone-who-passed-away",
+      "visible": true
+    },
+    { "title": "I’m having problems with my 2-step verification code", "url": "problems-2-step-verification-code", "visible": true },
+    { "title": "How do I cancel my giffgaff account?", "url": "how-do-i-cancel-my-giffgaff-account", "visible": true },
+    { "title": "How do I turn off the adult content block?", "url": "how-do-i-turn-off-the-adult-content-block", "visible": true },
+    {
+      "title": "Why have I been charged for giffgaff-to-giffgaff calls or texts?",
+      "url": "charged-for-giffgaff-to-giffgaff-calls-or-texts",
+      "visible": true
+    },
+    { "title": "Does giffgaff have an app?", "url": "does-giffgaff-have-an-app", "visible": true },
+    { "title": "How do I update my personal details?", "url": "update-my-personal-details", "visible": true },
+    {
+      "title": "Can I lift the adult content bar without either a passport or British driving licence?",
+      "url": "can-i-lift-the-adult-content-bar-without-either-a-passport-or-british-driving-licence",
+      "visible": true
+    },
+    { "title": "When should I contact an agent?", "url": "when-should-i-contact-an-agent", "visible": true },
+    { "title": "I'm not sure why I received a verification code ", "url": "request-verification-code-text-email", "visible": true }
+  ]
+}

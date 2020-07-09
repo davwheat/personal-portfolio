@@ -1,0 +1,16 @@
+[
+  { "id": 3, "name": "SIM and number", "description": "", "catOrder": 0, "catUrl": "SIM-and-number" },
+  { "id": 4, "name": "Phones", "description": "", "catOrder": 0, "catUrl": "phones" },
+  { "id": 7, "name": "goodybags and credit", "description": "", "catOrder": 0, "catUrl": "goodybags-and-credit" },
+  { "id": 8, "name": "Guides", "description": "", "catOrder": 0, "catUrl": "guidelines" },
+  {
+    "id": 1,
+    "name": "Network and service",
+    "description": "Fixing problems with signal and settings",
+    "catOrder": 1,
+    "catUrl": "network-and-service"
+  },
+  { "id": 2, "name": "My account", "description": "Solve issues with your account and usage", "catOrder": 2, "catUrl": "my-account" },
+  { "id": 5, "name": "International", "description": "", "catOrder": 6, "catUrl": "international" },
+  { "id": 6, "name": "Getting involved", "description": "", "catOrder": 7, "catUrl": "getting-involved" }
+]

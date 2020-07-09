@@ -1,0 +1,21 @@
+{
+  "communityUrlPrefix": "https://community.giffgaff.com/assets/files/",
+  "images": [
+    {
+      "name": "Lost SIM replacement envelope",
+      "description": "Image of the envelope which contains a replacement SIM after a member reports their phone or SIM as lost or stolen.",
+      "filename": "lost-sim-envelope/lost-sim-envelope",
+      "ext": ".png",
+      "communityUrl": "2020-07-08/1594223104-541542-lost-sim-envelope.png",
+      "version": 2
+    },
+    {
+      "name": "Start new goodybag early",
+      "description": "Screenshot showing the \"Start my next goodybag now\" button on a members' dashboard their data allowance drops below 100 MB.",
+      "filename": "start-goodybag-early/start-goodybag-early",
+      "ext": ".png",
+      "communityUrl": "2020-07-08/1594223121-623470-start-goodybag-early.png",
+      "version": 2
+    }
+  ]
+}

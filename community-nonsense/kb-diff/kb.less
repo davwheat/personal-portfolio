@@ -1,0 +1,91 @@
+.hidden,
+[hidden] {
+  display: none;
+}
+
+.gg-c-form__element-message.gg-c-form__helper-text {
+  visibility: visible;
+  opacity: 1;
+  margin: 4px 0;
+}
+
+#main-form {
+  @padding: 48px;
+
+  outline: 4px black solid;
+  padding: @padding;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 300px;
+  max-width: 720px + 2 * @padding;
+  margin: auto;
+
+  > section {
+    flex: 1;
+    max-width: 720px;
+
+    > button {
+      margin-top: 32px;
+    }
+
+    h2,
+    legend.gg-u-text-louder {
+      padding-bottom: 16px;
+    }
+
+    .faq {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      h3 {
+        padding-top: 16px;
+      }
+    }
+  }
+
+  #loading-message {
+    background-color: var(--wild-sand);
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity 250ms ease-out;
+    visibility: visible;
+    opacity: 1;
+
+    max-width: unset;
+
+    &.hidden,
+    &[hidden] {
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .gg-c-loading-icon {
+      // double sizing to match large text
+      height: 48px;
+      width: 48px;
+      border-width: 4px;
+    }
+
+    p {
+      margin-top: 24px;
+    }
+  }
+}

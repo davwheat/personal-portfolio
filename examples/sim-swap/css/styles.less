@@ -1,0 +1,412 @@
+@import (inline) 'style-guide.new.css';
+@import (inline) 'app-styles.css';
+@import (inline) 'fonts/fonts.css';
+
+html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#unofficial {
+  background: #00528a;
+  color: #fff;
+
+  > div {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+footer {
+  a {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+
+    picture.gg-b128-n256-r512 {
+      img {
+        max-width: 100%;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+main#main-content {
+  min-height: calc(100vh - 56px - 120px);
+
+  > div {
+    min-height: calc(100vh - 56px - 120px);
+  }
+}
+
+.gg-o-tiles--columns {
+  @media (min-width: 768px) {
+    flex-direction: row;
+    > li.gg-o-tiles__item {
+      flex-basis: 50%;
+    }
+  }
+}
+
+.gg-c-form__element--info .gg-c-form__element-message--info {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  max-height: 200px;
+  transition: all 0.25s ease-in-out 0.1s, opacity 0.125s ease-in-out 0.25s;
+}
+
+.warn-text {
+  color: var(--red);
+}
+
+.small-width {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .gg-o-page-section {
+    max-width: 680px;
+  }
+}
+
+.gg-o-page-section p:not(:last-child) {
+  padding-bottom: 16px;
+}
+
+.table_container {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  table {
+    border: 2px solid #000;
+    margin: auto;
+    margin-bottom: 16px;
+
+    th {
+      font-weight: bold;
+    }
+
+    td,
+    th {
+      padding: 4px 8px;
+    }
+
+    &#apn-settings {
+      td:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.side-nav-container {
+  @media (min-width: 1140px) {
+    display: flex;
+  }
+
+  .side-nav {
+    display: none;
+    overflow-y: auto;
+    max-height: calc(100vh - 72px - 32px);
+
+    @media (min-width: 1140px) {
+      display: block;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 280px;
+      align-self: flex-start;
+      padding-right: 48px;
+      margin-bottom: 24px;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 72px;
+    }
+  }
+
+  .gg-o-page-section {
+    max-width: 100%;
+  }
+
+  .gg-c-cards .gg-c-cards__item {
+    @media (max-width: 1140px) and (min-width: 992px) {
+      flex-basis: 50%;
+    }
+  }
+
+  article {
+    padding: 16px;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    -webkit-animation: fade-in 0.4s ease-in 0.15s both;
+    animation: fade-in 0.4s ease-in 0.15s both;
+    overflow: hidden;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      padding: 48px;
+    }
+    @media (min-width: 480px) {
+      padding: 24px;
+    }
+  }
+}
+
+.gg-u-digital-noise-chunky {
+  overflow: initial;
+}
+
+@media print {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  margin-left: 0;
+  margin-right: 0;
+
+  &:first {
+    margin-top: 0;
+  }
+}
+
+@page {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@page :first {
+  margin-top: 0;
+}
+
+#copy-container .button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 8px;
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.gg-o-page-section {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.75em;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.viewer-container {
+  display: flex;
+  flex-direction: column;
+
+  .viewer-main {
+    flex: 1;
+
+    > .gg-o-page-section {
+      display: flex;
+      flex-direction: column;
+
+      > fieldset {
+        margin-bottom: 16px;
+      }
+
+      #viewer-frame-container {
+        margin: 0 auto;
+        flex: 1;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-origin: center top;
+
+        &.mobile {
+          min-height: unset;
+
+          &[data-size='320x568'] {
+            // iphone 5
+            @w: 320px;
+            @h: 568px;
+
+            @px: 40px;
+            @py: 114px;
+
+            @px-offset: -1px;
+            @py-offset: -3px;
+
+            width: @w + 2 * @px;
+            height: @h + 2 * @py;
+            max-height: @h + 2 * @py;
+            min-height: @h + 2 * @py;
+            .viewer-frame-container2 {
+              background: url(/examples/sim-swap/img/Apple_iPhone_5s_Space_Grey.svg);
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-clip: border-box;
+
+              padding: @py - @py-offset @px - @px-offset;
+
+              #viewer-frame {
+                transform: translate(2px, 1px);
+                // border-radius: 4px;
+              }
+            }
+          }
+          &[data-size='375x667'] {
+            // iphone 6/7/8
+            @w: 375px;
+            @h: 667px;
+
+            @px: 40px;
+            @py: 114px;
+
+            @px-offset: -3px;
+            @py-offset: -5px;
+
+            width: @w + 2 * @px;
+            height: @h + 2 * @py;
+            max-height: @h + 2 * @py;
+            min-height: @h + 2 * @py;
+            .viewer-frame-container2 {
+              background: url(/examples/sim-swap/img/Apple_iPhone_8_Space_Grey.svg);
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-clip: border-box;
+
+              padding: @py - @py-offset @px - @px-offset;
+
+              #viewer-frame {
+                transform: translate(0, -12px);
+              }
+            }
+          }
+          &[data-size='375x812'] {
+            // iphone xs
+            @w: 375px;
+            @h: 812px;
+
+            @px: 64px;
+            @py: 55px;
+
+            @px-offset: 7px;
+            @py-offset: -1px;
+
+            width: @w + 2 * @px;
+            height: @h + 2 * @py;
+            max-height: @h + 2 * @py;
+            min-height: @h + 2 * @py;
+            .viewer-frame-container2 {
+              background: url('/examples/sim-swap/img/Apple_iPhone_XS_Space_Gray.svg');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-clip: border-box;
+
+              padding: @py - @py-offset @px - @px-offset;
+
+              #viewer-frame {
+                transform: translate(0px, 12px);
+                border-bottom-left-radius: 42px;
+                border-bottom-right-radius: 42px;
+              }
+            }
+          }
+          &[data-size='360x800'] {
+            // pixel 4
+            @w: 411px;
+            @h: 869px;
+
+            @px: 64px;
+            @py: 55px;
+
+            @px-offset: 0px;
+            @py-offset: 1px;
+
+            width: @w + 2 * @px;
+            height: @h + 2 * @py;
+            max-height: @h + 2 * @py;
+            min-height: @h + 2 * @py;
+            .viewer-frame-container2 {
+              background: url('/examples/sim-swap/img/Google_Pixel_4_Clearly_White.svg');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-clip: border-box;
+
+              padding: @py - @py-offset @px - @px-offset;
+
+              #viewer-frame {
+                transform: translate(-2px, 2px);
+                border-radius: 36px;
+              }
+            }
+          }
+
+          #viewer-frame {
+            background: black;
+          }
+        }
+
+        // largest mobile height
+        min-height: 812px;
+
+        .viewer-frame-container2 {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          #viewer-frame {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        + a[href] {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,252 @@
+html {
+  scroll-padding-top: 0;
+
+  @media (min-width: 992px) {
+    scroll-padding-top: 56px;
+  }
+}
+
+.gg-u-hr {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.gg-o-page-section p:not(:last-child) + hr {
+  margin-top: 0;
+}
+
+.realme--hero-image_container {
+  margin: auto;
+  display: block;
+
+  .realme--hero-image {
+    max-height: 420px;
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.gg-o-page-section {
+  h1,
+  h2,
+  h3,
+  ol,
+  ul {
+    + p,
+    &:not(ol):not(ul) + ol,
+    &:not(ol):not(ul) + ul {
+      margin-top: var(--tiny);
+    }
+  }
+
+  ol,
+  ul {
+    + h1,
+    + h2,
+    + h3 {
+      margin-top: 32px;
+    }
+  }
+}
+
+ol.gg-c-list-ordered,
+ul.gg-c-list {
+  ol.gg-c-list-ordered,
+  ul.gg-c-list {
+    margin-top: var(--tiny);
+  }
+}
+
+code {
+  display: block;
+  padding: 2px 6px !important;
+  font-family: 'Consolas', monospace;
+  width: max-content;
+  max-width: 100%;
+
+  .token.entity {
+    color: inherit;
+  }
+}
+
+li > pre:last-child {
+  margin-bottom: var(--small) !important;
+}
+
+.unknown-step > .unknown-step__message {
+  padding: var(--small);
+  margin-bottom: var(--small);
+  margin-top: var(--tiny);
+
+  background-color: rgba(0, 82, 138, 0.15);
+  border-top: solid var(--tiny) var(--dark-blue);
+
+  &.important {
+    background-color: rgba(214, 0, 0, 0.1);
+    border-top: solid var(--tiny) var(--red);
+  }
+}
+
+img.inline {
+  height: 1em;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+body[data-version='10'] {
+  [data-version='9'] {
+    display: none;
+  }
+
+  .gg-c-minor-alert[data-version-warning] {
+    display: none;
+  }
+}
+
+body[data-version='9'] {
+  [data-version='10'] {
+    display: none;
+  }
+
+  .gg-c-minor-alert[data-version-waring] {
+    display: none;
+  }
+}
+
+body:not([data-version='9']):not([data-version='10']) {
+  [data-version='9'] {
+    display: none;
+  }
+
+  .gg-c-minor-alert[data-version-message] {
+    display: none;
+  }
+}
+
+#contents {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999998;
+  padding-left: 48px;
+  padding-top: 72px;
+
+  overflow-y: auto;
+
+  @media (max-height: 720px) {
+    padding-top: 56px;
+  }
+
+  @media (max-height: 640px) {
+    padding-top: 32px;
+  }
+
+  transition: transform 250ms ease-out;
+
+  &.in {
+    transform: translateX(0%);
+
+    + #toggle-contents {
+      transform-origin: right 0;
+      transform: translateX(calc(-100vw + 31px)) rotate(90deg);
+      flex-direction: row-reverse;
+      border: none !important;
+
+      @media (min-width: 900px) {
+        transform: translateX(calc(-100vw + 100%));
+      }
+
+      svg {
+        @media (min-width: 900px) {
+          transform: rotate(180deg);
+          margin-left: 4px;
+          margin-right: 0;
+        }
+
+        transform: rotate(90deg);
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.out,
+  & {
+    transform: translateX(100%);
+  }
+}
+
+#toggle-contents {
+  position: fixed;
+  right: 0;
+  background: #000;
+  color: #fff;
+  z-index: 9999999;
+  display: flex;
+
+  transition: all 250ms ease-out;
+
+  top: 35%;
+
+  @media (max-height: 480px) {
+    top: 60%;
+  }
+
+  @media (max-height: 300px) {
+    top: 75%;
+  }
+
+  padding: 8px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  padding-right: 16px;
+  transform: rotate(90deg);
+  transform-origin: right 0;
+
+  border: 2px white solid;
+  border-top: none;
+
+  @media (min-width: 900px) {
+    padding: 8px;
+    padding-right: 16px;
+    flex-direction: row;
+    transform: none;
+    transform-origin: center center;
+
+    top: 25%;
+
+    border: 2px white solid;
+    border-right: none;
+  }
+
+  svg {
+    margin-right: 8px;
+    transform: rotate(-90deg);
+    transition: all 250ms ease-in-out;
+
+    @media (min-width: 900px) {
+      transform: unset;
+      margin-right: 4px;
+    }
+  }
+}
+
+.gg-c-modal__close-icon {
+  transform: scale(2);
+}
+
+.gg-c-modal__close-button--custom {
+  position: relative;
+  height: 48px;
+  width: auto;
+  top: unset;
+  right: unset;
+}
+
+@import (inline) './prism.css';

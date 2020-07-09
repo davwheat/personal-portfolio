@@ -1,0 +1,104 @@
+// MANUAL FIX FOR 50.7.0
+
+.gg-c-minor-alert__message {
+  display: block;
+}
+
+// -------------
+
+// GIFFGAFF SCROLLBARS
+
+textarea.gg-c-form__input {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #000;
+  }
+
+  padding: 6px 8px;
+}
+
+// -------------
+
+// FIX CB SHINE EFFECT
+
+.gg-c-checkbox__pseudo-checkbox {
+  &::before,
+  &::after {
+    z-index: 2;
+  }
+}
+
+.gg-c-checkbox__shine {
+  z-index: 1;
+}
+
+.gg-c-checkbox__checkbox:focus + .gg-c-checkbox__pseudo-checkbox:before {
+  outline: #35adce;
+  outline-offset: -2px;
+  outline-style: solid;
+}
+
+// -------------
+
+// FIX BREADCRUMBS ON BLACK
+
+.gg-t-black,
+.gg-c-masthead,
+.gg-c-masthead-minor {
+  .gg-c-breadcrumbs__link {
+    color: #35adce;
+  }
+}
+
+// -------------
+
+.gg-c-form__element--valid .gg-c-form__input {
+  padding-right: 40px;
+}
+
+.gg-c-form__element--valid:after {
+  content: '';
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  -webkit-animation: fade-in 0.5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.gg-c-form__element--valid .gg-c-form__sort-code .gg-c-form__input {
+  padding-right: 8px;
+}
+
+.gg-c-form__element--valid:after {
+  background-image: url(/img/svg/ggm--validation__valid.svg);
+}
+
+.gg-c-form__message--valid {
+  color: #007349;
+}
+
+.gg-c-form__element-message--valid {
+  color: #007349;
+}
+
+.gg-c-form--valid .gg-c-form__message--valid {
+  display: block;
+}
+
+.gg-c-form__element--valid .gg-c-form__element-message--valid {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  max-height: 200px;
+  transition: all 0.25s ease-in-out 0.1s, opacity 0.125s ease-in-out 0.25s;
+}

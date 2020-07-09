@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Helper tools | giffgaff unofficial</title>
+    <meta name="title" content="Helper tools | giffgaff unofficial" />
+    <meta name="description" content="A collection of handy tools for giffgaff community helpers." />
+    <link rel="canonical" href="https://giffgaff.davwheat.dev/helper-tools" />
+
+    <script src="/js/redirect-script.js" async></script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://giffgaff.davwheat.dev/helper-tools" />
+    <meta property="og:title" content="Helper tools | giffgaff unofficial" />
+    <meta property="og:description" content="A collection of handy tools for giffgaff community helpers." />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://giffgaff.davwheat.dev/helper-tools" />
+    <meta property="twitter:title" content="Helper tools | giffgaff unofficial" />
+    <meta property="twitter:description" content="A collection of handy tools for giffgaff community helpers." />
+
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/giffgaff-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://static.giffgaff.com/fonts/1.0.0/font.css" as="style" />
+
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js" as="script" />
+    <link rel="preload" href="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js" as="script" />
+    <link rel="preload" href="/helper-tools/js/html2canvas.min.js" as="script" />
+
+    <link rel="preload" href="/img/gg-img/aff-large.png" as="image" media="(min-width: 728px)" />
+    <link rel="preload" href="/img/gg-img/aff-med.png" as="image" media="(min-width: 550px and max-width: 727px)" />
+    <link rel="preload" href="/img/gg-img/aff-small.png" as="image" media="(max-width: 549px)" />
+
+    <link rel="preload" href="/img/design.png" as="image" media="(min-width: 992px)" />
+    <link rel="preload" href="/img/design_mobile.png" as="image" media="(max-width: 991px)" />
+    <link rel="preload" href="/img/design.webp" as="image" media="(min-width: 992px)" type="image/webp" />
+    <link rel="preload" href="/img/design_mobile.webp" as="image" media="(max-width: 991px)" type="image/webp" />
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch%2CPromise%2CNodeList.prototype.forEach%2CArray.prototype.forEach%2CObject.values%2CReflect%2CReflect.construct"></script>
+    <script src="/js/modernizr-custom.min.js"></script>
+    <script data-ad-client="ca-pub-2701335557132384" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/js/custom-components.min.js" async></script>
+
+    <link rel="stylesheet" href="/css/styles.min.css" />
+    <link rel="stylesheet" href="/helper-tools/styles.css" />
+
+    <script src="/helper-tools/js/html2canvas.min.js" async defer></script>
+  </head>
+  <body class="qa-page">
+    <gg-header></gg-header>
+
+    <main id="main-content">
+      <div class="gg-u-digital-noise-chunky gg-t-wild-sand">
+        <header class="gg-c-masthead gg-c-masthead--digital-noise">
+          <div class="gg-c-masthead__content">
+            <div class="gg-c-masthead__text">
+              <h1 class="gg-u-text-megaphone">
+                <mark class="gg-u-doodle-boing gg-u-doodle-boing--light-pink">Redesigned</mark>
+                pages
+              </h1>
+              <p class="gg-c-masthead__page-subtitle">
+                Check out some of my example redesigns for old pages on the giffgaff website.
+              </p>
+            </div>
+            <picture class="gg-c-masthead__picture" style="align-self: center;">
+              <source media="(min-width: 992px)" srcset="/img/design.webp" type="image/webp" />
+              <source media="(min-width: 992px)" srcset="/img/design.png" />
+              <source srcset="/img/design_mobile.webp" type="image/webp" />
+              <img style="height: auto;" src="/img/design_mobile.png" />
+            </picture>
+          </div>
+        </header>
+
+        <section class="gg-o-page-section">
+          <ul class="gg-o-tiles homepage-bits-and-bobs s-homepage-bits-and-bobs-tiles">
+            <li class="gg-o-tiles__item">
+              <a class="gg-o-tiles__tile homepage-bits-and-bobs__tile" href="/examples/sim-swap">
+                <h3 class="gg-u-text-loud">SIM swap and activation</h3>
+                <p>
+                  A fancy redesign of the SIM swap and onboarding flows, using giffgaff's new design system and community feedback to prevent
+                  accidental new account creation.
+                </p>
+                <p class="homepage-bits-and-bobs__link gg-u-link gg-u-link--arrow">
+                  Take a peek
+                </p>
+              </a>
+            </li>
+
+            <li class="gg-o-tiles__item">
+              <a class="gg-o-tiles__tile homepage-bits-and-bobs__tile" href="/examples/our-offer">
+                <h3 class="gg-u-text-loud">"Our offers"</h3>
+                <p>
+                  The page featuring the "brand new" iPhone 6S in 2020 was getting too old for me, so I had a go at a possible redesign showing
+                  off new devices.
+                </p>
+                <p class="homepage-bits-and-bobs__link gg-u-link gg-u-link--arrow">
+                  Take a peek
+                </p>
+              </a>
+            </li>
+
+            <li class="gg-o-tiles__item">
+              <a class="gg-o-tiles__tile homepage-bits-and-bobs__tile" href="/examples/html-emails">
+                <h3 class="gg-u-text-loud">Community emails</h3>
+                <p>
+                  The plain text emails from the community are getting on my nerves, so I made an example HTML email template for what emails
+                  could (should) look like in the future.
+                </p>
+                <p class="homepage-bits-and-bobs__link gg-u-link gg-u-link--arrow">
+                  Take a peek
+                </p>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <gg-footer></gg-footer>
+
+    <!-- Tools! -->
+    <script async defer src="/helper-tools/js/buttonGenerator.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAT0fbey8ETQULa-SSIyBEfsVmIjtToh48',
+        authDomain: 'gg-help.firebaseapp.com',
+        databaseURL: 'https://gg-help.firebaseio.com',
+        projectId: 'gg-help',
+        storageBucket: 'gg-help.appspot.com',
+        messagingSenderId: '441453803789',
+        appId: '1:441453803789:web:c6e2cd6b1a07c3c6999844',
+        measurementId: 'G-0TVVBKR3LE',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>

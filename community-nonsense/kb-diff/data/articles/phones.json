@@ -1,0 +1,31 @@
+{
+  "categoryName": "Phones",
+  "articleList": [
+    { "title": "I'm having problems with my monthly phone payment", "url": "monthly-phone-payment-problems", "visible": true },
+    { "title": "How can I track my phone delivery?", "url": "track-my-phone-delivery", "visible": true },
+    {
+      "title": "How do I lift the bar on my lost phone if I find it?",
+      "url": "how-do-i-lift-the-bar-on-my-lost-phone-if-i-find-it",
+      "visible": true
+    },
+    { "title": "How do I pay monthly for a phone with a loan?", "url": "pay-monthly-for-a-phone", "visible": true },
+    { "title": "Can I use a phone locked to O2 on the giffgaff network?", "url": "can-i-use-a-phone-locked-to-o2", "visible": true },
+    { "title": "Is my phone locked to another network?", "url": "is-my-phone-locked-to-another-network", "visible": true },
+    { "title": "How do I return a faulty phone or get it repaired?", "url": "return-or-repair-a-faulty-phone", "visible": true },
+    { "title": "How do I know if my phone is locked to another network?", "url": "know-if-my-phone-is-locked", "visible": true },
+    { "title": "How do I know if my phone has been barred?", "url": "how-do-i-know-if-my-phone-has-been-blacklisted", "visible": true },
+    { "title": "How do I sell my phone?", "url": "sell-my-phone", "visible": true },
+    { "title": "What’s a refurbished phone?", "url": "whats-a-refurbished-phone", "visible": true },
+    { "title": "What warranty does my phone come with?", "url": "warranty-my-phone-comes-with", "visible": true },
+    { "title": "How do I unlock my phone?", "url": "how-do-i-unlock-my-phone", "visible": true },
+    {
+      "title": "What happens if I send my phone to giffgaff for repair outside the warranty period?",
+      "url": "giffgaff-repairs-outside-the-warranty-period",
+      "visible": true
+    },
+    { "title": "I lost my phone. What should I do?", "url": "i-lost-my-phone-what-should-i-do", "visible": true },
+    { "title": "How do I return my phone if I change my mind?", "url": "return-my-phone-if-i-change-my-mind", "visible": true },
+    { "title": "Can you send me proof of phone usage for my insurer?", "url": "proof-of-phone-usage-for-my-insurer", "visible": true },
+    { "title": "How do I buy a phone?", "url": "how-do-i-buy-a-phone", "visible": true }
+  ]
+}

@@ -1,0 +1,32 @@
+#ug-button {
+  &-container {
+    padding: 48px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:focus,
+  *:focus {
+    outline: none;
+  }
+
+  &.generated {
+    span {
+      padding-bottom: 4px;
+    }
+  }
+
+  &--preview {
+    cursor: pointer;
+  }
+
+  span {
+    &::before,
+    &::after {
+      display: none !important;
+    }
+
+    transform: none !important;
+  }
+}

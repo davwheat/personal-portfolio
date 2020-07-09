@@ -1,0 +1,34 @@
+{
+  "categoryName": "Guides",
+  "articleList": [
+    { "title": "What’s giffgaff doing about coronavirus (Covid-19)", "url": "whats-giffgaff-doing-about-coronavirus-covid-19", "visible": true },
+    { "title": "Policy to manage illegitimate SMS usage", "url": "illegitimate-sms-usage-policy", "visible": true },
+    { "title": "Special Charges Code of Practice", "url": "special-charges-code-of-practice", "visible": true },
+    {
+      "title": "Returning your phone within 21 days of receipt - Changing your mind",
+      "url": "changing-your-mind-and-returning-your-phone",
+      "visible": true
+    },
+    { "title": "giffgaff Traffic Management Key Facts Indicator", "url": "traffic-management-key-facts-indicator", "visible": true },
+    { "title": "Traffic Flow Policy", "url": "traffic-flow-policy", "visible": true },
+    {
+      "title": "Returning a faulty handset for repair after 30 days of receipt",
+      "url": "returning-a-faulty-handset-for-repair-after-thirty-days",
+      "visible": true
+    },
+    { "title": "Tethering policy", "url": "tethering-policy", "visible": true },
+    {
+      "title": "How to return a faulty phone within the first 30 days of receipt",
+      "url": "returning-a-faulty-handset-for-repair-before-thirty-days",
+      "visible": true
+    },
+    { "title": "giffgaff Handset Warranties", "url": "giffgaff-handset-warranties", "visible": true },
+    { "title": "Using your mobile abroad", "url": "usingyourmobileabroad", "visible": true },
+    {
+      "title": "Inclusive and non-inclusive calls, texts and services",
+      "url": "inclusive-and-non-inclusive-calls-texts-and-services",
+      "visible": true
+    },
+    { "title": "Becoming a beta app tester", "url": "becoming-a-beta-app-tester", "visible": true }
+  ]
+}
