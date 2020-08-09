@@ -11,13 +11,34 @@
   font-weight: 700;
   text-decoration: none;
 
-  transform-origin: 50%;
-  transition: transform 0.2s ease-out;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 25%;
+    height: 2px;
+
+    background-color: var(--primary-red);
+
+    margin-left: -2px;
+    margin-right: -2px;
+
+    transform: scaleX(0);
+    transition: transform 0.2s ease-out;
+  }
 
   &:hover,
   &:focus,
   &:active {
-    transform: scale(1.15);
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }
 
