@@ -2,9 +2,9 @@ const Colors = require('./src/data/colors.json')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `David Wheatley`,
+    description: `David Wheatley is an front-end web designed specialising in React, located in West Sussex, UK.`,
+    author: `@davwheat`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
