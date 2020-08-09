@@ -1,0 +1,81 @@
+.hero {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+.heroInner {
+  max-width: 768px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  width: 100vw;
+}
+.heroInner p,
+.heroInner h1,
+.heroInner h2,
+.heroInner h3,
+.heroInner h4,
+.heroInner h5,
+.heroInner h6 {
+  margin-bottom: 0.1em;
+}
+.heroInner p:last-child,
+.heroInner h1:last-child,
+.heroInner h2:last-child,
+.heroInner h3:last-child,
+.heroInner h4:last-child,
+.heroInner h5:last-child,
+.heroInner h6:last-child {
+  margin: 0;
+}
+.firstElement {
+  /* To override the header bottom margin */
+  margin-top: -24px;
+}
+/* SIZES */
+.heroSmall .heroInner {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .heroSmall .heroInner {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+.heroNormal .heroInner {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .heroNormal .heroInner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+.heroLarge .heroInner {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+@media (min-width: 768px) {
+  .heroLarge .heroInner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+.heroHuge .heroInner {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+@media (min-width: 768px) {
+  .heroHuge .heroInner {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}

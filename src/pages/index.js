@@ -1,21 +1,24 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import Layout from '../components/Templates/Layout/layout'
+import Hero from '../components/Design/Hero'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Colors from '../data/colors.json'
+import Section from '../components/Design/Section'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+  <Layout title="Home">
+    <Hero firstElement size="huge" color={Colors.primaryBlue}>
+      <h1 className="text-loud">David Wheatley</h1>
+      <h2 className="text-louder">A front-end web developer from West Sussex, UK</h2>
+    </Hero>
+    <Section>
+      <p className="text-speak-up">Hello!</p>
+      <p className="text-speak">Usually, people's portfolio websites are super fancy, well-crafted, but also bloated and heavy. Not mine. This site is statically generated into simple HTML, CSS and JavaScript (aka it's fast).</p>
+      <p className="text-speak">
+        I prefer <strong>simple websites</strong>. Websites which are responsive and perform well on all devices, no matter how old and slow.
+        Websites are for everyone, so everyone should be able to use them.
+      </p>
+    </Section>
   </Layout>
 )
 

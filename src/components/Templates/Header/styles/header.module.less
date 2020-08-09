@@ -1,0 +1,50 @@
+.header {
+  background: #000;
+  color: #fff;
+  height: 56px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 24px;
+}
+
+.name {
+  line-height: 56px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transform-origin: 50%;
+  transition: transform 0.2s ease-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.15);
+  }
+}
+
+.headerInnerContainer {
+  max-width: 768px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+}
+
+.nav {
+  margin-left: auto;
+  line-height: 56px;
+
+  a:any-link {
+    text-decoration: none;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 56px;
+    display: inline-block;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}
