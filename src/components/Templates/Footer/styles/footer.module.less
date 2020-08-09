@@ -23,6 +23,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: -8px;
 
   a {
     padding: 8px 16px;
@@ -30,12 +31,17 @@
     display: inline-block;
 
     border-right: 1px #ccc solid;
+    border-left: 1px solid #ccc;
+
+    margin-bottom: 8px;
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    font-weight: 400;
 
     transition: all 0.2s ease-out;
-
-    &:first-child {
-      border-left: 1px solid #ccc;
-    }
 
     &:hover,
     &:focus,
