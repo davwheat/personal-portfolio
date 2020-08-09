@@ -12,7 +12,7 @@ const IndexPage = () => (
       <h2 className="text-louder">A front-end web developer from West Sussex, UK</h2>
     </Hero>
     <Section>
-      <p className="text-speak-up">Hello!</p>
+      <p className="text-loud">Hello!</p>
       <p className="text-speak">Usually, people's portfolio websites are super fancy, well-crafted, but also bloated and heavy. Not mine. This site is statically generated into simple HTML, CSS and JavaScript (aka it's fast).</p>
       <p className="text-speak">
         I prefer <strong>simple websites</strong>. Websites which are responsive and perform well on all devices, no matter how old and slow.
