@@ -8,7 +8,7 @@ import clsx from 'clsx'
 
 export default function Link({ href, children, className, ...props }) {
   return (
-    <GatsbyLink to={href} className={clsx(styles.link, className)}>
+    <GatsbyLink to={href} className={clsx(styles.link, className)} {...props}>
       {children}
     </GatsbyLink>
   )
