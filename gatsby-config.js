@@ -17,7 +17,7 @@ module.exports = {
         background_color: Colors.primaryRed,
         theme_color: Colors.primaryRed,
         display: `minimal-ui`,
-        icon: `src/images/thinking-emoji.png`, // This path is relative to the root of the site.
+        icon: `src/images/thinking_emoji.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
