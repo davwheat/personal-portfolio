@@ -18,9 +18,9 @@
   font-weight: 700;
 }
 .text-loud {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 28px;
 }
 @media screen and (min-width: 768px) {
   .text-loud {
@@ -29,9 +29,9 @@
   }
 }
 .text-louder {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
-  line-height: 32px;
+  line-height: 36px;
 }
 @media screen and (min-width: 768px) {
   .text-louder {
