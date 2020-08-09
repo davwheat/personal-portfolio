@@ -19,7 +19,7 @@ export default function Footer() {
           <Link href="/">Home</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/my-work">Portfolio</Link>
-          <a href="https//github.com/davwheat" rel="noopener noreferrer">
+          <a href="https://github.com/davwheat" rel="noopener noreferrer">
             My GitHub
           </a>
         </nav>
