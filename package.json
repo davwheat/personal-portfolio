@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "David Wheatley <hi@davwheat.dev>",
   "dependencies": {
+    "animate.css": "^4.1.0",
     "clsx": "^1.1.1",
     "firebase": "^7.17.1",
     "gatsby": "^2.24.23",

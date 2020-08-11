@@ -1,0 +1,153 @@
+.fullWidth {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  margin-top: 48px;
+}
+
+.container {
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 639px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 399px) {
+    grid-template-columns: 1fr;
+  }
+
+  .spacer {
+    height: 100px;
+    display: none;
+    visibility: hidden;
+
+    @media (min-width: 400px) and (max-width: 640px) {
+      display: block;
+      grid-column: 2;
+      grid-row: 1 / span 1;
+    }
+  }
+}
+
+.tech {
+  max-width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  margin-bottom: 48px;
+
+  @media (min-width: 768px) {
+    grid-row: span 2;
+
+    &:nth-child(4n - 3) {
+      grid-column: 1;
+    }
+
+    &:nth-child(4n - 2) {
+      grid-column: 3;
+    }
+
+    &:nth-child(4n - 1) {
+      grid-column: 2;
+    }
+
+    &:nth-child(4n) {
+      grid-column: 4;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 767px) {
+    grid-row: span 2;
+
+    &:nth-last-child(2),
+    &:nth-last-child(3) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(3n - 2) {
+      grid-column: 1;
+    }
+
+    &:nth-child(3n - 1) {
+      grid-column: 3;
+    }
+
+    &:nth-child(3n) {
+      grid-column: 2;
+    }
+  }
+
+  @media (min-width: 400px) and (max-width: 639px) {
+    grid-row: span 2;
+
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(2n - 1) {
+      grid-column: 1;
+    }
+
+    &:nth-child(2n) {
+      grid-column: 2;
+    }
+  }
+
+  @media (max-width: 399px) {
+    max-width: unset;
+    margin-bottom: 24px;
+
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bubble {
+  filter: drop-shadow(0 0 8px var(--neutral-grey));
+  width: 100%;
+}
+
+.bar {
+  height: 8px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  background-color: var(--neutral-grey);
+
+  margin-bottom: 22px;
+  margin-top: -2px;
+
+  &::after {
+    display: block;
+    padding-top: 8px;
+    content: attr(data-value);
+
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 20px;
+  }
+
+  .barInner {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: var(--primary-red);
+  }
+}

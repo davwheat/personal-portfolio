@@ -9,6 +9,8 @@ import SEO from '../../seo'
 import './styles/layout.css'
 import styles from './styles/layout.module.css'
 
+import 'animate.css/animate.min.css'
+
 const Layout = ({ children, title }) => {
   return (
     <>
