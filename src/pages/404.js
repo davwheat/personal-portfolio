@@ -9,7 +9,7 @@ import Link from '../components/Links/Link'
 
 const Links = [
   { text: 'Home Page', url: '/' },
-  { text: 'Blog', url: '/blog' },
+  // { text: 'Blog', url: '/blog' },
 ]
 
 const NotFoundPage = () => (
@@ -26,10 +26,8 @@ const NotFoundPage = () => (
       <nav>
         <ul className="list">
           {Links.map(link => (
-            <li>
-              <Link to={link.url} key={link.url}>
-                {link.text}
-              </Link>
+            <li key={`${link.url}--${link.text}`}>
+              <Link to={link.url}>{link.text}</Link>
             </li>
           ))}
         </ul>

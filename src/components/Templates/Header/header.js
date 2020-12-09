@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
         David Wheatley
       </Link>
       <nav className={styles.nav}>
-        <Link href="/blog">Blog</Link>
+        <Link href="/">Home</Link>
       </nav>
     </div>
   </header>

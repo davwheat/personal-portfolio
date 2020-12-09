@@ -17,8 +17,8 @@ export default function Footer() {
         </section>
         <nav className={styles.nav}>
           <Link href="/">Home</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/my-work">Portfolio</Link>
+          {/* <Link href="/blog">Blog</Link> */}
+          {/* <Link href="/my-work">Portfolio</Link> */}
           <a href="https://github.com/davwheat" rel="noopener noreferrer">
             My GitHub
           </a>

@@ -8,6 +8,9 @@ import PHPLogo from '../../images/tech/php.svg'
 
 import styles from './styles/Tech.module.css'
 
+
+import createId from "react-id-generator";
+
 export default function Tech() {
   return (
     <div className={styles.fullWidth}>
@@ -24,15 +27,19 @@ export default function Tech() {
 }
 
 function TechItem({ src, name, proficiency, from }) {
+  const headingId = createId("tech-item--desc");
+
   return (
     <div className={styles.tech}>
-      <img src={src} draggable={false} className={styles.bubble} />
-      <h1 className="text-loud">{name}</h1>
+      <img alt={name + ' logo'} src={src} draggable={false} className={styles.bubble} />
+      <h1 id={headingId} className="text-loud">{name}</h1>
       <div
-        role="meter"
+        role="slider"
+        aria-readonly="true"
         aria-valuemin="0"
-        aria-valuemin="5"
+        aria-valuemax="5"
         aria-valuenow={proficiency}
+        aria-labelledby={headingId}
         className={styles.bar}
         data-value={proficiency + ' of 5'}
       >
