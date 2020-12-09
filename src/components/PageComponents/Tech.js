@@ -26,13 +26,15 @@ export default function Tech() {
 function TechItem({ src, name, proficiency, from }) {
   return (
     <div className={styles.tech}>
-      <img src={src} draggable={false} className={styles.bubble} />
+      <img alt={name + ' logo'} src={src} draggable={false} className={styles.bubble} />
       <h1 className="text-loud">{name}</h1>
       <div
-        role="meter"
+        role="slider"
+        aria-readonly="true"
         aria-valuemin="0"
-        aria-valuemin="5"
+        aria-valuemax="5"
         aria-valuenow={proficiency}
+        aria-meter-name={name + ' meter'}
         className={styles.bar}
         data-value={proficiency + ' of 5'}
       >
