@@ -6,17 +6,27 @@ import Footer from '../Footer'
 
 import SEO from '../../seo'
 
-import './styles/layout.css'
-import styles from './styles/layout.module.css'
+import { makeStyles } from '@material-ui/styles'
 
-import 'animate.css/animate.min.css'
+const useStyles = makeStyles({
+  mainContent: {
+    maxWidth: 768,
+    margin: 'auto',
+    paddingLeft: 24,
+    paddingRight: 24,
+    flex: '1',
+    width: '100%',
+  },
+})
 
 const Layout = ({ children, title }) => {
+  const classes = useStyles()
+
   return (
     <>
       <SEO title={title} />
       <Header />
-      <main className={styles.mainContent}>{children}</main>
+      <main className={classes.mainContent}>{children}</main>
       <Footer />
     </>
   )
