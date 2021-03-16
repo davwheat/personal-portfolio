@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './styles/footer.module.css'
+import * as styles from './styles/footer.module.css'
 import Link from '../../Links/Link'
 
 export default function Footer() {

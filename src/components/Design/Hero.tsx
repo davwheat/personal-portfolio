@@ -92,7 +92,7 @@ const Hero: React.FC<Props> = ({ children, color = '#000', size = 'normal', firs
         [size === 'small' && classes.heroSmall],
         [size === 'normal' && classes.heroNormal],
         [size === 'large' && classes.heroLarge],
-        [size === 'huge' && classes.heroHuge]
+        [size === 'huge' && classes.heroHuge],
       )}
       style={{ backgroundColor: color, color: bestContrast(color, ['#000', '#fff']) }}
     >

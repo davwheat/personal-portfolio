@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link as GatsbyLink } from 'gatsby'
 
-import styles from './styles/link.module.css'
+import * as styles from './styles/link.module.css'
 
 import clsx from 'clsx'
 

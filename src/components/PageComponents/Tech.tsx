@@ -5,10 +5,9 @@ import ReactLogo from '../../images/tech/react.svg'
 import GatsbyLogo from '../../images/tech/gatsby.svg'
 import FlarumLogo from '../../images/tech/flarum.svg'
 
-import Breakpoints from '../../data/breakpoints'
-
 import { makeStyles } from '@material-ui/styles'
 import TechItem from './TechItem'
+import Breakpoints from '../../data/breakpoints'
 
 const useStyles = makeStyles({
   fullWidth: {
@@ -21,19 +20,17 @@ const useStyles = makeStyles({
   container: {
     maxWidth: 960,
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
     margin: 'auto',
-    gap: 16,
-    paddingLeft: 16,
-    paddingRight: 16,
-    [Breakpoints.between.tablet.and.desktopSmall]: {
-      gridTemplateColumns: '1fr 1fr 1fr',
+    gap: 48,
+    paddingLeft: 32,
+    paddingRight: 32,
+    justifyContent: 'center',
+    [Breakpoints.upTo.desktopSmall]: {
+      gap: 40,
     },
-    [Breakpoints.between.phone.and.tablet]: {
-      gridTemplateColumns: '1fr 1fr',
-    },
-    [Breakpoints.upTo.phone]: {
-      gridTemplateColumns: '1fr',
+    [Breakpoints.upTo.tablet]: {
+      gap: 32,
     },
   },
 })

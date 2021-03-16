@@ -3,7 +3,7 @@ import React from 'react'
 
 import Link from '../../Links/Link'
 
-import styles from './styles/header.module.css'
+import * as styles from './styles/header.module.css'
 
 const Header = ({ siteTitle }) => (
   <header className={styles.header}>

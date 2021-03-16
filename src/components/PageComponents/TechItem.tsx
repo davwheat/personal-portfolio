@@ -22,19 +22,31 @@ interface TechItemProps {
 
 const useStyles = makeStyles({
   tech: {
-    maxWidth: 145,
+    width: '100%',
     margin: 'auto',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
+    maxWidth: 200,
+    [Breakpoints.upTo.phone]: {
+      maxWidth: 160,
+    },
   },
   bubble: {
     filter: 'drop-shadow(0 0 8px var(--neutral-grey))',
     width: '100%',
   },
-  techHeading: { paddingTop: 8 },
-  centreText: { flexGrow: 1, display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center' },
+  techHeading: {
+    paddingTop: 8,
+  },
+  centreText: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
 })
 
 const TechItem: React.FC<TechItemProps> = ({ src, name, from }) => {

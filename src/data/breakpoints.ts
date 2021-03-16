@@ -54,7 +54,7 @@ const Breakpoints: Breakpoints = {
       ...prev,
       [val]: mediaUpTo(pixelValues[val]),
     }),
-    {}
+    {},
   ),
 
   downTo: Object.keys(pixelValues).reduce(
@@ -62,7 +62,7 @@ const Breakpoints: Breakpoints = {
       ...prev,
       [val]: mediaDownTo(pixelValues[val]),
     }),
-    {}
+    {},
   ),
 
   between: Object.keys(pixelValues).reduce(
@@ -78,12 +78,12 @@ const Breakpoints: Breakpoints = {
                     [val2]: mediaBetween(pixelValues[val1], pixelValues[val2]),
                   }
                 : prev,
-            {}
+            {},
           ),
         },
       },
     }),
-    {}
+    {},
   ),
 } as const
 

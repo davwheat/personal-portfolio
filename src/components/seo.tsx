@@ -33,7 +33,7 @@ const SEO: React.FC<Props> = ({ description, meta, title }) => {
           }
         }
       }
-    `
+    `,
   )
 
   const metaDescription = description || site.siteMetadata.description
