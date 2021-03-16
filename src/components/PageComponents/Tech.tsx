@@ -3,6 +3,7 @@ import React from 'react'
 import HTMLLogo from '../../images/tech/html5.svg'
 import ReactLogo from '../../images/tech/react.svg'
 import GatsbyLogo from '../../images/tech/gatsby.svg'
+import FlarumLogo from '../../images/tech/flarum.svg'
 
 import Breakpoints from '../../data/breakpoints'
 
@@ -58,7 +59,12 @@ const tech = [
     icon: ReactLogo,
     from: 2020,
   },
-]
+  {
+    name: 'Flarum',
+    icon: FlarumLogo,
+    from: 2020,
+  },
+].sort((a, b) => a.from - b.from)
 
 const Tech: React.FC = () => {
   const classes = useStyles()
