@@ -1,10 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import Header from '../Header/header'
-import Footer from '../Footer'
-
-import SEO from '../../seo'
+import Header from './Header'
+import Footer from './Footer'
+import SEO from './SEO'
 
 import { makeStyles } from '@material-ui/styles'
 
@@ -19,7 +17,11 @@ const useStyles = makeStyles({
   },
 })
 
-const Layout = ({ children, title }) => {
+interface Props {
+  title: string
+}
+
+const Layout: React.FC<Props> = ({ children, title }) => {
   const classes = useStyles()
 
   return (
@@ -30,10 +32,6 @@ const Layout = ({ children, title }) => {
       <Footer />
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

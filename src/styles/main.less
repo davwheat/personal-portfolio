@@ -11,6 +11,8 @@
 
 @import './typography.less';
 
+@import './table.less';
+
 ul,
 ol {
   list-style-type: square;
@@ -20,4 +22,13 @@ ol {
   &:not(.list) {
     list-style: none;
   }
+}
+
+sup {
+  .text-whisper();
+  vertical-align: super;
+}
+
+abbr {
+  text-underline-offset: 2px;
 }

@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     '& $heroInner': {
       paddingTop: 16,
       paddingBottom: 16,
-      ['@media (min-width: 768px)']: {
+      '@media (min-width: 768px)': {
         paddingTop: 24,
         paddingBottom: 24,
       },
@@ -46,7 +46,7 @@ const useStyles = makeStyles({
     '& $heroInner': {
       paddingTop: 24,
       paddingBottom: 24,
-      ['@media (min-width: 768px)']: {
+      '@media (min-width: 768px)': {
         paddingTop: 48,
         paddingBottom: 48,
       },
@@ -56,7 +56,7 @@ const useStyles = makeStyles({
     '& $heroInner': {
       paddingTop: 36,
       paddingBottom: 36,
-      ['@media (min-width: 768px)']: {
+      '@media (min-width: 768px)': {
         paddingTop: 56,
         paddingBottom: 56,
       },
@@ -66,7 +66,7 @@ const useStyles = makeStyles({
     '& $heroInner': {
       paddingTop: 48,
       paddingBottom: 48,
-      ['@media (min-width: 768px)']: {
+      '@media (min-width: 768px)': {
         paddingTop: 72,
         paddingBottom: 72,
       },
@@ -75,7 +75,6 @@ const useStyles = makeStyles({
 })
 
 interface Props {
-  children: JSX.Element
   color?: string
   size?: 'small' | 'normal' | 'large' | 'huge'
   firstElement?: boolean

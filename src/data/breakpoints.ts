@@ -47,7 +47,6 @@ interface Breakpoints {
   }
 }
 
-// @ts-ignore
 const Breakpoints: Breakpoints = {
   upTo: Object.keys(pixelValues).reduce(
     (prev, val) => ({
@@ -71,13 +70,13 @@ const Breakpoints: Breakpoints = {
       [val1]: {
         and: {
           ...Object.keys(pixelValues).reduce(
-            (prev, val2) =>
+            (prev2, val2) =>
               val1 !== val2
                 ? {
-                    ...prev,
+                    ...prev2,
                     [val2]: mediaBetween(pixelValues[val1], pixelValues[val2]),
                   }
-                : prev,
+                : prev2,
             {},
           ),
         },
@@ -85,6 +84,6 @@ const Breakpoints: Breakpoints = {
     }),
     {},
   ),
-} as const
+} as Breakpoints
 
 export default Breakpoints

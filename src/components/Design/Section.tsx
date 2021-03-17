@@ -26,7 +26,11 @@ const useStyles = makeStyles({
   },
 })
 
-export default function Section({ children, usePadding, ...props }) {
+interface Props {
+  usePadding?: boolean
+}
+
+const Section: React.FC<Props> = ({ children, usePadding, ...props }) => {
   const classes = useStyles()
 
   return (
@@ -35,3 +39,5 @@ export default function Section({ children, usePadding, ...props }) {
     </section>
   )
 }
+
+export default Section

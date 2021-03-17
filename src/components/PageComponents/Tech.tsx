@@ -15,7 +15,14 @@ const useStyles = makeStyles({
     position: 'relative',
     marginLeft: '-50vw',
     left: '50%',
-    marginTop: 48,
+
+    marginTop: 64,
+    [Breakpoints.upTo.desktopSmall]: {
+      marginTop: 48,
+    },
+    [Breakpoints.upTo.tablet]: {
+      marginTop: 36,
+    },
   },
   container: {
     maxWidth: 960,
@@ -31,6 +38,9 @@ const useStyles = makeStyles({
     },
     [Breakpoints.upTo.tablet]: {
       gap: 32,
+    },
+    [Breakpoints.upTo.phone]: {
+      gap: 24,
     },
   },
 })

@@ -36,9 +36,16 @@ const useStyles = makeStyles({
   bubble: {
     filter: 'drop-shadow(0 0 8px var(--neutral-grey))',
     width: '100%',
+    margin: 'auto',
+    [Breakpoints.upTo.tablet]: {
+      width: '85%',
+    },
+    [Breakpoints.upTo.phone]: {
+      width: '70%',
+    },
   },
   techHeading: {
-    paddingTop: 8,
+    paddingTop: 12,
   },
   centreText: {
     flexGrow: 1,
@@ -55,7 +62,7 @@ const TechItem: React.FC<TechItemProps> = ({ src, name, from }) => {
 
   return (
     <div className={classes.tech}>
-      <img alt={name + ' logo'} src={src} draggable={false} className={classes.bubble} />
+      <img alt={`${name} logo`} src={src} draggable={false} className={classes.bubble} />
       <div className={classes.centreText}>
         <h1 id={headingId} className={clsx('text-loud', classes.techHeading)}>
           {name}

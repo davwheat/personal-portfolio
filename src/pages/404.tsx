@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '../components/Templates/Layout/layout'
+import Layout from '../components/Layout'
 import Hero from '../components/Design/Hero'
 
 import Colors from '../data/colors.json'
@@ -12,7 +12,7 @@ const Links = [
   // { text: 'Blog', url: '/blog' },
 ]
 
-const NotFoundPage = () => (
+const NotFoundPage: React.FC = () => (
   <Layout title="Not Found">
     <Hero firstElement color={Colors.primaryBlue}>
       <h1 className="text-megaphone">Lost?</h1>
@@ -21,13 +21,13 @@ const NotFoundPage = () => (
     <Section>
       <p className="text-speak">It looks like you've stumbled across a link to a page that doesn't exist.</p>
       <p className="text-speak">
-        Try one of these pages, or <a href="javascript:history.back()">go back</a>.
+        Try one of these pages, or <ButtonLink onClick={() => history.back()}>go back</ButtonLink>.
       </p>
       <nav>
         <ul className="list">
           {Links.map(link => (
             <li key={`${link.url}--${link.text}`}>
-              <Link to={link.url}>{link.text}</Link>
+              <Link href={link.url}>{link.text}</Link>
             </li>
           ))}
         </ul>
