@@ -71,12 +71,12 @@ const Breakpoints: Breakpoints = {
         and: {
           ...Object.keys(pixelValues).reduce(
             (prev2, val2) =>
-              val1 !== val2
+              (val1 !== val2
                 ? {
                     ...prev2,
                     [val2]: mediaBetween(pixelValues[val1], pixelValues[val2]),
                   }
-                : prev2,
+                : prev2),
             {},
           ),
         },
