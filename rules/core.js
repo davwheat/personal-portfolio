@@ -53,7 +53,7 @@ module.exports = {
     'init-declarations': 'off',
     'space-infix-ops': 'error',
     'no-cond-assign': 'error',
-    'no-confusing-arrow': ['error', { allowParens: true }],
+    'no-confusing-arrow': 0,
     'no-console': ['error', { allow: ['error', 'warn', 'trace'] }],
     'no-const-assign': 'error',
     'no-constant-condition': 'error',
