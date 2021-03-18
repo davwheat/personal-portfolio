@@ -9,7 +9,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  extends: ['eslint:recommended', './rules/index.js', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  extends: ['eslint:recommended', './rules/index.js', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
