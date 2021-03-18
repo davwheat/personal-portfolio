@@ -6,6 +6,7 @@ import Hero from '../components/Design/Hero'
 import Colors from '../data/colors.json'
 import Section from '../components/Design/Section'
 import Link from '../components/Links/Link'
+import ButtonLink from '../components/Links/ButtonLink'
 
 const Links = [
   { text: 'Home Page', url: '/' },

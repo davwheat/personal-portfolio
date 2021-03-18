@@ -9,7 +9,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  extends: ['eslint:recommended', './rules/index.js', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  extends: ['eslint:recommended', './rules/index.js', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -21,7 +21,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'jsx-a11y'],
   rules: {
     'max-len': ['error', { code: 160 }],
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
     semi: ['error', 'never'],
     'jsx-a11y/anchor-is-valid': [
       'error',
