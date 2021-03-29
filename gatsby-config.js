@@ -13,17 +13,21 @@ const prodPlugins = !__IS_DEV__
           exclude: ['error', 'warn'],
         },
       },
+      {
+        resolve: `gatsby-plugin-sitemap`,
+        options: {
+          sitemapSize: 1000,
+        },
+      },
     ]
   : []
 
 module.exports = {
-  flags: {
-    // FAST_DEV: true,
-  },
   siteMetadata: {
     title: `David Wheatley`,
     description: `David Wheatley is an front-end web designed specialising in React, located in West Sussex, UK.`,
     author: `@davwheat`,
+    siteUrl: `https://davwheat.dev`
   },
   plugins: [
     ...prodPlugins,
