@@ -27,7 +27,7 @@ module.exports = {
     title: `David Wheatley`,
     description: `David Wheatley is an front-end web designed specialising in React, located in West Sussex, UK.`,
     author: `@davwheat`,
-    siteUrl: `https://davwheat.dev`
+    siteUrl: `https://davwheat.dev`,
   },
   plugins: [
     ...prodPlugins,
