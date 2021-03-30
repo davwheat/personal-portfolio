@@ -69,15 +69,15 @@ const useStyles = makeStyles({
   },
 })
 
-const IndexPage: React.FC = () => {
+const MyProjectsPage: React.FC = () => {
   const classes = useStyles()
 
   return (
-    <Layout title="Home">
-      <Hero firstElement size="huge" color={Colors.primaryBlue}>
-        <h1 className="text-louder">David Wheatley</h1>
+    <Layout title="My projects">
+      <Hero firstElement size="huge" color={Colors.primaryRed}>
+        <h1 className="text-louder">My projects</h1>
         <p role="doc-subtitle" className="text-loud">
-          A front-end web developer from West Sussex,&nbsp;UK
+          Take a peek at my favourite projects that I've worked on over the past few years.
         </p>
       </Hero>
 
@@ -92,84 +92,8 @@ const IndexPage: React.FC = () => {
           Websites are for everyone, so everyone should be able to use them, no matter their device or internet&nbsp;connection.
         </p>
       </Section>
-
-      <Hero className={classes.projectsHeroOuter} innerClassName={classes.projectsHero} color={Colors.primaryRed}>
-        <div>
-          <h2 className="text-loud">Take a peek at some projects that I've worked on over the years.</h2>
-        </div>
-        <div className={classes.projectsLinkContainer}>
-          <Link className={classes.projectsLink} href="/my-projects">
-            My projects
-          </Link>
-        </div>
-      </Hero>
-
-      <Section>
-        <h2 className="text-louder">What do I know?</h2>
-        <p className="text-speak">
-          I've got experience with quite a lot of technologies, which is always handy. Over the years, I've experimented with lots of different
-          frameworks and languages, both new and old, allowing me to quickly and easily adapt to new technologies when&nbsp;needed.
-        </p>
-
-        <Tech />
-      </Section>
-
-      <Section>
-        <h2 className="text-louder">Qualifications</h2>
-        <p className="text-speak"></p>
-        <table>
-          <thead>
-            <tr>
-              <th>Course</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>BTEC L3 Computing</td>
-              <td>
-                <abbr title="Distinction star">D*</abbr>
-                <sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-            <tr>
-              <td>A-level Computer Science</td>
-              <td>
-                A*<sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-            <tr>
-              <td>A-level Maths</td>
-              <td>
-                B<sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-            <tr>
-              <td>GCSE Computer Science</td>
-              <td>9</td>
-            </tr>
-            <tr>
-              <td>AQA L2 Further Maths Certificate</td>
-              <td>9</td>
-            </tr>
-            <tr>
-              <td>GCSE English & Maths</td>
-              <td>9</td>
-            </tr>
-            <tr>
-              <td>GCSE Business</td>
-              <td>9</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan={2}>P - predicted result (still studying)</td>
-            </tr>
-          </tfoot>
-        </table>
-      </Section>
     </Layout>
   )
 }
 
-export default IndexPage
+export default MyProjectsPage

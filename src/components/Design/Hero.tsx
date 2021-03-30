@@ -78,9 +78,11 @@ interface Props {
   color?: string
   size?: 'small' | 'normal' | 'large' | 'huge'
   firstElement?: boolean
+  className?: string
+  innerClassName?: string
 }
 
-const Hero: React.FC<Props> = ({ children, color = '#000', size = 'normal', firstElement = false }) => {
+const Hero: React.FC<Props> = ({ children, color = '#000', size = 'normal', firstElement = false, className, innerClassName }) => {
   const classes = useStyles()
 
   return (
@@ -92,10 +94,11 @@ const Hero: React.FC<Props> = ({ children, color = '#000', size = 'normal', firs
         [size === 'normal' && classes.heroNormal],
         [size === 'large' && classes.heroLarge],
         [size === 'huge' && classes.heroHuge],
+        className,
       )}
       style={{ backgroundColor: color, color: bestContrast(color, ['#000', '#fff']) }}
     >
-      <div className={classes.heroInner}>{children}</div>
+      <div className={clsx(classes.heroInner, innerClassName)}>{children}</div>
     </section>
   )
 }
