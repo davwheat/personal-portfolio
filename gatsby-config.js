@@ -60,6 +60,7 @@ module.exports = {
     },
     `gatsby-plugin-webpack-size`,
     `gatsby-plugin-material-ui`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     // {
     //   resolve: 'gatsby-plugin-react-svg',
     //   options: {
