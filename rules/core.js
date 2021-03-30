@@ -33,7 +33,6 @@ module.exports = {
     'new-cap': 'off',
     'comma-dangle': ['error', 'always-multiline'],
     'max-statements': ['error', 50],
-    'max-len': ['error', 150, 2],
     'max-depth': ['error', 4],
     'max-nested-callbacks': ['error', 5],
     indent: ['error', 2, { SwitchCase: 1 }],
