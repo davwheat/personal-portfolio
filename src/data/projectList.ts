@@ -1,5 +1,6 @@
-type ProjectType = 'Web' | 'Mobile' | 'API'
-type Tech = 'Gatsby' | 'React' | 'REST API' | 'Flutter' | 'React Native' | 'Flarum' | 'Typescript' | 'Javascript'
+export type ProjectType = 'Web' | 'Mobile' | 'API'
+export const AllTech = ['Gatsby', 'React', 'REST API', 'Flutter', 'React Native', 'Flarum', 'Typescript', 'Javascript'] as const
+export type Tech = ValuesOf<typeof AllTech>
 
 export interface Project {
   title: string
@@ -24,18 +25,31 @@ const projectList: ReadonlyArray<Project> = [
       live: 'https://raildotmatrix.davwheat.dev/',
       vcs: 'https://github.com/davwheat/uk-dot-matrix',
     },
-    tech: ['Gatsby', 'React', 'REST API'],
+    tech: ['Gatsby', 'React', 'REST API', 'Javascript'],
   },
   {
     title: 'Techway Flue Leakage App',
     type: 'Mobile',
-    description: '',
+    description:
+      'An app created for Techway Solutions Ltd to speed up their leakage testing and certification process. Supports exporting test certificates to PDF.',
     image: '',
     links: {
-      live: 'https://raildotmatrix.davwheat.dev/',
-      vcs: 'https://github.com/davwheat/uk-dot-matrix',
+      live: 'https://play.google.com/store/apps/details?id=dev.davwheat.flueleakagecalculator',
+      //   vcs: 'https://github.com/davwheat/uk-dot-matrix',
     },
-    tech: ['Gatsby', 'React', 'REST API'],
+    tech: ['React Native', 'Javascript'],
+  },
+  {
+    title: 'Flarum Badge API',
+    type: 'API',
+    description:
+      'Public API for everything related to Flarum extensions. Includes fetching badges to show if your extension supports the latest version of Flarum, to fetching extension icons.',
+    image: '',
+    links: {
+      live: 'http://docs.flarum-badge-api.davwheat.dev/',
+      vcs: 'https://github.com/davwheat/flarum-badge-api',
+    },
+    tech: ['REST API', 'Flarum', 'Typescript'],
   },
 ] as const
 

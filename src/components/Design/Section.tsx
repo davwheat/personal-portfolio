@@ -5,7 +5,6 @@ import Breakpoints from '../../data/breakpoints'
 
 const useStyles = makeStyles({
   pageSection: {
-    overflow: 'hidden',
     marginTop: 24,
     marginBottom: 24,
     [Breakpoints.downTo.desktopSmall]: {

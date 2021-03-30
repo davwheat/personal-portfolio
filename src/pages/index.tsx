@@ -75,7 +75,7 @@ const IndexPage: React.FC = () => {
   return (
     <Layout title="Home">
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
-        <h1 className="text-louder">David Wheatley</h1>
+        <h1 className="text-shout">David Wheatley</h1>
         <p role="doc-subtitle" className="text-loud">
           A front-end web developer from West Sussex,&nbsp;UK
         </p>
