@@ -24,18 +24,54 @@ const useStyles = makeStyles({
       paddingBottom: 48,
     },
   },
+  fullWidth: {
+    width: '100vw',
+    position: 'relative',
+    marginLeft: '-50vw',
+    left: '50%',
+  },
+  fullWidthInner: {
+    padding: '0 8px',
+  },
+  wider: {
+    width: '100vw',
+    position: 'relative',
+    marginLeft: '-50vw',
+    left: '50%',
+  },
+  widerInner: {
+    maxWidth: 960,
+    margin: 'auto',
+    paddingLeft: 24,
+    paddingRight: 24,
+  },
 })
 
 interface Props {
   usePadding?: boolean
+  width: 'normal' | 'wider' | 'full'
 }
 
-const Section: React.FC<Props> = ({ children, usePadding, ...props }) => {
+const Section: React.FC<Props> = ({ children, usePadding, width = 'normal', ...props }) => {
   const classes = useStyles()
 
   return (
-    <section {...props} className={clsx(classes.pageSection, [usePadding && classes.pad])}>
-      {children}
+    <section
+      {...props}
+      className={clsx(classes.pageSection, [
+        usePadding && classes.pad,
+        width === 'full' && classes.fullWidth,
+        width === 'wider' && classes.wider,
+      ])}
+    >
+      <div
+        className={clsx({
+          [classes.fullWidthInner]: width === 'full',
+          [classes.widerInner]: width === 'wider',
+        })}
+      >
+        {children}
+      </div>
     </section>
   )
 }

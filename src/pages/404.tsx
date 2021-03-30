@@ -10,14 +10,15 @@ import ButtonLink from '../components/Links/ButtonLink'
 
 const Links = [
   { text: 'Home Page', url: '/' },
+  { text: 'My projects', url: '/my-projects' },
   // { text: 'Blog', url: '/blog' },
 ]
 
 const NotFoundPage: React.FC = () => (
   <Layout title="Not Found">
     <Hero firstElement color={Colors.primaryBlue}>
-      <h1 className="text-megaphone">Lost?</h1>
-      <p className="text-loud">This page doesn't exist</p>
+      <h1 className="text-shout">Lost?</h1>
+      <p className="text-loud">Error 404 - This page doesn't exist</p>
     </Hero>
     <Section>
       <p className="text-speak">It looks like you've stumbled across a link to a page that doesn't exist.</p>

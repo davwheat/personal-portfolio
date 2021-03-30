@@ -3,24 +3,24 @@ name: Smoketest
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: 14.x
 
 jobs:
   install:
     runs-on: ubuntu-latest
     name: Prepare repo
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -31,7 +31,7 @@ jobs:
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
@@ -40,9 +40,10 @@ jobs:
         id: module-cache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-${{ github.sha }}-
+            ${{ runner.os }}-node-modules-
 
       - name: Install dependencies on cache miss
         run: yarn install --frozen-lockfile
@@ -52,73 +53,65 @@ jobs:
         run: yarn --prefer-offline --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit == 'true'
 
-  lint:
-    runs-on: ubuntu-latest
-    needs: [install]
-    name: Lint
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Restore dependencies cache
-        uses: actions/cache@v2
-        id: moduleCache
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-${{ github.sha }}-
-
-      - name: Lint using ESLint
-        run: yarn lint
-
   formatting:
     runs-on: ubuntu-latest
     needs: [install]
     name: Verify formatting
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Restore dependencies cache
         uses: actions/cache@v2
         id: moduleCache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-${{ github.sha }}-
+          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
 
       - name: Verify formatting
         run: yarn format:check
 
-  build:
-    runs-on: ubuntu-latest
-    needs: [lint, formatting]
+  # test:
+  #   runs-on: ubuntu-latest
+  #   needs: [install]
+  #   name: Run tests
 
-    strategy:
-      matrix:
-        node-version: [14.x]
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+
+  #     - name: Use Node.js ${{ env.NODE_VERSION }}
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: ${{ env.NODE_VERSION }}
+
+  #     - name: Restore dependencies cache
+  #       uses: actions/cache@v2
+  #       id: moduleCache
+  #       with:
+  #         path: ./node_modules
+  #         key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
+
+  #     - name: Run tests
+  #       run: yarn test
+
+  #     - name: Upload coverage
+  #       # Run even if tests fail
+  #       if: always()
+  #       uses: codecov/codecov-action@v1
+  #       with:
+  #         directory: coverage
+
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    needs: [formatting]
 
     steps:
       - name: Checkout code
@@ -126,22 +119,96 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Restore dependencies cache
         uses: actions/cache@v2
         id: moduleCache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Restore Gatsby cache
+        uses: actions/cache@v2
+        id: gatsbyCache
+        with:
+          path: ./.cache
+          key: ${{ runner.os }}-gatsby-cache-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-node-modules-${{ github.sha }}-
+            ${{ runner.os }}-gatsby-cache-
+
+      - name: Restore Gatsby build output
+        uses: actions/cache@v2
+        id: gatsbyOut
+        with:
+          path: ./public
+          key: ${{ runner.os }}-gatsby-out-${{ hashFiles('yarn.lock') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-out-${{ hashFiles('yarn.lock') }}
+            ${{ runner.os }}-gatsby-out-
 
       - name: Build site
         run: yarn build:ci
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: [build]
+    name: Lint
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v2
+        id: moduleCache
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Restore Gatsby cache
+        uses: actions/cache@v2
+        id: gatsbyCache
+        with:
+          path: ./.cache
+          key: ${{ runner.os }}-gatsby-cache-${{ hashFiles('yarn.lock') }}
+
+      - name: Lint using ESLint
+        run: yarn lint
+
+  deploy:
+    name: Deploy site to production
+    runs-on: ubuntu-latest
+    needs: [lint]
+
+    # Only deploy on push to main branch
+    if: github.ref == 'refs/heads/deploy' && github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Restore Gatsby cache
+        uses: actions/cache@v2
+        id: gatsbyCache
+        with:
+          path: ./.cache
+          key: ${{ runner.os }}-gatsby-cache-${{ hashFiles('yarn.lock') }}
+
+      - name: Restore Gatsby output
+        uses: actions/cache@v2
+        id: gatsbyOut
+        with:
+          path: ./public
+          key: ${{ runner.os }}-gatsby-out-${{ hashFiles('yarn.lock') }}-${{ github.sha }}
 
       - name: Upload a compiled website
         uses: actions/upload-artifact@v2
@@ -150,10 +217,8 @@ jobs:
           path: public/
 
       - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        if: github.ref == 'refs/heads/deploy' && github.event_name == 'push'
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: prod
-          FOLDER: public
-          CLEAN: true
+          branch: prod
+          folder: public
+          clean: true

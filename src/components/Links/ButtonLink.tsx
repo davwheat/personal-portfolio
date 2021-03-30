@@ -8,11 +8,13 @@ import Colors from '../../data/colors.json'
 const useStyles = makeStyles({
   linkButton: {
     appearance: 'none',
-    backgroundColor: 'none',
+    background: 'none',
     color: Colors.linkColor,
     border: 'none',
     cursor: 'pointer',
     textDecoration: 'underline',
+    fontFamily: 'inherit',
+    fontSize: '1em',
     fontWeight: 700,
     display: 'inline',
     margin: 0,

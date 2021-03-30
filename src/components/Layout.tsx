@@ -4,7 +4,8 @@ import Header from './Header'
 import Footer from './Footer'
 import SEO from './SEO'
 
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles, ThemeProvider } from '@material-ui/styles'
+import theme from '../theme'
 
 const useStyles = makeStyles({
   mainContent: {
@@ -25,12 +26,12 @@ const Layout: React.FC<Props> = ({ children, title }) => {
   const classes = useStyles()
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <SEO title={title} />
       <Header />
       <main className={classes.mainContent}>{children}</main>
       <Footer />
-    </>
+    </ThemeProvider>
   )
 }
 

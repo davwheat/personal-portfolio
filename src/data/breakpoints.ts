@@ -1,4 +1,4 @@
-const pixelValues = {
+export const pixelValues = {
   desktopSmall: 768,
   desktopLarge: 1100,
   tablet: 640,
