@@ -9,6 +9,7 @@ import Link from '../components/Links/Link'
 import { makeStyles } from '@material-ui/styles'
 import Breakpoints from '../data/breakpoints'
 import generateTransitions from '../functions/generateTransitions'
+import ProjectList from '../components/Projects/ProjectList'
 
 const useStyles = makeStyles({
   projectsHeroOuter: {
@@ -81,16 +82,8 @@ const MyProjectsPage: React.FC = () => {
         </p>
       </Hero>
 
-      <Section>
-        <h2 className="text-louder">Hello!</h2>
-        <p className="text-speak">
-          Usually, people's portfolio websites are super fancy, well-crafted, but also bloated and heavy. Not mine. This site is statically
-          generated from fully-fledged React into simple, performant, and powerful HTML, CSS and Javascript with Gatsby.js.
-        </p>
-        <p className="text-speak">
-          I prefer <strong>simple websites</strong>. Websites which are responsive and perform well on all devices, no matter how old and slow.
-          Websites are for everyone, so everyone should be able to use them, no matter their device or internet&nbsp;connection.
-        </p>
+      <Section width="wider">
+        <ProjectList />
       </Section>
     </Layout>
   )
