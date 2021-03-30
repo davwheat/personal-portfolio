@@ -224,7 +224,6 @@ module.exports = {
     'one-var': ['error', 'never'],
     'one-var-declaration-per-line': 'error',
     'operator-assignment': 'off',
-    'operator-linebreak': ['error', 'before'],
     'padded-blocks': 'off',
     'prefer-arrow-callback': ['error', { allowNamedFunctions: true, allowUnboundThis: true }],
     'prefer-rest-params': 'error',
