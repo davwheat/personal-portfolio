@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/core'
 import uuid from 'react-uuid'
 import Breakpoints from '../../data/breakpoints'
 import clsx from 'clsx'

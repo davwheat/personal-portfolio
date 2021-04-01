@@ -2,7 +2,8 @@ import React from 'react'
 
 import clsx from 'clsx'
 import bestContrast from 'get-best-contrast-color'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/core'
+import Breakpoints from '../../data/breakpoints'
 
 const useStyles = makeStyles({
   hero: {
@@ -17,9 +18,9 @@ const useStyles = makeStyles({
   heroInner: {
     width: '100%',
     margin: 'auto',
-    maxWidth: 960,
-    paddingLeft: 24,
-    paddingRight: 24,
+    maxWidth: 1000,
+    paddingLeft: 48,
+    paddingRight: 48,
     paddingTop: 48,
     paddingBottom: 48,
     '& p, & h1, & h2, & h3, & h4, & h5, & h6': {
@@ -28,47 +29,55 @@ const useStyles = makeStyles({
         margin: 0,
       },
     },
+    [Breakpoints.upTo.desktopSmall]: {
+      paddingLeft: 36,
+      paddingRight: 36,
+    },
+    [Breakpoints.upTo.phone]: {
+      paddingLeft: 24,
+      paddingRight: 24,
+    },
   },
   firstElement: {
     marginTop: -24,
   },
   heroSmall: {
     '& $heroInner': {
-      paddingTop: 16,
-      paddingBottom: 16,
-      '@media (min-width: 768px)': {
-        paddingTop: 24,
-        paddingBottom: 24,
+      paddingTop: 24,
+      paddingBottom: 24,
+      [Breakpoints.upTo.desktopSmall]: {
+        paddingTop: 16,
+        paddingBottom: 16,
       },
     },
   },
   heroNormal: {
     '& $heroInner': {
-      paddingTop: 24,
-      paddingBottom: 24,
-      '@media (min-width: 768px)': {
-        paddingTop: 48,
-        paddingBottom: 48,
+      paddingTop: 48,
+      paddingBottom: 48,
+      [Breakpoints.upTo.desktopSmall]: {
+        paddingTop: 24,
+        paddingBottom: 24,
       },
     },
   },
   heroLarge: {
     '& $heroInner': {
-      paddingTop: 36,
-      paddingBottom: 36,
-      '@media (min-width: 768px)': {
-        paddingTop: 56,
-        paddingBottom: 56,
+      paddingTop: 56,
+      paddingBottom: 56,
+      [Breakpoints.upTo.desktopSmall]: {
+        paddingTop: 36,
+        paddingBottom: 36,
       },
     },
   },
   heroHuge: {
     '& $heroInner': {
-      paddingTop: 48,
-      paddingBottom: 48,
-      '@media (min-width: 768px)': {
-        paddingTop: 72,
-        paddingBottom: 72,
+      paddingTop: 72,
+      paddingBottom: 72,
+      [Breakpoints.upTo.desktopSmall]: {
+        paddingTop: 48,
+        paddingBottom: 48,
       },
     },
   },

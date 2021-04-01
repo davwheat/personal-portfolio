@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link as GatsbyLink } from 'gatsby'
 
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/core'
 import clsx from 'clsx'
 
 import Colors from '../../data/colors.json'
@@ -20,11 +20,30 @@ interface Props {
   className?: string
 }
 
+function isExternalLink(url: string): boolean {
+  const regex = /^https?:\/\//
+
+  return !!url.match(regex)
+}
+
 const Link: React.FC<Props> = ({ href, children, className, ...props }) => {
   const classes = useStyles()
 
+  const linkProps = {
+    className: clsx(classes.link, className),
+    ...props,
+  }
+
+  if (isExternalLink(href)) {
+    return (
+      <a href={href} {...linkProps}>
+        {children}
+      </a>
+    )
+  }
+
   return (
-    <GatsbyLink to={href} className={clsx(classes.link, className)} {...props}>
+    <GatsbyLink to={href} {...linkProps}>
       {children}
     </GatsbyLink>
   )

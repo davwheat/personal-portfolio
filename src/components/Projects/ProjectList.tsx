@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
-import { makeStyles } from '@material-ui/styles'
 import ProjectListData, { AllTech } from '../../data/projectList'
 
 import ProjectCard from './ProjectCard'
 import sortAscending from '../../functions/sortAscending'
-import { Checkbox, Chip, FormControlLabel } from '@material-ui/core'
+import { Checkbox, Chip, FormControlLabel, makeStyles } from '@material-ui/core'
 import generateTransitions from '../../functions/generateTransitions'
 import clsx from 'clsx'
 

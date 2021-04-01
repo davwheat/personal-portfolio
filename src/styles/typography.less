@@ -1,23 +1,27 @@
 .text-whisper {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 20px;
-
-  &-loud,
-  strong {
-    font-weight: 700;
+  &,
+  &-loud {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 20px;
   }
 }
 
 .text-speak {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
+  &,
+  &-loud {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}
 
-  &-up,
+.text-whisper,
+.text-speak {
+  &-loud,
   strong {
-    font-weight: 700;
+    font-weight: bold;
   }
 }
 
