@@ -49,7 +49,7 @@ const useStyles = makeStyles({
 
 interface Props {
   usePadding?: boolean
-  width: 'normal' | 'wider' | 'full'
+  width?: 'normal' | 'wider' | 'full'
 }
 
 const Section: React.FC<Props> = ({ children, usePadding, width = 'normal', ...props }) => {
