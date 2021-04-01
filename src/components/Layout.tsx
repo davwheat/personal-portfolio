@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Header from './Header'
-import Footer from './Footer'
+import Footer from './PageComponents/Footer'
 import SEO from './SEO'
 
 import { makeStyles, ThemeProvider } from '@material-ui/styles'

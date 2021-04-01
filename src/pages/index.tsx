@@ -6,9 +6,10 @@ import Colors from '../data/colors.json'
 import Section from '../components/Design/Section'
 import Tech from '../components/PageComponents/Tech'
 import Link from '../components/Links/Link'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/core'
 import Breakpoints from '../data/breakpoints'
 import generateTransitions from '../functions/generateTransitions'
+import Experience from '../components/Experience/Experience'
 
 const useStyles = makeStyles({
   projectsHeroOuter: {
@@ -93,6 +94,15 @@ const IndexPage: React.FC = () => {
         </p>
       </Section>
 
+      <Section>
+        <h2 className="text-louder">Experience</h2>
+        <p className="text-speak">
+          I've worked on several for multiple different organisations, as well as contributing to the wider open source community.
+        </p>
+
+        <Experience />
+      </Section>
+
       <Hero className={classes.projectsHeroOuter} innerClassName={classes.projectsHero} color={Colors.primaryRed}>
         <div>
           <h2 className="text-loud">Take a peek at some projects that I've worked on over the years.</h2>
@@ -116,7 +126,10 @@ const IndexPage: React.FC = () => {
 
       <Section>
         <h2 className="text-louder">Qualifications</h2>
-        <p className="text-speak"></p>
+        <p className="text-speak">
+          As a student, I haven't received all of my qualifications at the moment, so some of the courses below show my predicted grades as
+          opposed to my actual grades.
+        </p>
         <table>
           <thead>
             <tr>
@@ -126,36 +139,44 @@ const IndexPage: React.FC = () => {
           </thead>
           <tbody>
             <tr>
-              <td>BTEC L3 Computing</td>
-              <td>
-                <abbr title="Distinction star">D*</abbr>
-                <sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-            <tr>
               <td>A-level Computer Science</td>
               <td>
                 A*<sup aria-label="predicted result">P</sup>
               </td>
             </tr>
+
             <tr>
               <td>A-level Maths</td>
               <td>
-                B<sup aria-label="predicted result">P</sup>
+                A*<sup aria-label="predicted result">P</sup>
               </td>
             </tr>
+
+            <tr>
+              <td>
+                <abbr title="A-level equivalent">BTEC L3</abbr> Computing
+              </td>
+              <td>
+                <abbr title="Distinction star">D*</abbr>
+                <sup aria-label="predicted result">P</sup>
+              </td>
+            </tr>
+
             <tr>
               <td>GCSE Computer Science</td>
               <td>9</td>
             </tr>
+
             <tr>
               <td>AQA L2 Further Maths Certificate</td>
               <td>9</td>
             </tr>
+
             <tr>
-              <td>GCSE English & Maths</td>
+              <td>GCSE English &amp; Maths</td>
               <td>9</td>
             </tr>
+
             <tr>
               <td>GCSE Business</td>
               <td>9</td>

@@ -5,7 +5,7 @@ import ReactLogo from '../../images/tech/react.svg'
 import GatsbyLogo from '../../images/tech/gatsby.svg'
 import FlarumLogo from '../../images/tech/flarum.svg'
 
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/core'
 import TechItem from './TechItem'
 import Breakpoints from '../../data/breakpoints'
 
