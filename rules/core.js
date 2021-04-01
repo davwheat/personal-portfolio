@@ -121,7 +121,7 @@ module.exports = {
     'no-implied-eval': 'error',
     'no-implicit-coercion': 'off',
     'no-implicit-globals': 'error',
-    'no-invalid-this': 'error',
+    'no-invalid-this': 'off',
     'no-iterator': 'error',
     'no-label-var': 'error',
     'no-lone-blocks': 'error',
