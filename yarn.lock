@@ -2772,6 +2772,11 @@ babel-extract-comments@^1.0.0:
   dependencies:
     babylon "^6.18.0"
 
+babel-jsx-utils@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/babel-jsx-utils/-/babel-jsx-utils-1.1.0.tgz#304ce4fce0c86cbeee849551a45eb4ed1036381a"
+  integrity sha512-Mh1j/rw4xM9T3YICkw22aBQ78FhsHdsmlb9NEk4uVAFBOg+Ez9ZgXXHugoBPCZui3XLomk/7/JBBH4daJqTkQQ==
+
 babel-loader@^8.2.2:
   version "8.2.2"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.2.tgz#9363ce84c10c9a40e6c753748e1441b60c8a0b81"
@@ -6104,6 +6109,24 @@ gatsby-plugin-eslint@^3.0.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-eslint/-/gatsby-plugin-eslint-3.0.0.tgz#af6a70158f1751f03f804430aa8b1feeac7db97c"
   integrity sha512-nvyLz067k8lmhWIalhgFCzlNIjHIabYPZXpARM0k4AGRJWOPgOxc5P0T+G/TjCvtSg4+jtKotbE5ranMbxIBiw==
 
+gatsby-plugin-image@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-1.2.0.tgz#ad571ba270b5c1e8a679ac33eeccd01ac3370db3"
+  integrity sha512-tG39QNnmld4rpTLettTL6r8BFm1rRrcionBpgUJXi9l5W4UaUn/hKdM9jV8g5aNUzo4YrEcgZcf1v2dPfrz9Iw==
+  dependencies:
+    "@babel/code-frame" "^7.12.13"
+    "@babel/parser" "^7.12.5"
+    "@babel/traverse" "^7.12.5"
+    babel-jsx-utils "^1.1.0"
+    babel-plugin-remove-graphql-queries "^3.2.0"
+    camelcase "^5.3.1"
+    chokidar "^3.5.1"
+    common-tags "^1.8.0"
+    fs-extra "^8.1.0"
+    gatsby-core-utils "^2.2.0"
+    objectFitPolyfill "^2.3.0"
+    prop-types "^15.7.2"
+
 gatsby-plugin-less@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-less/-/gatsby-plugin-less-5.2.0.tgz#a4eedc5632bf26f8245fdbb7d690e17a128feba5"
@@ -6375,10 +6398,10 @@ gatsby-transformer-sharp@^3.2.0:
     semver "^7.3.4"
     sharp "^0.27.0"
 
-gatsby@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.2.0.tgz#4b92b3063761572eb8116b9fd4efce3c916bb045"
-  integrity sha512-eVaAR6LQA4D7bPeN1/2Hzk5kt7QJzb0DoPUuBy9daxZy3oPR1Zf6wfdV6RQcW6+ABLpG073h5uOTMxANAlm66A==
+gatsby@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.2.1.tgz#c1130764077e4fc7360cb6892b25e810ae53cbbf"
+  integrity sha512-nakOINSniWsBPfbZE5HJOoEwC2/bBoJAYxGYNG/P7M8mM9JVbsIsnAylTe205/MsO0qpcTpqRm0usxzyvF3yYw==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/core" "^7.12.3"
@@ -9661,6 +9684,11 @@ object.values@^1.1.0, object.values@^1.1.1, object.values@^1.1.3:
     define-properties "^1.1.3"
     es-abstract "^1.18.0-next.2"
     has "^1.0.3"
+
+objectFitPolyfill@^2.3.0:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/objectFitPolyfill/-/objectFitPolyfill-2.3.5.tgz#be8c83064aabfa4e88780f776c2013c48ce1f745"
+  integrity sha512-8Quz071ZmGi0QWEG4xB3Bv5Lpw6K0Uca87FLoLMKMWjB6qIq9IyBegP3b/VLNxv2WYvIMGoeUQ+c6ibUkNa8TA==
 
 obuf@^1.0.0, obuf@^1.1.2:
   version "1.1.2"

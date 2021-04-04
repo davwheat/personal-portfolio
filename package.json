@@ -13,7 +13,7 @@
     "@material-ui/styles": "^4.11.3",
     "animate.css": "^4.1.1",
     "clsx": "^1.1.1",
-    "gatsby": "^3.2.0",
+    "gatsby": "^3.2.1",
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-less": "^5.2.0",
     "gatsby-plugin-manifest": "^3.2.0",
