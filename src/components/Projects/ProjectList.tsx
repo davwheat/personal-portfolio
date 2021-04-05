@@ -9,12 +9,17 @@ import ProjectListData, { AllTech } from '../../data/projectList'
 
 import generateTransitions from '../../functions/generateTransitions'
 import sortAscending from '../../functions/sortAscending'
+import Breakpoints from '../../data/breakpoints'
 
 const useStyles = makeStyles({
   filter: {
     marginBottom: 24,
     display: 'flex',
     gap: 32,
+    [Breakpoints.upTo.bigPhone]: {
+      flexDirection: 'column',
+      gap: 16,
+    },
   },
   checkbox: {
     marginTop: -9,
@@ -25,6 +30,9 @@ const useStyles = makeStyles({
     gridTemplateColumns: '1fr 1fr',
     gridTemplateRows: 'repeat(auto-fill, 1fr)',
     gap: 16,
+    [Breakpoints.upTo.tablet]: {
+      gridTemplateColumns: '1fr',
+    },
   },
   techList: {
     display: 'flex',
@@ -52,13 +60,13 @@ const ProjectList: React.FC = () => {
     <div>
       <nav className={classes.filter}>
         <div>
-          <p className="text-speak">Filter by technology</p>
+          <p className="text-speak-up">Filter by technology</p>
           <div>
             <Checkbox
               // className={classes.checkbox}
               checked={mustMatchAll}
               onChange={e => setMustMatchAll(e.target.checked)}
-              label="Must match all"
+              label={mustMatchAll ? 'Matches all selected' : 'Matches any selected'}
             />
           </div>
         </div>
