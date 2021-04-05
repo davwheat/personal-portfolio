@@ -2,6 +2,7 @@ import React from 'react'
 
 import { makeStyles } from '@material-ui/core'
 import Link from '../Links/Link'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const useStyles = makeStyles({
   container: {
@@ -48,6 +49,25 @@ const useStyles = makeStyles({
 
 const Footer: React.FC = () => {
   const classes = useStyles()
+  const {
+    siteBuildMetadata,
+  }: {
+    siteBuildMetadata: {
+      /**
+       * String date/time formatted as YYYY-MM-DD HH:mm
+       */
+      buildTime: string
+    }
+  } = useStaticQuery(
+    graphql`
+      query {
+        siteBuildMetadata {
+          buildTime(formatString: "YYYY-MM-DD HH:mm z")
+        }
+      }
+    `,
+  )
+
   return (
     <footer className={classes.container}>
       <main className={classes.content}>
@@ -63,6 +83,7 @@ const Footer: React.FC = () => {
               Learn more
             </a>
           </p>
+          <p className="text-whisper">Last updated {siteBuildMetadata.buildTime}.</p>
         </section>
         <nav className={classes.nav}>
           <Link href="/">Home</Link>
