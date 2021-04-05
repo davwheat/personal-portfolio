@@ -55,7 +55,7 @@ const projectList: ReadonlyArray<Project> = [
         width={440}
         src="../assets/images/projects/techway-leakage-app.png"
         placeholder="blurred"
-        alt="Banner. Title: Flue Gas Leakage Test Calculator. Description: Easily perform Class B and C flue gas leakage tests."
+        alt="Promotional banner. Icon on left showing rounded rectangle with air moving through it and a check mark. Title: Flue Gas Leakage Test Calculator. Subtitle: Easily perform Class B and C flue gas leakage tests."
       />
     ),
     links: {
