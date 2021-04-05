@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core'
-import Link from './Links/Link'
+import Link from '../Links/Link'
 
 const useStyles = makeStyles({
   header: {

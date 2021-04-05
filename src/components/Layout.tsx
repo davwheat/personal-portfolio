@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Header from './Header'
+import Header from './PageComponents/Header'
 import Footer from './PageComponents/Footer'
 import SEO from './SEO'
 
