@@ -118,6 +118,8 @@ const useStyles = makeStyles({
         '&~ $navBackdrop': {
           transform: 'translate(0, 0)',
           opacity: 1,
+          // Prevent transform delay when entering
+          transitionDelay: `0ms`,
         },
         // Switch to the close menu icon
         '&~ $navBtnLabel': {
@@ -189,7 +191,9 @@ const useStyles = makeStyles({
     opacity: 0,
     // Display under menu
     zIndex: MOBILE_NAV_ZINDEX - 1,
-    ...generateTransitions('opacity', 'long'),
+    // Delay transform off-screen until opacity has finished transitioning
+    transitionDelay: `0ms, ${Durations.long}ms`,
+    ...generateTransitions(['opacity', 'transform'], ['long', 1], ['ease-out', 'linear']),
   },
   '@keyframes menuEnter': {
     '0%': {
