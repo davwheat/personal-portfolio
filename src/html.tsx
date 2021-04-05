@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 const HTML: React.FC<Props> = props => {
   return (
@@ -11,6 +10,9 @@ const HTML: React.FC<Props> = props => {
 
         <link rel="preload" href="/fonts/Jost-Book.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Jost-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+
+        {/* <!-- Cloudflare Web Analytics --> */}
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02248a7178184dfea7dd8abd1639759b"}' />
 
         {props.headComponents}
       </head>

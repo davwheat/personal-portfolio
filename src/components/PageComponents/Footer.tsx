@@ -58,12 +58,17 @@ const Footer: React.FC = () => {
             <a href="https://github.com/davwheat/personal-portfolio" rel="noopener noreferrer">
               View this site on GitHub
             </a>
+            <BulletSeparator />
+            This site collects anonymised analytics that does not track individual users.{' '}
+            <a href="https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web" rel="noopener noreferrer">
+              Learn more
+            </a>
           </p>
         </section>
         <nav className={classes.nav}>
           <Link href="/">Home</Link>
           {/* <Link href="/blog">Blog</Link> */}
-          {/* <Link href="/my-work">Portfolio</Link> */}
+          <Link href="/my-projects">My projects</Link>
           <a href="https://github.com/davwheat" rel="noopener noreferrer">
             My GitHub
           </a>
@@ -71,6 +76,24 @@ const Footer: React.FC = () => {
       </main>
     </footer>
   )
+}
+
+const useBulletStyles = makeStyles({
+  separator: {
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    transformOrigin: 'center',
+    transform: 'scale(2) translateY(-5%)',
+    marginLeft: 8,
+    marginRight: 8,
+    color: '#fff',
+  },
+})
+
+const BulletSeparator: React.FC = () => {
+  const classes = useBulletStyles()
+
+  return <span className={classes.separator}>•</span>
 }
 
 export default Footer
