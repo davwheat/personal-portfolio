@@ -56,7 +56,8 @@ const useStyles = makeStyles({
   nav: {
     '& a:any-link': {
       textDecoration: 'none',
-      padding: '0 8px',
+      paddingLeft: 8,
+      paddingRight: 8,
       lineHeight: '56px',
       height: 56,
       display: 'inline-block',
@@ -64,26 +65,39 @@ const useStyles = makeStyles({
         backgroundColor: '#fff',
         color: '#000',
       },
+      // Make links full width on mobile menu
+      [Breakpoints.upTo.bigPhone]: {
+        paddingLeft: 24,
+        paddingRight: 24,
+        marginLeft: -16,
+        marginRight: -16,
+      },
     },
     [Breakpoints.upTo.bigPhone]: {
       padding: 16,
       paddingBottom: 64,
+      background: '#000',
+      // Fixed to bottom of screen
       position: 'fixed',
       bottom: 0,
       left: 0,
       right: 0,
       width: '100vw',
+      // Flex!
       display: 'flex',
       flexDirection: 'column',
       gap: 8,
-      background: '#000',
       zIndex: MOBILE_NAV_ZINDEX,
-      willChange: 'transform',
+      // Default off-screen transform
       transform: 'translateY(100%)',
+      // Nav animations
       animationFillMode: 'forwards',
-      animationDuration: 15000,
+      animationDuration: Durations.long,
       animationIterationCount: 1,
       animationName: '$menuExit',
+      // Scrollable nav links
+      maxHeight: '50vh',
+      overflowY: 'auto',
       ...generateTransitions('transform', 'long'),
       '@media (max-height: 600px)': {
         paddingBottom: 48,
@@ -91,16 +105,21 @@ const useStyles = makeStyles({
     },
   },
   navBtn: {
+    // Don't show the nav toggle on desktop
     display: 'none',
     [Breakpoints.upTo.bigPhone]: {
+      // If checked...
       '&:checked': {
+        // Animate in the nav menu
         '&~ $nav': {
           animationName: '$menuEnter',
         },
+        // Unhide the backdrop
         '&~ $navBackdrop': {
           transform: 'translate(0, 0)',
           opacity: 1,
         },
+        // Switch to the close menu icon
         '&~ $navBtnLabel': {
           '&::before': {
             opacity: 1,
@@ -112,14 +131,21 @@ const useStyles = makeStyles({
       },
     },
   },
+  // Nav toggle button label (this is the only touch point)
+  // used to toggle the nav menu
   navBtnLabel: {
-    display: 'block',
+    display: 'none',
     fontSize: 0,
     height: 56,
     width: 56,
     position: 'relative',
     zIndex: MOBILE_NAV_ZINDEX + 1,
     marginRight: -20,
+    // Only show on mobile
+    [Breakpoints.upTo.bigPhone]: {
+      display: 'block',
+    },
+    // Common icon styles
     '&::after, &::before': {
       position: 'absolute',
       display: 'block',
@@ -130,6 +156,7 @@ const useStyles = makeStyles({
       textAlign: 'center',
       ...generateTransitions('opacity'),
     },
+    // Menu icon
     '&::after': {
       fontSize: 32,
       content: '"≡"',
@@ -137,6 +164,7 @@ const useStyles = makeStyles({
       opacity: 1,
       transform: 'translateY(-2px)',
     },
+    // Close icon
     '&::before': {
       fontSize: 28,
       content: '"🗙"',
@@ -145,8 +173,12 @@ const useStyles = makeStyles({
       transform: 'translateY(-1px)',
     },
   },
+  // Grey background with onClick to hide the menu
   navBackdrop: {
     display: 'block',
+    // Hide off-screen until needed
+    // We use this instead of visibility: hidden or display: none
+    // as they will break the opacity transition
     transform: 'translate(2000vw, 2000vh)',
     position: 'fixed',
     top: 0,
@@ -155,6 +187,7 @@ const useStyles = makeStyles({
     bottom: 0,
     background: 'rgba(0, 0, 0, 0.25)',
     opacity: 0,
+    // Display under menu
     zIndex: MOBILE_NAV_ZINDEX - 1,
     ...generateTransitions('opacity', 'long'),
   },
@@ -190,7 +223,15 @@ const useStyles = makeStyles({
 
 const Header: React.FC = () => {
   const classes = useStyles()
+
   const navbarRef = useRef<HTMLDivElement>(null)
+  const menuCheckboxRef = useRef<HTMLInputElement>(null)
+
+  function closeMenu() {
+    if (menuCheckboxRef.current) {
+      menuCheckboxRef.current.checked = false
+    }
+  }
 
   return (
     <header className={classes.header}>
@@ -201,10 +242,16 @@ const Header: React.FC = () => {
 
         <div aria-hidden className={classes.spacer} />
 
-        <input onChange={() => (navbarRef.current.style.animationName = '')} type="checkbox" id="navbar-menu-btn" className={classes.navBtn} />
+        <input
+          ref={menuCheckboxRef}
+          onChange={() => (navbarRef.current.style.animationName = '')}
+          type="checkbox"
+          id="navbar-menu-btn"
+          className={classes.navBtn}
+        />
 
         {/* Grey backdrop for mobile nav */}
-        <div aria-hidden className={classes.navBackdrop} />
+        <div onClick={closeMenu} aria-hidden className={classes.navBackdrop} />
 
         <label htmlFor="navbar-menu-btn" className={classes.navBtnLabel}>
           Toggle menu
