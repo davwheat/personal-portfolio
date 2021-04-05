@@ -83,7 +83,7 @@ const useBulletStyles = makeStyles({
     display: 'inline-block',
     verticalAlign: 'middle',
     transformOrigin: 'center',
-    transform: 'scale(2) translateY(-5%)',
+    transform: 'scale(2)',
     marginLeft: 8,
     marginRight: 8,
     color: '#fff',
