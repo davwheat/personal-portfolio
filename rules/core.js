@@ -58,7 +58,7 @@ module.exports = {
     'no-constant-condition': 'error',
     'no-control-regex': 'error',
     'no-empty-function': 'off',
-    'no-debugger': 'error',
+    'no-debugger': 'warn',
     'no-dupe-args': 'error',
     'no-dupe-class-members': 'error',
     'no-dupe-keys': 'error',
