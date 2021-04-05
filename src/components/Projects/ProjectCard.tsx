@@ -54,10 +54,18 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
     gap: 4,
     justifyContent: 'space-around',
-    padding: CARD_PADDING,
     marginLeft: -CARD_PADDING,
     marginBottom: -CARD_PADDING,
     marginRight: -CARD_PADDING,
+  },
+  link: {
+    padding: CARD_PADDING,
+    flex: 1,
+    textAlign: 'center',
+    '&:hover, &:focus': {
+      background: '#000',
+      color: '#fff',
+    },
   },
   spring: {
     flexGrow: 1,
@@ -141,8 +149,16 @@ const ProjectCard: React.FC<Props> = ({ project, selectedCategories }) => {
 
       {links && (
         <div className={classes.links}>
-          {links.live && <Link href={links.live}>View live</Link>}
-          {links.vcs && <Link href={links.vcs}>GitHub</Link>}
+          {links.live && (
+            <Link className={classes.link} href={links.live}>
+              View live
+            </Link>
+          )}
+          {links.vcs && (
+            <Link className={classes.link} href={links.vcs}>
+              GitHub
+            </Link>
+          )}
         </div>
       )}
     </article>
