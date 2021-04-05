@@ -2,6 +2,7 @@ export const pixelValues = {
   desktopSmall: 768,
   desktopLarge: 1100,
   tablet: 640,
+  bigPhone: 500,
   phone: 400,
 } as const
 
@@ -10,6 +11,7 @@ const oneBelowPixelValues = {
   desktopSmall: 767,
   desktopLarge: 1099,
   tablet: 639,
+  bigPhone: 499,
   phone: 399,
 } as const
 
