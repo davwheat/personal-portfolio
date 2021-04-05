@@ -22,7 +22,8 @@ interface ImageProps {
   className: string
 }
 
-// Max width of images is ~430px, so we render them at 440px wide
+const IMAGE_INTRINSIC_WIDTH = 600
+
 const projectList: ReadonlyArray<Project> = [
   {
     title: 'Rail Dot Matrix',
@@ -32,7 +33,7 @@ const projectList: ReadonlyArray<Project> = [
     ImageComponent: ({ className }) => (
       <StaticImage
         className={className}
-        width={440}
+        width={IMAGE_INTRINSIC_WIDTH}
         src="../assets/images/projects/rail-dot-matrix.png"
         placeholder="blurred"
         alt="Screenshot of Rail Dot Matrix in use"
@@ -52,7 +53,7 @@ const projectList: ReadonlyArray<Project> = [
     ImageComponent: ({ className }) => (
       <StaticImage
         className={className}
-        width={440}
+        width={IMAGE_INTRINSIC_WIDTH}
         src="../assets/images/projects/techway-leakage-app.png"
         placeholder="blurred"
         alt="Promotional banner. Icon on left showing rounded rectangle with air moving through it and a check mark. Title: Flue Gas Leakage Test Calculator. Subtitle: Easily perform Class B and C flue gas leakage tests."
@@ -72,7 +73,7 @@ const projectList: ReadonlyArray<Project> = [
     ImageComponent: ({ className }) => (
       <StaticImage
         className={className}
-        width={440}
+        width={IMAGE_INTRINSIC_WIDTH}
         src="../assets/images/projects/flarum-badge-api.png"
         placeholder="blurred"
         alt="Screenshot of Flarum Badge API documentation"
