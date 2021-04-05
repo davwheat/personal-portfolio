@@ -34,6 +34,18 @@ module.exports = {
     `gatsby-plugin-preact`,
     `gatsby-plugin-react-head`,
     `gatsby-plugin-less`,
+    {
+      resolve: '@slixites/gatsby-plugin-google-fonts',
+      options: {
+        fonts: [`jost\:400,400i,500,700,700i`],
+        display: 'fallback',
+        preconnect: true,
+        attributes: {
+          rel: 'stylesheet preload prefetch',
+          as: 'style',
+        },
+      },
+    },
     `gatsby-plugin-csp`,
     {
       resolve: 'gatsby-plugin-eslint',
@@ -54,7 +66,7 @@ module.exports = {
         short_name: `davwheat`,
         start_url: `/`,
         background_color: Colors.primaryRed,
-        theme_color: Colors.primaryRed,
+        theme_color: Colors.primaryBlue,
         display: `minimal-ui`,
         icon: `src/images/thinking_emoji.png`, // This path is relative to the root of the site.
       },
