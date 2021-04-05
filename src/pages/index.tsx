@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     '&::after, &::before': {
       content: '""',
       display: 'block',
-      background: Colors.primaryRed,
+      background: 'var(--primary-red)',
       height: 8,
       width: '100%',
     },

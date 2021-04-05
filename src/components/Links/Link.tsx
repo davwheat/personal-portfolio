@@ -5,11 +5,9 @@ import { Link as GatsbyLink } from 'gatsby'
 import { makeStyles } from '@material-ui/core'
 import clsx from 'clsx'
 
-import Colors from '../../data/colors.json'
-
 const useStyles = makeStyles({
   link: {
-    color: Colors.linkColor,
+    color: 'var(--link-color)',
     fontWeight: 700,
     textDecoration: 'underline',
   },
