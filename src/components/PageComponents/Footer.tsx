@@ -2,6 +2,7 @@ import React from 'react'
 
 import { makeStyles } from '@material-ui/core'
 import Link from '../Links/Link'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const useStyles = makeStyles({
   container: {
@@ -34,7 +35,6 @@ const useStyles = makeStyles({
       borderLeft: '1px #ccc solid',
       marginBottom: 8,
       fontWeight: 400,
-      transition: 'background 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out',
       '&:not(:first-child)': {
         marginLeft: -1,
       },
@@ -49,6 +49,25 @@ const useStyles = makeStyles({
 
 const Footer: React.FC = () => {
   const classes = useStyles()
+  const {
+    siteBuildMetadata,
+  }: {
+    siteBuildMetadata: {
+      /**
+       * String date/time formatted as YYYY-MM-DD HH:mm
+       */
+      buildTime: string
+    }
+  } = useStaticQuery(
+    graphql`
+      query {
+        siteBuildMetadata {
+          buildTime(formatString: "YYYY-MM-DD HH:mm z")
+        }
+      }
+    `,
+  )
+
   return (
     <footer className={classes.container}>
       <main className={classes.content}>
@@ -64,6 +83,7 @@ const Footer: React.FC = () => {
               Learn more
             </a>
           </p>
+          <p className="text-whisper">Last updated {siteBuildMetadata.buildTime}.</p>
         </section>
         <nav className={classes.nav}>
           <Link href="/">Home</Link>
@@ -83,7 +103,7 @@ const useBulletStyles = makeStyles({
     display: 'inline-block',
     verticalAlign: 'middle',
     transformOrigin: 'center',
-    transform: 'scale(2) translateY(-5%)',
+    transform: 'scale(2)',
     marginLeft: 8,
     marginRight: 8,
     color: '#fff',

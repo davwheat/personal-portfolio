@@ -72,7 +72,16 @@ module.exports = {
 
     // require that JSX labels use "htmlFor"
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
-    'jsx-a11y/label-has-for': ['error', { components: ['label'] }],
+    // 'jsx-a11y/label-has-for': ['error', { components: ['label'] }],
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        labelComponents: ['CustomInputLabel'],
+        labelAttributes: ['label'],
+        controlComponents: ['CustomInput'],
+        depth: 3,
+      },
+    ],
 
     // require that mouseover/out come with focus/blur, for keyboard-only users
     // TODO: evaluate
