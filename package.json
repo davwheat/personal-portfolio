@@ -11,6 +11,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/styles": "^4.11.3",
+    "@slixites/gatsby-plugin-google-fonts": "^1.1.1",
     "animate.css": "^4.1.1",
     "clsx": "^1.1.1",
     "gatsby": "^3.2.1",
@@ -32,6 +33,7 @@
     "get-best-contrast-color": "^0.3.1",
     "hk-grotesk": "^1.0.2",
     "mdi-react": "^7.5.0",
+    "nanoid": "^3.1.22",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.18",
     "prop-types": "^15.7.2",

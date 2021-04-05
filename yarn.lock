@@ -1727,6 +1727,11 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
+"@slixites/gatsby-plugin-google-fonts@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@slixites/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.1.1.tgz#eeb65c80861fbf3b3622b674ed2d9b122e7cdc0e"
+  integrity sha512-j3ErrGd360UClx5WAquaYnHDjly1ghBHzqD+AF2jb3doyC7REZxAfm/YZt1+1s410SR1Ck4B0ehaGY3seUiJow==
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"

@@ -3,13 +3,11 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core'
 import clsx from 'clsx'
 
-import Colors from '../../data/colors.json'
-
 const useStyles = makeStyles({
   linkButton: {
     appearance: 'none',
     background: 'none',
-    color: Colors.linkColor,
+    color: 'var(--link-color)',
     border: 'none',
     cursor: 'pointer',
     textDecoration: 'underline',
