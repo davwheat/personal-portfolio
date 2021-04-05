@@ -1,23 +1,36 @@
 import React from 'react'
 
 import { Chip, makeStyles } from '@material-ui/core'
-import type { Project, Tech } from '../../data/projectList'
-import generateTransitions from '../../functions/generateTransitions'
+
 import Link from '../Links/Link'
+
+import generateTransitions from '../../functions/generateTransitions'
 import sortAscending from '../../functions/sortAscending'
 import clsx from 'clsx'
+
+import type { Project, ProjectType, Tech } from '../../data/projectList'
 
 interface Props {
   project: Project
   selectedCategories: ReadonlyArray<Tech>
 }
 
+const CARD_PADDING = 16 as const
+
 const useStyles = makeStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
     border: '2px solid black',
-    padding: 16,
+    padding: CARD_PADDING,
+    position: 'relative',
+  },
+  header: {
+    display: 'flex',
+    gap: 8,
+  },
+  heading: {
+    flexGrow: 1,
   },
   categories: {
     justifySelf: 'flex-end',
@@ -41,21 +54,69 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
     gap: 4,
     justifyContent: 'space-around',
+    padding: CARD_PADDING,
+    marginLeft: -CARD_PADDING,
+    marginBottom: -CARD_PADDING,
+    marginRight: -CARD_PADDING,
   },
   spring: {
     flexGrow: 1,
   },
+  image: {
+    marginLeft: -CARD_PADDING,
+    marginRight: -CARD_PADDING,
+    marginTop: 12,
+    marginBottom: CARD_PADDING,
+  },
+  typeChip: {
+    fontFamily: "'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+    borderRadius: 4,
+    color: '#fff',
+    background: typeToColor(),
+    border: 'none',
+    '& > *': {
+      padding: 8,
+    },
+    '&[data-type="web"i]': {
+      background: typeToColor('Web'),
+    },
+    '&[data-type="api"i]': {
+      background: typeToColor('API'),
+    },
+    '&[data-type="mobile"i]': {
+      background: typeToColor('Mobile'),
+    },
+  },
 })
 
+function typeToColor(type?: ProjectType) {
+  switch (type) {
+    case 'Web':
+      return '#119ccf'
+    case 'API':
+      return '#e6961e'
+    case 'Mobile':
+      return '#8b19bd'
+    default:
+      return '#000'
+  }
+}
+
 const ProjectCard: React.FC<Props> = ({ project, selectedCategories }) => {
-  const { title, description, links, tech, type, image } = project
+  const { title, description, links, tech, type, ImageComponent } = project
   const classes = useStyles()
 
   const sortedTech = [...tech].sort(sortAscending)
 
   return (
     <article className={classes.card}>
-      <h3 className="text-loud">{title}</h3>
+      <header className={classes.header}>
+        <h3 className={clsx('text-loud', classes.heading)}>{title}</h3>
+        <Chip data-type={type} className={classes.typeChip} component="p" label={type} />
+      </header>
+
       <div className={classes.categories}>
         {sortedTech.map(category => {
           const isSelected = selectedCategories.includes(category)
@@ -72,9 +133,11 @@ const ProjectCard: React.FC<Props> = ({ project, selectedCategories }) => {
           )
         })}
       </div>
-      <p className="text-speak">{description}</p>
 
       <div aria-hidden className={classes.spring} />
+      {ImageComponent && <ImageComponent className={classes.image} />}
+
+      <p className="text-speak">{description}</p>
 
       {links && (
         <div className={classes.links}>

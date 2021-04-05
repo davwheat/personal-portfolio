@@ -39,6 +39,7 @@ const useStyles = makeStyles({
 })
 
 const sortedTech = [...AllTech].sort(sortAscending)
+const sortedProjectList = [...ProjectListData].sort((a, b) => sortAscending(a.type, b.type) || sortAscending(a.title, b.title))
 
 const ProjectList: React.FC = () => {
   const classes = useStyles()
@@ -90,7 +91,7 @@ const ProjectList: React.FC = () => {
         </div>
       </nav>
       <div className={classes.list}>
-        {ProjectListData.map(project => {
+        {sortedProjectList.map(project => {
           if (selectedTech.length > 0) {
             if (mustMatchAll && !selectedTech.every(t => project.tech.includes(t))) return null
             else if (!selectedTech.some(t => project.tech.includes(t))) return null
