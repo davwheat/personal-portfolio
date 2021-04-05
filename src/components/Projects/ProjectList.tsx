@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
+import { Chip, makeStyles } from '@material-ui/core'
+import clsx from 'clsx'
+
+import ProjectCard from './ProjectCard'
+import Checkbox from '../Inputs/Checkbox'
 
 import ProjectListData, { AllTech } from '../../data/projectList'
 
-import ProjectCard from './ProjectCard'
-import sortAscending from '../../functions/sortAscending'
-import { Checkbox, Chip, FormControlLabel, makeStyles } from '@material-ui/core'
 import generateTransitions from '../../functions/generateTransitions'
-import clsx from 'clsx'
+import sortAscending from '../../functions/sortAscending'
 
 const useStyles = makeStyles({
   filter: {
@@ -51,17 +53,14 @@ const ProjectList: React.FC = () => {
       <nav className={classes.filter}>
         <div>
           <p className="text-speak">Filter by technology</p>
-          <FormControlLabel
-            control={
-              <Checkbox
-                className={classes.checkbox}
-                checked={mustMatchAll}
-                onChange={e => setMustMatchAll(e.target.checked)}
-                color="secondary"
-              />
-            }
-            label="Must match all"
-          />
+          <div>
+            <Checkbox
+              // className={classes.checkbox}
+              checked={mustMatchAll}
+              onChange={e => setMustMatchAll(e.target.checked)}
+              label="Must match all"
+            />
+          </div>
         </div>
 
         <div className={classes.techList}>
