@@ -34,7 +34,6 @@ const useStyles = makeStyles({
       borderLeft: '1px #ccc solid',
       marginBottom: 8,
       fontWeight: 400,
-      transition: 'background 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out',
       '&:not(:first-child)': {
         marginLeft: -1,
       },
