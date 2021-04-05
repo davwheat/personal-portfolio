@@ -5,6 +5,9 @@ import Link from '../Links/Link'
 import Breakpoints from '../../data/breakpoints'
 import generateTransitions, { Durations } from '../../functions/generateTransitions'
 
+import MenuIcon from '../../assets/icons/menu.svg'
+import CloseIcon from '../../assets/icons/close.svg'
+
 const MOBILE_NAV_ZINDEX = 1000000
 
 const useStyles = makeStyles({
@@ -156,23 +159,22 @@ const useStyles = makeStyles({
       right: 0,
       bottom: 0,
       textAlign: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: '65%',
       ...generateTransitions('opacity'),
     },
     // Menu icon
     '&::after': {
-      fontSize: 32,
-      content: '"≡"',
-      fontWeight: 700,
+      content: '""',
       opacity: 1,
-      transform: 'translateY(-2px)',
+      backgroundImage: `url(${MenuIcon})`,
     },
     // Close icon
     '&::before': {
-      fontSize: 28,
-      content: '"🗙"',
-      fontWeight: 400,
+      content: '""',
       opacity: 0,
-      transform: 'translateY(-1px)',
+      backgroundImage: `url(${CloseIcon})`,
     },
   },
   // Grey background with onClick to hide the menu
