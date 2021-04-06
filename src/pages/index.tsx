@@ -12,23 +12,6 @@ import generateTransitions from '../functions/generateTransitions'
 import Experience from '../components/Experience/Experience'
 
 const useStyles = makeStyles({
-  projectsHeroOuter: {
-    marginTop: 8,
-    marginBottom: 8,
-    '&::after, &::before': {
-      content: '""',
-      display: 'block',
-      background: 'var(--primary-red)',
-      height: 8,
-      width: '100%',
-    },
-    '&::before': {
-      clipPath: 'polygon(0% 0%, 0% 100%, 100% 100%)',
-    },
-    '&::after': {
-      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%)',
-    },
-  },
   projectsHero: {
     display: 'grid',
     gap: 16,
@@ -103,7 +86,7 @@ const IndexPage: React.FC = () => {
         <Experience />
       </Section>
 
-      <Hero className={classes.projectsHeroOuter} innerClassName={classes.projectsHero} color={Colors.primaryRed}>
+      <Hero innerClassName={classes.projectsHero} color={Colors.primaryRed}>
         <div>
           <h2 className="text-loud">Take a peek at some projects that I've worked on over the years.</h2>
         </div>

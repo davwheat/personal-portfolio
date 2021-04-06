@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core'
+import Colors from './data/colors.json'
 
 export default createMuiTheme({
   typography: {
@@ -9,10 +10,10 @@ export default createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#51c5dd',
+      main: Colors.primaryBlue,
     },
     secondary: {
-      main: '#f76076',
+      main: Colors.primaryRed,
     },
   },
   props: {

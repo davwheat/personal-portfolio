@@ -19,6 +19,8 @@ const prodPlugins = !__IS_DEV__
           sitemapSize: 1000,
         },
       },
+      // Fixed hot reload in dev
+      `gatsby-plugin-preact`,
     ]
   : []
 
@@ -31,7 +33,6 @@ module.exports = {
   },
   plugins: [
     ...prodPlugins,
-    `gatsby-plugin-preact`,
     `gatsby-plugin-react-head`,
     `gatsby-plugin-less`,
     {
