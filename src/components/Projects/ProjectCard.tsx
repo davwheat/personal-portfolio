@@ -142,8 +142,9 @@ const ProjectCard: React.FC<Props> = ({ project, selectedCategories }) => {
         })}
       </div>
 
-      <div aria-hidden className={classes.spring} />
       {ImageComponent && <ImageComponent className={classes.image} />}
+
+      <div aria-hidden className={classes.spring} />
 
       <p className="text-speak">{description}</p>
 
