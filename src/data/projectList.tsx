@@ -85,6 +85,26 @@ const projectList: ReadonlyArray<Project> = [
     },
     tech: ['REST API', 'Flarum', 'Typescript'],
   },
+  {
+    title: 'Sky+ Web EPG',
+    type: 'Web',
+    description:
+      "A recreation of the Sky+ electronic program guide on the web. Pulls in real-time listings from Sky's programme listings API used for Sky Q.",
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/sky-web-epg.png"
+        placeholder="blurred"
+        alt="Screenshot of Sky Web EPG"
+      />
+    ),
+    links: {
+      live: 'https://sky-epg.davwheat.dev/',
+      vcs: 'https://github.com/davwheat/sky-plus-web-simulator',
+    },
+    tech: ['Gatsby', 'React', 'REST API', 'Typescript'],
+  },
 ] as const
 
 export default projectList
