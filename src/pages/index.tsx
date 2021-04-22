@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core'
 import Breakpoints from '../data/breakpoints'
 import generateTransitions from '../functions/generateTransitions'
 import Experience from '../components/Experience/Experience'
+import QualificationsTable from '../components/Education/QualificationsTable'
 
 const useStyles = makeStyles({
   projectsHero: {
@@ -50,6 +51,9 @@ const useStyles = makeStyles({
         transform: 'translateX(3px) scaleY(0.92) scaleX(1.05) rotate(45deg)',
       },
     },
+  },
+  eduTable: {
+    marginTop: 24,
   },
 })
 
@@ -110,67 +114,10 @@ const IndexPage: React.FC = () => {
       <Section>
         <h2 className="text-louder">Qualifications</h2>
         <p className="text-speak">
-          As a student, I haven't received all of my qualifications at the moment, so some of the courses below show my predicted grades as
-          opposed to my actual grades.
+          As a current student, I haven't completed all of my qualifications at the moment, so some of the courses below show my current
+          (predicted) grades as opposed to my actual grades.
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Course</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>A-level Computer Science</td>
-              <td>
-                A*<sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-
-            <tr>
-              <td>A-level Maths</td>
-              <td>
-                A*<sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <abbr title="A-level equivalent">BTEC L3</abbr> Computing
-              </td>
-              <td>
-                <abbr title="Distinction star">D*</abbr>
-                <sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-
-            <tr>
-              <td>GCSE Computer Science</td>
-              <td>9</td>
-            </tr>
-
-            <tr>
-              <td>AQA L2 Further Maths Certificate</td>
-              <td>9</td>
-            </tr>
-
-            <tr>
-              <td>GCSE English &amp; Maths</td>
-              <td>9</td>
-            </tr>
-
-            <tr>
-              <td>GCSE Business</td>
-              <td>9</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan={2}>P - predicted result (still studying)</td>
-            </tr>
-          </tfoot>
-        </table>
+        <QualificationsTable className={classes.eduTable} />
       </Section>
     </Layout>
   )
