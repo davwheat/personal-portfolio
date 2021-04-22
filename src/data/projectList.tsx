@@ -105,6 +105,25 @@ const projectList: ReadonlyArray<Project> = [
     },
     tech: ['Gatsby', 'React', 'REST API', 'Typescript'],
   },
+  {
+    title: 'Flarum',
+    type: 'Web',
+    description: 'Open source framework for creating modern forums. Pioneering accessibility and modern styling and development techniques.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/flarum-discuss.png"
+        placeholder="blurred"
+        alt="Screenshot of Flarum's official community forum"
+      />
+    ),
+    links: {
+      live: 'https://discuss.flarum.org/',
+      vcs: 'https://github.com/flarum/core',
+    },
+    tech: ['REST API', 'Typescript', 'Flarum'],
+  },
 ] as const
 
 export default projectList
