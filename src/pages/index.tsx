@@ -85,15 +85,6 @@ const IndexPage: React.FC = () => {
         </p>
       </Section>
 
-      <Section>
-        <h2 className="text-louder">Experience</h2>
-        <p className="text-speak">
-          I've worked on several for multiple different organisations, as well as contributing to the wider open source community.
-        </p>
-
-        <Experience />
-      </Section>
-
       <Hero innerClassName={classes.projectsHero} color={Colors.primaryRed}>
         <div>
           <h2 className="text-loud">Take a peek at some projects that I've worked on over the years.</h2>
@@ -104,6 +95,15 @@ const IndexPage: React.FC = () => {
           </Link>
         </div>
       </Hero>
+
+      <Section>
+        <h2 className="text-louder">Experience</h2>
+        <p className="text-speak">
+          I've worked on several for multiple different organisations, as well as contributing to the wider open source community.
+        </p>
+
+        <Experience />
+      </Section>
 
       <Section>
         <h2 className="text-louder">What do I know?</h2>
