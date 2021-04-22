@@ -73,7 +73,8 @@ const IndexPage: React.FC = () => {
         <h2 className="text-louder">Hello!</h2>
         <p className="text-speak">
           Usually, people's portfolio websites are super fancy, well-crafted, but also bloated and heavy. Not mine. This site is statically
-          generated from fully-fledged React into simple, performant, and powerful HTML, CSS and Javascript with Gatsby.js.
+          generated from fully-fledged React into simple, performant, and powerful HTML, CSS and Javascript with{' '}
+          <a rel="noreferrer noopener" target="_blank" href="https://gatsbyjs.com/">Gatsby.js</a>.
         </p>
         <p className="text-speak">
           I prefer <strong>simple websites</strong>. Websites which are responsive and perform well on all devices, no matter how old and slow.
