@@ -14,12 +14,19 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
     organisation: 'giffgaff',
     organisationSite: 'https://community.giffgaff.com',
     description: 'UK mobile network',
-    role: 'a freelancer',
+    role: 'a web developer',
     projects: [
       'Fixed CSS styling issues',
-      'Added a dark theme for the community forum',
-      'Worked with their developers to implement new features',
+      'Created a dark theme for their community forum',
+      'Worked with developers to implement new community features',
     ],
+  },
+  {
+    organisation: 'Techway Solutions',
+    organisationSite: 'https://play.google.com/store/apps/details?id=dev.davwheat.flueleakagecalculator',
+    description: 'Engineering services',
+    role: 'a mobile developer',
+    projects: ['Created a app used for certifying industrial flues'],
   },
 ] as const
 
