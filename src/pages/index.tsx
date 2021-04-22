@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core'
 import Breakpoints from '../data/breakpoints'
 import generateTransitions from '../functions/generateTransitions'
 import Experience from '../components/Experience/Experience'
+import QualificationsTable from '../components/Education/QualificationsTable'
 
 const useStyles = makeStyles({
   projectsHero: {
@@ -51,6 +52,9 @@ const useStyles = makeStyles({
       },
     },
   },
+  eduTable: {
+    marginTop: 24,
+  },
 })
 
 const IndexPage: React.FC = () => {
@@ -69,7 +73,8 @@ const IndexPage: React.FC = () => {
         <h2 className="text-louder">Hello!</h2>
         <p className="text-speak">
           Usually, people's portfolio websites are super fancy, well-crafted, but also bloated and heavy. Not mine. This site is statically
-          generated from fully-fledged React into simple, performant, and powerful HTML, CSS and Javascript with Gatsby.js.
+          generated from fully-fledged React into simple, performant, and powerful HTML, CSS and Javascript with{' '}
+          <a rel="noreferrer noopener" target="_blank" href="https://gatsbyjs.com/">Gatsby.js</a>.
         </p>
         <p className="text-speak">
           I prefer <strong>simple websites</strong>. Websites which are responsive and perform well on all devices, no matter how old and slow.
@@ -110,67 +115,10 @@ const IndexPage: React.FC = () => {
       <Section>
         <h2 className="text-louder">Qualifications</h2>
         <p className="text-speak">
-          As a student, I haven't received all of my qualifications at the moment, so some of the courses below show my predicted grades as
-          opposed to my actual grades.
+          As a current student, I haven't completed all of my qualifications at the moment, so some of the courses below show my current
+          (predicted) grades as opposed to my actual grades.
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Course</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>A-level Computer Science</td>
-              <td>
-                A*<sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-
-            <tr>
-              <td>A-level Maths</td>
-              <td>
-                A*<sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <abbr title="A-level equivalent">BTEC L3</abbr> Computing
-              </td>
-              <td>
-                <abbr title="Distinction star">D*</abbr>
-                <sup aria-label="predicted result">P</sup>
-              </td>
-            </tr>
-
-            <tr>
-              <td>GCSE Computer Science</td>
-              <td>9</td>
-            </tr>
-
-            <tr>
-              <td>AQA L2 Further Maths Certificate</td>
-              <td>9</td>
-            </tr>
-
-            <tr>
-              <td>GCSE English &amp; Maths</td>
-              <td>9</td>
-            </tr>
-
-            <tr>
-              <td>GCSE Business</td>
-              <td>9</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan={2}>P - predicted result (still studying)</td>
-            </tr>
-          </tfoot>
-        </table>
+        <QualificationsTable className={classes.eduTable} />
       </Section>
     </Layout>
   )

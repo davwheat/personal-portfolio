@@ -1,9 +1,9 @@
 import React from 'react'
 
-import HTMLLogo from '../../images/tech/html5.svg'
-import ReactLogo from '../../images/tech/react.svg'
-import GatsbyLogo from '../../images/tech/gatsby.svg'
-import FlarumLogo from '../../images/tech/flarum.svg'
+import HTMLLogo from '../../assets/tech/html5.svg'
+import ReactLogo from '../../assets/tech/react.svg'
+import GatsbyLogo from '../../assets/tech/gatsby.svg'
+import FlarumLogo from '../../assets/tech/flarum.svg'
 
 import { makeStyles } from '@material-ui/core'
 import TechItem from './TechItem'

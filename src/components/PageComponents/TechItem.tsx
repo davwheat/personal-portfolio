@@ -36,6 +36,7 @@ const useStyles = makeStyles({
   bubble: {
     filter: 'drop-shadow(0 0 8px var(--neutral-grey))',
     width: '100%',
+    height: '100%',
     margin: 'auto',
     [Breakpoints.upTo.tablet]: {
       width: '85%',

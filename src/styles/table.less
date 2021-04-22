@@ -3,8 +3,11 @@
 // Only apply to tables which are not using
 // custom styles
 table:not(.custom) {
-  border: 1px solid #000;
-  border-radius: 4px;
+  @main-color: #000;
+  @row-separator-color: rgba(128, 128, 128, 0.2);
+  @row-hover-color: rgba(128, 128, 128, 0.08);
+
+  border: 2px solid @main-color;
   border-spacing: 0;
 
   margin: auto;
@@ -15,11 +18,17 @@ table:not(.custom) {
   }
 
   thead {
-    background: rgba(128, 128, 128, 0.15);
+    background: @main-color;
+    color: #fff;
+    font-weight: bold;
 
     tr {
       &:last-child th {
-        border-bottom: 1px rgba(128, 128, 128, 0.5) solid;
+        border-bottom: 2px @main-color solid;
+      }
+
+      th {
+        text-align: left;
       }
     }
   }
@@ -27,12 +36,12 @@ table:not(.custom) {
   tbody {
     tr {
       &:not(:last-child) td {
-        border-bottom: 1px rgba(128, 128, 128, 0.15) solid;
+        border-bottom: 1px @row-separator-color solid;
       }
 
       &:hover,
       &:focus-within {
-        background: rgba(128, 128, 128, 0.05);
+        background: @row-hover-color;
       }
     }
   }
@@ -42,7 +51,7 @@ table:not(.custom) {
 
     tr {
       &:first-child td {
-        border-top: 1px rgba(128, 128, 128, 0.5) solid;
+        border-top: 1px @main-color solid;
       }
     }
   }
