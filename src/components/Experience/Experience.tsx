@@ -4,18 +4,22 @@ import { makeStyles } from '@material-ui/core'
 
 const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
   {
-    organisation: 'giffgaff',
-    organisationSite: 'https://community.giffgaff.com',
-    description: 'UK mobile network',
-    role: 'a freelancer',
-    projects: ['Fixed styling issues', 'Added a dark theme for the forum'],
-  },
-  {
     organisation: 'Flarum',
     organisationSite: 'https://flarum.org',
     description: 'Free, open-source forum software',
     role: 'a core developer trainee',
     projects: ['Improved accessibility', 'Replaced old JS libraries with native methods', 'Pioneered CSS modernisation'],
+  },
+  {
+    organisation: 'giffgaff',
+    organisationSite: 'https://community.giffgaff.com',
+    description: 'UK mobile network',
+    role: 'a freelancer',
+    projects: [
+      'Fixed CSS styling issues',
+      'Added a dark theme for the community forum',
+      'Worked with their developers to implement new features',
+    ],
   },
 ] as const
 
