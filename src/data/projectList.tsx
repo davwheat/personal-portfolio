@@ -124,6 +124,25 @@ const projectList: ReadonlyArray<Project> = [
     },
     tech: ['REST API', 'Typescript', 'Flarum'],
   },
+  {
+    title: 'Ticket Barrier Error Lookup',
+    type: 'Mobile',
+    description: 'Open source framework for creating modern forums. Pioneering accessibility and modern styling and development techniques.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/gateline-errors.png"
+        placeholder="blurred"
+        alt="Screenshot of Flarum's official community forum"
+      />
+    ),
+    links: {
+      live: 'https://play.google.com/store/apps/details?id=dev.davwheat.railway.gateline_errors',
+      vcs: 'https://github.com/davwheat/uk_railway_gateline_error_lookup',
+    },
+    tech: ['Flutter'],
+  },
 ] as const
 
 export default projectList
