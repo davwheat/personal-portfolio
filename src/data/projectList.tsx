@@ -3,7 +3,19 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 export type ProjectType = 'Web' | 'Mobile' | 'API'
-export const AllTech = ['Gatsby', 'React', 'REST API', 'Flutter', 'React Native', 'Flarum', 'Typescript', 'Javascript'] as const
+export const AllTech = [
+  'Gatsby',
+  'React',
+  'REST API',
+  'Flutter',
+  'React Native',
+  'Flarum',
+  'Typescript',
+  'Javascript',
+  'Wearables',
+  'Android',
+  'Kotlin',
+] as const
 export type Tech = ValuesOf<typeof AllTech>
 
 export interface Project {
@@ -63,7 +75,7 @@ const projectList: ReadonlyArray<Project> = [
       live: 'https://play.google.com/store/apps/details?id=dev.davwheat.flueleakagecalculator',
       //   vcs: 'https://github.com/davwheat/uk-dot-matrix',
     },
-    tech: ['React Native', 'Javascript'],
+    tech: ['React Native', 'Javascript', 'Android'],
   },
   {
     title: 'Flarum Badge API',
@@ -141,7 +153,26 @@ const projectList: ReadonlyArray<Project> = [
       live: 'https://play.google.com/store/apps/details?id=dev.davwheat.railway.gateline_errors',
       vcs: 'https://github.com/davwheat/uk_railway_gateline_error_lookup',
     },
-    tech: ['Flutter'],
+    tech: ['Flutter', 'Android'],
+  },
+  {
+    title: 'giffgaff for Wear OS',
+    type: 'Mobile',
+    description: 'Open source app which displays key information about your giffgaff account on your Wear OS smartwatch.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/giffgaff-wear.png"
+        placeholder="blurred"
+        alt="Screenshot of the watch app"
+      />
+    ),
+    links: {
+      live: 'https://play.google.com/store/apps/details?id=dev.davwheat.giffgaff.wearable',
+      vcs: 'https://github.com/davwheat/giffgaff-for-wear-os',
+    },
+    tech: ['Kotlin', 'Android', 'Wearables', 'REST API'],
   },
 ] as const
 
