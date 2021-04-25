@@ -139,14 +139,14 @@ const projectList: ReadonlyArray<Project> = [
   {
     title: 'Ticket Barrier Error Lookup',
     type: 'Mobile',
-    description: 'Open source framework for creating modern forums. Pioneering accessibility and modern styling and development techniques.',
+    description: 'Ever wondered why the ticket barriers have told you to "seek assistance"? This app will tell you why.',
     ImageComponent: ({ className }) => (
       <StaticImage
         className={className}
         width={IMAGE_INTRINSIC_WIDTH}
         src="../assets/images/projects/gateline-errors.png"
         placeholder="blurred"
-        alt="Screenshot of Flarum's official community forum"
+        alt="Screenshot of the app in use"
       />
     ),
     links: {
