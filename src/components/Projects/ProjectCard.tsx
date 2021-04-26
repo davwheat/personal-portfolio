@@ -12,7 +12,6 @@ import type { Project, ProjectType, Tech } from '../../data/projectList'
 
 interface Props {
   project: Project
-  selectedCategories: ReadonlyArray<Tech>
 }
 
 const CARD_PADDING = 16 as const
@@ -43,9 +42,6 @@ const useStyles = makeStyles({
   chip: {
     fontFamily: "'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     ...generateTransitions(['background', 'color']),
-  },
-  chipSelected: {
-    border: '1px solid transparent',
   },
   links: {
     justifySelf: 'flex-end',
@@ -112,7 +108,7 @@ function typeToColor(type?: ProjectType) {
   }
 }
 
-const ProjectCard: React.FC<Props> = ({ project, selectedCategories }) => {
+const ProjectCard: React.FC<Props> = ({ project }) => {
   const { title, description, links, tech, type, ImageComponent } = project
   const classes = useStyles()
 
@@ -127,18 +123,7 @@ const ProjectCard: React.FC<Props> = ({ project, selectedCategories }) => {
 
       <div className={classes.categories}>
         {sortedTech.map(category => {
-          const isSelected = selectedCategories.includes(category)
-
-          return (
-            <Chip
-              color="secondary"
-              size="small"
-              className={clsx(classes.chip, [isSelected && classes.chipSelected])}
-              variant={isSelected ? 'default' : 'outlined'}
-              label={category}
-              key={category}
-            />
-          )
+          return <Chip color="secondary" size="small" className={clsx(classes.chip)} variant={'default'} label={category} key={category} />
         })}
       </div>
 
