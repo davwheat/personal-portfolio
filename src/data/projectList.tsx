@@ -2,7 +2,7 @@ import React from 'react'
 
 import { StaticImage } from 'gatsby-plugin-image'
 
-export type ProjectType = 'Web' | 'Mobile' | 'API'
+export type ProjectType = 'Web' | 'Mobile' | 'API' | 'Desktop'
 export const AllTech = [
   'Gatsby',
   'React',
@@ -15,6 +15,8 @@ export const AllTech = [
   'Wearables',
   'Android',
   'Kotlin',
+  'Express.js',
+  'Electron',
 ] as const
 export type Tech = ValuesOf<typeof AllTech>
 
@@ -73,7 +75,6 @@ const projectList: ReadonlyArray<Project> = [
     ),
     links: {
       live: 'https://play.google.com/store/apps/details?id=dev.davwheat.flueleakagecalculator',
-      //   vcs: 'https://github.com/davwheat/uk-dot-matrix',
     },
     tech: ['React Native', 'Javascript', 'Android'],
   },
@@ -95,7 +96,7 @@ const projectList: ReadonlyArray<Project> = [
       live: 'http://docs.flarum-badge-api.davwheat.dev/',
       vcs: 'https://github.com/davwheat/flarum-badge-api',
     },
-    tech: ['REST API', 'Flarum', 'Typescript'],
+    tech: ['REST API', 'Flarum', 'Typescript', 'Express.js'],
   },
   {
     title: 'Sky+ Web EPG',
@@ -158,7 +159,7 @@ const projectList: ReadonlyArray<Project> = [
   {
     title: 'giffgaff for Wear OS',
     type: 'Mobile',
-    description: 'Open source app which displays key information about your giffgaff account on your Wear OS smartwatch.',
+    description: 'Unofficial open-source app which displays key information about your giffgaff account on your Wear OS smartwatch.',
     ImageComponent: ({ className }) => (
       <StaticImage
         className={className}
@@ -173,6 +174,124 @@ const projectList: ReadonlyArray<Project> = [
       vcs: 'https://github.com/davwheat/giffgaff-for-wear-os',
     },
     tech: ['Kotlin', 'Android', 'Wearables', 'REST API'],
+  },
+  {
+    title: 'giffgaff status',
+    type: 'Web',
+    description: 'Unofficial open-source website that interfaces with the giffgaff community API to pull in the latest service updates.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/giffgaff-status.png"
+        placeholder="blurred"
+        alt="Screenshot of giffgaffstatus.com"
+      />
+    ),
+    links: {
+      live: 'https://giffgaffstatus.com',
+      vcs: 'https://github.com/davwheat/giffgaff-status',
+    },
+    tech: ['Javascript', 'React', 'REST API', 'Gatsby'],
+  },
+  {
+    title: 'World Cup of Train Operators',
+    type: 'Web',
+    description:
+      'Open-source website to track the World Cup of Train Operators run by Geoff Marshall. Partnered with the respective API, it pulls the latest poll data from Twitter. Created in partnership with Kishan Singh.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/world-cup-of-train-operators.png"
+        placeholder="blurred"
+        alt="Screenshot of the World Cup of TOCs"
+      />
+    ),
+    links: {
+      live: 'https://toccup.davwheat.dev',
+      vcs: 'https://github.com/davwheat/world-cup-of-tocs',
+    },
+    tech: ['Typescript', 'React', 'REST API', 'Gatsby'],
+  },
+  {
+    title: 'World Cup of Train Operators API',
+    type: 'API',
+    description:
+      "Open-source API to pull data about the latest World Cup of TOCs polls from Geoff Marshall's Twitter account. Created in partnership with Kishan Singh.",
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/world-cup-of-train-operators-api.png"
+        placeholder="blurred"
+        alt="Screenshot of a response from the API"
+      />
+    ),
+    links: {
+      live: 'https://toccup.davwheat.dev',
+      vcs: 'https://github.com/davwheat/world-cup-of-tocs-api',
+    },
+    tech: ['Typescript', 'REST API', 'Express.js'],
+  },
+  {
+    title: 'Project Mega Pack Manager API',
+    type: 'API',
+    description:
+      "Open-source API which serves data about all available liveries in Project Mega Pack for the Project Mega Pack Manager. It's used by over 85000 people, and generates 140 TB of traffic per month. Created in collaboration with Jaap Rodenburg.",
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/project-mega-pack-api.png"
+        placeholder="blurred"
+        alt="Screenshot of a response from the API"
+      />
+    ),
+    links: {
+      live: 'https://www.projectmegapack.com',
+      vcs: 'https://github.com/MSFS-Mega-Pack/MSFS2020-Livery-API',
+    },
+    tech: ['Typescript', 'REST API', 'Express.js'],
+  },
+  {
+    title: 'Project Mega Pack Manager',
+    type: 'Desktop',
+    description:
+      "Open-source Electron app which provides management (browsing, installation, and removal) of liveries in Project Mega Pack. It's used by over 85000 people, and generates 140 TB of traffic per month. Created in collaboration with Jaap Rodenburg.",
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/project-mega-pack-manager.png"
+        placeholder="blurred"
+        alt="Screenshot of the Project Mega Pack Manager"
+      />
+    ),
+    links: {
+      live: 'https://www.projectmegapack.com',
+      vcs: 'https://github.com/MSFS-Mega-Pack/MSFS2020-livery-manager',
+    },
+    tech: ['Typescript', 'Electron', 'React', 'REST API'],
+  },
+  {
+    title: 'Boris Briefing Bingo',
+    type: 'Web',
+    description: "Online bingo board to play along with during Boris Johnson's Coronavirus Press Briefings.",
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/boris-bingo.png"
+        placeholder="blurred"
+        alt="Screenshot of borisbingo.com"
+      />
+    ),
+    links: {
+      live: 'https://borisbingo.com',
+      vcs: 'https://github.com/davwheat/boris-johnson-covid-bingo',
+    },
+    tech: ['Javascript', 'Gatsby', 'React'],
   },
 ] as const
 
