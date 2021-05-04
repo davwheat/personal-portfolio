@@ -1,6 +1,7 @@
 import React from 'react'
 import ExperienceCard from './ExperienceCard'
 import { makeStyles } from '@material-ui/core'
+import Breakpoints from '../../data/breakpoints'
 
 const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
   {
@@ -44,6 +45,9 @@ const useStyles = makeStyles({
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gap: 16,
+    [Breakpoints.upTo.tablet]: {
+      gridTemplateColumns: '1fr',
+    },
   },
 })
 
