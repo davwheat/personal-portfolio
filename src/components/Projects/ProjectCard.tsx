@@ -5,7 +5,7 @@ import { Chip, makeStyles } from '@material-ui/core'
 import Link from '../Links/Link'
 
 import generateTransitions from '../../functions/generateTransitions'
-import sortAscending from '../../functions/sortAscending'
+import sortDescending from '../../functions/sortDescending'
 import clsx from 'clsx'
 
 import type { Project, ProjectType } from '../../data/projectList'
@@ -111,7 +111,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
   const { title, description, links, tech, type, ImageComponent } = project
   const classes = useStyles()
 
-  const sortedTech = [...tech].sort(sortAscending)
+  const sortedTech = [...tech].sort(sortDescending)
 
   return (
     <article className={classes.card}>

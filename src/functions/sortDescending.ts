@@ -1,10 +1,10 @@
 const collator = new Intl.Collator('en-GB')
 
-export default function sortAscending(a: unknown, b: unknown): number {
+export default function sortDescending(a: unknown, b: unknown): number {
   if (typeof a === 'string' && typeof b === 'string') {
-    return collator.compare(b, a)
+    return collator.compare(a, b)
   }
 
   // @ts-expect-error eek
-  return b - a
+  return a - b
 }

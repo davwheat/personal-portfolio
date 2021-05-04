@@ -3,11 +3,9 @@ import { makeStyles } from '@material-ui/core'
 
 import ProjectCard from './ProjectCard'
 
-import ProjectListData from '../../data/projectList'
-
-import generateTransitions from '../../functions/generateTransitions'
-import sortAscending from '../../functions/sortAscending'
+import sortDescending from '../../functions/sortDescending'
 import Breakpoints from '../../data/breakpoints'
+import ProjectListData from '../../data/projectList'
 
 const useStyles = makeStyles({
   filter: {
@@ -39,14 +37,13 @@ const useStyles = makeStyles({
   },
   chip: {
     fontFamily: "'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-    ...generateTransitions(['background', 'color', 'border-color']),
   },
   chipSelected: {
     border: '1px solid transparent',
   },
 })
 
-const sortedProjectList = [...ProjectListData].sort((a, b) => sortAscending(a.type, b.type) || sortAscending(a.title, b.title))
+const sortedProjectList = [...ProjectListData].sort((a, b) => sortDescending(a.title, b.title))
 
 const ProjectList: React.FC = () => {
   const classes = useStyles()
