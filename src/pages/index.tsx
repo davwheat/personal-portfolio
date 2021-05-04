@@ -73,7 +73,7 @@ const IndexPage: React.FC = () => {
         <h2 className="text-louder">Hello!</h2>
         <p className="text-speak">
           Usually, people's portfolio websites are super fancy, well-crafted, but also bloated and heavy. Not mine. This site is statically
-          generated from fully-fledged React into simple, performant, and powerful HTML, CSS and Javascript with{' '}
+          generated from fully-fledged React into simple, performant, and powerful HTML, CSS and Javascript with&nbsp;
           <a rel="noreferrer noopener" target="_blank" href="https://gatsbyjs.com/">
             Gatsby.js
           </a>
@@ -87,7 +87,7 @@ const IndexPage: React.FC = () => {
 
       <Hero innerClassName={classes.projectsHero} color={Colors.primaryRed}>
         <div>
-          <h2 className="text-loud">Take a peek at some projects that I've worked on over the years.</h2>
+          <h2 className="text-loud">Take a peek at some projects that I've worked on over the&nbsp;years.</h2>
         </div>
         <div className={classes.projectsLinkContainer}>
           <Link className={classes.projectsLink} href="/my-projects">
@@ -99,7 +99,7 @@ const IndexPage: React.FC = () => {
       <Section>
         <h2 className="text-louder">Experience</h2>
         <p className="text-speak">
-          I've worked on several for multiple different organisations, as well as contributing to the wider open source community.
+          I've worked on several for multiple different organisations, as well as contributing to the wider open source&nbsp;community.
         </p>
 
         <Experience />
@@ -119,7 +119,7 @@ const IndexPage: React.FC = () => {
         <h2 className="text-louder">Qualifications</h2>
         <p className="text-speak">
           As a current student, I haven't completed all of my qualifications at the moment, so some of the courses below show my current
-          (predicted) grades as opposed to my actual grades.
+          (predicted) grades as opposed to my actual&nbsp;grades.
         </p>
         <QualificationsTable className={classes.eduTable} />
       </Section>
