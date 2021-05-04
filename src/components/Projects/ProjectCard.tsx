@@ -8,7 +8,7 @@ import generateTransitions from '../../functions/generateTransitions'
 import sortAscending from '../../functions/sortAscending'
 import clsx from 'clsx'
 
-import type { Project, ProjectType, Tech } from '../../data/projectList'
+import type { Project, ProjectType } from '../../data/projectList'
 
 interface Props {
   project: Project

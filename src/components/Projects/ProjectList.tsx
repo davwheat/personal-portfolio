@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import { Chip, makeStyles } from '@material-ui/core'
-import clsx from 'clsx'
+import React from 'react'
+import { makeStyles } from '@material-ui/core'
 
 import ProjectCard from './ProjectCard'
-import Checkbox from '../Inputs/Checkbox'
 
-import ProjectListData, { AllTech } from '../../data/projectList'
+import ProjectListData from '../../data/projectList'
 
 import generateTransitions from '../../functions/generateTransitions'
 import sortAscending from '../../functions/sortAscending'
