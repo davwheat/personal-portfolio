@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core'
 
 import ProjectCard from './ProjectCard'
+import Tabs from '../Tabs'
 
 import sortDescending from '../../functions/sortDescending'
 import Breakpoints from '../../data/breakpoints'
@@ -45,17 +46,46 @@ const useStyles = makeStyles({
 
 const sortedProjectList = [...ProjectListData].sort((a, b) => sortDescending(a.title, b.title))
 
+const webProjects = sortedProjectList.filter(p => p.type === 'Web')
+const mobileProjects = sortedProjectList.filter(p => p.type === 'Mobile')
+const apiProjects = sortedProjectList.filter(p => p.type === 'API')
+const desktopProjects = sortedProjectList.filter(p => p.type === 'Desktop')
+
 const ProjectList: React.FC = () => {
   const classes = useStyles()
 
   return (
-    <div>
-      <div className={classes.list}>
-        {sortedProjectList.map(project => {
-          return <ProjectCard key={`${project.title}__${project.description}`} project={project} />
-        })}
-      </div>
-    </div>
+    <>
+      <h2 className="text-louder">Project type</h2>
+      <Tabs
+        tabNames={['Web', 'Mobile', 'APIs', 'Desktop']}
+        tabItems={[
+          <div className={classes.list}>
+            {webProjects.map(project => {
+              return <ProjectCard key={`${project.title}__${project.description}`} project={project} />
+            })}
+          </div>,
+
+          <div className={classes.list}>
+            {mobileProjects.map(project => {
+              return <ProjectCard key={`${project.title}__${project.description}`} project={project} />
+            })}
+          </div>,
+
+          <div className={classes.list}>
+            {apiProjects.map(project => {
+              return <ProjectCard key={`${project.title}__${project.description}`} project={project} />
+            })}
+          </div>,
+
+          <div className={classes.list}>
+            {desktopProjects.map(project => {
+              return <ProjectCard key={`${project.title}__${project.description}`} project={project} />
+            })}
+          </div>,
+        ]}
+      />
+    </>
   )
 }
 
