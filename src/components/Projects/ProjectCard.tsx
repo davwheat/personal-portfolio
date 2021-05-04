@@ -48,7 +48,6 @@ const useStyles = makeStyles({
     marginTop: 8,
     display: 'flex',
     flexWrap: 'wrap',
-    gap: 4,
     justifyContent: 'space-around',
     marginLeft: -CARD_PADDING,
     marginBottom: -CARD_PADDING,
