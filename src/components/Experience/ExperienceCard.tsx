@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core'
 
 import type { ExperienceDataEntry } from './Experience'
 import Link from '../Links/Link'
+import generateTransitions from '../../functions/generateTransitions'
 
 interface Props {
   data: ExperienceDataEntry
@@ -13,13 +14,19 @@ const useStyles = makeStyles({
   root: {
     padding: 16,
     border: '2px solid black',
+    ...generateTransitions('box-shadow', 'short'),
+
+    '&:hover, &:focus-within': {
+      boxShadow: '0 0 0 2px black',
+    },
   },
   title: {
     marginBottom: 2,
   },
   subtitle: {
     textTransform: 'uppercase',
-    marginBottom: 8,
+    marginBottom: 12,
+    lineHeight: 1.2,
   },
   projectList: {},
   description: {},
