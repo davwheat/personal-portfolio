@@ -105,7 +105,7 @@ const IndexPage: React.FC = () => {
         <Experience />
       </Section>
 
-      <Section>
+      <Section darker>
         <h2 className="text-louder">What do I know?</h2>
         <p className="text-speak">
           I've got experience with quite a lot of technologies, which is always handy. Over the years, I've experimented with lots of different
