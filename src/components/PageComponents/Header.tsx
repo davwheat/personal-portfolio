@@ -146,6 +146,7 @@ const useStyles = makeStyles({
     position: 'relative',
     zIndex: MOBILE_NAV_ZINDEX + 1,
     marginRight: -20,
+    cursor: 'pointer',
     // Only show on mobile
     [Breakpoints.upTo.bigPhone]: {
       display: 'block',
