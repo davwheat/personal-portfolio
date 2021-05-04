@@ -28,29 +28,20 @@ const useStyles = makeStyles({
     alignItems: 'center',
   },
   name: {
-    // lineHeight: 56,
     fontWeight: 700,
     textDecoration: 'none',
-    position: 'relative',
+    paddingLeft: 12,
+    paddingRight: 12,
     outline: 'none',
-    '&::before': {
-      position: 'absolute',
-      content: '""',
-      display: 'block',
-      top: 0,
-      bottom: 0,
-      left: -12,
-      right: -12,
-      border: '2px solid #fff',
-      transform: 'scale(0)',
-      opacity: 0,
-      transition: 'transform 0.2s ease-out, opacity 0.2s ease-out',
-    },
+
+    // hover colour
     '&:hover, &:focus, &:active': {
-      '&::before': {
-        transform: 'scale(1)',
-        opacity: 1,
-      },
+      backgroundColor: '#fff',
+      color: '#000',
+    },
+    '&:focus:not(:focus-visible)': {
+      backgroundColor: 'unset',
+      color: 'unset',
     },
   },
   spacer: {
@@ -59,15 +50,23 @@ const useStyles = makeStyles({
   nav: {
     '& a:any-link': {
       textDecoration: 'none',
-      paddingLeft: 8,
-      paddingRight: 8,
+      paddingLeft: 12,
+      paddingRight: 12,
       lineHeight: '56px',
       height: 56,
       display: 'inline-block',
+      outline: 'none',
+
+      // hover colour
       '&:hover, &:focus, &:active': {
         backgroundColor: '#fff',
         color: '#000',
       },
+      '&:focus:not(:focus-visible)': {
+        backgroundColor: 'unset',
+        color: 'unset',
+      },
+
       // Make links full width on mobile menu
       [Breakpoints.upTo.bigPhone]: {
         paddingLeft: 24,
