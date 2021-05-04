@@ -77,19 +77,10 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     borderRadius: 4,
     color: '#fff',
-    background: typeToColor(),
+    background: 'var(--chip-bg)',
     border: 'none',
     '& > *': {
       padding: 8,
-    },
-    '&[data-type="web"i]': {
-      background: typeToColor('Web'),
-    },
-    '&[data-type="api"i]': {
-      background: typeToColor('API'),
-    },
-    '&[data-type="mobile"i]': {
-      background: typeToColor('Mobile'),
     },
   },
 })
@@ -102,6 +93,8 @@ function typeToColor(type?: ProjectType) {
       return '#e6961e'
     case 'Mobile':
       return '#8b19bd'
+    case 'Desktop':
+      return '#36a339'
     default:
       return '#000'
   }
@@ -117,7 +110,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
     <article className={classes.card}>
       <header className={classes.header}>
         <h3 className={clsx('text-loud', classes.heading)}>{title}</h3>
-        <Chip data-type={type} className={classes.typeChip} component="p" label={type} />
+        <Chip className={classes.typeChip} component="p" label={type} style={{ '--chip-bg': typeToColor(type) } as unknown} />
       </header>
 
       <div className={classes.categories}>
