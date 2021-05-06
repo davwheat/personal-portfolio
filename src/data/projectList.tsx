@@ -293,6 +293,26 @@ const projectList: ReadonlyArray<Project> = [
     },
     tech: ['Javascript', 'Gatsby', 'React'],
   },
+  {
+    title: 'Let me really Google that for you',
+    type: 'Web',
+    description:
+      'A version of "Let me Google that for you", without ads or trackers, and that actually uses Google along with other search engines.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/let-me-really-google-that-for-you.png"
+        placeholder="blurred"
+        alt="Screenshot of Let me REALLY Google that for you"
+      />
+    ),
+    links: {
+      live: 'https://lmrgtfy.davwheat.dev/',
+      vcs: 'https://github.com/davwheat/let-me-really-google-that-for-you',
+    },
+    tech: ['Typescript', 'Gatsby', 'React'],
+  },
 ] as const
 
 export default projectList
