@@ -27,7 +27,7 @@ const prodPlugins = !__IS_DEV__
 module.exports = {
   siteMetadata: {
     title: `David Wheatley`,
-    description: `David Wheatley is an front-end web designed specialising in React, located in West Sussex, UK.`,
+    description: `David Wheatley is an front-end web designer specialising in React, located in West Sussex, UK.`,
     author: `@davwheat`,
     siteUrl: `https://davwheat.dev`,
   },
