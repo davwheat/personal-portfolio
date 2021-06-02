@@ -27,7 +27,6 @@ const useStyles = makeStyles({
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
-    height: '100%',
     maxWidth: 200,
     [Breakpoints.upTo.phone]: {
       maxWidth: 160,

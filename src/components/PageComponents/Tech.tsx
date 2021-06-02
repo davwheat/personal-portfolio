@@ -27,6 +27,7 @@ const useStyles = makeStyles({
   container: {
     maxWidth: 960,
     display: 'grid',
+    alignItems: 'center',
     gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
     margin: 'auto',
     gap: 48,
