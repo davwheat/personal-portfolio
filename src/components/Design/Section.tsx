@@ -59,10 +59,8 @@ const useStyles = makeStyles({
     '& > div': {
       maxWidth: 720,
       margin: 'auto',
-      [Breakpoints.upTo.bigPhone]: {
-        paddingLeft: 36,
-        paddingRight: 36,
-      },
+      paddingLeft: 24,
+      paddingRight: 24,
     },
   },
 })
