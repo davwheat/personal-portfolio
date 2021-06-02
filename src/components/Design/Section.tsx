@@ -59,6 +59,8 @@ const useStyles = makeStyles({
     '& > div': {
       maxWidth: 720,
       margin: 'auto',
+      paddingLeft: 24,
+      paddingRight: 24,
     },
   },
 })
