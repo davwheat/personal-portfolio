@@ -27,6 +27,7 @@ const useStyles = makeStyles({
     textTransform: 'uppercase',
     marginBottom: 12,
     lineHeight: 1.2,
+    color: '#666',
   },
   projectList: {},
   description: {},
