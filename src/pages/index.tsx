@@ -57,11 +57,11 @@ const useStyles = makeStyles({
   },
 })
 
-const IndexPage: React.FC = () => {
+const IndexPage = ({ location }) => {
   const classes = useStyles()
 
   return (
-    <Layout title="Home">
+    <Layout location={location} title="Home">
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
         <h1 className="text-shout">David Wheatley</h1>
         <p role="doc-subtitle" className="text-loud">

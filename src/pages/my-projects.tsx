@@ -7,9 +7,9 @@ import ProjectList from '../components/Projects/ProjectList'
 import Layout from '../components/Layout'
 import Hero from '../components/Design/Hero'
 
-const MyProjectsPage: React.FC = () => {
+const MyProjectsPage = ({ location }) => {
   return (
-    <Layout title="My projects">
+    <Layout location={location} title="My projects">
       <Hero firstElement size="huge" color={Colors.primaryRed}>
         <h1 className="text-shout">My projects</h1>
         <p role="doc-subtitle" className="text-loud">

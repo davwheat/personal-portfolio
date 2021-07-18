@@ -33,6 +33,7 @@ module.exports = {
   },
   plugins: [
     ...prodPlugins,
+
     `gatsby-plugin-react-head`,
     `gatsby-plugin-less`,
     {
@@ -69,20 +70,12 @@ module.exports = {
         background_color: Colors.primaryRed,
         theme_color: Colors.primaryBlue,
         display: `minimal-ui`,
-        icon: `src/images/thinking_emoji.png`, // This path is relative to the root of the site.
+        icon: `src/images/thinking_emoji.png`,
       },
     },
     `gatsby-plugin-webpack-size`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
-    // {
-    //   resolve: 'gatsby-plugin-react-svg',
-    //   options: {
-    //     rule: {
-    //       include: /\.inline\.svg$/, // See below to configure properly
-    //     },
-    //   },
-    // },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -93,5 +86,32 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+
+    // Blog plugins
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/templates/blog-article/BlogPageTemplate.tsx'),
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `docs-heading-link`,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-meta-redirect`,
   ],
 }

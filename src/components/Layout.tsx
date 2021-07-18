@@ -7,6 +7,9 @@ import SEO from './SEO'
 import { makeStyles, ThemeProvider } from '@material-ui/styles'
 import theme from '../theme'
 
+import type { LocationContext } from '@gatsbyjs/reach-router'
+import { ScrollContext } from 'gatsby-react-router-scroll'
+
 const useStyles = makeStyles({
   mainContent: {
     maxWidth: 768,
@@ -20,18 +23,25 @@ const useStyles = makeStyles({
 
 interface Props {
   title: string
+  description?: string
+  location: LocationContext
 }
 
-const Layout: React.FC<Props> = ({ children, title }) => {
+const Layout: React.FC<Props> = ({ children, title, description, location }) => {
   const classes = useStyles()
 
   return (
-    <ThemeProvider theme={theme}>
-      <SEO title={title} />
-      <Header />
-      <main className={classes.mainContent}>{children}</main>
-      <Footer />
-    </ThemeProvider>
+    <ScrollContext location={location}>
+      <ThemeProvider theme={theme}>
+        <SEO title={title} description={description} />
+
+        <Header />
+
+        <main className={classes.mainContent}>{children}</main>
+
+        <Footer />
+      </ThemeProvider>
+    </ScrollContext>
   )
 }
 
