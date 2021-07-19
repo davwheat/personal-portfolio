@@ -3,6 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/styles'
 
 import Link from '@components/Links/Link'
+import generateTransitions from '@functions/generateTransitions'
 
 import dayjs from 'dayjs'
 import dayjsLocalizedFormat from 'dayjs/plugin/localizedFormat'
@@ -14,6 +15,10 @@ const useStyles = makeStyles({
     position: 'relative',
     padding: 16,
     border: '2px solid #000',
+    ...generateTransitions('box-shadow', 'short'),
+    '&:hover, &:focus-within': {
+      boxShadow: '0 0 0 2px black',
+    },
   },
   title: {
     '& a::after': {
