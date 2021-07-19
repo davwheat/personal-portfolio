@@ -17,7 +17,8 @@
       "@functions/*": ["functions/*"],
       "@types/*": ["../@types/*", "../node_modules/@types/*"],
       "@css/*": ["css/*"],
-      "@templates/*": ["templates/*"]
+      "@templates/*": ["templates/*"],
+      "@blog/*": ["components/BlogComponents/MdxComponents/*"]
     }
   },
   "exclude": ["node_modules", "build", "scripts", "acceptance-tests", "webpack", "jest", "src/setupTests.ts"]

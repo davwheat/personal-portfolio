@@ -33,6 +33,7 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
         '@functions': path.resolve(__dirname, 'src/functions'),
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@templates': path.resolve(__dirname, 'src/templates'),
+        '@blog': path.resolve(__dirname, 'src/components/BlogComponents/MdxComponents'),
       },
     },
   })
