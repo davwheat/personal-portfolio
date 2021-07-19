@@ -37,15 +37,14 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
     },
   })
 }
-
-/**
- * Create docs pages.
- */
 exports.createPages = async inp => {
   await createBlogArticles(inp)
   await createBlogListing(inp)
 }
 
+/**
+ * Create blog article pages.
+ */
 async function createBlogArticles({ actions, graphql, reporter }) {
   const { createRedirect } = actions
 
@@ -108,6 +107,9 @@ async function createBlogArticles({ actions, graphql, reporter }) {
   })
 }
 
+/**
+ * Create blog listings.
+ */
 async function createBlogListing({ actions, graphql, reporter }) {
   const { createPage, createRedirect } = actions
   const result = await graphql(
