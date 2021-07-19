@@ -1,5 +1,6 @@
 import React from 'react'
 
+import clsx from 'clsx'
 import { makeStyles } from '@material-ui/styles'
 
 import Link from '@components/Links/Link'
@@ -20,7 +21,14 @@ const useStyles = makeStyles({
       boxShadow: '0 0 0 2px black',
     },
   },
+  subtitle: {
+    textTransform: 'uppercase',
+    marginBottom: 12,
+    lineHeight: 1.2,
+    color: '#666',
+  },
   title: {
+    marginBottom: 4,
     '& a::after': {
       content: '""',
       display: 'block',
@@ -38,11 +46,11 @@ export const BlogCard = ({ title, date, description, slug }) => {
 
   return (
     <li className={classes.root}>
-      <h2 className={classes.title}>
+      <h2 className={clsx(classes.title, 'text-loud')}>
         <Link href={slug}>{title}</Link>
       </h2>
 
-      <p>{dayjs(date).format('LL')}</p>
+      <p className={clsx(classes.subtitle, 'text-whisper-loud')}>{dayjs(date).format('LL')}</p>
       <p>{description}</p>
     </li>
   )
