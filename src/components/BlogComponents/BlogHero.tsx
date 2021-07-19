@@ -3,11 +3,6 @@ import React from 'react'
 import type { IMdxPageContextWithoutBody } from '@templates/blog-article/BlogPageTemplate'
 import Hero from '@components/Design/Hero'
 
-import dayjs from 'dayjs'
-import dayjsLocalizedFormat from 'dayjs/plugin/localizedFormat'
-
-dayjs.extend(dayjsLocalizedFormat)
-
 interface IDocsPageInfoProps {
   pageContext: IMdxPageContextWithoutBody
 }
@@ -50,7 +45,7 @@ export function BlogHero({ pageContext }: IDocsPageInfoProps) {
         <span>
           {pageContext.timeToRead} min{pageContext.timeToRead !== 1 && 's'} to read
         </span>
-        <span>Written {dayjs(pageContext.frontmatter.created_at).format('LLL')}</span>
+        <span>Written {pageContext.frontmatter.created_at}</span>
       </aside>
     </Hero>
   )

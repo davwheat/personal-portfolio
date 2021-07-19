@@ -57,8 +57,8 @@ async function createBlogArticles({ actions, graphql, reporter }) {
             description
             path
             redirect_from
-            created_at
-            updated_at
+            created_at(formatString: "LLL", locale: "en-GB")
+            updated_at(formatString: "LLL", locale: "en-GB")
           }
 
           id
@@ -95,8 +95,7 @@ async function createBlogArticles({ actions, graphql, reporter }) {
       }
     }
 
-    frontmatter.created_at = new Date(frontmatter.created_at)
-    frontmatter.updated_at = frontmatter.updated_at ? new Date(frontmatter.updated_at) : new Date(frontmatter.created_at)
+    frontmatter.updated_at = frontmatter.updated_at ? frontmatter.updated_at : frontmatter.created_at
 
     actions.createPage({
       path: `/blog/${frontmatter.path}`,

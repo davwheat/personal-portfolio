@@ -39,11 +39,11 @@ export interface IMdxPageContext {
     /**
      * Date article was created at.
      */
-    created_at: Date
+    created_at: string
     /**
      * Date article was updated at.
      */
-    updated_at: Date
+    updated_at: string
   }
 
   /**

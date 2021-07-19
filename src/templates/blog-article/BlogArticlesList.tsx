@@ -95,7 +95,7 @@ export const pageQuery = graphql`
           title
           description
           path
-          created_at(formatString: "YYYY-MM-DD")
+          created_at(formatString: "LL", locale: "en-GB")
         }
 
         id
