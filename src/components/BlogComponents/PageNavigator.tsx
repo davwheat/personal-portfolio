@@ -55,11 +55,11 @@ export default function PageNavigator({ currentPage, maxPage }) {
 
   itemArr.push(
     currentPage !== 1 ? (
-      <Link className={classes.noSelect} aria-label="Previous page" href={`/blog/${currentPage - 1}`}>
+      <Link key="prev_a" className={classes.noSelect} aria-label="Previous page" href={`/blog/${currentPage - 1}`}>
         &lt;
       </Link>
     ) : (
-      <span className={classes.noSelect} aria-hidden>
+      <span key="prev_t" className={classes.noSelect} aria-hidden>
         &lt;
       </span>
     ),
@@ -75,13 +75,13 @@ export default function PageNavigator({ currentPage, maxPage }) {
 
     if (selected) {
       itemArr.push(
-        <span aria-label={`Page ${p} (selected)`} className={clsx(classes.box, classes.noSelect)} data-selected>
+        <span key={`${p}_sel`} aria-label={`Page ${p} (selected)`} className={clsx(classes.box, classes.noSelect)} data-selected>
           {p}
         </span>,
       )
     } else {
       itemArr.push(
-        <Link aria-label={`Page ${p}`} className={classes.box} href={`/blog/${p}`}>
+        <Link key={`${p}_desel`} aria-label={`Page ${p}`} className={classes.box} href={`/blog/${p}`}>
           {p}
         </Link>,
       )
@@ -90,11 +90,11 @@ export default function PageNavigator({ currentPage, maxPage }) {
 
   itemArr.push(
     currentPage !== maxPage ? (
-      <Link className={classes.noSelect} aria-label="Next page" href={`/blog/${currentPage + 1}`}>
+      <Link key="next_a" className={classes.noSelect} aria-label="Next page" href={`/blog/${currentPage + 1}`}>
         &gt;
       </Link>
     ) : (
-      <span className={classes.noSelect} aria-hidden>
+      <span key="next_t" className={classes.noSelect} aria-hidden>
         &gt;
       </span>
     ),
