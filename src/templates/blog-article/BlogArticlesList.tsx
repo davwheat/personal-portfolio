@@ -35,7 +35,7 @@ const useStyles = makeStyles({
     margin: 0,
     padding: 0,
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridTemplateColumns: 'repeat(2, 1fr)',
     gap: 24,
 
     [Breakpoints.between.desktopSmall.and.phone]: {
