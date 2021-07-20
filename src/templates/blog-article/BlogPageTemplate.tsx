@@ -84,12 +84,21 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
             <Link href={`/blog/${pageContext.page}`}>Back to article list</Link>
           </Section>
 
-          <Section>
+          <hr />
+
+          <Section id="blog-article-content">
             <BlogErrorBoundary>
               <MDXProvider components={MdxShortcodes}>
                 <MDXRenderer pageContext={contextNoBody}>{body}</MDXRenderer>
               </MDXProvider>
             </BlogErrorBoundary>
+          </Section>
+
+          <hr />
+
+          <Section>
+            <p className="text-speak text-center">End of article</p>
+            <Link href={`/blog/${pageContext.page}`}>Back to article list</Link>
           </Section>
         </BlogErrorBoundary>
       </article>
