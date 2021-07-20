@@ -88,7 +88,7 @@ export default function BlogArticlesList({
 }
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query ($skip: Int!, $limit: Int!) {
     allMdx(sort: { order: DESC, fields: [frontmatter___created_at] }, limit: $limit, skip: $skip) {
       nodes {
         frontmatter {
