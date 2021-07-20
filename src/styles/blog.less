@@ -1,13 +1,4 @@
 #blog-article {
-  ul {
-    list-style-type: square;
-    list-style-position: outside;
-  }
-
-  ol {
-    list-style: decimal outside;
-  }
-
   hr {
     padding: 0;
     height: 2px;
@@ -16,9 +7,36 @@
     margin: 32px 16px;
   }
 
-  p {
-    strong {
-      font-weight: bold;
+  &-content {
+    ul {
+      list-style-type: square;
+      list-style-position: outside;
+    }
+
+    ol {
+      list-style: decimal outside;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+      margin-bottom: 0.75em;
+    }
+
+    p {
+      strong {
+        font-weight: bold;
+      }
+    }
+
+    th {
+      text-align: center;
     }
   }
 }
