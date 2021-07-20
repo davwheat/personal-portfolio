@@ -108,6 +108,15 @@ module.exports = {
               className: `docs-heading-link`,
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true,
+            },
+          },
+          `gatsby-remark-static-images`,
+          `gatsby-remark-copy-linked-files`,
         ],
       },
     },
