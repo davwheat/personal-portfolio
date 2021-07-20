@@ -65,13 +65,14 @@ const useStyles = makeStyles({
   },
 })
 
-interface Props {
+export interface ISectionProps extends React.HTMLAttributes<HTMLDivElement> {
   usePadding?: boolean
   width?: 'normal' | 'wider' | 'full'
   darker?: boolean
+  children: React.ReactNode
 }
 
-const Section: React.FC<Props> = ({ children, usePadding, width = 'normal', darker = false, ...props }) => {
+const Section = ({ children, usePadding, width = 'normal', darker = false, ...props }: ISectionProps) => {
   const classes = useStyles()
 
   return (

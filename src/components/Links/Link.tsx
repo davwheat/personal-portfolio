@@ -13,9 +13,9 @@ const useStyles = makeStyles({
   },
 })
 
-interface Props {
+export interface ILinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
-  className?: string
+  children: React.ReactNode
 }
 
 function isExternalLink(url: string): boolean {
@@ -24,7 +24,7 @@ function isExternalLink(url: string): boolean {
   return !!url.match(regex)
 }
 
-const Link: React.FC<Props> = ({ href, children, className, ...props }) => {
+const Link = ({ href, children, className, ...props }: ILinkProps) => {
   const classes = useStyles()
 
   const linkProps = {
