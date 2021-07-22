@@ -48,7 +48,9 @@ export function TableOfContents({ pageContext }: ITableOfContentsProps) {
   const classes = useTocStyles()
 
   if (!pageContext) {
-    throw 'No `pageContext` was passed to the TableOfContents component. If being used in MDX files, ensure your usage matches: `<TableOfContents {...props} />`.'
+    throw new Error(
+      'No `pageContext` was passed to the TableOfContents component. If being used in MDX files, ensure your usage matches: `<TableOfContents {...props} />`.',
+    )
   }
 
   const tocData = pageContext.tableOfContents.items

@@ -31,7 +31,9 @@ export function BlogHero({ pageContext }: IDocsPageInfoProps) {
   const classes = useStyles()
 
   if (!pageContext) {
-    throw 'No `pageContext` was passed to the BlogHero component. If being used in MDX files, ensure your usage matches: `<BlogHero {...props} />`.'
+    throw new Error(
+      'No `pageContext` was passed to the BlogHero component. If being used in MDX files, ensure your usage matches: `<BlogHero {...props} />`.',
+    )
   }
 
   return (

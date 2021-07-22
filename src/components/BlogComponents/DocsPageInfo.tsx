@@ -29,7 +29,9 @@ export function DocsPageInfo({ pageContext }: IDocsPageInfoProps) {
   const classes = useStyles()
 
   if (!pageContext) {
-    throw 'No `pageContext` was passed to the DocsPageInfo component. If being used in MDX files, ensure your usage matches: `<DocsPageInfo {...props} />`.'
+    throw new Error(
+      'No `pageContext` was passed to the DocsPageInfo component. If being used in MDX files, ensure your usage matches: `<DocsPageInfo {...props} />`.',
+    )
   }
 
   return (
