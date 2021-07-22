@@ -23,6 +23,7 @@ const MdxShortcodes: MDXProviderComponentsProp = {
   h4: MdxHeadingInterop('h4'),
   h5: MdxHeadingInterop('h5'),
   h6: MdxHeadingInterop('h6'),
+  img: props => <img {...props} loading="lazy" />,
   TableOfContents,
 }
 
