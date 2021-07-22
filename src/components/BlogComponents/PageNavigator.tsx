@@ -65,7 +65,7 @@ export default function PageNavigator({ currentPage, maxPage }) {
     ),
   )
 
-  pageArray.map(p => {
+  pageArray.forEach(p => {
     const showDots = p - lastP > 1
     lastP = p
 
