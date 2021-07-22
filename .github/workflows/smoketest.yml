@@ -21,19 +21,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Restore dependencies cache
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
 
       - name: Cache node_modules for other runs
         uses: actions/cache@v2
@@ -69,7 +61,7 @@ jobs:
 
       - name: Restore dependencies cache
         uses: actions/cache@v2
-        id: moduleCache
+        id: module-cache
         with:
           path: ./node_modules
           key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
@@ -126,7 +118,7 @@ jobs:
 
       - name: Restore dependencies cache
         uses: actions/cache@v2
-        id: moduleCache
+        id: module-cache
         with:
           path: ./node_modules
           key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
@@ -169,7 +161,7 @@ jobs:
 
       - name: Restore dependencies cache
         uses: actions/cache@v2
-        id: moduleCache
+        id: module-cache
         with:
           path: ./node_modules
           key: ${{ runner.os }}-node-modules-${{ github.sha }}-${{ hashFiles('yarn.lock') }}
