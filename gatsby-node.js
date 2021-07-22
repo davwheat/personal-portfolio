@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// eslint-disable-next-line
 const path = require('path')
 
 const BlogArticlesPerPage = 16
@@ -92,7 +93,7 @@ async function createBlogArticles({ actions, graphql, reporter }) {
           })
         })
       } else {
-        throw '`redirect_from` in MDX frontmatter must either be an array of paths, or not defined'
+        throw new Error('`redirect_from` in MDX frontmatter must either be an array of paths, or not defined')
       }
     }
 
