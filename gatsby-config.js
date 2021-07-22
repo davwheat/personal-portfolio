@@ -13,12 +13,7 @@ const prodPlugins = !__IS_DEV__
           exclude: ['error', 'warn'],
         },
       },
-      {
-        resolve: `gatsby-plugin-sitemap`,
-        options: {
-          sitemapSize: 1000,
-        },
-      },
+      `gatsby-plugin-sitemap`,
       // Fixed hot reload in dev
       `gatsby-plugin-preact`,
     ]
