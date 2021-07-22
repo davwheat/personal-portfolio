@@ -3,7 +3,7 @@ import React from 'react'
 import { Heading } from './Typography/Heading'
 
 interface IBlogErrorBoundaryProps {
-  [key: string]: never
+  children: React.ReactNode
 }
 
 export class BlogErrorBoundary extends React.Component<IBlogErrorBoundaryProps, { hasError: boolean }> {
