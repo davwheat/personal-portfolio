@@ -2,7 +2,11 @@ import React from 'react'
 
 import { Heading } from './Typography/Heading'
 
-export class BlogErrorBoundary extends React.Component<{}, { hasError: boolean }> {
+interface IBlogErrorBoundaryProps {
+  [key: string]: never
+}
+
+export class BlogErrorBoundary extends React.Component<IBlogErrorBoundaryProps, { hasError: boolean }> {
   constructor(props) {
     super(props)
     this.state = { hasError: false }
