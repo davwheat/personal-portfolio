@@ -178,7 +178,6 @@ module.exports = {
 
     // stylistic
     'array-bracket-spacing': ['error', 'never'],
-    camelcase: ['error', { properties: 'always' }],
     'comma-spacing': ['error', { before: false, after: true }],
     'comma-style': ['error', 'last'],
     'computed-property-spacing': ['error', 'never'],
