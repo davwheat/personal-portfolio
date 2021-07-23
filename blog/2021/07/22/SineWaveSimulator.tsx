@@ -6,6 +6,49 @@ import Breakpoints from '@data/breakpoints'
 import { makeStyles, useMediaQuery } from '@material-ui/core'
 import TrackVisibility from 'react-on-screen'
 
+const useStyles = makeStyles({
+  root: {
+    border: '2px solid #000',
+    padding: 16,
+    marginTop: '1em',
+    marginBottom: '1em',
+  },
+  canvas: {
+    marginTop: 24,
+    margin: 'auto',
+    width: 'max-content',
+  },
+  container: {
+    marginTop: 12,
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    justifyItems: 'center',
+    gap: 16,
+    [Breakpoints.upTo.tablet]: {
+      gridTemplateColumns: '1fr',
+    },
+  },
+  controls: {
+    display: 'grid',
+    gridTemplateColumns: 'auto 1fr',
+    gap: 4,
+    columnGap: 16,
+    width: 'max-content',
+    margin: 'auto',
+    [Breakpoints.upTo.phone]: {
+      gridTemplateColumns: '1fr',
+      justifyItems: 'center',
+    },
+  },
+  data: {
+    width: 'max-content',
+    '& p': {
+      marginBottom: '2px !important',
+      width: 'max-content',
+    },
+  },
+})
+
 export default function SineWaveSimulator() {
   const step = useRef(0)
 
@@ -172,44 +215,3 @@ export default function SineWaveSimulator() {
     </figure>
   )
 }
-
-const useStyles = makeStyles({
-  root: {
-    border: '2px solid #000',
-    padding: 16,
-  },
-  canvas: {
-    marginTop: 24,
-    margin: 'auto',
-    width: 'max-content',
-  },
-  container: {
-    marginTop: 12,
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    justifyItems: 'center',
-    gap: 16,
-    [Breakpoints.upTo.tablet]: {
-      gridTemplateColumns: '1fr',
-    },
-  },
-  controls: {
-    display: 'grid',
-    gridTemplateColumns: 'auto 1fr',
-    gap: 4,
-    columnGap: 16,
-    width: 'max-content',
-    margin: 'auto',
-    [Breakpoints.upTo.phone]: {
-      gridTemplateColumns: '1fr',
-      justifyItems: 'center',
-    },
-  },
-  data: {
-    width: 'max-content',
-    '& p': {
-      marginBottom: '2px !important',
-      width: 'max-content',
-    },
-  },
-})
