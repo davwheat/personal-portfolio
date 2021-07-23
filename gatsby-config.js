@@ -29,6 +29,14 @@ module.exports = {
   plugins: [
     ...prodPlugins,
 
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     `gatsby-plugin-react-head`,
     `gatsby-plugin-less`,
     {
