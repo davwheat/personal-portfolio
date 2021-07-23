@@ -1,7 +1,7 @@
-import { createMuiTheme } from '@material-ui/core'
+import { createTheme } from '@material-ui/core'
 import Colors from './data/colors.json'
 
-export default createMuiTheme({
+export default createTheme({
   typography: {
     allVariants: {
       fontFamily:
