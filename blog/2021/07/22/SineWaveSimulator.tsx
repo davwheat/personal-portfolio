@@ -12,47 +12,47 @@ export default function SineWaveSimulator() {
   const [frequency, setFrequency] = useState(2)
   const [amplitude, setAmplitude] = useState(40)
 
-  function showAxes(ctx) {
-    var width = ctx.canvas.width
-    var height = ctx.canvas.height
-    var xMin = 0
+  function showAxes(context: CanvasRenderingContext2D) {
+    const width = context.canvas.width
+    const height = context.canvas.height
+    const xMin = 0
 
-    ctx.beginPath()
-    ctx.strokeStyle = 'rgb(128,128,128)'
+    context.beginPath()
+    context.strokeStyle = 'rgb(128,128,128)'
 
     // X-Axis
-    ctx.moveTo(xMin, height / 2)
-    ctx.lineTo(width, height / 2)
+    context.moveTo(xMin, height / 2)
+    context.lineTo(width, height / 2)
 
     // Y-Axis
-    ctx.moveTo(width / 2, 0)
-    ctx.lineTo(width / 2, height)
+    context.moveTo(width / 2, 0)
+    context.lineTo(width / 2, height)
 
     // Starting line
-    ctx.stroke()
+    context.stroke()
   }
 
-  function drawCentrePoint(ctx: CanvasRenderingContext2D, x, y) {
-    const height = ctx.canvas.height
+  function drawCentrePoint(context: CanvasRenderingContext2D, x: number, y: number) {
+    const height = context.canvas.height
     const radius = 3
 
-    ctx.beginPath()
-    ctx.lineWidth = 2
-    ctx.strokeStyle = '#f00'
-    ctx.moveTo(x, height / 2)
-    ctx.lineTo(x, y)
-    ctx.stroke()
+    context.beginPath()
+    context.lineWidth = 2
+    context.strokeStyle = '#f00'
+    context.moveTo(x, height / 2)
+    context.lineTo(x, y)
+    context.stroke()
 
-    ctx.beginPath()
-    ctx.arc(x, y, radius, 0, 2 * Math.PI, false)
+    context.beginPath()
+    context.arc(x, y, radius, 0, 2 * Math.PI, false)
 
-    ctx.fillStyle = 'red'
-    ctx.fill()
-    ctx.lineWidth = 1
-    ctx.stroke()
+    context.fillStyle = 'red'
+    context.fill()
+    context.lineWidth = 1
+    context.stroke()
   }
 
-  function plotSine(ctx: CanvasRenderingContext2D, xOffset) {
+  function plotSine(ctx: CanvasRenderingContext2D, xOffset: number) {
     const width = ctx.canvas.width
     const height = ctx.canvas.height
 
@@ -60,18 +60,15 @@ export default function SineWaveSimulator() {
     ctx.lineWidth = 2
     ctx.strokeStyle = 'rgb(66,44,255)'
 
-    // console.log("Drawing point...");
-    // drawPoint(ctx, yOffset+step);
-
     let x = 0,
       y = 0
 
     const dotX = width / 2
 
-    ctx.moveTo(0, getY(0, xOffset, amplitude, frequency, height))
+    ctx.moveTo(0, getY(0, xOffset, height))
 
     while (x < width) {
-      y = getY(x, xOffset, amplitude, frequency, height)
+      y = getY(x, xOffset, height)
       ctx.lineTo(x, y)
       x++
     }
@@ -79,7 +76,7 @@ export default function SineWaveSimulator() {
     ctx.stroke()
     ctx.closePath()
 
-    drawCentrePoint(ctx, dotX, getY(dotX, xOffset, amplitude, frequency, height))
+    drawCentrePoint(ctx, dotX, getY(dotX, xOffset, height))
 
     ctx.stroke()
   }
@@ -101,7 +98,7 @@ export default function SineWaveSimulator() {
     }
   }
 
-  function getY(x: number, offset: number, amplitude: number, frequency: number, height: number) {
+  function getY(x: number, offset: number, height: number) {
     return height / 2 + amplitude * Math.sin((Math.PI / 180) * (x + offset) * frequency)
   }
 
