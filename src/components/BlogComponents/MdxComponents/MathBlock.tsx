@@ -25,6 +25,7 @@ const useStyles = makeStyles({
   mathBlock: {
     background: Colors.lightGrey,
     padding: 8,
+    overflowX: 'auto',
   },
   warning: {
     display: 'flex',
