@@ -3,6 +3,8 @@ import React from 'react'
 import type { LocationContext } from '@gatsbyjs/reach-router'
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { makeStyles } from '@material-ui/styles'
+import clsx from 'clsx'
 
 import { BlogHero } from '@components/BlogComponents/BlogHero'
 import Section from '@components/Design/Section'
@@ -87,8 +89,19 @@ interface IDocsPageTemplateProps {
   location: LocationContext
 }
 
+const useStyles = makeStyles({
+  footerPara: {
+    marginBottom: 32,
+  },
+  bottomNav: {
+    marginTop: -16,
+    marginBottom: 24,
+  },
+})
+
 export default function DocsPageTemplate({ pageContext, location }: IDocsPageTemplateProps) {
   const { body, ...contextNoBody } = pageContext
+  const classes = useStyles()
 
   return (
     <Layout location={location} title={pageContext.frontmatter.title} description={pageContext.excerpt}>
@@ -112,10 +125,17 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
 
           <hr />
 
-          <Section>
-            <p className="text-speak text-center">End of article</p>
-            <Link href={`/blog/${pageContext.page}`}>Back to article list</Link>
+          <Section component="footer">
+            <p className={clsx('text-speak text-center', classes.footerPara)}>
+              Noticed something not quite right with this blog article? Give me a poke at{' '}
+              <Link href={`mailto:blog@davwheat.dev?subject=${encodeURIComponent(pageContext.frontmatter.title)}`}>blog@davwheat.dev</Link> and
+              let me know.
+            </p>
           </Section>
+
+          <nav className={classes.bottomNav}>
+            <Link href={`/blog/${pageContext.page}`}>Back to article list</Link>
+          </nav>
         </BlogErrorBoundary>
       </article>
     </Layout>
