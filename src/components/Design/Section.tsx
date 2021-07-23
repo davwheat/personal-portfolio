@@ -70,21 +70,21 @@ export interface ISectionProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: 'normal' | 'wider' | 'full'
   darker?: boolean
   children: React.ReactNode
+  component?: any
 }
 
-const Section = ({ children, usePadding, width = 'normal', darker = false, ...props }: ISectionProps) => {
+function Section({ children, usePadding, width = 'normal', darker = false, component = 'section', ...props }: ISectionProps) {
   const classes = useStyles()
 
-  return (
-    <section
-      {...props}
-      className={clsx(classes.pageSection, [
-        usePadding && classes.pad,
-        width === 'full' && classes.fullWidth,
-        width === 'wider' && classes.wider,
-        darker && classes.darkBg,
-      ])}
-    >
+  return React.createElement(component, {
+    ...props,
+    className: clsx(classes.pageSection, [
+      usePadding && classes.pad,
+      width === 'full' && classes.fullWidth,
+      width === 'wider' && classes.wider,
+      darker && classes.darkBg,
+    ]),
+    children: (
       <div
         className={clsx({
           [classes.fullWidthInner]: width === 'full',
@@ -93,8 +93,8 @@ const Section = ({ children, usePadding, width = 'normal', darker = false, ...pr
       >
         {children}
       </div>
-    </section>
-  )
+    ),
+  })
 }
 
 export default Section
