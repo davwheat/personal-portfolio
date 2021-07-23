@@ -14,6 +14,11 @@
 
 @import './tooltips.less';
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 ul {
   list-style: square outside;
 }
@@ -41,4 +46,13 @@ abbr {
   text-decoration: underline dotted;
   text-underline-offset: 2px;
   cursor: help;
+}
+
+.gritty-bg {
+  background: url(./gritty.png) repeat;
+  background-size: 16px;
+}
+
+.softer-bg {
+  background: url(./softer.png) repeat;
 }
