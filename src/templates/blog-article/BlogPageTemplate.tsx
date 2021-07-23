@@ -12,7 +12,11 @@ import Link from '@components/Links/Link'
 import { MdxHeadingInterop } from '@components/BlogComponents/Typography/MdxHeadingInterop'
 import { TableOfContents } from '@components/BlogComponents/TableOfContents'
 import { BlogErrorBoundary } from '@components/BlogComponents/BlogErrorBoundary'
+import { MathBlock } from '@blog/index'
 
+import TeX from '@matejmazur/react-katex'
+
+import 'katex/dist/katex.min.css'
 import '@styles/blog.less'
 
 const MdxShortcodes: MDXProviderComponentsProp = {
@@ -25,6 +29,17 @@ const MdxShortcodes: MDXProviderComponentsProp = {
   h6: MdxHeadingInterop('h6'),
   img: props => <img {...props} loading="lazy" />,
   TableOfContents,
+  div: props => {
+    if (props.className?.includes?.('math-display')) {
+      return <MathBlock {...props} />
+    }
+  },
+  span: props => {
+    if (props.className?.includes?.('math-inline')) {
+      const { children, ...others } = props
+      return <TeX math={children} {...others} />
+    }
+  },
 }
 
 export interface IMdxPageContext {
