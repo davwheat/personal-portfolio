@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
   factBody: {
     '& p:last-child': {
-      marginBottom: 0,
+      marginBottom: '0 !important',
     },
   },
 })
@@ -28,7 +28,7 @@ export function FactBox({ title = 'Interesting fact', children }: IFactBoxProps)
 
   return (
     <aside className={classes.factBox} role="note">
-      <p className="text-speak-up">{title}</p>
+      {title && <p className="text-speak-up">{title}</p>}
       <div className={classes.factBody}>{children}</div>
     </aside>
   )
