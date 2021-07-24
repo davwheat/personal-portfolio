@@ -36,12 +36,16 @@ const MdxShortcodes: MDXProviderComponentsProp = {
     if (props.className?.includes?.('math-display')) {
       return <MathBlock {...props} />
     }
+
+    return <div {...props} />
   },
   span: props => {
     if (props.className?.includes?.('math-inline')) {
       const { children, ...others } = props
       return <TeX math={children} {...others} />
     }
+
+    return <span {...props} />
   },
 }
 
