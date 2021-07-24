@@ -7,6 +7,8 @@ created_at: 2021-07-23T11:00Z
 
 import { FactBox, MathBlock } from '@blog'
 import SineWaveSimulator from './SineWaveSimulator'
+import TDDSimulation from './TDDSimulation'
+import FDDSimulation from './FDDSimulation'
 
 <TableOfContents {...props} />
 
@@ -59,3 +61,57 @@ higher the frequency, the higher the wave's energy** and that **the lower the wa
 frequency are directly linked: increasing frequency will decrease the wavelength, and vice versa. You can see this in the demo below.
 
 <SineWaveSimulator />
+
+When a wave passes through a material, it loses a proportion of its power for every metre it travels. This is referred to as the **attentuation
+coefficient**. Materials with a high attentuation coefficient are less easily penetrated with waves, such as those from phone masts.
+
+The power lost is dependent on the amount of energy present originally. A 20% decrease in power from 250 W would be 200 W, a reduction of 50 W.
+However, a 20% reduction from 100 W is 80 W, a reduction of only 20 W.
+
+Since lower frequency waves have lower energy and lower power from the beginning, less is lost when they pass through a material than a high
+frequency.
+
+This is most critically an issue with [newer 5G mmWave](https://www.androidauthority.com/what-is-5g-mmwave-933631/), which uses frequencies
+upwards of 26 GHz. These frequencies can be belowed using just sheets of paper, let alone brick walls or
+[even just your hands](https://www.eetimes.com/mwc-are-your-5-fingers-blocking-your-5g/).
+
+## Duplex modes
+
+**Duplex** refers to the ability for a communication channel to transmit and receive data. LTE can be either **full duplex** (meaning that
+transmitting and receiving can happen simulataneously), or **half duplex** (meaning that transmitting and receiving can happen, but not at the
+same time).
+
+Both LTE-TDD and LTE-FDD share the vast majority of their core infrastructure, allowing chipset and modem manufacturers to more easily support
+both modes with one single chip.
+
+### Time-division Duplex (TDD)
+
+Time-division Duplex works by using one single frequency, and by switching between uploading and downloading over time. The proportion of time
+spent uploading or downloading can be changed on-the-fly to account for longer periods spent mainly downloading or uploading.
+
+There needs to be a small period in between the transition from uplink to downlink and vice versa. This is called the **guard period** or guard
+interval. This is used to ensure one device's transmission is fully received before the other begins to transmit. This period must get longer as
+the devices grow further apart, resulting in significant throughput loss over long distances.
+
+LTE-TDD is mainly used at higher frequencies, covering bands between 1850 MHz and 3800 MHz. The LTE-TDD spectrum allocation is normally cheaper
+than LTE-FDD and also has less traffic.
+
+#### Simulation
+
+<TDDSimulation />
+
+### Frequency-division Duplex (FDD)
+
+Frequency-division duplex works by using two different frequencies, where each is dedicated to either upload or download only.
+
+For FDD to work, networks need to use paired frequencies. For example, 800 MHz Band 20 uses an offset spacing of $-41\text{ MHz}$, meaning that
+downlink frequencies are found $-41\text{ MHz}$ from uplink frequencies (e.g. if uplink is at 800 MHz, then downlink is at 769 MHz). As this
+spectrum must be paired and purchased in these sets, it's often much more expensive to set up and run than LTE-TDD due to licensing costs.
+
+As the frequencies for uplink and downlink are locked for each network, it is hard for them to dynamically change their speeds. When using TDD,
+networks can dynamically set the amount of time that is spent either uploading or downloading, but with FDD the relationship is fixed to the
+spectrum allocations owned.
+
+#### Simulation
+
+<FDDSimulation />
