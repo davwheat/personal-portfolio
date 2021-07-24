@@ -38,7 +38,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-head`,
-    `gatsby-plugin-less`,
     {
       resolve: '@slixites/gatsby-plugin-google-fonts',
       options: {
@@ -77,7 +76,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-webpack-size`,
-    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -89,6 +95,7 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    `gatsby-plugin-less`,
 
     // Blog plugins
     {
