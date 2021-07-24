@@ -102,8 +102,8 @@ export default function SineWaveSimulator() {
     ctx.lineWidth = 2
     ctx.strokeStyle = 'rgb(66,44,255)'
 
-    let x = 0,
-      y = 0
+    let x = 0
+    let y = 0
 
     const dotX = width / 2
 
