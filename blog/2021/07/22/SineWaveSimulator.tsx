@@ -4,7 +4,6 @@ import { Canvas } from '@components/Canvas'
 import Breakpoints from '@data/breakpoints'
 
 import { makeStyles, useMediaQuery } from '@material-ui/core'
-import TrackVisibility from 'react-on-screen'
 
 const useStyles = makeStyles({
   root: {
@@ -128,11 +127,9 @@ export default function SineWaveSimulator() {
     const width = context.canvas.width
 
     context.clearRect(0, 0, width, 150)
+    
     showAxes(context)
-    // context.save()
-
     plotSine(context, step.current)
-    // context.restore()
 
     step.current += 1
 
@@ -208,9 +205,7 @@ export default function SineWaveSimulator() {
       </div>
 
       <div className={classes.canvas}>
-        <TrackVisibility offset={300} partialVisibility>
-          {({ isVisible }) => <Canvas width={`${canvasWidth}`} height="150" draw={isVisible ? draw : () => {}} />}
-        </TrackVisibility>
+        <Canvas width={`${canvasWidth}`} height="150" draw={draw} />
       </div>
     </figure>
   )
