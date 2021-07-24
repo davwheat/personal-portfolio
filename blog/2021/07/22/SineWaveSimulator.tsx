@@ -127,7 +127,7 @@ export default function SineWaveSimulator() {
     const width = context.canvas.width
 
     context.clearRect(0, 0, width, 150)
-    
+
     showAxes(context)
     plotSine(context, step.current)
 
