@@ -58,5 +58,28 @@
         font-size: 1.1em;
       }
     }
+
+    table {
+      margin-top: 1em;
+      margin-bottom: 1em;
+
+      overflow-x: auto;
+
+      table-layout: fixed;
+      min-width: 100%;
+    }
+
+    .wider {
+      margin: 1em 0;
+
+      max-width: 100vw;
+      max-width: ~'min(1280px, 100vw)';
+      width: max-content;
+
+      padding: 0 16px;
+
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
