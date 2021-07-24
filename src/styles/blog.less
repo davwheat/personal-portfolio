@@ -60,13 +60,9 @@
     }
 
     table {
-      margin-top: 1em;
-      margin-bottom: 1em;
-
-      overflow-x: auto;
-
       table-layout: fixed;
-      min-width: 100%;
+      width: 100%;
+      min-width: max-content;
     }
 
     .wider {
@@ -80,6 +76,8 @@
 
       margin-left: 50%;
       transform: translateX(-50%);
+
+      overflow-x: auto;
     }
   }
 }
