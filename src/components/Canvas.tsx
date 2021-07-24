@@ -1,12 +1,19 @@
 import React, { useRef, useEffect } from 'react'
-
-import TrackVisibility from 'react-on-screen'
+import { useVisible } from 'react-hooks-visible'
 
 interface ICanvasProps extends React.HTMLAttributes<HTMLCanvasElement> {
   draw: (context: CanvasRenderingContext2D) => void
+  width: string
+  height: string
 }
 
+/**
+ * Creates a Canvas with the provided draw function.
+ *
+ * Does not run `draw` if the canvas is outside the viewport.
+ */
 export const Canvas = ({ draw, ...props }: ICanvasProps) => {
+  const [targetRef, isVisible] = useVisible<HTMLDivElement>()
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -15,7 +22,7 @@ export const Canvas = ({ draw, ...props }: ICanvasProps) => {
     let animationFrameId: number
 
     const render = () => {
-      draw(context)
+      if (isVisible) draw(context)
       animationFrameId = window.requestAnimationFrame(render)
     }
 
@@ -26,5 +33,9 @@ export const Canvas = ({ draw, ...props }: ICanvasProps) => {
     }
   }, [draw])
 
-  return <canvas ref={canvasRef} {...props} />
+  return (
+    <div ref={targetRef}>
+      <canvas ref={canvasRef} {...props} />
+    </div>
+  )
 }

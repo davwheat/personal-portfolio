@@ -12911,6 +12911,11 @@ react-head@^3.4.0:
   dependencies:
     "@babel/runtime" "^7.8.3"
 
+react-hooks-visible@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-hooks-visible/-/react-hooks-visible-1.1.1.tgz#67a12a395b670067fe9d2ce25cb4d84788a83a3b"
+  integrity sha512-ACBaW/wKv/pfNh36MpDKoh8fL6nAsw7OHyUYj5RLefVMxoe/PrUIupwpafk8juLPX3v+yDuobSI3EcSvJYeUWg==
+
 react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
