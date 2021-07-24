@@ -34,7 +34,7 @@ const Link = ({ href, children, className, ...props }: ILinkProps) => {
 
   if (isExternalLink(href)) {
     return (
-      <a href={href} {...linkProps}>
+      <a href={href} rel="noopener" {...linkProps}>
         {children}
       </a>
     )
