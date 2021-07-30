@@ -31,7 +31,7 @@ export const Canvas = ({ draw, ...props }: ICanvasProps) => {
     return () => {
       window.cancelAnimationFrame(animationFrameId)
     }
-  }, [draw])
+  }, [draw, isVisible])
 
   return (
     <div ref={targetRef}>
