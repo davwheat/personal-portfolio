@@ -17,15 +17,15 @@ const Education: Qualification[] = [
   },
   {
     courseName: 'BTEC L3 Computing',
-    grade: 'D*',
+    grade: 'DS*',
     isPredicted: true,
-    gradeTooltip: 'Equivalent to A*',
+    gradeTooltip: 'Distinction star (equiv A*)',
     year: '2022',
   },
   {
     courseName: 'A-level Maths',
     grade: 'A*',
-    isPredicted: true,
+    isPredicted: false,
     year: '2021',
   },
   {
