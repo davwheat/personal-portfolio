@@ -29,7 +29,7 @@ export default function BlogFooterAdvert() {
     <div className={classes.advert}>
       <p className="text-whisper">
         Ads allow me to pay for research and development costs related to this website and other open source projects. If you enjoyed this blog
-        article, consider disabling your ad-blocker.
+        article, consider disabling your ad-blocker if you use one.
       </p>
 
       <ins
