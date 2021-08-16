@@ -30,7 +30,6 @@ const MdxShortcodes: MDXProviderComponentsProp = {
   h4: MdxHeadingInterop('h4'),
   h5: MdxHeadingInterop('h5'),
   h6: MdxHeadingInterop('h6'),
-  // eslint-disable-next-line
   img: props => <img {...props} loading="lazy" />,
   TableOfContents,
   div: props => {

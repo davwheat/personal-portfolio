@@ -4,7 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// eslint-disable-next-line
 const path = require('path')
 
 const BlogArticlesPerPage = 16

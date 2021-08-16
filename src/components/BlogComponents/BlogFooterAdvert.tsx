@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 export default function BlogFooterAdvert() {
   const classes = useStyles()
 
-  useEffect(() => {
+  useEffect((): void => {
     try {
       // @ts-expect-error AdSense is horrible
       ;(adsbygoogle = window.adsbygoogle || []).push({})

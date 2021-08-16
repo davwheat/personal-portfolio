@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const __IS_DEV__ = process.env.NODE_ENV !== 'production'
 
 const Colors = require('./src/data/colors.json')
@@ -51,18 +49,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-csp`,
-    {
-      resolve: 'gatsby-plugin-eslint',
-      options: {
-        test: /\.(j|t)sx?$/,
-        exclude: /(node_modules|.cache|public)/,
-        stages: ['develop', 'build-javascript'],
-        options: {
-          emitWarning: true,
-          failOnError: true,
-        },
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
