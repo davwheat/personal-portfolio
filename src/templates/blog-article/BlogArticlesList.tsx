@@ -76,7 +76,7 @@ export default function BlogArticlesList({
         </p>
       </Hero>
 
-      <Section>
+      <Section width="wider">
         <ul className={classes.list}>{Posts}</ul>
       </Section>
 
