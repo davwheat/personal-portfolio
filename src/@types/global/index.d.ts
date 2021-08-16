@@ -1,6 +1,3 @@
-declare global {
-  export type ValuesOf<T extends readonly unknown[]> = T[number]
-}
+declare type ValuesOf<T extends readonly unknown[]> = T[number]
 
-// Need to export something for global to work
-export const _ = ''
+// declare var globalVar: mytype
