@@ -61,6 +61,7 @@ async function createBlogArticles({ actions, graphql, reporter }) {
             redirect_from
             created_at(formatString: "LLL", locale: "en-GB")
             updated_at(formatString: "LLL", locale: "en-GB")
+            archived
           }
 
           id
@@ -98,6 +99,7 @@ async function createBlogArticles({ actions, graphql, reporter }) {
     }
 
     frontmatter.updated_at = frontmatter.updated_at ? frontmatter.updated_at : frontmatter.created_at
+    frontmatter.archived ||= false
 
     actions.createPage({
       path: `/blog/${frontmatter.path}`,
@@ -116,7 +118,7 @@ async function createBlogListing({ actions, graphql, reporter }) {
   const result = await graphql(
     `
       {
-        allMdx(sort: { fields: [frontmatter___created_at], order: DESC }) {
+        allMdx(sort: { fields: [frontmatter___created_at], order: DESC }, filter: { frontmatter: { archived: { ne: true } } }) {
           nodes {
             id
           }

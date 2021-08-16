@@ -14,7 +14,7 @@ import Link from '@components/Links/Link'
 import { MdxHeadingInterop } from '@components/BlogComponents/Typography/MdxHeadingInterop'
 import { TableOfContents } from '@components/BlogComponents/TableOfContents'
 import { BlogErrorBoundary } from '@components/BlogComponents/BlogErrorBoundary'
-import { MathBlock } from '@blog/index'
+import { FactBox, MathBlock } from '@blog/index'
 
 import TeX from '@matejmazur/react-katex'
 
@@ -68,6 +68,10 @@ export interface IMdxPageContext {
      * Date article was updated at.
      */
     updated_at: string
+    /**
+     * Is the post archived (hidden from the article list).
+     */
+    archived: boolean
   }
 
   /**
@@ -123,6 +127,13 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
 
           <Section id="blog-article-content">
             <BlogErrorBoundary>
+              {contextNoBody.frontmatter.archived && (
+                <FactBox title="Archived">
+                  This article has been archived. Information contained within it may be out-of-date or wholly incorrect. This article has been
+                  retained purely for historical and archival purposes only.
+                </FactBox>
+              )}
+
               <MDXProvider components={MdxShortcodes}>
                 <MDXRenderer pageContext={contextNoBody}>{body}</MDXRenderer>
               </MDXProvider>
