@@ -80,14 +80,14 @@ const Footer: React.FC = () => {
             <BulletSeparator />
             This site collects anonymised analytics that does not track individual users.{' '}
             <a href="https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web" rel="noopener noreferrer">
-              Learn more
+              Learn more about Cloudflare analytics
             </a>
           </p>
           <p className="text-whisper">Last updated {siteBuildMetadata.buildTime}.</p>
         </section>
         <nav className={classes.nav}>
           <Link href="/">Home</Link>
-          {/* <Link href="/blog">Blog</Link> */}
+          <Link href="/blog">Blog</Link>
           <Link href="/my-projects">My projects</Link>
           <a href="https://github.com/davwheat" rel="noopener noreferrer">
             My GitHub
