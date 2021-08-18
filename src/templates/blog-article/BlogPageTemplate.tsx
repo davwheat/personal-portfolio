@@ -20,7 +20,6 @@ import TeX from '@matejmazur/react-katex'
 
 import 'katex/dist/katex.min.css'
 import '@styles/blog.less'
-import BlogFooterAdvert from '@components/BlogComponents/BlogFooterAdvert'
 
 const MdxShortcodes: MDXProviderComponentsProp = {
   a: Link,
@@ -140,10 +139,6 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
           </Section>
 
           <hr />
-
-          <aside>
-            <BlogFooterAdvert />
-          </aside>
 
           <Section component="footer">
             <p className={clsx('text-speak text-center', classes.footerPara)}>

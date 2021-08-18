@@ -12,12 +12,6 @@ const HTML: React.FC<Props> = props => {
         <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02248a7178184dfea7dd8abd1639759b"}' />
 
         {props.headComponents}
-
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2701335557132384"
-          crossOrigin="anonymous"
-        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
