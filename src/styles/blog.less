@@ -64,8 +64,15 @@
 
     table {
       table-layout: fixed;
-      width: 100%;
       min-width: max-content;
+    }
+
+    :not(.narrow) > table {
+      width: 100%;
+    }
+
+    .narrow {
+      margin: auto;
     }
 
     .wider {
