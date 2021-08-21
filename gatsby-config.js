@@ -97,7 +97,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/templates/blog-article/BlogPageTemplate.tsx'),
         },
-        remarkPlugins: [require('remark-math')],
+        remarkPlugins: [require(`remark-math`), [require(`remark-twemoji`), { isReact: true }]],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-autolink-headers`,
