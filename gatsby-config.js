@@ -102,7 +102,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              className: `docs-heading-link`,
+              className: `heading-link`,
             },
           },
           {

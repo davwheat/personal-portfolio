@@ -33,7 +33,7 @@ const useStyles = makeStyles({
     marginTop: '0.75em',
     fontWeight: 600,
 
-    '& .docs-heading-link': {
+    '& .heading-link': {
       position: 'absolute',
       left: -24,
       top: '0',
@@ -49,7 +49,7 @@ const useStyles = makeStyles({
     },
 
     '&:hover, &:focus-within': {
-      '& .docs-heading-link': {
+      '& .heading-link': {
         opacity: 1,
       },
     },
