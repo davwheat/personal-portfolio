@@ -31,7 +31,7 @@ const useTocStyles = makeStyles({
   },
   tocList: {
     listStyle: 'none',
-    margin: 0,
+    margin: '0 !important',
     padding: 0,
 
     '& &': {
