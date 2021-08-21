@@ -8,6 +8,8 @@ const path = require('path')
 
 const BlogArticlesPerPage = 16
 
+const WORDS_PER_MINUTE = 80
+
 /**
  * Customise webpack config.
  */
@@ -66,8 +68,11 @@ async function createBlogArticles({ actions, graphql, reporter }) {
           id
           body
           tableOfContents(maxDepth: 3)
-          timeToRead
           excerpt
+
+          wordCount {
+            words
+          }
         }
       }
     }
@@ -79,7 +84,16 @@ async function createBlogArticles({ actions, graphql, reporter }) {
   const pages = result.data.allMdx.nodes
 
   pages.forEach((page, i) => {
-    const { frontmatter, tableOfContents, timeToRead, excerpt, id, body } = page
+    const {
+      frontmatter,
+      tableOfContents,
+      wordCount: { words },
+      excerpt,
+      id,
+      body,
+    } = page
+
+    const timeToRead = Math.ceil(words / WORDS_PER_MINUTE)
 
     // Create all redirects that are defined in frontmatter
     if (frontmatter.redirect_from) {
