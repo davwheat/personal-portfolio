@@ -110,7 +110,6 @@ module.exports = {
             options: {
               maxWidth: 500,
               maxHeight: 675,
-              sizeByPixelDensity: true,
               linkImagesToOriginal: true,
               quality: 80,
             },
