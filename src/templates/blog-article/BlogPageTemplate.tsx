@@ -112,7 +112,7 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
   const classes = useStyles()
 
   return (
-    <Layout location={location} title={pageContext.frontmatter.title} description={pageContext.excerpt}>
+    <Layout location={location} title={pageContext.frontmatter.title} description={pageContext.frontmatter.description || pageContext.excerpt}>
       <article id="blog-article">
         <BlogErrorBoundary>
           <BlogHero pageContext={contextNoBody} />
