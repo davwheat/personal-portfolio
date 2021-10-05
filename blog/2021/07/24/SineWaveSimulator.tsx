@@ -192,7 +192,7 @@ export default function SineWaveSimulator() {
 
         <div className={classes.data}>
           <p>
-            <strong>Frequency:</strong> {frequency * 1000} Hz
+            <strong>Frequency:</strong> {(frequency * 1000).toFixed(0)} Hz
           </p>
           {/* Light in air: 299702547 m/s */}
           <p>
