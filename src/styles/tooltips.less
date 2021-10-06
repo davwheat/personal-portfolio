@@ -23,13 +23,15 @@
   @tooltip-arrow-height: 6px;
 
   // Transform while tooltip not shown
-  .preVisibleTransform(@x: -50%, @y: 8px) {
+  .preVisibleTransform(@x: -50%, @y: 8px, @x2: -50%, @y2: 0) {
     &::before,
     &::after {
+      transform: translate(@x, @y);
+
       // Don't do slide animation if user has selected reduced motion
       // in their OS
-      @media not all and (prefers-reduced-motion: reduce) {
-        transform: translate(@x, @y);
+      @media (prefers-reduced-motion: reduce) {
+        transform: translate(@x2, @y2);
       }
     }
   }
@@ -168,7 +170,7 @@
       .arrow('right');
     }
 
-    .preVisibleTransform(0, -50%);
+    .preVisibleTransform(0, -50%, -8px, -50%);
     .visibleTransform(-8px, -50%);
   }
 
@@ -189,7 +191,7 @@
       .arrow('left');
     }
 
-    .preVisibleTransform(0, -50%);
+    .preVisibleTransform(0, -50%, 8px, -50%);
     .visibleTransform(8px, -50%);
   }
 
@@ -210,7 +212,7 @@
       .arrow('up');
     }
 
-    .preVisibleTransform(-50%, -8px);
+    .preVisibleTransform(-50%, -8px, -50%, 0);
     .visibleTransform(-50%, 0);
   }
 }
