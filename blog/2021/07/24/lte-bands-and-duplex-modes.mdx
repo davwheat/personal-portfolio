@@ -1,14 +1,27 @@
 ---
-title: How do LTE frequency bands and duplex modes affect throughput?
-description: LTE functions on a wide range of frequencies. These frequency ranges are called bands, and are standardised across the world.
+title: LTE frequency bands and duplex modes
+description:
+  LTE functions on a wide range of frequencies called "bands", and are standardised across the world. These bands can operate in one of two
+  duplexing modes, explained in this article.
 path: 2021/07/24/lte-bands-and-duplex-modes
 created_at: 2021-07-24T11:00Z
 ---
 
-import { FactBox, MathBlock, BenefitsTable } from '@blog'
+import { FactBox, MathBlock, BenefitsTable, PostPublishNote } from '@blog'
 import SineWaveSimulator from './SineWaveSimulator'
 import TDDSimulation from './TDDSimulation'
 import FDDSimulation from './FDDSimulation'
+
+<PostPublishNote>
+
+Since publishing this article, I've done further research which explores why different frequency bands perform differently in real-world
+applications.
+
+I would highly recommend reading the new article after this one in order to ensure you leave with the full range of knowledge applicable.
+
+[Read the new article](/blog/2021/10/04/speed-differences-high-low-frequencies)
+
+</PostPublishNote>
 
 <TableOfContents {...props} />
 
@@ -19,11 +32,11 @@ device.
 
 ## How does frequency link to speed?
 
-It doesn't really, and it's a common misconception of how radio frequency (RF) systems work. Frequency on its own makes no difference to the
-speeds you can achieve on LTE.
+In theory, it doesn't really, and it's a common misconception of how radio frequency (RF) systems work. Frequency on its own makes no difference
+to the speeds you can achieve on LTE.
 
-The frequency is a **carrier frequency**, meaning that its only role is to carry the LTE signal. The signal itself is encoded into a channel with
-a set width (such as 10 MHz or 20 MHz).
+The frequency is a **carrier frequency**, meaning that its only role is to carry the LTE signal. This signal is encoded into a channel with a set
+width (such as 10 MHz or 20 MHz).
 
 In fact, the data carried on that signal can be moved to any other frequency as long as the available bandwidth is the same. In the example
 animation below, we can copy a 20 MHz bandwidth signal from 2100 MHz to 800 MHz without any loss in data.
@@ -35,7 +48,7 @@ The only way that frequency and speed are linked is in their ability to penetrat
 ### Penetrating power
 
 In general, lower frequency (longer wavelength) waves can pass more easily through dense substances. For example, you can hear bass notes from
-music through walls more easily than you can hear singing.
+music through walls more easily than you can hear vocals.
 
 <FactBox title="Bear with me...">
 
@@ -47,33 +60,7 @@ As a wave, such as radio waves, travel through materials, they lose some of thei
 minimal, allowing waves to travel for kilometres in ideal circumstances. When they travel through denser materials, such as brick or concrete,
 they lose more energy.
 
-There are two main equations that can be used to represent wave energy. One relates frequency to energy, and the other relates wavelength to
-energy.
-
-<MathBlock
-  title="Wave energy equations"
-  math="\text{wave energy} = \text{planck's constant} \times \text{frequency} \\ \text{wave energy} = \frac{\text{planck's constant}\times\text{speed of light}}{\text{wavelength}}"
-  footer="True for all electromagnetic waves"
-/>
-
-Both $\text{speed of light}$ and $\text{planck's constant}$ are constant (values that don't change). This means that we can infer that **the
-higher the frequency, the higher the wave's energy** and that **the lower the wavelength, the higher the wave's energy**. Wavelength and
-frequency are directly linked: increasing frequency will decrease the wavelength, and vice versa. You can see this in the demo below.
-
 <SineWaveSimulator />
-
-When a wave passes through a material, it loses a proportion of its power for every metre it travels. This is referred to as the **attentuation
-coefficient**. Materials with a high attentuation coefficient are less easily penetrated with waves, such as those from phone masts.
-
-The power lost is dependent on the amount of energy present originally. A 20% decrease in power from 250 W would be 200 W, a reduction of 50 W.
-However, a 20% reduction from 100 W is 80 W, a reduction of only 20 W.
-
-Since lower frequency waves have lower energy and lower power from the beginning, less is lost when they pass through a material than a high
-frequency.
-
-This is most critically an issue with [newer 5G mmWave](https://www.androidauthority.com/what-is-5g-mmwave-933631/), which uses frequencies
-upwards of 26 GHz. These frequencies can be blocked using just sheets of paper, let alone brick walls or
-[even just your hands](https://www.eetimes.com/mwc-are-your-5-fingers-blocking-your-5g/).
 
 ## Duplex modes
 

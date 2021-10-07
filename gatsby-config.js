@@ -81,6 +81,13 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `icons`,
+        path: `${__dirname}/src/assets/icons`,
+      },
+    },
     `gatsby-plugin-less`,
 
     // Blog plugins
