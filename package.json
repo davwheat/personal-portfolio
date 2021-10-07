@@ -15,6 +15,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@slixites/gatsby-plugin-google-fonts": "^1.1.1",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.10.7",
     "gatsby": "^3.14.1",
