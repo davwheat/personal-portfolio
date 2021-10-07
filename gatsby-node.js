@@ -5,6 +5,7 @@
  */
 
 const path = require('path')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 
 const BlogArticlesPerPage = 16
 
@@ -14,6 +15,12 @@ const WORDS_PER_MINUTE = 80
  * Customise webpack config.
  */
 exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) => {
+  if (stage === 'develop' || stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      plugins: [new CaseSensitivePathsPlugin()],
+    })
+  }
+
   actions.setWebpackConfig({
     module: {
       rules: [
