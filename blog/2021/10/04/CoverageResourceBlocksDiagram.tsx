@@ -106,7 +106,7 @@ const useStyles = makeStyles({
     left: '50%',
     top: '50%',
     transformOrigin: '50% 0',
-    ...generateTransitions(['transform', 'height'], 'short'),
+    ...generateTransitions(['transform', 'height'], 50),
   },
   footer: {
     borderTop: `2px solid ${Colors.neutralGrey}`,
@@ -121,16 +121,26 @@ const useStyles = makeStyles({
   },
 })
 
+/**
+ * Available bands and their coverage (diameter) on the diagram in pixels
+ */
 const AvailableFrequencies = [
   { frequency: 800, name: 'B20', coverageSize: 500 },
   { frequency: 1800, name: 'B3', coverageSize: 350 },
   { frequency: 2600, name: 'B7', coverageSize: 200 },
 ] as const
 
+/**
+ * Used to create the UE elements.
+ *
+ * `count` UEs are created, `distance / 2` from the eNB.
+ *
+ * `distance / 2` is used to match with the `coverageSize` value.
+ */
 const UEDistributionData = [
   { distance: 140, count: 6 },
-  { distance: 290, count: 10 },
-  { distance: 435, count: 14 },
+  { distance: 290, count: 12 },
+  { distance: 435, count: 16 },
 ]
 
 const BANDWIDTH = 20
@@ -146,31 +156,50 @@ export default function CoverageResourceBlocksDiagram() {
   const dataLine = useRef<HTMLSpanElement>(null)
 
   const [frequencyBand, setFrequencyBand] = useState<typeof AvailableFrequencies[number]>(AvailableFrequencies[0])
+  const [speed, setSpeed] = useState(150)
 
+  /**
+   * Number of UEs currently in range of the selected frequency band.
+   */
   const ueCountInRange = UEDistributionData.filter(x => x.distance <= frequencyBand.coverageSize)
     .map(x => x.count)
     .reduce((acc, curr) => acc + curr, 0)
+  /**
+   * Number of RBs dedicated to each UE, assuming they are split evenly between all UEs.
+   */
   const ueResourceBlocks = RESOURCE_BLOCKS / ueCountInRange
+  /**
+   * Max throughput per UE in bits per second.
+   */
   const ueMaxThroughput = ueResourceBlocks * 12 * 15_000 * 8
 
   const classes = useStyles()
   const smallScreen = useMediaQuery(Breakpoints.upTo.tablet)
   const [targetRef, isVisible] = useVisible<HTMLDivElement>()
 
+  /**
+   * Handles the transcieving visualisation.
+   */
   React.useEffect(() => {
+    /**
+     * React refs to all UE elements which are currently in range on the eNB.
+     */
     const ueElementsInRange = Object.keys(phoneElementsRef.current)
       .filter(dist => parseInt(dist) <= frequencyBand.coverageSize)
       .map(dist => phoneElementsRef.current[parseInt(dist)])
       .flat()
 
-    // const ueElementsNotInRange = Object.keys(phoneElementsRef)
-    //   .filter(dist => parseInt(dist) > frequencyBand.coverageSize)
-    //   .map(dist => phoneElementsRef[parseInt(dist)] as HTMLImageElement[])
-    //   .flat()
-
+    /**
+     * Memory of the previously randomly picked UE.
+     */
     let lastRandom = -1
 
-    const randomInRangeUe = () => {
+    /**
+     * Picks a random in-range UE. Ensures that the chosen UE is not the same as the one picked last time.
+     *
+     * @returns random UE element ref
+     */
+    const randomInRangeUe = (): SVGElement => {
       let newRandom: number
       do {
         if (ueElementsInRange.length === 0) {
@@ -186,6 +215,11 @@ export default function CoverageResourceBlocksDiagram() {
       return newRandom >= 0 ? ueElementsInRange[newRandom] : null
     }
 
+    /**
+     * Remove `transcieving` class from all UEs.
+     *
+     * Used to clear any previous transcieving visualisation after a state change or re-render.
+     */
     Object.values(phoneElementsRef.current)
       .flat()
       .forEach(el => {
@@ -196,6 +230,9 @@ export default function CoverageResourceBlocksDiagram() {
     let timeoutKey = -1
     let lastUe = null
 
+    /**
+     * Starts trancieving to a random UE, then recursively calls itself with a timeout.
+     */
     const begin = () => {
       const randomUe = randomInRangeUe()
 
@@ -211,7 +248,7 @@ export default function CoverageResourceBlocksDiagram() {
       lastUe = randomUe
 
       if (!abortController.signal.aborted && isVisible) {
-        timeoutKey = setTimeout(() => begin(), 300)
+        timeoutKey = setTimeout(() => begin(), speed)
       }
     }
 
@@ -221,7 +258,7 @@ export default function CoverageResourceBlocksDiagram() {
       abortController.abort()
       clearTimeout(timeoutKey)
     }
-  }, [isVisible, frequencyBand, smallScreen])
+  }, [isVisible, frequencyBand, smallScreen, speed])
 
   return (
     <figure className={classes.root}>
@@ -239,6 +276,17 @@ export default function CoverageResourceBlocksDiagram() {
             value={AvailableFrequencies.findIndex(band => band.name === frequencyBand.name)}
             onChange={e => setFrequencyBand(AvailableFrequencies[e.target.value as any as number])}
           />
+
+          <label htmlFor="speed-input">Speed </label>
+          <input
+            id="speed-input"
+            type="range"
+            min={1}
+            step={-1}
+            max={4}
+            value={6 - speed / 75}
+            onChange={e => setSpeed((6 - (e.target.value as any as number)) * 75)}
+          />
         </div>
 
         <div className={classes.data}>
@@ -246,7 +294,10 @@ export default function CoverageResourceBlocksDiagram() {
             <strong>Band:</strong> {frequencyBand.name} &ndash; {frequencyBand.frequency} Hz @ {BANDWIDTH} MHz BW
           </p>
           <p>
-            <strong>Avg RBs per UE:</strong> {ueResourceBlocks.toFixed(2)} RBs
+            <strong>Avg RBs per UE:</strong>{' '}
+            {Number.isInteger(ueResourceBlocks)
+              ? `${ueResourceBlocks} RBs`
+              : `${Math.floor(ueResourceBlocks)} - ${Math.ceil(ueResourceBlocks)} RBs`}
           </p>
           <p>
             <strong>Throughput per UE:</strong> {(ueMaxThroughput / 1_000_000).toFixed(2)} Mbps
@@ -298,11 +349,11 @@ export default function CoverageResourceBlocksDiagram() {
               This is not to scale in any way, and is only used to demonstrate an idea, rather than provide concrete comparisons.
             </p>
             <p className="text-whisper-up">
-              Throughput is theoretical, calculated with 256 QAM and 1x1{' '}
+              Throughput and RBs per UE are theoretical. Throughput calculated with 256 QAM and 1x1{' '}
               <abbr data-tooltip aria-label="Single-input, single-output">
                 SiSo
               </abbr>
-              .
+              . Both assume all UEs have 100% network usages.
             </p>
           </footer>
         </>
