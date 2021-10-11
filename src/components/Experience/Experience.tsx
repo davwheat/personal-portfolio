@@ -8,7 +8,7 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
     organisation: 'Flarum',
     organisationSite: 'https://flarum.org',
     description: 'Free, open-source and extensible forum framework',
-    role: 'a front-end core developer',
+    role: 'a front-end web developer',
     projects: [
       'Improved accessibility',
       'Replaced old JS libraries with newer and native methods',
@@ -20,7 +20,7 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
     organisation: 'giffgaff',
     organisationSite: 'https://community.giffgaff.com',
     description: 'UK mobile network with 1M+ members',
-    role: 'a web developer',
+    role: 'a freelance web developer',
     projects: [
       'Discovered and fixed styling issues',
       'Produced a dark theme for their community forum',
@@ -32,7 +32,7 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
     organisation: 'Techway Solutions',
     organisationSite: 'https://play.google.com/store/apps/details?id=dev.davwheat.flueleakagecalculator',
     description: 'Industrial engineering services',
-    role: 'a mobile developer',
+    role: 'a mobile app developer',
     projects: [
       'Created a app used for certifying industrial flues',
       'Engaged with the client to ensure the specification is met',
