@@ -40,6 +40,26 @@ const IMAGE_INTRINSIC_WIDTH = 600
 
 const projectList: ReadonlyArray<Project> = [
   {
+    title: 'Railway Announcements Generator',
+    type: 'Web',
+    description:
+      'Generate announcements for a variety of UK rail networks. Patched together from 100s of recordings, and all assembled client-side.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/rail-announcements.png"
+        placeholder="blurred"
+        alt="Screenshot of Railway Announcements Generator in use"
+      />
+    ),
+    links: {
+      live: 'https://rail-announcements.davwheat.dev/',
+      vcs: 'https://github.com/davwheat/rail-announcements',
+    },
+    tech: ['React', 'Typescript', 'React'],
+  },
+  {
     title: 'Rail Dot Matrix',
     type: 'Web',
     description:
