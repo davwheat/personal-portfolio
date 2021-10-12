@@ -86,8 +86,8 @@ For a <Tooltip text="LTE band 20">L20</Tooltip> site with 10 MHz bandwidth &mdas
 would be just **50 RBs**. Meanwhile, for a site with 3xCA on L1+L7+L20 with 15, 20 and 10 MHz respectively (a typical Vodafone UK capacity site),
 this is a total of **225 RBs**.
 
-Remember from my OFDM article, linked above, that we can calculate the maximum theoretical throughput using the number of resource blocks and
-the modulation used for data transfer:
+Remember from my OFDM article, linked above, that we can calculate the maximum theoretical throughput using the number of resource blocks and the
+modulation used for data transfer:
 
 <figure role="group">
   <MathBlock
@@ -109,15 +109,15 @@ super special test site, of course!).
 <CoverageResourceBlocksDiagram />
 
 As you modify the frequency, notice how the amount of RBs, and therefore maximum throughput, allocated to each individual UE changes. This is a
-direct consequence of reacher greater or fewer UEs from one eNB.
+direct consequence of reaching greater or fewer UEs from one eNB.
 
 ## Conclusion
 
 While frequency should have no effect on the achieveable speeds in theory, however real-world speeds almost always do relate to frequency.
 
-The extra coverage achieved on low frequency frequencies normally means that networks deploy a reduced number of sites, resulting in a greater
-number of UEs connected to a single site. This means that the amount of resources available to individual devices is reduced, meaning that
-possible speeds are much lower.
+The extra coverage achieved on lower frequencies normally means that networks deploy a reduced number of sites, resulting in a greater number of
+UEs connected to a single site. This means that the amount of resources available to individual devices is reduced, meaning that possible speeds
+are much lower.
 
 If you haven't checked out the previous article, which explores how duplexing modes (TDD and FDD) affect speeds and useability, I'd highly
 recommend [giving it a read](/blog/2021/07/24/lte-bands-and-duplex-modes).
