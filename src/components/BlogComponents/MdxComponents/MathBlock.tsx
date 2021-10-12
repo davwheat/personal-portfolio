@@ -61,10 +61,8 @@ const useStyles = makeStyles({
     marginRight: 8,
     marginBottom: -1,
   },
-
   footer: {
     borderTop: `2px solid ${Colors.neutralGrey}`,
-    background: Colors.lightGrey,
     padding: '8px 16px',
     '& p': {
       marginBottom: '0 !important',
