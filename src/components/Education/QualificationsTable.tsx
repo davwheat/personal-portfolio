@@ -35,36 +35,6 @@ const Education: Qualification[] = [
     isPredicted: false,
     year: '2021',
   },
-  {
-    courseName: 'GCSE Computer Science',
-    grade: '9',
-    isPredicted: false,
-    year: '2020',
-  },
-  {
-    courseName: 'GCSE Maths',
-    grade: '9',
-    isPredicted: false,
-    year: '2020',
-  },
-  {
-    courseName: 'AQA L2 Further Maths Certificate',
-    grade: '9',
-    isPredicted: false,
-    year: '2020',
-  },
-  {
-    courseName: 'GCSE Business',
-    grade: '9',
-    isPredicted: false,
-    year: '2020',
-  },
-  {
-    courseName: 'GCSE English Language',
-    grade: '9',
-    isPredicted: false,
-    year: '2020',
-  },
 ]
 
 interface Props {
