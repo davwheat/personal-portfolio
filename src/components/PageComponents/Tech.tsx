@@ -2,8 +2,11 @@ import React from 'react'
 
 import HTMLLogo from '../../assets/tech/html5.svg'
 import ReactLogo from '../../assets/tech/react.svg'
+import TypescriptLogo from '../../assets/tech/typescript.svg'
 import GatsbyLogo from '../../assets/tech/gatsby.svg'
 import FlarumLogo from '../../assets/tech/flarum.svg'
+import PhpLogo from '../../assets/tech/php.svg'
+import LaravelLogo from '../../assets/tech/laravel.svg'
 
 import { makeStyles } from '@material-ui/core'
 import TechItem from './TechItem'
@@ -71,6 +74,16 @@ const tech = [
     name: 'Flarum',
     icon: FlarumLogo,
     from: 2020,
+  },
+  {
+    name: 'PHP',
+    icon: PhpLogo,
+    from: 2021,
+  },
+  {
+    name: 'Laravel',
+    icon: LaravelLogo,
+    from: 2021,
   },
 ].sort((a, b) => a.from - b.from)
 
