@@ -5,6 +5,18 @@ import Breakpoints from '../../data/breakpoints'
 
 const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
   {
+    organisation: 'Blomstra',
+    organisationSite: 'https://blomstra.net',
+    description: 'Managed Flarum hosting, and custom development',
+    role: 'a full-stack web developer',
+    projects: [
+      'Worked to project briefs to deliver new Flarum features',
+      'Created and upgraded existing open-source Flarum extensions',
+      'Integrated Flarum with other third-party services',
+      'Engaged in key communication with external clients',
+    ],
+  },
+  {
     organisation: 'Flarum',
     organisationSite: 'https://flarum.org',
     description: 'Free, open-source and extensible forum framework',
