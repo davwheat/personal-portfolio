@@ -29,7 +29,8 @@
       margin-bottom: 0.75em;
     }
 
-    p, li {
+    p,
+    li {
       strong {
         font-weight: bold;
       }
@@ -110,6 +111,18 @@
 
     code {
       font-family: 'Consolas', 'Courier New', Courier, monospace;
+    }
+
+    figure > p + figcaption {
+      text-align: center;
+      display: block;
+      padding: 0 32px;
+
+      // .text-whisper-up
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 20px;
     }
   }
 }
