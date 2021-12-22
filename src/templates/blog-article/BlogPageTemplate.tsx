@@ -143,8 +143,8 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
           <Section component="footer">
             <p className={clsx('text-speak text-center', classes.footerPara)}>
               Noticed something not quite right with this blog article? Give me a poke at{' '}
-              <Link href={`mailto:blog@davwheat.dev?subject=${encodeURIComponent(pageContext.frontmatter.title)}`}>blog@davwheat.dev</Link> and
-              let me know.
+              <Link href={`mailto:blog@davwheat.dev?subject=${encodeURIComponent(pageContext.frontmatter.title)}`}>blog@davwheat.dev</Link> or{' '}
+              <Link href="https://t.me/davwheat">t.me/davwheat</Link> and let me know.
             </p>
           </Section>
 
