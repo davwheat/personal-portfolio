@@ -43,6 +43,7 @@ export interface ISpectrumAllocation {
 
 export interface ISpectrumMapProps {
   caption: string
+  note?: string
   data: ISpectrumAllocation[]
 }
 
@@ -135,6 +136,9 @@ const useSpectrumMapStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  note: {
+    marginTop: 8,
+  },
 })
 
 const useSpectrumMapItemStyles = makeStyles({
@@ -186,7 +190,7 @@ const useSpectrumMapDetailsStyles = makeStyles({
   },
 })
 
-export function SpectrumMap({ caption, data }: ISpectrumMapProps) {
+export function SpectrumMap({ caption, data, note }: ISpectrumMapProps) {
   const classes = useSpectrumMapStyles()
 
   const minMhz = Math.min(...data.map(a => a.freqStart))
@@ -225,6 +229,7 @@ export function SpectrumMap({ caption, data }: ISpectrumMapProps) {
 
       <footer className={clsx(classes.footer, 'softer-bg')}>
         <p className="text-whisper-up">Click on a spectrum block to view more information about it.</p>
+        {note && <p className={clsx('text-whisper-up', classes.note)}>{note}</p>}
       </footer>
     </figure>
   )
