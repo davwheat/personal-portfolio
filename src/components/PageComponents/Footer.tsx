@@ -1,8 +1,11 @@
 import React from 'react'
 
-import { makeStyles } from '@material-ui/core'
 import Link from '../Links/Link'
+import SocialButtons from '../SocialButtons'
+
+import { makeStyles } from '@material-ui/core'
 import { graphql, useStaticQuery } from 'gatsby'
+import Breakpoints from '@data/breakpoints'
 
 const useStyles = makeStyles({
   container: {
@@ -16,17 +19,31 @@ const useStyles = makeStyles({
     margin: 'auto',
     padding: '0 24px',
   },
+  topContainer: {
+    display: 'flex',
+
+    [Breakpoints.upTo.desktopSmall]: {
+      flexDirection: 'column',
+    },
+  },
   about: {
+    marginRight: 16,
     '& p': {
       paddingBottom: 4,
     },
+
+    [Breakpoints.upTo.desktopSmall]: {
+      marginRight: 0,
+      marginBottom: 12,
+    },
   },
   nav: {
-    marginTop: 16,
+    marginTop: 24,
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
     marginBottom: -8,
+
     '& a': {
       padding: '8px 16px',
       textDecoration: 'none',
@@ -71,20 +88,25 @@ const Footer: React.FC = () => {
   return (
     <footer className={classes.container}>
       <main className={classes.content}>
-        <section className={classes.about}>
-          <p className="text-speak-up">&copy; {new Date().getFullYear()} David Wheatley</p>
-          <p className="text-whisper">
-            <a href="https://github.com/davwheat/personal-portfolio" rel="noopener noreferrer">
-              View this site on GitHub
-            </a>
-            <BulletSeparator />
-            This site collects anonymised analytics that does not track individual users.{' '}
-            <a href="https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web" rel="noopener noreferrer">
-              Learn more about Cloudflare analytics
-            </a>
-          </p>
-          <p className="text-whisper">Last updated {siteBuildMetadata.buildTime}.</p>
+        <section className={classes.topContainer}>
+          <div className={classes.about}>
+            <p className="text-speak-up">&copy; {new Date().getFullYear()} David Wheatley</p>
+            <p className="text-whisper">
+              <a href="https://github.com/davwheat/personal-portfolio" rel="noopener noreferrer">
+                View this site on GitHub
+              </a>
+              <BulletSeparator />
+              This site collects anonymised analytics that does not track individual users.{' '}
+              <a href="https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web" rel="noopener noreferrer">
+                Learn more about Cloudflare analytics
+              </a>
+            </p>
+            <p className="text-whisper">Last updated {siteBuildMetadata.buildTime}.</p>
+          </div>
+
+          <SocialButtons />
         </section>
+
         <nav className={classes.nav}>
           <Link href="/">Home</Link>
           <Link href="/blog">Blog</Link>
