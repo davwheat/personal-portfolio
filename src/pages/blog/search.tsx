@@ -136,7 +136,7 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
     const params = new URLSearchParams(window.location.search.substring(1))
 
     setSearchState(v => ({ ...v, query: params.get('q') || v.query }))
-  }, [window.location])
+  }, [location])
 
   useEffect(() => {
     if (searchState.query.trim()) {
