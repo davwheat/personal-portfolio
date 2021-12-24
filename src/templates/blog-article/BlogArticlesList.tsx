@@ -13,6 +13,8 @@ import type { LocationContext } from '@gatsbyjs/reach-router'
 import type { IMdxPageContextWithoutBody } from '@templates/blog-article/BlogPageTemplate'
 import { makeStyles } from '@material-ui/styles'
 import Breakpoints from '@data/breakpoints'
+import Link from '@components/Links/Link'
+import SearchIcon from 'mdi-react/SearchIcon'
 
 interface IBlogArticlesListProps {
   location: LocationContext
@@ -46,6 +48,16 @@ const useStyles = makeStyles({
       gridTemplateColumns: '1fr',
     },
   },
+  searchLink: {
+    textAlign: 'right',
+    marginBottom: 32,
+    marginTop: -12,
+    marginRight: 8,
+  },
+  searchIcon: {
+    marginRight: 4,
+    verticalAlign: 'bottom',
+  },
 })
 
 export default function BlogArticlesList({
@@ -77,6 +89,13 @@ export default function BlogArticlesList({
       </Hero>
 
       <Section width="wider">
+        <p className={classes.searchLink}>
+          <Link href="/blog/search">
+            <SearchIcon className={classes.searchIcon} />
+            Search blog
+          </Link>
+        </p>
+
         <ul className={classes.list}>{Posts}</ul>
       </Section>
 
