@@ -17,11 +17,23 @@ import SearchIcon from 'mdi-react/SearchIcon'
 import generateTransitions from '@functions/generateTransitions'
 import clsx from 'clsx'
 
+interface ISearchResultDocument {
+  id: string
+  title: string
+  tags: string[]
+  description: string
+}
+
+interface ISearchState {
+  results: ISearchResultDocument[]
+  query: string
+}
+
 interface IBlogSearchData {
   fuseSearchIndex: {
     fuse: {
       index: any
-      documents: SearchResultDocument[]
+      documents: ISearchResultDocument[]
     }
   }
 }
@@ -93,9 +105,9 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
   const classes = useStyles()
 
   const fuseSearcher = useMemo(() => {
-    const idx = fuse.parseIndex(fuseSearchIndex.fuse.index)
+    const idx = fuse.parseIndex<ISearchResultDocument>(fuseSearchIndex.fuse.index)
 
-    return new fuse(
+    return new fuse<ISearchResultDocument>(
       fuseSearchIndex.fuse.documents,
       {
         keys: [
@@ -115,7 +127,7 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
     )
   }, [fuseSearchIndex])
 
-  const [searchState, setSearchState] = useState({
+  const [searchState, setSearchState] = useState<ISearchState>({
     query: '',
     results: [],
   })
