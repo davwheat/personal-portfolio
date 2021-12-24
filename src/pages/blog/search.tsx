@@ -93,9 +93,9 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
   const classes = useStyles()
 
   const fuseSearcher = useMemo(() => {
-    const idx = fuse.parseIndex<PageSearchIndex>(fuseSearchIndex.fuse.index)
+    const idx = fuse.parseIndex(fuseSearchIndex.fuse.index)
 
-    return new fuse<PageSearchIndex>(
+    return new fuse(
       fuseSearchIndex.fuse.documents,
       {
         keys: [
@@ -127,16 +127,18 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
   }, [window.location])
 
   useEffect(() => {
-    if (searchState.query) {
-      const paramResults = fuseSearcher.search(searchState.query).map(i => i.item)
+    if (searchState.query.trim()) {
+      const paramResults = fuseSearcher.search(searchState.query.trim()).map(i => i.item)
       setSearchState(v => ({ ...v, results: paramResults }))
+    } else {
+      setSearchState(v => ({ ...v, results: [] }))
     }
   }, [searchState.query, fuseSearcher])
 
   const { query, results } = searchState
 
   return (
-    <Layout location={location} title="Search Blog" description="Search blog articles from David Wheatley.">
+    <Layout location={location} title="Search blog" description="Search blog articles from David Wheatley.">
       <Hero firstElement color={Colors.primaryBlue}>
         <h1 className="text-shout">Search blog</h1>
       </Hero>
@@ -161,8 +163,10 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
 
       <Section width="wider">
         <p className={clsx('text-speak-up', classes.resultCount)}>
-          {results.length} {results.length ? 'results' : 'result'} found
+          {results.length} {results.length !== 1 ? 'results' : 'result'} found
         </p>
+
+        {query.trim() === '' && <p className="text-center text-loud">Please enter a search query.</p>}
 
         <ul className={classes.list}>
           {results.map(result => (
