@@ -121,5 +121,33 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-meta-redirect`,
+    {
+      resolve: `@ssfbank/gatsby-plugin-search-fusejs`,
+      options: {
+        resolvers: {
+          Mdx: {
+            title: node => node.frontmatter.title,
+            description: node => node.frontmatter.description,
+            tags: node => (Array.isArray(node.frontmatter.tags) ? node.frontmatter.tags : [node.frontmatter.tags]),
+            path: node => node.frontmatter.path,
+          },
+        },
+
+        // pass on fuse specific constructor options: https://fusejs.io/api/options.html
+        fuseOptions: {
+          keys: [`title`, `tags`, `description`], // Mandatory
+          ignoreLocation: true,
+          treshold: 0.4,
+          minMatchCharLength: 2,
+        },
+
+        // if you want a copy of the serialized data structure into the public folder for external or lazy-loaded clientside consumption
+        // will be put in ./public folder and will end up as ./public/fuse-search-data.json
+        copySerializationToFile: 'fuse-search-data',
+
+        // Optional filter to limit indexed nodes
+        filter: (node, getNode) => node.frontmatter.tags !== 'exempt',
+      },
+    },
   ],
 }

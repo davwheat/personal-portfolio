@@ -2697,6 +2697,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ssfbank/gatsby-plugin-search-fusejs@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@ssfbank/gatsby-plugin-search-fusejs@npm:1.0.5"
+  dependencies:
+    fuse.js: 6.4.6
+  peerDependencies:
+    gatsby: ">=3"
+  checksum: 09c3c27f4a3e8e2838569078a706d91fc3ca25fa22df87d2bcea3974c108e4f8351f00b521a6a51569e8196a4f136af7c3fd6e4ceed587f2ecb7e4b07ca8a63a
+  languageName: node
+  linkType: hard
+
 "@szmarczak/http-timer@npm:^1.1.2":
   version: 1.1.2
   resolution: "@szmarczak/http-timer@npm:1.1.2"
@@ -7834,6 +7845,20 @@ __metadata:
   version: 1.0.1
   resolution: "functional-red-black-tree@npm:1.0.1"
   checksum: ca6c170f37640e2d94297da8bb4bf27a1d12bea3e00e6a3e007fd7aa32e37e000f5772acf941b4e4f3cf1c95c3752033d0c509af157ad8f526e7f00723b9eb9f
+  languageName: node
+  linkType: hard
+
+"fuse.js@npm:6.4.6":
+  version: 6.4.6
+  resolution: "fuse.js@npm:6.4.6"
+  checksum: 012dfacdc9a3c065d05d031b4eaaad7dd460f66dca100fcef182ed4e70a6b763b6753071702589d0b28def34b48ad077f01426d4ac1d75ef374564f6baa943fd
+  languageName: node
+  linkType: hard
+
+"fuse.js@npm:^6.5.3":
+  version: 6.5.3
+  resolution: "fuse.js@npm:6.5.3"
+  checksum: f7c14f4422000e7f7e3515c66f7cefdfc38adec4cf380097f4146a201ea438af60b67dc5849b3c0de0115ce3f9bc5afad6fc6570c08dcfcef5bf6e95eb8e6d6f
   languageName: node
   linkType: hard
 
@@ -13259,6 +13284,7 @@ __metadata:
     "@mdx-js/mdx": ^1.6.22
     "@mdx-js/react": ^1.6.22
     "@slixites/gatsby-plugin-google-fonts": ^1.1.1
+    "@ssfbank/gatsby-plugin-search-fusejs": ^1.0.5
     "@types/color": ^3.0.2
     "@types/material-ui": ^0.21.12
     "@types/mdx-js__react": ^1.5.5
@@ -13268,6 +13294,7 @@ __metadata:
     clsx: ^1.1.1
     cross-env: ^7.0.3
     dayjs: ^1.10.7
+    fuse.js: ^6.5.3
     gatsby: ^4.3.0
     gatsby-image: ^3.11.0
     gatsby-plugin-catch-links: ^4.3.0
