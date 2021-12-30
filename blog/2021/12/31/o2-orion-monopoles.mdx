@@ -23,7 +23,7 @@ In the past, O2 has had a fairly troublesome history in terms of capacity. Many 
 time, resulting in O2 sites which used to be more than capable of providing decent performance to customers within their zone painful to use.
 This is extremely prevalent with their main deployments being 800 MHz LTE across rural and suburban United Kingdom.
 
-# Approaches to capacity management
+# Capacity management
 
 O2's approaches to capacity management have been successful to varying degrees, but all put together, they result in a positive impact in urban
 areas, such as large towns and cities. This section won't cover everything, as that's deserving of its own separate page, and Peter already did a
@@ -67,10 +67,10 @@ Eight feeders, labelled as 2300 MHz LTE (Band 40) on a brand new O2 Orion monopo
 </figcaption>
 </figure>
 
-### Massive MIMO 2300 MHz
+### Massive MIMO
 
-In a few select locations, O2 instead equip their sites with **massive MIMO**. This allows for directional beamforming to be used. This is where
-users data streams are directed towards a user's device, rather than spewed into the air in all directions.
+In a few select locations, O2 instead equip their 2300 MHz LTE sites with **massive MIMO**. This allows for directional beamforming to be used.
+This is where users data streams are directed towards a user's device, rather than spewed into the air in all directions.
 
 Initially, you might think that this is purely to allow for higher speeds as a result of reduced signal-to-noise ratio and increased power, due
 to the signal being focused at the UE directly, but there is more to it than this.
@@ -82,6 +82,7 @@ This relies on users being located apart from one another. If two or more users 
 form beams towards one of them, while keeping a null zone around the other's position.
 
 import MassiveMimoDiagram from './MassiveMimoDiagram'
+
 <MassiveMimoDiagram />
 
 <!--
