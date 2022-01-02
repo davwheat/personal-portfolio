@@ -108,10 +108,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
+              layout: 'constrained',
               maxWidth: 500,
               maxHeight: 675,
               linkImagesToOriginal: true,
               quality: 80,
+              withWebp: true,
+              withAvif: true,
             },
           },
           `gatsby-remark-static-images`,

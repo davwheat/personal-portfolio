@@ -21,7 +21,7 @@ export interface ILinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
 function isExternalLink(url: string): boolean {
   const regex = /^(https?:\/\/|mailto:)/
 
-  return !!url.match(regex)
+  return !!url?.match(regex)
 }
 
 const Link = ({ href, children, className, ...props }: ILinkProps) => {

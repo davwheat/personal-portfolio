@@ -1,0 +1,116 @@
+---
+title: 'O2 Beacon 3 - Orion'
+description:
+  O2's latest flagship monopoles, Orion, are a mastermind in the mobile networking world, cramming tonnes of bands into a single streetworks
+  cabinet.
+path: 2022/01/07/o2-beacon-3-orion
+created_at: 2022-01-07T16:00Z
+---
+
+import { FactBox, MathBlock, Tooltip, SpectrumMap } from '@blog'
+
+<TableOfContents {...props} />
+
+# A brief history
+
+O2 (<Tooltip text="MCC: 234, MNC: 10"><code>234/10</code></Tooltip>) is the largest network operator in the United Kingdom in terms of customers.
+Including its <Tooltip text="Mobile virtual network operators">MVNOs</Tooltip>, O2's customer base totals a whopping 36.2 million customers in a
+country of just 67 million, meaning they have a market share of 54%.
+([Source](https://news.o2.co.uk/press-release/o2-continues-customer-growth-and-profitability-as-it-supports-uk-through-pandemic))
+
+In the past, O2 has had a fairly troublesome history in terms of capacity. Many parts of the UK which used to be more rural have expanded over
+time, resulting in O2 sites which used to be more than capable of providing decent performance to customers within their zone painful to use.
+This is extremely prevalent with their main deployments being 800 MHz LTE across rural and suburban United Kingdom.
+
+# Introduction to Orion
+
+In 2021, O2 launched its **Beacon 3** project, including its brand new, flagship Orion monopoles.
+
+Orion monopoles manage to cram a multitude 4G bands, along with n28 and n78 5G all into one street cabinet and monopole, often replacing what
+used to be basic 4G/3G/2G monopoles and several street cabinets.
+
+O2 have begun to fall in love with these new deployments, because of their simplicity. A pole swap can be done in just one day, consisting of
+contractors installing the feeders in the new cabinet, and an HIAB truck arriving with the new monopole, lifting and dropping it into place, and
+then taking the old one away to be stripped for parts.
+
+![An O2 Orion monopole alongside a previous Beacon 2 monopole](./orion_vs_old.jpg)
+
+# Planning applications
+
+For mobile networks to install new street infrastructure, they do not need to apply for planning permission. Instead, they must submit a notice
+of **prior notification**. This is a notice of intent, basically saying "I'm doing something. Tell me if I can't.".
+
+The local planning authority has **56 days to object to the plans, or approve them**. No response after 56 days is classed as an approval. The
+big kick against conspiracy theorists is that **LPAs may only reject proposed development due to its siting or appearance**.
+
+The compact nature of Orion monopole sites mean that councils are more likely to approve them compared to monopoles from other operators which
+may clutter public areas with various street furniture.
+
+## Exemptions
+
+Exemptions exist from submtting prior notification plans, aimed to make minor changes easier for network operators. While they are meant for
+swapping out equipment when it fails or for adding new microwave link dishes to sites, O2 have now been seen using these powers for performing
+full-on Orion site swaps in some areas.
+
+One of my local monopole sites in Burgess Hill, for example, has recently been swapped from a Beacon 2 site to a new dual operator Orion with no
+prior notice submitted. This was possible due to one exemption:
+
+> prior approval does not apply to ground-based masts which when altered or replaced would not exceed the greater of the height of the existing
+> mast and 20m above ground level
+
+Since my old local monopole was 20m in height, and so was the new Orion monopole, **the site could be swapped out without any form of approval
+required**.
+
+# Orion equipment
+
+Orion installations differ significantly. The majority of site we've seen so far have been O2 unilateral (only O2) monopoles, using Ericsson
+equipment. We've seen some Cornerstone shared sites (where O2 and Vodafone are both located on the monopole), though.
+
+## Nokia vendor
+
+My site was one of the first we'd seen in the wild using Nokia equipment. It was also a dual-operator site, with O2 and Vodafone both
+broadcasting from it.
+
+On the top of the monopole are three
+[Commscope 24-port RRZZT4S4-65B-R6 antennae](https://www.commscope.com/product-type/antennas/base-station-antennas-equipment/base-station-antennas/itemrrzzt4s4-65b-r6/)
+(that's a mouthful), each fully loaded with feeder cables. This is different from the Huawei passive antennae we had previously seen in Ericsson
+zones.
+
+The street furniture used was a single Yorkshire cabinet, while the previous three cabinets (one for each operator, plus one for power) were
+removed as part of the upgrade on Day 4.
+
+![The new Commscope Yorkshire cabinet used in this Orion deployment](./commscope_cabinet.jpg)
+
+<FactBox title="It's worth knowing...">
+
+The use of non-Huawei antennae in this Orion build **is not** related to the UK's ban on Huawei equipment in new 5G deployments, as that ban only
+applies to active equipment.
+
+</FactBox>
+
+The site appears to be configured for:
+
+- 5G
+  - 8T8R 3500 MHz NR (n78)
+  - 2T4R 700 MHz NR (n28)
+- 4G
+  - 8T8R 2300 MHz LTE (B40)
+  - 4T4R 2100 MHz LTE (B1)
+  - 2T2R 900 MHz LTE (B8)
+  - 2T2R 800 MHz LTE (B20)
+
+I am yet to fieldtest this site, so I cannot confirm this is the exact deployment, however.
+
+<!--
+- Kathrein 78211593 https://marketplace.shields-e.com/Product/Details/78211593
+  - RET - tilting the antenna
+    - no longer motors -- phase control
+    - altering the time antennas receive the signal changes the tilt
+  - https://en.wikipedia.org/wiki/Beam_tilt
+- feeder tag - CAL -> calibration port
+  - for beams, esp high TRx levels
+- n78 5G 8TRx
+  - missing 5G RRUs
+- Commscope antennas, rather than typical Huawei https://www.commscope.com/product-type/antennas/base-station-antennas-equipment/base-station-antennas/itemrrzzt4s4-65b-r6/
+  - high port config
+-->
