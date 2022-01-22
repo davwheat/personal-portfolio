@@ -13,25 +13,24 @@ import { FactBox, MathBlock, Tooltip, SpectrumMap } from '@blog'
 
 <FactBox title="Note">
 
-Click on any of the images in this article to view them at their full-size glory.
+Click on any of the images in this article to view them in their full-size glory.
 
 </FactBox>
 
 # A brief history
 
-O2 (<Tooltip text="MCC: 234, MNC: 10"><code>234/10</code></Tooltip>) is the largest network operator in the United Kingdom in terms of customers.
-Including its <Tooltip text="Mobile virtual network operators">MVNOs</Tooltip>, O2's customer base totals a whopping 36.2 million customers in a
-country of just 67 million, meaning they have a market share of 54%.
+O2 (<Tooltip text="MCC: 234, MNC: 10"><code>234/10</code></Tooltip>) is the largest mobile network operator in the United Kingdom in terms of
+customers. Including its <Tooltip text="Mobile virtual network operators">MVNOs</Tooltip>, O2's customer base totals a whopping 36.2 million
+customers in a country of just 67 million, meaning they have a market share of 54%.
 ([Source](https://news.o2.co.uk/press-release/o2-continues-customer-growth-and-profitability-as-it-supports-uk-through-pandemic))
 
-In the past, O2 has had a fairly troublesome history in terms of capacity. Many parts of the UK which used to be more rural have expanded over
-time, resulting in O2 sites which used to be more than capable of providing decent performance to customers within their zone suffering from
-lower performance as network load increases each year. This is extremely prevalent with their main deployments being 800 MHz LTE across rural and
-suburban United Kingdom.
+In the past, O2 has struggled in terms of capacity. Many parts of the UK which used to be more rural have grown over time, resulting in O2 sites
+which used to be more than capable of providing decent performance to customers within their zone suffering from lower performance as network
+load increases each year. This is extremely prevalent with their main 800 MHz LTE deployments across rural and suburban communities.
 
 # Introduction to Orion
 
-In 2021, O2 launched its **Beacon 3** network upgrade project, including its brand new, flagship Orion monopoles.
+In 2021, O2 launched its "Beacon 3" network upgrade project, including its brand new, flagship Orion monopoles.
 
 <FactBox>
 
@@ -45,7 +44,7 @@ multi-operator radio access network (MORAN) sites we typically see with Cornerst
 Orion monopoles manage to cram a multitude of 4G bands, along with n28 and n78 5G and their standard 2G/3G all into **one street cabinet and one
 monopole**, often replacing what used to be basic 4G/3G/2G monopoles and several street cabinets.
 
-O2 have begun favouring these new deployments because of their simplicity. A **pole swap can be done in just one day**, consisting of contractors
+O2 have begun favouring these new deployments because of their simplicity. A pole swap can be done in just one day, consisting of contractors
 installing the feeders in the new cabinet, and an HIAB truck arriving with the new monopole, lifting and dropping it into place, and then taking
 the old one away to be stripped for parts.
 
@@ -59,8 +58,20 @@ of **prior notification**. This is a notice of intent, basically saying "I want 
 The local planning authority has **56 days to object to the plans, or approve them**. No response after 56 days is classed as an approval. The
 big kick against conspiracy theorists is that **LPAs may only reject proposed development due to its siting or appearance**.
 
-The compact nature of Orion monopole sites mean that councils are more likely to approve them compared to monopoles from other operators which
-may clutter public areas with various street furniture.
+The compact nature of Orion monopole sites mean that councils would probably be more likely to approve them compared to monopoles from other
+operators which may clutter public areas with various street furniture. This is especially apparent if you compare Orion sites to similar Phase 7
+sites from Mobile Broadband Networks Limited (MBNL), which provide all radio technologies for Three and EE.
+
+<figure>
+
+![An MBNL Phase 7 site with 7 different cabinets.](./mbnl-phase-7-streetworks.jpg)
+
+<figcaption>
+
+An MBNL Phase 7 site with 7 different cabinets.
+
+</figcaption>
+</figure>
 
 ## Exemptions
 
@@ -87,16 +98,15 @@ using Ericsson equipment. We've seen some Cornerstone shared sites (where O2 and
 [My site](https://www.google.com/maps/place/50%C2%B058'00.2%22N+0%C2%B008'13.7%22W/@50.9667335,-0.1376914,19z) was one of the first we'd seen in
 the wild using Nokia equipment. It was also a dual-operator site, with O2 and Vodafone both broadcasting from it.
 
-Unlike the [previous Ericsson sites seen by Jake and Peter in Cardiff](https://www.youtube.com/watch?v=ou_CGjbQ8uc), this site doesn't appear to
-be kitted out for a massive MIMO deployment, instead preferring 8T8R for n78 5G.
+Unlike the [previous Ericsson sites seen by Peter and Jake in Cardiff](https://www.youtube.com/watch?v=ou_CGjbQ8uc), this site doesn't appear to
+be equipped for a massive MIMO deployment, instead preferring 8T8R for n78 5G.
 
 On the top of the monopole are three
-[Commscope 24-port RRZZT4S4-65B-R6 antennas](https://www.commscope.com/product-type/antennas/base-station-antennas-equipment/base-station-antennas/itemrrzzt4s4-65b-r6/)
-(that's a mouthful), each fully loaded with feeder cables. This is different from the Huawei passive antennas we had previously seen in Ericsson
-zones.
+[Commscope 24-port RRZZT4S4-65B-R6 antennas](https://www.commscope.com/product-type/antennas/base-station-antennas-equipment/base-station-antennas/itemrrzzt4s4-65b-r6/),
+each fully loaded with feeder cables. This is different from the Huawei passive antennas we had previously seen in Ericsson zones.
 
 The street furniture used was a single Yorkshire cabinet, while the previous three cabinets (one for each operator, plus one for power) were
-removed as part of the upgrade on Day 4.
+removed as part of the upgrade on day four.
 
 ![The new Commscope Yorkshire cabinet used in this Orion deployment](./commscope_cabinet.jpg)
 
@@ -111,12 +121,12 @@ This particular Orion site appears to be configured for:
 
 - 5G
   - 8T8R 3500 MHz NR (n78) at 40 MHz
-  - 2T4R 700 MHz NR (n28) at 10 MHz
+  - 2T4R 700 MHz NR (n28) at 10 MHz, paired
 - 4G
   - 4T4R 2100 MHz LTE (B1) at 10 MHz, paired
   - 2T2R 900 MHz LTE (B8) at 10 MHz, paired
   - 2T2R 800 MHz LTE (B20) at 10 MHz, paired
-  - 8T8R 2300 MHz LTE (B40) at 40 MHz total
+  - 8T8R 2300 MHz LTE (B40) with 2x20 MHz TDD carriers
 - and standard 2G/3G 900 MHz
 
 **n78 5G is not yet active on the site** as the remote radio units are missing from the monopole, as you can see below, and the 3500 MHz feeders
@@ -127,9 +137,9 @@ remain disconnected next to it. This RRU is set to be installed on 30 Jan 2022, 
 
 ### Beam tilting
 
-Beam tilting is a way to **control the distance which a site can transmit to**. It works by changing the angle at which beams are transmitted at
-from the antenna. In the past, this used to be done by physically moving the antenna elements inside the panel with motors, but this is now more
-commonly done thorugh **phase control**.
+Beam tilting is a way to control the distance which a site can transmit at a given effective power level. It works by changing the angle at which
+beams are transmitted at from the antenna. In the past, this used to be done by physically moving the antenna elements inside the panel with
+motors, but this is now more commonly done through phase control.
 
 Phase control tilts beams by altering the time at which different antenna elements receive RF signals. This tilts the signal beam in a specific
 direction.
