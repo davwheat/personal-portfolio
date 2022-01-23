@@ -42,7 +42,7 @@ export interface ISpectrumAllocation {
 }
 
 export interface ISpectrumMapProps {
-  caption: string
+  caption?: string
   note?: string
   data: ISpectrumAllocation[]
 }
@@ -204,7 +204,7 @@ export function SpectrumMap({ caption, data, note }: ISpectrumMapProps) {
   return (
     <figure className={classes.root} style={{ '--sections': gridColumns } as any}>
       <div className={classes.container}>
-        <figcaption className="text-loud text-center">{caption}</figcaption>
+        {caption && <figcaption className="text-loud text-center">{caption}</figcaption>}
 
         <div className={classes.map}>
           {sortedData.map(allocation => (
