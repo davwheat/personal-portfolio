@@ -24,8 +24,8 @@
     h5,
     h6,
     p,
-    ul,
-    ol {
+    ul:not(ul > li > ul):not(ol > li > ul),
+    ol:not(ul > li > ol):not(ol > li > ol) {
       margin-bottom: 0.75em;
     }
 
