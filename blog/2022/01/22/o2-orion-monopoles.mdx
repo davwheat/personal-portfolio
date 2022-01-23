@@ -90,20 +90,38 @@ required**.
 
 # Orion equipment
 
-Orion installations differ between vendor zones. The majority of sites we've seen have been O2 <Tooltip text="only O2">unilaterals</Tooltip>
-using Ericsson equipment. We've seen some Cornerstone shared sites (where O2 and Vodafone are both located on the monopole), though.
+Orion installations differ between vendor zones. Most Orion sites we've seen have been O2 <Tooltip text="single operator">unilaterals</Tooltip>
+using Ericsson equipment. We've seen some Cornerstone shared MORAN (multiple operator radio access network) sites (where O2 and Vodafone are both
+located on the monopole), though.
+
+## Ericsson vendor
+
+The Ericsson Orion monopoles were first noted by [Peter Clarke and Jake (Undersc0re)](https://www.youtube.com/watch?v=ou_CGjbQ8uc) in Cardiff.
+
+These deployments consisted of Huawei passive atennas for broadcasting 2G, 3G, 4G on all frequencies and 5G 700 MHz. They also had Ericsson AIR
+3278 32T32R massive MIMO antenna panels for 5G 3500 MHz n78, and Ericsson ERS 8808 8TRx panels for 2300 MHz B40 LTE.
+
+![Ericsson Orion monopole with labelled massive MIMO panels.](./ericsson-orion.png)
+
+The site's passive antennas are driven by three Ericsson ERS 4415 radios for 2100 MHz 4G LTE, and six Ericsson ERS 2238 tri-band radios for 700
+MHz 5G NR, 800/900 MHz 4G LTE and 900 MHz 2G/3G.
+
+![Ericsson Orion cabinet with labelled Ericsson ERS radios.](./ercisson-orion-cab.png)
 
 ## Nokia vendor
 
 [My site](https://www.google.com/maps/place/50%C2%B058'00.2%22N+0%C2%B008'13.7%22W/@50.9667335,-0.1376914,19z) was one of the first we'd seen in
 the wild using Nokia equipment. It was also a dual-operator site, with O2 and Vodafone both broadcasting from it.
 
-Unlike the [previous Ericsson sites seen by Peter and Jake in Cardiff](https://www.youtube.com/watch?v=ou_CGjbQ8uc), this site doesn't appear to
-be equipped for a massive MIMO deployment, instead preferring 8T8R for n78 5G.
+Unlike the [previous Ericsson sites seen by Peter and Jake](https://www.youtube.com/watch?v=ou_CGjbQ8uc), this site doesn't appear to be equipped
+for a massive MIMO deployment, instead preferring 8T8R for n78 5G.
 
 On the top of the monopole are three
 [Commscope 24-port RRZZT4S4-65B-R6 antennas](https://www.commscope.com/product-type/antennas/base-station-antennas-equipment/base-station-antennas/itemrrzzt4s4-65b-r6/),
 each fully loaded with feeder cables. This is different from the Huawei passive antennas we had previously seen in Ericsson zones.
+
+We also find the remote radio heads at the top of the pole. This site appears to be utilising three Nokia AirScale 8T8R AZNC RRUs for LTE 2300
+MHz, with three Nokia AirScale 8T8R AZQJ RRHs for NR 3500 MHz likely to be installed at a later date.
 
 The street furniture used was a single Yorkshire cabinet, while the previous three cabinets (one for each operator, plus one for power) were
 removed as part of the upgrade on day four.
@@ -113,7 +131,7 @@ removed as part of the upgrade on day four.
 <FactBox title="It's worth knowing...">
 
 The use of non-Huawei antennas in this Orion build **is not** related to the UK's ban on Huawei equipment in new 5G deployments, as that ban only
-applies to active equipment.
+applies to active equipment, while previous Orion builds have used Ericsson active antennas for 5G.
 
 </FactBox>
 
