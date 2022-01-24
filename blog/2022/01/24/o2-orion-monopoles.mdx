@@ -98,8 +98,8 @@ located on the monopole), though.
 
 The Ericsson Orion monopoles were first noted by [Peter Clarke and Jake (Undersc0re)](https://www.youtube.com/watch?v=ou_CGjbQ8uc) in Cardiff.
 
-These deployments consisted of Huawei passive atennas for broadcasting 2G, 3G, 4G on all frequencies (except 2300 MHz) and 5G 700 MHz. They also
-had Ericsson AIR 3278 32T32R massive MIMO antenna panels for 5G 3500 MHz n78, and Ericsson ERS 8808 8TRx panels for 2300 MHz B40 LTE.
+These deployments consisted of Huawei passive atennas for broadcasting 2G, 3G, 4G on all frequencies and 5G 700 MHz. They also
+had Ericsson AIR 3278 32T32R massive MIMO antenna panels for 5G 3500 MHz n78, and Ericsson ERS 8808 8TRx RRUs for 2300 MHz B40 LTE.
 
 ![Ericsson Orion monopole with labelled massive MIMO panels.](./ericsson-orion.png)
 
@@ -139,7 +139,7 @@ This particular Orion site appears to be configured for:
 
 - 5G
   - 8T8R 3500 MHz NR (n78) at 40 MHz
-  - 2T4R 700 MHz NR (n28) at 10 MHz, paired
+  - 2T2R (possibly 4R) 700 MHz NR (n28) at 10 MHz, paired
 - 4G
   - 4T4R 2100 MHz LTE (B1) at 10 MHz, paired
   - 2T2R 900 MHz LTE (B8) at 10 MHz, paired
@@ -171,10 +171,10 @@ This beam tilting optimisation is often referred to as **coverage-capacity optim
 
 </FactBox>
 
-On this Nokia Orion site, beam tilting is performed through the use of
-[Kathrein 78211593 RETs](https://marketplace.shields-e.com/Product/Details/78211593), seen in between the feeders in the image below.
+On this Nokia Orion site, beam tilting is performed through the use of Kathrein FlexRETs, powered by
+[Kathrein 78211593 smart bias tees](https://marketplace.shields-e.com/Product/Details/78211593), seen in between the feeders in the image below.
 
-![Image of Kathrein RET obscured by feeders into the passive antenna panel](./kathrein-rets.jpg)
+![Image of Kathrein smart bias tee obscured by feeders into the passive antenna panel](./kathrein-sbt.jpg)
 
 # Attribution
 
