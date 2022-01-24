@@ -108,10 +108,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 500,
-              maxHeight: 675,
+              maxWidth: 575,
+              wrapperStyle: () => 'max-height: 80vh; overflow: hidden;',
+              backgroundColor: 'transparent',
               linkImagesToOriginal: true,
               quality: 80,
+              withWebp: true,
+              withAvif: true,
             },
           },
           `gatsby-remark-static-images`,

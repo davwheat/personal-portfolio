@@ -57,7 +57,7 @@ const projectList: ReadonlyArray<Project> = [
       live: 'https://rail-announcements.davwheat.dev/',
       vcs: 'https://github.com/davwheat/rail-announcements',
     },
-    tech: ['React', 'Typescript', 'React'],
+    tech: ['React', 'Typescript', 'Gatsby'],
   },
   {
     title: 'Rail Dot Matrix',

@@ -16,15 +16,19 @@ const useStyles = makeStyles({
 export interface ILinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
   children: React.ReactNode
+  /**
+   * If present, will force as internal/external. Otherwise will auto-detect.
+   */
+  internal?: boolean
 }
 
 function isExternalLink(url: string): boolean {
   const regex = /^(https?:\/\/|mailto:)/
 
-  return !!url.match(regex)
+  return !!url?.match(regex)
 }
 
-const Link = ({ href, children, className, ...props }: ILinkProps) => {
+const Link = ({ href, children, className, internal, ...props }: ILinkProps) => {
   const classes = useStyles()
 
   const linkProps = {
@@ -32,7 +36,7 @@ const Link = ({ href, children, className, ...props }: ILinkProps) => {
     ...props,
   }
 
-  if (isExternalLink(href)) {
+  if (internal === false || (internal !== true && isExternalLink(href))) {
     return (
       <a href={href} rel="noopener" {...linkProps}>
         {children}
