@@ -64,23 +64,11 @@ async function createBlogArticles({ actions, graphql, reporter }) {
       allMdx {
         nodes {
           frontmatter {
-            title
-            description
-            path
             redirect_from
-            created_at(formatString: "LLL", locale: "en-GB")
-            updated_at(formatString: "LLL", locale: "en-GB")
-            archived
+            path
           }
 
           id
-          body
-          tableOfContents(maxDepth: 3)
-          excerpt
-
-          wordCount {
-            words
-          }
         }
       }
     }
@@ -92,16 +80,7 @@ async function createBlogArticles({ actions, graphql, reporter }) {
   const pages = result.data.allMdx.nodes
 
   pages.forEach((page, i) => {
-    const {
-      frontmatter,
-      tableOfContents,
-      wordCount: { words },
-      excerpt,
-      id,
-      body,
-    } = page
-
-    const timeToRead = Math.ceil(words / WORDS_PER_MINUTE)
+    const { frontmatter, id } = page
 
     // Create all redirects that are defined in frontmatter
     if (frontmatter.redirect_from) {
@@ -119,14 +98,11 @@ async function createBlogArticles({ actions, graphql, reporter }) {
       }
     }
 
-    frontmatter.updated_at = frontmatter.updated_at ? frontmatter.updated_at : frontmatter.created_at
-    frontmatter.archived ||= false
-
     actions.createPage({
       path: `/blog/${frontmatter.path}`,
       component: path.resolve(`./src/templates/blog-article/BlogPageTemplate.tsx`),
 
-      context: { id, tableOfContents, timeToRead, excerpt, body, frontmatter, page: Math.ceil((i + 1) / BlogArticlesPerPage) },
+      context: { id, page: Math.ceil((i + 1) / BlogArticlesPerPage) },
     })
   })
 }

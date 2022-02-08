@@ -18,6 +18,9 @@ const prodPlugins = !__IS_DEV__
   : []
 
 module.exports = {
+  flags: {
+    // FAST_DEV: true,
+  },
   siteMetadata: {
     title: `David Wheatley`,
     description: `David Wheatley is an front-end web designer specialising in React, located in West Sussex, UK.`,
@@ -71,6 +74,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
