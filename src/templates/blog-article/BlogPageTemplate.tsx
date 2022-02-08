@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { graphql } from 'gatsby'
+
 import type { LocationContext } from '@gatsbyjs/reach-router'
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -65,7 +67,7 @@ export interface IMdxPageContext {
     /**
      * Date article was updated at.
      */
-    updated_at: string
+    updated_at?: string
     /**
      * Is the post archived (hidden from the article list).
      */
@@ -93,7 +95,8 @@ export interface IMdxPageContext {
 export type IMdxPageContextWithoutBody = Omit<IMdxPageContext, 'body'>
 
 interface IDocsPageTemplateProps {
-  pageContext: IMdxPageContext & { page: number }
+  pageContext: { id: string; page: number }
+  data: { mdx: IMdxPageContext & { page: number } }
   location: LocationContext
 }
 
@@ -107,12 +110,19 @@ const useStyles = makeStyles({
   },
 })
 
-export default function DocsPageTemplate({ pageContext, location }: IDocsPageTemplateProps) {
-  const { body, ...contextNoBody } = pageContext
+export default function DocsPageTemplate({ pageContext, location, data: { mdx: data } }: IDocsPageTemplateProps) {
+  const { body, ...contextNoBody } = data
   const classes = useStyles()
 
+  contextNoBody.frontmatter.updated_at ||= contextNoBody.frontmatter.created_at
+  contextNoBody.frontmatter.archived ||= false
+
   return (
-    <Layout location={location} title={pageContext.frontmatter.title} description={pageContext.frontmatter.description || pageContext.excerpt}>
+    <Layout
+      location={location}
+      title={contextNoBody.frontmatter.title}
+      description={contextNoBody.frontmatter.description || contextNoBody.excerpt}
+    >
       <article id="blog-article">
         <BlogErrorBoundary>
           <BlogHero pageContext={contextNoBody} />
@@ -143,7 +153,7 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
           <Section component="footer">
             <p className={clsx('text-speak text-center', classes.footerPara)}>
               Noticed something not quite right with this blog article? Give me a poke at{' '}
-              <Link href={`mailto:blog@davwheat.dev?subject=${encodeURIComponent(pageContext.frontmatter.title)}`}>blog@davwheat.dev</Link> or{' '}
+              <Link href={`mailto:blog@davwheat.dev?subject=${encodeURIComponent(contextNoBody.frontmatter.title)}`}>blog@davwheat.dev</Link> or{' '}
               <Link href="https://t.me/davwheat">t.me/davwheat</Link> and let me know.
             </p>
           </Section>
@@ -156,3 +166,29 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
     </Layout>
   )
 }
+
+export const query = graphql`
+  query MdxBlogPost($id: String) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+        description
+        path
+        redirect_from
+        created_at(formatString: "LLL", locale: "en-GB")
+        updated_at(formatString: "LLL", locale: "en-GB")
+        archived
+      }
+
+      id
+      body
+      tableOfContents(maxDepth: 3)
+      excerpt
+      timeToRead
+
+      wordCount {
+        words
+      }
+    }
+  }
+`

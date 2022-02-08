@@ -71,6 +71,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
