@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core'
-import React from 'react'
+import React, { useState } from 'react'
 import { Tab, Tabs as OGTabs, TabList, TabPanel } from 'react-tabs'
 import Breakpoints from '../data/breakpoints'
 import Colors from '../data/colors.json'
@@ -68,13 +68,19 @@ const useStyles = makeStyles({
 
 const Tabs: React.FC<TabProps> = ({ tabNames, tabItems }) => {
   const classes = useStyles()
+  const [selectedTab, setSelectedTab] = useState(0)
 
   if (tabNames.length !== tabItems.length) {
     throw new Error('Different amount of tabNames and tabItems provided.')
   }
 
   return (
-    <OGTabs>
+    <OGTabs
+      selectedIndex={selectedTab}
+      onSelect={(index, lastIndex, event) => {
+        setSelectedTab(index)
+      }}
+    >
       <TabList className={classes.nav}>
         {tabNames.map(name => (
           <Tab key={name} className={classes.tab}>
