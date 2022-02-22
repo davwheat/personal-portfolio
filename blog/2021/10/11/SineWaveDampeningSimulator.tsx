@@ -3,7 +3,9 @@ import React, { useRef, useState } from 'react'
 import { Canvas } from '@components/Canvas'
 import Breakpoints from '@data/breakpoints'
 
-import { makeStyles, useMediaQuery } from '@material-ui/core'
+import { useMediaQuery } from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles({
   root: {

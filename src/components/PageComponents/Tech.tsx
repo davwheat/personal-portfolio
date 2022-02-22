@@ -8,7 +8,7 @@ import FlarumLogo from '../../assets/tech/flarum.svg'
 import PhpLogo from '../../assets/tech/php.svg'
 import LaravelLogo from '../../assets/tech/laravel.svg'
 
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 import TechItem from './TechItem'
 import Breakpoints from '../../data/breakpoints'
 

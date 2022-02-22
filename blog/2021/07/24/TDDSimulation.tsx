@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 import clsx from 'clsx'
 
 import Breakpoints from '@data/breakpoints'

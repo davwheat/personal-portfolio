@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Colors from '@data/colors.json'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 
 export interface IFactBoxProps {
   title?: string

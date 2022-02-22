@@ -1,6 +1,6 @@
 import React from 'react'
 import ExperienceCard from './ExperienceCard'
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 import Breakpoints from '../../data/breakpoints'
 
 const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [

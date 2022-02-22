@@ -1,7 +1,7 @@
-import { createTheme } from '@material-ui/core'
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 import Colors from './data/colors.json'
 
-export default createTheme({
+export default createTheme(adaptV4Theme({
   typography: {
     allVariants: {
       fontFamily:
@@ -21,4 +21,4 @@ export default createTheme({
       variant: 'outlined',
     },
   },
-})
+}))

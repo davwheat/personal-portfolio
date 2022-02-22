@@ -65,14 +65,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-webpack-size`,
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-image`,

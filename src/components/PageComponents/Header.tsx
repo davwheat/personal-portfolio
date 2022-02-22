@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 import Link from '../Links/Link'
 import Breakpoints from '../../data/breakpoints'
 import generateTransitions, { Durations } from '../../functions/generateTransitions'

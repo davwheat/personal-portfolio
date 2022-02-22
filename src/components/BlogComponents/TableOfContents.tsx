@@ -1,6 +1,6 @@
 import Link from '@components/Links/Link'
 import { Heading } from '@components/BlogComponents/Typography/Heading'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 import clsx from 'clsx'
 import React from 'react'
 import type { IMdxPageContextWithoutBody } from '@templates/blog-article/BlogPageTemplate'

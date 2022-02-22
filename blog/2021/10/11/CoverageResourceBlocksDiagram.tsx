@@ -4,7 +4,9 @@ import { FactBox } from '@components/BlogComponents/MdxComponents'
 import Breakpoints from '@data/breakpoints'
 import Colors from '@data/colors.json'
 
-import { makeStyles, useMediaQuery } from '@material-ui/core'
+import { useMediaQuery } from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import MastIcon from '@assets/icons/mast.inline.svg'
 import PhoneIcon from '@assets/icons/phone.inline.svg'

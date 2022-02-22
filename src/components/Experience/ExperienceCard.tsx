@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import React from 'react'
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 
 import type { ExperienceDataEntry } from './Experience'
 import Link from '../Links/Link'

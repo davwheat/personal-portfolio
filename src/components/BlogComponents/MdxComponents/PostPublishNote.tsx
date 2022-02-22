@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Colors from '@data/colors.json'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 
 import dayjs, { Dayjs } from 'dayjs'
 import dayjsLocalizedFormat from 'dayjs/plugin/localizedFormat'

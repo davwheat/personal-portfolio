@@ -4,7 +4,8 @@ import Header from './PageComponents/Header'
 import Footer from './PageComponents/Footer'
 import SEO from './SEO'
 
-import { makeStyles, ThemeProvider } from '@material-ui/styles'
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles'
+import { makeStyles } from '@mui/styles'
 import theme from '../theme'
 
 import type { LocationContext } from '@gatsbyjs/reach-router'
@@ -32,15 +33,17 @@ const Layout: React.FC<Props> = ({ children, title, description, location }) => 
 
   return (
     <ScrollContext location={location}>
-      <ThemeProvider theme={theme}>
-        <SEO title={title} description={description} />
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <SEO title={title} description={description} />
 
-        <Header />
+          <Header />
 
-        <main className={classes.mainContent}>{children}</main>
+          <main className={classes.mainContent}>{children}</main>
 
-        <Footer />
-      </ThemeProvider>
+          <Footer />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </ScrollContext>
   )
 }

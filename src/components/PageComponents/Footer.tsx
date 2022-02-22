@@ -3,7 +3,7 @@ import React from 'react'
 import Link from '../Links/Link'
 import SocialButtons from '../SocialButtons'
 
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useStaticQuery } from 'gatsby'
 import Breakpoints from '@data/breakpoints'
 

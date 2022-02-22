@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@material-ui/core'
+import { useMediaQuery } from '@mui/material'
 
 /**
  * React Hook used to provide a responsive width for the blog canvas.

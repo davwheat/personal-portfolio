@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import Link from '@components/Links/Link'
 
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
   root: {

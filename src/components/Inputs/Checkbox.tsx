@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { nanoid } from 'nanoid'
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 import generateTransitions from '../../functions/generateTransitions'
 
 interface Props {

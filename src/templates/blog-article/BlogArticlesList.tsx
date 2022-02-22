@@ -11,7 +11,7 @@ import Colors from '@data/colors.json'
 
 import type { LocationContext } from '@gatsbyjs/reach-router'
 import type { IMdxPageContextWithoutBody } from '@templates/blog-article/BlogPageTemplate'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 import Breakpoints from '@data/breakpoints'
 import Link from '@components/Links/Link'
 import SearchIcon from 'mdi-react/SearchIcon'

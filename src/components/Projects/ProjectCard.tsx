@@ -1,6 +1,8 @@
 import React from 'react'
 
-import { Chip, makeStyles } from '@material-ui/core'
+import { Chip } from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import Link from '../Links/Link'
 
@@ -115,7 +117,14 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
 
       <div className={classes.categories}>
         {sortedTech.map(category => {
-          return <Chip color="secondary" size="small" className={clsx(classes.chip)} variant={'default'} label={category} key={category} />
+          return (
+            <Chip
+              color="secondary"
+              size="small"
+              className={clsx(classes.chip)}
+              label={category}
+              key={category} />
+          );
         })}
       </div>
 
@@ -140,7 +149,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         </div>
       )}
     </article>
-  )
+  );
 }
 
 export default React.memo(ProjectCard)

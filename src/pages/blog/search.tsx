@@ -8,7 +8,7 @@ import Section from '@components/Design/Section'
 
 import Colors from '@data/colors.json'
 
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 import Breakpoints from '@data/breakpoints'
 
 import fuse from 'fuse.js'

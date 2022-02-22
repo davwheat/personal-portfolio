@@ -6,7 +6,7 @@ import Colors from '../data/colors.json'
 import Section from '../components/Design/Section'
 import Tech from '../components/PageComponents/Tech'
 import Link from '../components/Links/Link'
-import { makeStyles } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
 import Breakpoints from '../data/breakpoints'
 import generateTransitions from '../functions/generateTransitions'
 import Experience from '../components/Experience/Experience'

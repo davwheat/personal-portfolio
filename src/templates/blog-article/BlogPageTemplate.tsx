@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import type { LocationContext } from '@gatsbyjs/reach-router'
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 import clsx from 'clsx'
 
 import { BlogHero } from '@components/BlogComponents/BlogHero'
