@@ -90,5 +90,5 @@
     "clean": "gatsby clean",
     "deploy:pages": "gatsby build && gh-pages -b prod -d public -m \"Deploy website\""
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.0"
 }
