@@ -14220,6 +14220,7 @@ __metadata:
     react-uuid: ^1.0.2
     remark-math: ^3.0.1
     remark-twemoji: ^0.1.1
+    throttle-debounce: ^3.0.1
     twemoji: ^13.1.1
     typescript: ^4.6.2
   languageName: unknown
@@ -17321,6 +17322,13 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: b6937a38c80c7f84d9c11dd75e49d5c44f71d95e810a3250bd1f1797fc7117c57698204adf676b71497acc205d769d65c16ae8fa10afad832ae1322630aef10a
+  languageName: node
+  linkType: hard
+
+"throttle-debounce@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "throttle-debounce@npm:3.0.1"
+  checksum: e34ef638e8df3a9154249101b68afcbf2652a139c803415ef8a2f6a8bc577bcd4d79e4bb914ad3cd206523ac78b9fb7e80885bfa049f64fbb1927f99d98b5736
   languageName: node
   linkType: hard
 

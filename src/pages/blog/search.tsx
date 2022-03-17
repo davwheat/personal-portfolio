@@ -5,16 +5,15 @@ import Link from '@components/Links/Link'
 import Layout from '@components/Layout'
 import Hero from '@components/Design/Hero'
 import Section from '@components/Design/Section'
+import TextBox from '@components/Inputs/TextBox'
 
 import Colors from '@data/colors.json'
 
 import { makeStyles } from '@material-ui/styles'
 import Breakpoints from '@data/breakpoints'
+import generateTransitions from '@functions/generateTransitions'
 
 import fuse from 'fuse.js'
-
-import SearchIcon from 'mdi-react/SearchIcon'
-import generateTransitions from '@functions/generateTransitions'
 import clsx from 'clsx'
 
 interface ISearchResultDocument {
@@ -39,46 +38,6 @@ interface IBlogSearchData {
 }
 
 const useStyles = makeStyles({
-  searchLabel: {
-    '& > span': {
-      display: 'block',
-    },
-  },
-  inputWrapper: {
-    marginTop: 8,
-    position: 'relative',
-  },
-  searchIcon: {
-    position: 'absolute',
-    left: 8,
-    top: 8,
-  },
-  input: {
-    padding: '6px 8px',
-    paddingLeft: 36,
-
-    font: 'inherit',
-    border: '2px solid black',
-
-    width: '100%',
-
-    '&:focus': {
-      borderColor: Colors.primaryRed,
-      outline: 'none',
-
-      '& + $searchIcon': {
-        color: Colors.primaryRed,
-      },
-    },
-
-    '&::-webkit-search-cancel-button': {
-      WebkitAppearance: 'none',
-      height: 24,
-      width: 24,
-      backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")`,
-      cursor: 'pointer',
-    },
-  },
   list: {
     margin: 0,
     padding: 0,
@@ -156,21 +115,7 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
       </Hero>
 
       <Section darker usePadding>
-        <label htmlFor="search-blog-input" className={classes.searchLabel}>
-          <span className="text-speak-up">Search query</span>
-
-          <div className={classes.inputWrapper}>
-            <input
-              type="search"
-              id="search-blog-input"
-              className={classes.input}
-              onInput={e => setSearchState(v => ({ ...v, query: e.target.value }))}
-              value={query}
-              placeholder="Start typing..."
-            />
-            <SearchIcon className={classes.searchIcon} />
-          </div>
-        </label>
+        <TextBox label="Search" placeholder="Start typing..." onInput={query => setSearchState(v => ({ ...v, query }))} />
       </Section>
 
       <Section width="wider">
