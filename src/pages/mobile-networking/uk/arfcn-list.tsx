@@ -93,7 +93,6 @@ const useStyles = makeStyles({
     padding: 24,
     // Makes the padding look more even
     paddingTop: 20,
-    marginBottom: 24,
     background: Colors.lightGrey,
   },
   sortFilterRelevanceCheckbox: {
@@ -217,7 +216,7 @@ function MobileNetworkingPage({ location }) {
         </p>
       </Section>
 
-      <Section width="wider">
+      <Section width="normal">
         <h2 className="text-louder">List of ARFCNs in the UK</h2>
 
         <div className={classes.filter}>
@@ -231,7 +230,9 @@ function MobileNetworkingPage({ location }) {
             onChange={() => setSortByFilterRelevance(x => !x)}
           />
         </div>
+      </Section>
 
+      <Section width="full">
         <table className={classes.table}>
           <thead className={classes.tableHeader}>
             <tr>
