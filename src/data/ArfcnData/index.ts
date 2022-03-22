@@ -1,4 +1,4 @@
-type UKNetworkOperator = 'O2' | 'Vodafone' | 'EE' | 'Three'
+type UKNetworkOperator = 'O2' | 'Vodafone' | 'EE' | 'Three' | 'Three (UK Broadband)'
 
 export interface ArfcnDataItem {
   band: number
