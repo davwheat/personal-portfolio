@@ -44,7 +44,7 @@ const useStyles = makeStyles({
       padding: 12,
     },
 
-    '&[aria-selected="true"]': {
+    '&[aria-selected]:not([aria-selected="false"])': {
       background: '#000',
       color: '#fff',
     },

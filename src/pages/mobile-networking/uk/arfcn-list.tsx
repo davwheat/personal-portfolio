@@ -89,7 +89,7 @@ const useStyles = makeStyles({
       color: '#fff',
     },
 
-    '&[data-selected="true"]': {
+    '&[data-selected]': {
       color: Colors.primaryBlue,
     },
   },
