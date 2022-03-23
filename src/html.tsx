@@ -9,7 +9,7 @@ const HTML: React.FC<Props> = props => {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         {/* <!-- Cloudflare Web Analytics --> */}
-        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02248a7178184dfea7dd8abd1639759b"}' />
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "24bc94c5419241dcafa5223c7cd712e2"}' />
 
         {props.headComponents}
       </head>
