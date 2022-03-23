@@ -111,6 +111,7 @@ const Footer: React.FC = () => {
           <Link href="/">Home</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/my-projects">My projects</Link>
+          <Link href="/mobile-networking">Networking</Link>
           <a href="https://github.com/davwheat" rel="noopener noreferrer">
             My GitHub
           </a>
