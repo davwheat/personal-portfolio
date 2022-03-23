@@ -89,7 +89,7 @@ const useStyles = makeStyles({
       color: '#fff',
     },
 
-    '&[data-selected]': {
+    '&[data-selected]:not([data-selected="false"])': {
       color: Colors.primaryBlue,
     },
   },
@@ -139,7 +139,7 @@ const useStyles = makeStyles({
       display: 'none',
     },
 
-    '&[data-selected="true"]': {
+    '&[data-selected]:not([data-selected="false"])': {
       background: '#000',
       color: '#fff',
 
