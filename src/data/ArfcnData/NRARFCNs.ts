@@ -29,11 +29,95 @@ const n3: SimpleArfcnDataItem[] = [
     arfcn: 374190,
     bandwidth: 10,
     operator: 'EE',
-    description: 'NR only trial - deployment',
+    description: 'non-DSS n3 trial',
+  },
+  {
+    arfcn: 374210,
+    bandwidth: 10,
+    operator: 'EE',
+    description: 'non-DSS n3 trial',
+  },
+  {
+    arfcn: 374280,
+    bandwidth: 10,
+    operator: 'EE',
+    description: 'non-DSS n3 trial',
+  },
+]
+
+const n8: SimpleArfcnDataItem[] = [
+  {
+    arfcn: 188450,
+    bandwidth: 10,
+    operator: 'Vodafone',
+    description: 'n8 NR SA trial deployment - not accessible to personal customers',
+  },
+]
+
+const n28: SimpleArfcnDataItem[] = [
+  {
+    arfcn: 156510,
+    bandwidth: 10,
+    operator: 'EE',
+    description: 'Standard n28 deployment',
+  },
+  {
+    arfcn: 152210,
+    bandwidth: 10,
+    operator: 'O2',
+    description: 'E/// - standard n28 deployment',
+  },
+  {
+    arfcn: 152690,
+    bandwidth: 10,
+    operator: 'O2',
+    description: 'Nokia - standard n28 deployment',
   },
 ]
 
 const n78: SimpleArfcnDataItem[] = [
+  {
+    arfcn: 628032,
+    bandwidth: 20,
+    operator: 'Vodafone',
+    description: 'All vendors - 20 MHz n78 deployment',
+  },
+  {
+    arfcn: 629332,
+    bandwidth: 40,
+    operator: 'Vodafone',
+    description: 'Huawei - 40 MHz n78 deployment (in 50 MHz allocation)',
+  },
+  {
+    arfcn: 629332,
+    bandwidth: 50,
+    operator: 'Vodafone',
+    description: 'E/// - 50 MHz n78 deployment (in 50 MHz allocation)',
+  },
+  {
+    arfcn: 628588,
+    bandwidth: 40,
+    operator: 'Vodafone',
+    description: 'Huawei - 40 MHz n78 deployment (in 50 MHz allocation)',
+  },
+  {
+    arfcn: 628320,
+    bandwidth: 40,
+    operator: 'Vodafone',
+    description: 'E/// - 40 MHz n78 deployment (in 50 MHz allocation)',
+  },
+  {
+    arfcn: 627648,
+    bandwidth: 50,
+    operator: 'Vodafone',
+    description: 'E/// - 50 MHz n78 deployment',
+  },
+  {
+    arfcn: 627932,
+    bandwidth: 50,
+    operator: 'Vodafone',
+    description: 'Huawei - 50 MHz n78 deployment',
+  },
   {
     arfcn: 631392,
     bandwidth: 40,
@@ -102,6 +186,12 @@ const n78: SimpleArfcnDataItem[] = [
   },
 ]
 
-const EARFCNs: ArfcnDataItem[] = [...mapListToBand(1, n1), ...mapListToBand(3, n3), ...mapListToBand(78, n78)]
+const EARFCNs: ArfcnDataItem[] = [
+  ...mapListToBand(1, n1),
+  ...mapListToBand(3, n3),
+  ...mapListToBand(8, n8),
+  ...mapListToBand(28, n28),
+  ...mapListToBand(78, n78),
+]
 
 export default EARFCNs
