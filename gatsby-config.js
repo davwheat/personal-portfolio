@@ -31,6 +31,12 @@ module.exports = {
     ...prodPlugins,
 
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://davwheat.dev`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
