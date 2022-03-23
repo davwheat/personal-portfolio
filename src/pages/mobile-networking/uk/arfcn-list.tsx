@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 
 import Colors from '@data/colors.json'
 
-import Section from '@components/Design/Section'
-import Hero from '@components/Design/Hero'
-import Layout from '@components/Layout'
 import { makeStyles } from '@material-ui/styles'
 import Fuse from 'fuse.js'
+import { debounce } from '@material-ui/core'
+import clsx from 'clsx'
 
 import NumericSortIcon from 'mdi-react/SortNumericVariantIcon'
 import NumericSortIconAsc from 'mdi-react/SortNumericAscendingVariantIcon'
@@ -16,11 +15,13 @@ import AlphaSortIcon from 'mdi-react/SortAlphabeticalVariantIcon'
 import AlphaSortIconAsc from 'mdi-react/SortAlphabeticalAscendingVariantIcon'
 import AlphaSortIconDesc from 'mdi-react/SortAlphabeticalDescendingVariantIcon'
 
+import Section from '@components/Design/Section'
+import Hero from '@components/Design/Hero'
+import Layout from '@components/Layout'
 import TextBox from '@components/Inputs/TextBox'
-import { debounce } from '@material-ui/core'
-import clsx from 'clsx'
 import Checkbox from '@components/Inputs/Checkbox'
-import { ArfcnDataItem } from '@data/ArfcnData'
+
+import type { ArfcnDataItem } from '@data/ArfcnData'
 import Breakpoints from '@data/breakpoints'
 
 import EARFCNs from '@data/ArfcnData/EARFCNs'
