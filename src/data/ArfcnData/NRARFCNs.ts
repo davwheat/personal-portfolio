@@ -186,7 +186,7 @@ const n78: SimpleArfcnDataItem[] = [
   },
 ]
 
-const EARFCNs: ArfcnDataItem[] = [
+const NRARFCNs: ArfcnDataItem[] = [
   ...mapListToBand(1, n1),
   ...mapListToBand(3, n3),
   ...mapListToBand(8, n8),
@@ -194,4 +194,4 @@ const EARFCNs: ArfcnDataItem[] = [
   ...mapListToBand(78, n78),
 ]
 
-export default EARFCNs
+export default NRARFCNs

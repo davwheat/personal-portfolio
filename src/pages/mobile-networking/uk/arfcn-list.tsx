@@ -16,12 +16,15 @@ import AlphaSortIcon from 'mdi-react/SortAlphabeticalVariantIcon'
 import AlphaSortIconAsc from 'mdi-react/SortAlphabeticalAscendingVariantIcon'
 import AlphaSortIconDesc from 'mdi-react/SortAlphabeticalDescendingVariantIcon'
 
-import EARFCNs from '@data/ArfcnData/EARFCNs'
 import TextBox from '@components/Inputs/TextBox'
 import { debounce } from '@material-ui/core'
 import clsx from 'clsx'
 import Checkbox from '@components/Inputs/Checkbox'
 import { ArfcnDataItem } from '@data/ArfcnData'
+import Breakpoints from '@data/breakpoints'
+
+import EARFCNs from '@data/ArfcnData/EARFCNs'
+import NRARFCNs from '@data/ArfcnData/NRARFCNs'
 
 const useStyles = makeStyles({
   table: {
@@ -98,9 +101,82 @@ const useStyles = makeStyles({
   sortFilterRelevanceCheckbox: {
     marginTop: 8,
   },
+  arfcnTypeButtonContainer: {
+    display: 'grid',
+    margin: 0,
+    marginBottom: 16,
+
+    gridTemplateColumns: 'repeat(auto-fit, minmax(10px, 1fr))',
+
+    [Breakpoints.between.phone.and.bigPhone]: {
+      gridTemplateColumns: '1fr 1fr',
+      gridTemplateRows: 'repeat(auto-fit, minmax(10px, 1fr))',
+    },
+
+    [Breakpoints.upTo.phone]: {
+      gridTemplateColumns: '1fr',
+      gridTemplateRows: 'repeat(auto-fit, minmax(10px, 1fr))',
+    },
+  },
+  arfcnTypeButton: {
+    padding: 16,
+    color: '#000',
+    textAlign: 'center',
+    font: 'inherit',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    position: 'relative',
+    appearance: 'none',
+    border: 'none',
+    background: 'none',
+
+    [Breakpoints.upTo.phone]: {
+      padding: 12,
+    },
+
+    '& .sr-only': {
+      display: 'none',
+    },
+
+    '&[data-selected="true"]': {
+      background: '#000',
+      color: '#fff',
+
+      '& .sr-only': {
+        display: 'inline',
+      },
+    },
+
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    },
+    '&:hover::after': {
+      border: `2px solid #000`,
+    },
+
+    '&:focus': {
+      outline: `4px solid ${Colors.primaryBlue}`,
+
+      '&:not(:focus-visible)': {
+        outline: 'none',
+      },
+    },
+  },
 })
 
 type AvailableSortColumns = 'arfcn' | 'band' | 'operator' | 'bandwidth'
+
+function getBandPrefix(rat: 'lte' | 'nr'): string | null {
+  if (rat === 'lte') return 'B'
+  else if (rat === 'nr') return 'n'
+
+  return null
+}
 
 function MobileNetworkingPage({ location }) {
   const classes = useStyles()
@@ -111,6 +187,9 @@ function MobileNetworkingPage({ location }) {
   const setFilterQueryDebounced = debounce(setFilterQuery, 250)
 
   const [sortByFilterRelevance, setSortByFilterRelevance] = useState(true)
+  const [selectedRat, setSelectedRat] = useState<'lte' | 'nr'>('lte')
+
+  const dataset = { nr: NRARFCNs, lte: EARFCNs }[selectedRat]
 
   function clickSortButton(col: AvailableSortColumns) {
     return () => {
@@ -154,7 +233,7 @@ function MobileNetworkingPage({ location }) {
     )
   }
 
-  const isAlpha = typeof EARFCNs[0][sort.column] === 'string'
+  const isAlpha = typeof dataset[0][sort.column] === 'string'
   const invert = sort.direction === 'desc' ? -1 : 1
 
   function sortData(data: ArfcnDataItem[]) {
@@ -164,7 +243,7 @@ function MobileNetworkingPage({ location }) {
     })
   }
 
-  const fuse = new Fuse(EARFCNs, {
+  const fuse = new Fuse(dataset, {
     // isCaseSensitive: false,
     // includeScore: false,
     shouldSort: sortByFilterRelevance,
@@ -189,7 +268,7 @@ function MobileNetworkingPage({ location }) {
       ? fuse.search(filterQuery).map(x => x.item)
       : sortData(fuse.search(filterQuery).map(x => x.item))
     : // Only search
-      sortData(EARFCNs)
+      sortData(dataset)
 
   return (
     <Layout location={location} title="UK ARFCN list">
@@ -217,8 +296,21 @@ function MobileNetworkingPage({ location }) {
       </Section>
 
       <Section width="normal">
-        <h2 className="text-louder">List of ARFCNs in the UK</h2>
+        <h2 className="text-louder">UK ARFCN table</h2>
 
+        <h3 className="text-loud">Radio access technology (RAT)</h3>
+        <nav className={classes.arfcnTypeButtonContainer}>
+          <button className={classes.arfcnTypeButton} onClick={() => setSelectedRat('nr')} data-selected={selectedRat === 'nr'}>
+            5G NR
+            <span className="sr-only">(Selected)</span>
+          </button>
+          <button className={classes.arfcnTypeButton} onClick={() => setSelectedRat('lte')} data-selected={selectedRat === 'lte'}>
+            4G LTE
+            <span className="sr-only">(Selected)</span>
+          </button>
+        </nav>
+
+        <h3 className="text-loud">Filtering</h3>
         <div className={classes.filter}>
           <TextBox label="Filter list" onInput={val => setFilterQueryDebounced(val)} placeholder="Filter by any field..." />
 
@@ -258,7 +350,10 @@ function MobileNetworkingPage({ location }) {
               <tr key={earfcn.arfcn}>
                 <td>{earfcn.arfcn}</td>
                 <td>{earfcn.bandwidth ? `${earfcn.bandwidth} MHz` : 'Unknown'}</td>
-                <td>B{earfcn.band}</td>
+                <td>
+                  {getBandPrefix(selectedRat)}
+                  {earfcn.band}
+                </td>
                 <td>{earfcn.operator}</td>
                 <td>{earfcn.description}</td>
               </tr>
