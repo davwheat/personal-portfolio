@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 import { nanoid } from 'nanoid'
 import { makeStyles } from '@material-ui/core'
@@ -11,6 +11,8 @@ interface Props {
    * If provided, the `checked` state will be managed by the parent component.
    */
   checked?: boolean
+  disabled?: boolean
+  className?: string
 }
 
 const SIZE = 24
@@ -37,6 +39,7 @@ const useStyles = makeStyles({
       border: `${BORDER_SIZE}px solid currentColor`,
       height: SIZE,
       width: SIZE,
+      background: '#fff',
     },
     '&::after': {
       content: '""',
@@ -56,20 +59,29 @@ const useStyles = makeStyles({
     '&:checked::after': {
       opacity: 1,
     },
+
+    '&[disabled]': {
+      '&, & + $label': {
+        cursor: 'not-allowed',
+      },
+    },
   },
   label: {
+    WebkitUserSelect: 'none',
+    userSelect: 'none',
     cursor: 'pointer',
     verticalAlign: 'middle',
   },
 })
 
-const Checkbox: React.FC<Props> = ({ label, onChange, checked }) => {
-  const [id] = useState(() => nanoid())
+function Checkbox({ label, onChange, checked, disabled, className }: Props) {
+  const id = useMemo(() => nanoid(), [])
   const classes = useStyles()
 
   return (
-    <>
+    <div className={className}>
       <input
+        disabled={disabled}
         className={classes.checkbox}
         id={id}
         checked={typeof checked !== 'undefined' ? checked : undefined}
@@ -79,7 +91,7 @@ const Checkbox: React.FC<Props> = ({ label, onChange, checked }) => {
       <label className={classes.label} htmlFor={id}>
         {label}
       </label>
-    </>
+    </div>
   )
 }
 
