@@ -61,7 +61,7 @@
     "react-uuid": "^1.0.2",
     "remark-math": "^3.0.1",
     "remark-twemoji": "^0.1.1",
-    "twemoji": "^13.1.1"
+    "twemoji": "^14.0.1"
   },
   "devDependencies": {
     "@types/color": "^3.0.3",

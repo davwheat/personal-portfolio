@@ -14220,7 +14220,7 @@ __metadata:
     react-uuid: ^1.0.2
     remark-math: ^3.0.1
     remark-twemoji: ^0.1.1
-    twemoji: ^13.1.1
+    twemoji: ^14.0.1
     typescript: ^4.6.2
   languageName: unknown
   linkType: soft
@@ -17628,22 +17628,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"twemoji-parser@npm:13.1.0":
-  version: 13.1.0
-  resolution: "twemoji-parser@npm:13.1.0"
-  checksum: 8046ce003c03dd92d68c2648cfbfa39c659fca4f05c10da8d14957985dc3c0c680f3ecf2de8245dc1ddffedc5b2a675f2032053e1e77cc7474301a88fe192ad3
+"twemoji-parser@npm:14.0.0":
+  version: 14.0.0
+  resolution: "twemoji-parser@npm:14.0.0"
+  checksum: 8eede69cf71f94735de7b6fddf5dfbfe3cb2e01baefc3201360984ccc97cfc659f206c8f73bd1405a2282779af3b79a8c9bed3864c672e15e2dc6f8ce4810452
   languageName: node
   linkType: hard
 
-"twemoji@npm:^13.1.1":
-  version: 13.1.1
-  resolution: "twemoji@npm:13.1.1"
+"twemoji@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "twemoji@npm:14.0.1"
   dependencies:
     fs-extra: ^8.0.1
     jsonfile: ^5.0.0
-    twemoji-parser: 13.1.0
+    twemoji-parser: 14.0.0
     universalify: ^0.1.2
-  checksum: f60a8785ad6eb1a673c4f1bccb00a852ead13639db9f763c0e3e9dee6e3e67d88f1d2b481bcee34c35570ab060918b30b6ee68aa65ea1042ad35cd83212a102a
+  checksum: 9a30aa0a8922a82d5e96a144510a6fb14484098ea968f7aa126e169993f5e559c157ac3d5b70873ec491f9a557ea82e1ffd66790e947dd4b8f74df0ba7fe46e5
   languageName: node
   linkType: hard
 
