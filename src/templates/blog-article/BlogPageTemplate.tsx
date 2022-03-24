@@ -60,6 +60,8 @@ export interface IMdxPageContext {
      * Blog article description, defined in frontmatter.
      */
     description: string
+    path: string
+    redirect_from?: string[]
     /**
      * Date article was created at.
      */
@@ -68,6 +70,8 @@ export interface IMdxPageContext {
      * Date article was updated at.
      */
     updated_at?: string
+    created_at_iso: string
+    updated_at_iso?: string
     /**
      * Is the post archived (hidden from the article list).
      */
@@ -123,6 +127,40 @@ export default function DocsPageTemplate({ pageContext, location, data: { mdx: d
       title={contextNoBody.frontmatter.title}
       description={contextNoBody.frontmatter.description || contextNoBody.excerpt}
     >
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: contextNoBody.frontmatter.title,
+          // image: 'https://benborgers.com/assets/json-ld.png',
+          publisher: {
+            '@type': 'Organization',
+            name: 'David Wheatley',
+            url: 'https://davwheat.dev',
+            // logo: {
+            //   '@type': 'ImageObject',
+            //   url: 'https://benborgers.com/assets/index.png',
+            //   width: '1200',
+            //   height: '630',
+            // },
+          },
+          url: `https://davwheat.dev/${contextNoBody.frontmatter.path}`,
+          datePublished: contextNoBody.frontmatter.created_at_iso,
+          dateCreated: contextNoBody.frontmatter.created_at_iso,
+          dateModified: contextNoBody.frontmatter.updated_at_iso ?? contextNoBody.frontmatter.created_at_iso,
+          description: contextNoBody.frontmatter.description,
+          author: {
+            '@type': 'Person',
+            name: 'David Wheatley',
+            url: 'https://davwheat.dev',
+          },
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://davwheat.dev/blog/${pageContext.page}`,
+          },
+        })}
+      </script>
+
       <article id="blog-article">
         <BlogErrorBoundary>
           <BlogHero pageContext={contextNoBody} />
@@ -177,6 +215,8 @@ export const query = graphql`
         redirect_from
         created_at(formatString: "LLL", locale: "en-GB")
         updated_at(formatString: "LLL", locale: "en-GB")
+        created_at_iso: created_at
+        updated_at_iso: updated_at
         archived
       }
 
