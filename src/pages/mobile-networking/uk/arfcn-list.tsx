@@ -272,7 +272,7 @@ function MobileNetworkingPage({ location }) {
       sortData(dataset)
 
   return (
-    <Layout location={location} title="UK ARFCN list">
+    <Layout location={location} title="UK ARFCN list" description="A (mostly complete) list of UK mobile networks' ARFCNs for 4G LTE and 5G NR.">
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
         <h1 className="text-shout">UK ARFCN list</h1>
         <p role="doc-subtitle" className="text-loud">
