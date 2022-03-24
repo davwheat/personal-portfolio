@@ -68,14 +68,14 @@ const useStyles = makeStyles({
       },
 
       // Make links full width on mobile menu
-      [Breakpoints.upTo.bigPhone]: {
+      [Breakpoints.upTo.tablet]: {
         paddingLeft: 24,
         paddingRight: 24,
         marginLeft: -16,
         marginRight: -16,
       },
     },
-    [Breakpoints.upTo.bigPhone]: {
+    [Breakpoints.upTo.tablet]: {
       padding: 16,
       paddingBottom: 64,
       background: '#000',
@@ -109,7 +109,7 @@ const useStyles = makeStyles({
   navBtn: {
     // Don't show the nav toggle on desktop
     display: 'none',
-    [Breakpoints.upTo.bigPhone]: {
+    [Breakpoints.upTo.tablet]: {
       // If checked...
       '&:checked': {
         // Animate in the nav menu
@@ -147,7 +147,7 @@ const useStyles = makeStyles({
     marginRight: -20,
     cursor: 'pointer',
     // Only show on mobile
-    [Breakpoints.upTo.bigPhone]: {
+    [Breakpoints.upTo.tablet]: {
       display: 'block',
     },
     // Common icon styles

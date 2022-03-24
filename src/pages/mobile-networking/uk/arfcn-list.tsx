@@ -276,7 +276,7 @@ function MobileNetworkingPage({ location }) {
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
         <h1 className="text-shout">UK ARFCN list</h1>
         <p role="doc-subtitle" className="text-loud">
-          A (almost certainly incomplete) dataset containing a list of UK mobile network frequencies by their NR/E/U ARFCN.
+          An almost certainly incomplete dataset of UK mobile network frequencies by their NR/E/UARFCN.
         </p>
       </Hero>
 
