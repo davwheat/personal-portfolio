@@ -298,7 +298,8 @@ function MobileNetworkingPage({ location }) {
 
         <p className="text-speak">
           In 4G LTE and previous generations of RAT, ARFCNs represented the centre of a carrier band, but with 5G NR this changed to the NR ARFCN
-          representing any frequency within the network's carrier, and the centre point is often determined using an offset sent in the&nbsp;SIB1.
+          representing any frequency within the network's carrier, and the centre point is often determined using an offset sent in
+          the&nbsp;SIB1.
         </p>
       </Section>
 
