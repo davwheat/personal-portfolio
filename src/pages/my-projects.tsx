@@ -9,7 +9,11 @@ import Hero from '../components/Design/Hero'
 
 const MyProjectsPage = ({ location }) => {
   return (
-    <Layout location={location} title="My projects">
+    <Layout
+      location={location}
+      title="My projects"
+      description="Take a peek at my favourite projects that I've worked on over the past few years."
+    >
       <Hero firstElement size="huge" color={Colors.primaryRed}>
         <h1 className="text-shout">My projects</h1>
         <p role="doc-subtitle" className="text-loud">

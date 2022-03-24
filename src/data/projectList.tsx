@@ -333,6 +333,25 @@ const projectList: ReadonlyArray<Project> = [
     },
     tech: ['Typescript', 'Gatsby', 'React'],
   },
+  {
+    title: 'BHASVIC B-Mag',
+    type: 'Web',
+    description: 'A customised content management system for my sixth-form college for publishing magazine articles, built with Flarum.',
+    ImageComponent: ({ className }) => (
+      <StaticImage
+        className={className}
+        width={IMAGE_INTRINSIC_WIDTH}
+        src="../assets/images/projects/b-mag.png"
+        placeholder="blurred"
+        alt="Screenshot of B-Mag"
+      />
+    ),
+    links: {
+      live: 'https://b-mag.bhasvic.ac.uk/',
+      vcs: 'https://github.com/BHASVIC',
+    },
+    tech: ['Typescript', 'REST API', 'Flarum'],
+  },
 ] as const
 
 export default projectList

@@ -52,11 +52,15 @@ function MobileNetworkingPage({ location }) {
   const classes = useStyles()
 
   return (
-    <Layout location={location} title="Mobile networks">
+    <Layout
+      location={location}
+      title="Mobile networks"
+      description="A collection of mobile networking tools and datasets maintained as part of my hobby."
+    >
       <Hero firstElement size="huge" color={Colors.primaryRed}>
         <h1 className="text-shout">Mobile networks</h1>
         <p role="doc-subtitle" className="text-loud">
-          As part of my hobby, I maintain a few mobile networking tools and datasets for the wider community.
+          A collection of mobile networking tools and datasets maintained as part of my hobby.
         </p>
       </Hero>
 

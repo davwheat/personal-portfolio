@@ -16,7 +16,7 @@ const Links = [
 ]
 
 const NotFoundPage = ({ location }) => (
-  <Layout location={location} title="Not Found">
+  <Layout location={location} title="Not Found" description="This page couldn't be found on my site.">
     <Hero firstElement color={Colors.primaryBlue}>
       <h1 className="text-shout">Lost?</h1>
       <p role="doc-subtitle" className="text-loud">
