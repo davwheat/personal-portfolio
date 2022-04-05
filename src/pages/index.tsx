@@ -99,7 +99,7 @@ const IndexPage = ({ location }) => {
       <Section>
         <h2 className="text-louder">Experience</h2>
         <p className="text-speak">
-          I've worked on several for multiple different organisations, as well as contributing to the wider open source&nbsp;community.
+          I've worked on several projects for multiple organisations, on top of contributing to the wider open source&nbsp;community.
         </p>
 
         <Experience />
