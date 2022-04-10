@@ -40,6 +40,7 @@ const useStyles = makeStyles({
     marginTop: 24,
     display: 'grid',
     gridTemplateColumns: 'repeat(var(--columns), minmax(0, 1fr))',
+    gap: 32,
     '--columns': 1,
 
     [Breakpoints.downTo.tablet]: {
