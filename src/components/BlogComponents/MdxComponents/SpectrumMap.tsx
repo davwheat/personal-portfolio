@@ -172,7 +172,9 @@ const useSpectrumMapItemStyles = makeStyles({
     margin: 0,
     position: 'relative',
 
-    outline: `2px solid #000`,
+    '&:not(:focus-visible)': {
+      outline: `2px solid #000`,
+    },
 
     cursor: 'pointer',
     backgroundColor: 'var(--owner-color)',
@@ -182,16 +184,22 @@ const useSpectrumMapItemStyles = makeStyles({
     gridColumn: 'span var(--bandwidth)',
 
     '&:focus-visible': {
-      outlineColor: Colors.primaryBlue,
+      '&': {
+        outline: '5px auto -webkit-focus-ring-color',
+      },
+      outline: '5px auto Highlight',
     },
 
     '&[data-selected=true]': {
-      outlineColor: Colors.primaryRed,
+      outlineColor: Colors.excessiveYellow,
       zIndex: 10,
+
+      '&:not(:focus-visible)': {
+        outlineWidth: 4,
+      },
     },
 
     '&:focus-visible ': {
-      outlineWidth: 4,
       zIndex: 11,
     },
 
