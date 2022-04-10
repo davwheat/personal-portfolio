@@ -15,7 +15,7 @@ export interface ISpectrumAllocation {
    * Override the default color provided by the `owner`.
    */
   colorOverride?: IColorPair
-  details?: string
+  details?: string | string[]
   /**
    * Start of allocation in MHz.
    */
@@ -324,7 +324,7 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
       {details && (
         <>
           <dt>Details:</dt>
-          <dd>{details}</dd>
+          <dd>{Array.isArray(details) ? details.map(detail => <p key={detail}>{detail}</p>) : details}</dd>
         </>
       )}
     </dl>
