@@ -122,7 +122,7 @@ const useSpectrumMapStyles = makeStyles({
     marginTop: 12,
     padding: 4,
     display: 'grid',
-    gridTemplateColumns: 'repeat(var(--sections), minmax(0.001px, 1fr))',
+    gridTemplateColumns: 'repeat(var(--sections), minmax(min-content, 1fr))',
     minWidth: '100%',
     overflowX: 'auto',
     justifyItems: 'stretch',
