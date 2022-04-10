@@ -110,13 +110,7 @@ const n78: SimpleArfcnDataItem[] = [
     arfcn: 629332,
     bandwidth: 40,
     operator: 'Vodafone',
-    description: 'Huawei - 40 MHz n78 deployment (in 50 MHz allocation)',
-  },
-  {
-    arfcn: 629332,
-    bandwidth: 50,
-    operator: 'Vodafone',
-    description: 'E/// - 50 MHz n78 deployment (in 50 MHz allocation)',
+    description: 'Huawei @ 40 MHz or E/// @ 50 MHz -  n78 deployment (in 50 MHz allocation)',
   },
   {
     arfcn: 628588,
