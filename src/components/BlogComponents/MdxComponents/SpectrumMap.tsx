@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import clsx from 'clsx'
 import Colors from '@data/colors.json'
+import Breakpoints from '@data/breakpoints'
 
 export interface IColorPair {
   back: string
@@ -144,6 +145,11 @@ const useSpectrumMapStyles = makeStyles({
   note: {
     marginTop: 8,
   },
+  smallDeviceNote: {
+    [Breakpoints.downTo.tablet]: {
+      display: 'none',
+    },
+  },
 })
 
 const useSpectrumMapItemStyles = makeStyles({
@@ -242,7 +248,10 @@ export function SpectrumMap({ caption, data, note }: ISpectrumMapProps) {
       </div>
 
       <footer className={clsx(classes.footer, 'softer-bg')}>
-        <p className="text-whisper-up">Click on a spectrum block to view more information about it.</p>
+        <p className="text-whisper-up">
+          Click on a spectrum block to view more information about it.{' '}
+          <span className={classes.smallDeviceNote}>On smaller devices, blocks above may not be shown to scale.</span>
+        </p>
         {note && <p className={clsx('text-whisper-up', classes.note)}>{note}</p>}
       </footer>
     </figure>
