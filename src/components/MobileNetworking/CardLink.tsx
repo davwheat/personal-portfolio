@@ -36,8 +36,10 @@ const useStyles = makeStyles({
     textDecoration: 'none',
     display: 'flex',
     border: '2px solid black',
+    outline: '0px solid black',
 
     '&:hover, &:focus, &:active': {
+      outlineWidth: 2,
       '& $arrow': {
         '&::after': {
           transform: 'translateX(3px) scaleY(0.92) scaleX(1.05) rotate(45deg)',
