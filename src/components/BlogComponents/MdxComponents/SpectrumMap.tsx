@@ -39,6 +39,11 @@ export interface ISpectrumAllocation {
     freqEnd: number
     type: 'fddUp' | 'fddDown' | 'tdd' | 'unused' | 'unknown'
   }
+
+  arfcns?: number[]
+  uarfcns?: number[]
+  earfcns?: number[]
+  nrarfcns?: number[]
 }
 
 export interface ISpectrumMapProps {
@@ -187,6 +192,12 @@ const useSpectrumMapDetailsStyles = makeStyles({
     '& dt': {
       fontWeight: 'bold',
     },
+    '& dd:not(:last-child)': {
+      marginBottom: 6,
+    },
+    '& dd p:last-child': {
+      marginBottom: 0,
+    },
   },
 })
 
@@ -265,11 +276,17 @@ function SpectrumMapItem({ allocation, onClick, isSelected }: ISpectrumMapItemPr
 
 function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
   const classes = useSpectrumMapDetailsStyles()
-  const { owner, ownerLongName, details, freqStart, freqEnd, type, pairedWith } = allocation
+  const { owner, ownerLongName, details, freqStart, freqEnd, type, pairedWith, arfcns, uarfcns, earfcns, nrarfcns } = allocation
+
+  const usageInfo: Record<string, number[]> = {}
+  arfcns && (usageInfo['2G GSM'] = arfcns)
+  uarfcns && (usageInfo['3G UMTS'] = uarfcns)
+  earfcns && (usageInfo['4G LTE'] = earfcns)
+  nrarfcns && (usageInfo['5G NR'] = nrarfcns)
 
   return (
     <dl className={classes.detailsRoot}>
-      <dt>Owned by:</dt>
+      <dt>Operated by:</dt>
       <dd>{ownerLongName || owner}</dd>
 
       <dt>Bandwidth:</dt>
@@ -286,6 +303,19 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
           </>
         )}
       </dd>
+
+      {(arfcns || uarfcns || earfcns || nrarfcns) && Object.keys(usageInfo).length !== 0 && (
+        <>
+          <dt>Used for:</dt>
+          <dd>
+            {Object.entries(usageInfo).map(([tech, arfcns]) => (
+              <p key={tech}>
+                {tech}: {arfcns.join(', ')}
+              </p>
+            ))}
+          </dd>
+        </>
+      )}
 
       {details && (
         <>
