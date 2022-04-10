@@ -41,7 +41,7 @@ export interface ISpectrumAllocation {
     type: 'fddUp' | 'fddDown' | 'tdd' | 'unused' | 'unknown'
   }
 
-  arfcns?: number[]
+  arfcns?: string | number[]
   uarfcns?: number[]
   earfcns?: number[]
   nrarfcns?: number[]
@@ -72,11 +72,19 @@ const OwnerColorMap: Record<string, IColorPair> = {
     back: '#e60000',
     front: '#fff',
   },
+  VF: {
+    back: '#e60000',
+    front: '#fff',
+  },
   EE: {
     back: '#007b85',
     front: '#fff',
   },
   Three: {
+    back: '#ff7c69',
+    front: '#000',
+  },
+  '3': {
     back: '#ff7c69',
     front: '#000',
   },
@@ -290,7 +298,7 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
   const classes = useSpectrumMapDetailsStyles()
   const { owner, ownerLongName, details, freqStart, freqEnd, type, pairedWith, arfcns, uarfcns, earfcns, nrarfcns } = allocation
 
-  const usageInfo: Record<string, number[]> = {}
+  const usageInfo: Record<string, number[] | string> = {}
   arfcns && (usageInfo['2G GSM'] = arfcns)
   uarfcns && (usageInfo['3G UMTS'] = uarfcns)
   earfcns && (usageInfo['4G LTE'] = earfcns)
@@ -323,7 +331,17 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
             {Object.entries(usageInfo).map(([tech, arfcns]) => (
               <p className="text-speak" key={tech}>
                 <strong>{tech}: </strong>
-                {arfcns.length ? <>{arfcns.join(', ')}</> : 'various/unconfirmed'}
+                {arfcns.length ? (
+                  typeof arfcns === 'string' ? (
+                    arfcns
+                  ) : (
+                    <>
+                      {arfcnLabel(tech, arfcns.length !== 1)} {arfcns.join(', ')}
+                    </>
+                  )
+                ) : (
+                  'various/unconfirmed'
+                )}
               </p>
             ))}
           </dd>
@@ -337,5 +355,22 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
         </>
       )}
     </dl>
+  )
+}
+
+function arfcnLabel(rat: string, plural: boolean) {
+  return (
+    (() => {
+      switch (rat) {
+        case '2G GSM':
+          return 'ARFCN'
+        case '3G UMTS':
+          return 'UARFCN'
+        case '4G LTE':
+          return 'EARFCN'
+        case '5G NR':
+          return 'NRARFCN'
+      }
+    })() + (plural ? 's' : '')
   )
 }
