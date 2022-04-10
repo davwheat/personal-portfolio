@@ -107,7 +107,7 @@ function getOwnerColor(owner: string): IColorPair {
 /**
  * Visualisation accuracy in Hertz.
  */
-const HERTZ_ACCURACY = 100_000
+const HERTZ_ACCURACY = 10_000
 
 const useSpectrumMapStyles = makeStyles({
   root: {
@@ -122,7 +122,7 @@ const useSpectrumMapStyles = makeStyles({
     marginTop: 12,
     padding: 4,
     display: 'grid',
-    gridTemplateColumns: 'repeat(var(--sections), minmax(5px, 1fr))',
+    gridTemplateColumns: 'repeat(var(--sections), minmax(0.001px, 1fr))',
     minWidth: '100%',
     overflowX: 'auto',
     justifyItems: 'stretch',
