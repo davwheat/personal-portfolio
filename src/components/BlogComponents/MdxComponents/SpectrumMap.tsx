@@ -195,8 +195,11 @@ const useSpectrumMapDetailsStyles = makeStyles({
     '& dd:not(:last-child)': {
       marginBottom: 6,
     },
-    '& dd p:last-child': {
-      marginBottom: 0,
+    '& dd p': {
+      marginBottom: 2,
+      '&:last-child': {
+        marginBottom: 0,
+      },
     },
   },
 })
@@ -309,8 +312,9 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
           <dt>Used for:</dt>
           <dd>
             {Object.entries(usageInfo).map(([tech, arfcns]) => (
-              <p key={tech}>
-                {tech}: {arfcns.join(', ')}
+              <p className="text-speak" key={tech}>
+                <strong>{tech}: </strong>
+                {arfcns.length ? <>{arfcns.join(', ')}</> : 'various/unconfirmed'}
               </p>
             ))}
           </dd>
