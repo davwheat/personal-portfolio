@@ -31,6 +31,11 @@ const Links: ILinkGroup[] = [
         description: 'A list of UK mobile network frequencies by their NRARFCN, EARFCN, UARFCN and ARFCNs.',
         url: '/mobile-networking/uk/arfcn-list',
       },
+      {
+        title: 'Spectrum allocation',
+        description: 'A list of UK mobile network frequencies by their NRARFCN, EARFCN, UARFCN and ARFCNs.',
+        url: '/mobile-networking/uk/spectrum',
+      },
     ],
   },
 ]
