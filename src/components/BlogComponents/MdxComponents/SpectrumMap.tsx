@@ -63,7 +63,7 @@ export interface ISpectrumMapDetailsProps {
   allocation: ISpectrumAllocation
 }
 
-const OwnerColorMap: Record<string, IColorPair> = {
+export const OwnerColorMap: Record<string, IColorPair> = {
   O2: {
     back: '#000066',
     front: '#fff',
