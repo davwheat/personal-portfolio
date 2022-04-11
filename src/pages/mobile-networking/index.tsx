@@ -31,6 +31,11 @@ const Links: ILinkGroup[] = [
         description: 'A list of UK mobile network frequencies by their NRARFCN, EARFCN, UARFCN and ARFCNs.',
         url: '/mobile-networking/uk/arfcn-list',
       },
+      {
+        title: 'Spectrum allocation',
+        description: 'A list of UK mobile network frequencies by their NRARFCN, EARFCN, UARFCN and ARFCNs.',
+        url: '/mobile-networking/uk/spectrum',
+      },
     ],
   },
 ]
@@ -40,6 +45,7 @@ const useStyles = makeStyles({
     marginTop: 24,
     display: 'grid',
     gridTemplateColumns: 'repeat(var(--columns), minmax(0, 1fr))',
+    gap: 32,
     '--columns': 1,
 
     [Breakpoints.downTo.tablet]: {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import clsx from 'clsx'
 import Colors from '@data/colors.json'
+import Breakpoints from '@data/breakpoints'
 
 export interface IColorPair {
   back: string
@@ -15,7 +16,7 @@ export interface ISpectrumAllocation {
    * Override the default color provided by the `owner`.
    */
   colorOverride?: IColorPair
-  details?: string
+  details?: string | string[]
   /**
    * Start of allocation in MHz.
    */
@@ -24,7 +25,7 @@ export interface ISpectrumAllocation {
    * End of allocation in MHz.
    */
   freqEnd: number
-  type: 'fddUp' | 'fddDown' | 'tdd' | 'unused' | 'unknown'
+  type: 'fddUp' | 'fddDown' | 'tdd' | 'sdl' | 'sul' | 'unused' | 'unknown'
   /**
    * The other piece of spectrum which this is paired with.
    */
@@ -37,8 +38,13 @@ export interface ISpectrumAllocation {
      * End of allocation in MHz.
      */
     freqEnd: number
-    type: 'fddUp' | 'fddDown' | 'tdd' | 'unused' | 'unknown'
+    type: 'fddUp' | 'fddDown' | 'tdd' | 'sdl' | 'sul' | 'unused' | 'unknown'
   }
+
+  arfcns?: string | number[]
+  uarfcns?: number[]
+  earfcns?: number[]
+  nrarfcns?: number[]
 }
 
 export interface ISpectrumMapProps {
@@ -57,7 +63,7 @@ export interface ISpectrumMapDetailsProps {
   allocation: ISpectrumAllocation
 }
 
-const OwnerColorMap: Record<string, IColorPair> = {
+export const OwnerColorMap: Record<string, IColorPair> = {
   O2: {
     back: '#000066',
     front: '#fff',
@@ -66,11 +72,19 @@ const OwnerColorMap: Record<string, IColorPair> = {
     back: '#e60000',
     front: '#fff',
   },
+  VF: {
+    back: '#e60000',
+    front: '#fff',
+  },
   EE: {
     back: '#007b85',
     front: '#fff',
   },
   Three: {
+    back: '#ff7c69',
+    front: '#000',
+  },
+  '3': {
     back: '#ff7c69',
     front: '#000',
   },
@@ -87,6 +101,8 @@ function getSpectrumTypeDescription(type: ISpectrumAllocation['type']): string {
     tdd: 'TDD uplink and downlink',
     unknown: 'Unknown',
     unused: 'Unused',
+    sdl: 'Supplemental downlink',
+    sul: 'Supplemental uplink',
   }[type]
 }
 
@@ -102,7 +118,7 @@ function getOwnerColor(owner: string): IColorPair {
 /**
  * Visualisation accuracy in Hertz.
  */
-const HERTZ_ACCURACY = 100_000
+const HERTZ_ACCURACY = 10_000
 
 const useSpectrumMapStyles = makeStyles({
   root: {
@@ -117,7 +133,7 @@ const useSpectrumMapStyles = makeStyles({
     marginTop: 12,
     padding: 4,
     display: 'grid',
-    gridTemplateColumns: 'repeat(var(--sections), minmax(5px, 1fr))',
+    gridTemplateColumns: 'repeat(var(--sections), minmax(min-content, 1fr))',
     minWidth: '100%',
     overflowX: 'auto',
     justifyItems: 'stretch',
@@ -139,6 +155,11 @@ const useSpectrumMapStyles = makeStyles({
   note: {
     marginTop: 8,
   },
+  smallDeviceNote: {
+    [Breakpoints.downTo.tablet]: {
+      display: 'none',
+    },
+  },
 })
 
 const useSpectrumMapItemStyles = makeStyles({
@@ -153,7 +174,9 @@ const useSpectrumMapItemStyles = makeStyles({
     margin: 0,
     position: 'relative',
 
-    outline: `2px solid #000`,
+    '&:not(:focus-visible)': {
+      outline: `2px solid #000`,
+    },
 
     cursor: 'pointer',
     backgroundColor: 'var(--owner-color)',
@@ -163,16 +186,22 @@ const useSpectrumMapItemStyles = makeStyles({
     gridColumn: 'span var(--bandwidth)',
 
     '&:focus-visible': {
-      outlineColor: Colors.primaryBlue,
+      '&': {
+        outline: '5px auto -webkit-focus-ring-color',
+      },
+      outline: '5px auto Highlight',
     },
 
     '&[data-selected=true]': {
-      outlineColor: Colors.primaryRed,
+      outlineColor: Colors.excessiveYellow,
       zIndex: 10,
+
+      '&:not(:focus-visible)': {
+        outlineWidth: 4,
+      },
     },
 
     '&:focus-visible ': {
-      outlineWidth: 4,
       zIndex: 11,
     },
 
@@ -186,6 +215,15 @@ const useSpectrumMapDetailsStyles = makeStyles({
   detailsRoot: {
     '& dt': {
       fontWeight: 'bold',
+    },
+    '& dd:not(:last-child)': {
+      marginBottom: 6,
+    },
+    '& dd p': {
+      marginBottom: 2,
+      '&:last-child': {
+        marginBottom: 0,
+      },
     },
   },
 })
@@ -228,7 +266,10 @@ export function SpectrumMap({ caption, data, note }: ISpectrumMapProps) {
       </div>
 
       <footer className={clsx(classes.footer, 'softer-bg')}>
-        <p className="text-whisper-up">Click on a spectrum block to view more information about it.</p>
+        <p className="text-whisper-up">
+          Click on a spectrum block to view more information about it.{' '}
+          <span className={classes.smallDeviceNote}>On smaller devices, blocks above may not be shown to scale.</span>
+        </p>
         {note && <p className={clsx('text-whisper-up', classes.note)}>{note}</p>}
       </footer>
     </figure>
@@ -265,11 +306,17 @@ function SpectrumMapItem({ allocation, onClick, isSelected }: ISpectrumMapItemPr
 
 function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
   const classes = useSpectrumMapDetailsStyles()
-  const { owner, ownerLongName, details, freqStart, freqEnd, type, pairedWith } = allocation
+  const { owner, ownerLongName, details, freqStart, freqEnd, type, pairedWith, arfcns, uarfcns, earfcns, nrarfcns } = allocation
+
+  const usageInfo: Record<string, number[] | string> = {}
+  arfcns && (usageInfo['2G GSM'] = arfcns)
+  uarfcns && (usageInfo['3G UMTS'] = uarfcns)
+  earfcns && (usageInfo['4G LTE'] = earfcns)
+  nrarfcns && (usageInfo['5G NR'] = nrarfcns)
 
   return (
     <dl className={classes.detailsRoot}>
-      <dt>Owned by:</dt>
+      <dt>Operated by:</dt>
       <dd>{ownerLongName || owner}</dd>
 
       <dt>Bandwidth:</dt>
@@ -287,12 +334,53 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
         )}
       </dd>
 
+      {(arfcns || uarfcns || earfcns || nrarfcns) && Object.keys(usageInfo).length !== 0 && (
+        <>
+          <dt>Used for:</dt>
+          <dd>
+            {Object.entries(usageInfo).map(([tech, arfcns]) => (
+              <p className="text-speak" key={tech}>
+                <strong>{tech}: </strong>
+                {arfcns.length ? (
+                  typeof arfcns === 'string' ? (
+                    arfcns
+                  ) : (
+                    <>
+                      {arfcnLabel(tech, arfcns.length !== 1)} {arfcns.join(', ')}
+                    </>
+                  )
+                ) : (
+                  'various/unconfirmed'
+                )}
+              </p>
+            ))}
+          </dd>
+        </>
+      )}
+
       {details && (
         <>
           <dt>Details:</dt>
-          <dd>{details}</dd>
+          <dd>{Array.isArray(details) ? details.map(detail => <p key={detail}>{detail}</p>) : details}</dd>
         </>
       )}
     </dl>
+  )
+}
+
+function arfcnLabel(rat: string, plural: boolean) {
+  return (
+    (() => {
+      switch (rat) {
+        case '2G GSM':
+          return 'ARFCN'
+        case '3G UMTS':
+          return 'UARFCN'
+        case '4G LTE':
+          return 'EARFCN'
+        case '5G NR':
+          return 'NRARFCN'
+      }
+    })() + (plural ? 's' : '')
   )
 }

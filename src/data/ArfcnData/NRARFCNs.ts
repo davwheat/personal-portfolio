@@ -11,16 +11,40 @@ function mapListToBand(band: number, list: SimpleArfcnDataItem[]): ArfcnDataItem
 
 const n1: SimpleArfcnDataItem[] = [
   {
+    arfcn: 431810,
+    bandwidth: 15,
+    operator: 'EE',
+    description: 'NR + LTE DSS - trial deployment',
+  },
+  {
     arfcn: 432530,
     bandwidth: 15,
     operator: 'EE',
-    description: 'NR only trial - deployment',
+    description: 'NR only trial (may also be used for DSS) - trial deployment',
   },
   {
     arfcn: 433250,
     bandwidth: 15,
     operator: 'EE',
     description: 'NR + LTE DSS - trial deployment',
+  },
+  {
+    arfcn: 425980,
+    bandwidth: 10,
+    operator: 'O2',
+    description: 'E/// - NR + LTE DSS - limited trial deployment',
+  },
+  {
+    arfcn: 428190,
+    bandwidth: 10,
+    operator: 'Vodafone',
+    description: 'Huawei - NR + LTE DSS - limited trial deployment',
+  },
+  {
+    arfcn: 427470,
+    bandwidth: 10,
+    operator: 'Vodafone',
+    description: 'E/// - NR + LTE DSS - limited trial deployment',
   },
 ]
 
@@ -86,13 +110,7 @@ const n78: SimpleArfcnDataItem[] = [
     arfcn: 629332,
     bandwidth: 40,
     operator: 'Vodafone',
-    description: 'Huawei - 40 MHz n78 deployment (in 50 MHz allocation)',
-  },
-  {
-    arfcn: 629332,
-    bandwidth: 50,
-    operator: 'Vodafone',
-    description: 'E/// - 50 MHz n78 deployment (in 50 MHz allocation)',
+    description: 'Huawei @ 40 MHz or E/// @ 50 MHz -  n78 deployment (in 50 MHz allocation)',
   },
   {
     arfcn: 628588,

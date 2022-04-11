@@ -13,7 +13,8 @@ const Band40: ISpectrumAllocation[] = [
     freqStart: 2350,
     freqEnd: 2390,
     type: 'tdd',
-    details: 'Split into two 20 MHz carriers: EARFCNs 39250 and 39448.',
+    details: 'Split into two 20 MHz carriers.',
+    earfcns: [39250, 39448],
   },
   {
     owner: 'MoD',

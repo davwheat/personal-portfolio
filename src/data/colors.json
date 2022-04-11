@@ -4,5 +4,6 @@
   "blueDark": "#0a4f70",
   "neutralGrey": "#c6c4c4",
   "lightGrey": "#f1f1f1",
-  "linkColor": "#00528a"
+  "linkColor": "#00528a",
+  "excessiveYellow": "#ffce1a"
 }
