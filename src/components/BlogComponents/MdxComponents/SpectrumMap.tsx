@@ -25,7 +25,7 @@ export interface ISpectrumAllocation {
    * End of allocation in MHz.
    */
   freqEnd: number
-  type: 'fddUp' | 'fddDown' | 'tdd' | 'unused' | 'unknown'
+  type: 'fddUp' | 'fddDown' | 'tdd' | 'sdl' | 'sul' | 'unused' | 'unknown'
   /**
    * The other piece of spectrum which this is paired with.
    */
@@ -38,7 +38,7 @@ export interface ISpectrumAllocation {
      * End of allocation in MHz.
      */
     freqEnd: number
-    type: 'fddUp' | 'fddDown' | 'tdd' | 'unused' | 'unknown'
+    type: 'fddUp' | 'fddDown' | 'tdd' | 'sdl' | 'sul' | 'unused' | 'unknown'
   }
 
   arfcns?: string | number[]
@@ -101,6 +101,8 @@ function getSpectrumTypeDescription(type: ISpectrumAllocation['type']): string {
     tdd: 'TDD uplink and downlink',
     unknown: 'Unknown',
     unused: 'Unused',
+    sdl: 'Supplemental downlink',
+    sul: 'Supplemental uplink',
   }[type]
 }
 
