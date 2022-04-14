@@ -11,19 +11,24 @@ const Band78: ISpectrumAllocation[] = [
     type: 'unknown',
   },
   {
-    owner: 'Vodafone',
+    owner: 'VF',
     freqStart: Start + 110,
     freqEnd: Start + 160,
     type: 'tdd',
     nrarfcns: [627648, 627932, 628032, 628320, 628588, 629332],
   },
   {
-    owner: 'Three',
+    owner: '3',
+    ownerLongName: 'Three',
+    colorOverride: OwnerColorMap.Three,
     freqStart: Start + 160,
     freqEnd: Start + 200,
     type: 'tdd',
     nrarfcns: [631392, 632666],
-    details: ['Second half inherited from UK Broadband aquisition', "This 40 MHz now being used for NR CA alongside Three's 100 MHz spectrum"],
+    details: [
+      'Second half inherited from UK Broadband aquisition',
+      "This 40 MHz now being used for NR CA trials alongside Three's 100 MHz spectrum",
+    ],
   },
   {
     owner: 'O2',
@@ -56,7 +61,7 @@ const Band78: ISpectrumAllocation[] = [
     nrarfcns: [646656],
   },
   {
-    owner: 'Vodafone',
+    owner: 'VF',
     freqStart: Start + 420,
     freqEnd: Start + 460,
     type: 'unused',
