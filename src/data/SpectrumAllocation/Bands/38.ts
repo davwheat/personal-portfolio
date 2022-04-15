@@ -4,7 +4,7 @@ const Start = 2570
 
 const Band38: ISpectrumAllocation[] = [
   {
-    owner: 'Vodafone',
+    owner: 'VF',
     freqStart: Start,
     freqEnd: Start + 5,
     type: 'unused',
