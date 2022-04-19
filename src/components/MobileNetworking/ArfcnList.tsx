@@ -186,15 +186,15 @@ function ArfcnList({ heading, ratData }: IArfcnListProps) {
 
         <h3 className="text-loud">Radio access technology (RAT)</h3>
         <nav className={classes.arfcnTypeButtonContainer}>
-          {ratButtonsToShow.includes('nr') && (
-            <button className={classes.arfcnTypeButton} onClick={() => setSelectedRat('nr')} data-selected={selectedRat === 'nr'}>
-              5G NR
-              <span className="sr-only">(Selected)</span>
-            </button>
-          )}
           {ratButtonsToShow.includes('lte') && (
             <button className={classes.arfcnTypeButton} onClick={() => setSelectedRat('lte')} data-selected={selectedRat === 'lte'}>
               4G LTE
+              <span className="sr-only">(Selected)</span>
+            </button>
+          )}
+          {ratButtonsToShow.includes('nr') && (
+            <button className={classes.arfcnTypeButton} onClick={() => setSelectedRat('nr')} data-selected={selectedRat === 'nr'}>
+              5G NR
               <span className="sr-only">(Selected)</span>
             </button>
           )}
