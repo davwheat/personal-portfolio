@@ -1,9 +1,10 @@
-type UKNetworkOperator = 'O2' | 'Vodafone' | 'EE' | 'Three' | 'Three (UK Broadband)'
+export type GBNetworkOperator = 'O2' | 'Vodafone' | 'EE' | 'Three' | 'Three (UK Broadband)'
+export type DKNetworkOperator = 'TDC' | '3 DK' | 'Telia-Telenor'
 
-export interface ArfcnDataItem {
+export interface ArfcnDataItem<CountryOperators extends string> {
   band: number
   arfcn: number
-  operator: UKNetworkOperator
+  operator: CountryOperators
   description: string
   /**
    * Bandwidth in MHz
@@ -11,4 +12,4 @@ export interface ArfcnDataItem {
   bandwidth?: number
 }
 
-export interface SimpleArfcnDataItem extends Omit<ArfcnDataItem, 'band'> {}
+export interface SimpleArfcnDataItem<Country extends string = string> extends Omit<ArfcnDataItem<Country>, 'band'> {}

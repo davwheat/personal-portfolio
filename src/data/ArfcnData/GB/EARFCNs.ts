@@ -1,4 +1,4 @@
-import type { ArfcnDataItem, SimpleArfcnDataItem } from './'
+import type { ArfcnDataItem, SimpleArfcnDataItem } from '..'
 
 function mapListToBand(band: number, list: SimpleArfcnDataItem[]): ArfcnDataItem[] {
   const newList = list as ArfcnDataItem[]

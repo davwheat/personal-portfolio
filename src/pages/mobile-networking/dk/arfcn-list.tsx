@@ -8,23 +8,23 @@ import Layout from '@components/Layout'
 import ArfcnListIntro from '@components/MobileNetworking/ArfcnListIntro'
 import ArfcnList from '@components/MobileNetworking/ArfcnList'
 
-import EARFCNs from '@data/ArfcnData/GB/EARFCNs'
-import NRARFCNs from '@data/ArfcnData/GB/NRARFCNs'
+import EARFCNs from '@data/ArfcnData/DK/EARFCNs'
+import NRARFCNs from '@data/ArfcnData/DK/NRARFCNs'
 
-function GBArfcnListPage({ location }) {
+function DKArfcnListPage({ location }) {
   return (
-    <Layout location={location} title="UK ARFCN list" description="A mostly complete list of UK mobile networks' ARFCNs for 4G LTE and 5G NR.">
+    <Layout location={location} title="Danish ARFCN list" description="A partial list of Danish mobile networks' ARFCNs for 4G LTE and 5G NR.">
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
-        <h1 className="text-shout">UK ARFCN list</h1>
+        <h1 className="text-shout">Danish ARFCN list</h1>
         <p role="doc-subtitle" className="text-loud">
-          A mostly complete dataset of UK mobile network data carriers by their NR/EARFCN.
+          A partial dataset of Danish mobile network frequencies by their NR/EARFCN.
         </p>
       </Hero>
 
       <ArfcnListIntro />
 
       <ArfcnList
-        heading="UK ARFCN table"
+        heading="Danish ARFCN table"
         ratData={{
           nr: NRARFCNs,
           lte: EARFCNs,
@@ -34,4 +34,4 @@ function GBArfcnListPage({ location }) {
   )
 }
 
-export default GBArfcnListPage
+export default DKArfcnListPage
