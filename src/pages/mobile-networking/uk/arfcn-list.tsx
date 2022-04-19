@@ -24,8 +24,8 @@ import Checkbox from '@components/Inputs/Checkbox'
 import type { ArfcnDataItem } from '@data/ArfcnData'
 import Breakpoints from '@data/breakpoints'
 
-import EARFCNs from '@data/ArfcnData/EARFCNs'
-import NRARFCNs from '@data/ArfcnData/NRARFCNs'
+import EARFCNs from '@data/ArfcnData/GB/EARFCNs'
+import NRARFCNs from '@data/ArfcnData/GB/NRARFCNs'
 
 const useStyles = makeStyles({
   table: {
