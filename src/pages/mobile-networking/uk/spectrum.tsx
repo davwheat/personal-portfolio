@@ -6,7 +6,7 @@ import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
 
-import { AllBands } from '@data/SpectrumAllocation/Bands'
+import { AllBands } from '@data/SpectrumAllocation/GB/Bands'
 import { SpectrumMap } from '@components/BlogComponents/MdxComponents'
 
 import bandNumberToName from '@functions/bandNumberToName'
