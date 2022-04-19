@@ -27,13 +27,13 @@ const Links: ILinkGroup[] = [
     groupDescription: 'A variety of mobile networking related datasets hosted by me.',
     groupLinks: [
       {
-        title: 'NR/E/U/ARFCN list',
-        description: 'A list of UK mobile network frequencies by their NRARFCN, EARFCN, UARFCN and ARFCNs.',
+        title: 'NR/EARFCN list',
+        description: 'A list of UK mobile network frequencies by their NRARFCNs and EARFCNs.',
         url: '/mobile-networking/uk/arfcn-list',
       },
       {
         title: 'Spectrum allocation',
-        description: 'A list of UK mobile network frequencies by their NRARFCN, EARFCN, UARFCN and ARFCNs.',
+        description: 'A visualisation of spectrum allocation for mobile networks within the UK.',
         url: '/mobile-networking/uk/spectrum',
       },
     ],
