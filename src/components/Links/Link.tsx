@@ -7,7 +7,6 @@ import clsx from 'clsx'
 
 const useStyles = makeStyles({
   link: {
-    color: 'var(--link-color)',
     fontWeight: 700,
     textDecoration: 'underline',
   },

@@ -7,7 +7,6 @@ const useStyles = makeStyles({
   linkButton: {
     appearance: 'none',
     background: 'none',
-    color: 'var(--link-color)',
     border: 'none',
     cursor: 'pointer',
     textDecoration: 'underline',
