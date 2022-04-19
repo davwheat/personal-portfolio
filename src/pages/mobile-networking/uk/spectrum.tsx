@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Colors from '@data/colors.json'
-
-import { makeStyles } from '@material-ui/styles'
-import clsx from 'clsx'
 
 import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
@@ -14,11 +11,7 @@ import { SpectrumMap } from '@components/BlogComponents/MdxComponents'
 
 import bandNumberToName from '@functions/bandNumberToName'
 
-const useStyles = makeStyles({})
-
 function SpectrumAllocationPage({ location }) {
-  const classes = useStyles()
-
   return (
     <Layout
       location={location}

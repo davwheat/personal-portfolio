@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Colors from '@data/colors.json'
-
 import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
 import CardLink from '@components/MobileNetworking/CardLink'
-import { makeStyles } from '@material-ui/styles'
+
+import Colors from '@data/colors.json'
 import Breakpoints from '@data/breakpoints'
-import Link from '@components/Links/Link'
+
+import { makeStyles } from '@material-ui/styles'
 
 interface ILinkGroup {
   groupName: string

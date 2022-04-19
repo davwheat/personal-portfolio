@@ -1,14 +1,15 @@
 import React from 'react'
 
-import Colors from '@data/colors.json'
-
 import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
 import CardLink from '@components/MobileNetworking/CardLink'
-import { makeStyles } from '@material-ui/styles'
-import Breakpoints from '@data/breakpoints'
 import Link from '@components/Links/Link'
+
+import Colors from '@data/colors.json'
+import Breakpoints from '@data/breakpoints'
+
+import { makeStyles } from '@material-ui/styles'
 
 interface ILinkGroup {
   groupName: string
@@ -61,11 +62,11 @@ function MobileNetworkingPage({ location }) {
   return (
     <Layout
       location={location}
-      title="Mobile networks"
+      title="UK mobile networking"
       description="A collection of mobile networking tools and datasets maintained as part of my hobby."
     >
       <Hero firstElement size="huge" color={Colors.primaryRed}>
-        <h1 className="text-shout">Mobile networks</h1>
+        <h1 className="text-shout">UK mobile networking</h1>
         <p role="doc-subtitle" className="text-loud">
           A collection of mobile networking tools and datasets maintained as part of my hobby.
         </p>
