@@ -4,16 +4,16 @@ import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
 import CardLink from '@components/MobileNetworking/CardLink'
-import Link from '@components/Links/Link'
 
 import Colors from '@data/colors.json'
 import Breakpoints from '@data/breakpoints'
 
 import { makeStyles } from '@material-ui/styles'
+import Breadcrumbs from '@components/Design/Breadcrumbs'
 
 interface ILinkGroup {
   groupName: string
-  groupDescription: string
+  groupDescription?: string
   groupLinks: ILink[]
 }
 
@@ -22,25 +22,6 @@ interface ILink {
   description: string
   url: string
 }
-
-const Links: ILinkGroup[] = [
-  {
-    groupName: 'Datasets',
-    groupDescription: 'A variety of mobile networking related datasets hosted by me.',
-    groupLinks: [
-      {
-        title: 'NR/EARFCN list',
-        description: 'A list of UK mobile network frequencies by their NRARFCNs and EARFCNs.',
-        url: '/mobile-networking/uk/arfcn-list',
-      },
-      {
-        title: 'Spectrum allocation',
-        description: 'A visualisation of spectrum allocation for mobile networks within the UK.',
-        url: '/mobile-networking/uk/spectrum',
-      },
-    ],
-  },
-]
 
 const useStyles = makeStyles({
   linkList: {
@@ -62,36 +43,32 @@ function MobileNetworkingPage({ location }) {
   return (
     <Layout
       location={location}
-      title="UK mobile networking"
-      description="A collection of mobile networking tools and datasets maintained as part of my hobby."
+      title="Mobile networking"
+      description="Non-UK mobile networking tools and datasets maintained as part of my hobby."
     >
       <Hero firstElement size="huge" color={Colors.primaryRed}>
-        <h1 className="text-shout">UK mobile networking</h1>
+        <h1 className="text-shout">Mobile networking</h1>
         <p role="doc-subtitle" className="text-loud">
-          A collection of mobile networking tools and datasets maintained as part of my hobby.
+          Tools, datasets and various resources for mobile networking worldwide.
         </p>
       </Hero>
 
-      <Section darker usePadding>
-        <h2 className="text-louder">Other countries</h2>
-        <p className="text-speak">
-          This page only has info about the UK. If you're interested in mobile networks outside the UK,{' '}
-          <Link href="/mobile-networking/other-countries">check out my info about other countries</Link>.
-        </p>
+      <Breadcrumbs
+        data={[
+          { t: 'Home', url: '/' },
+          { t: 'Mobile networking', url: '/mobile-networking' },
+        ]}
+      />
+
+      <Section width="wider">
+        <h2 className="text-louder">Countries</h2>
+        <p className="text-speak">List of all countries which I have mobile networking related information and pages about on this website.</p>
+
+        <div className={classes.linkList}>
+          <CardLink title="United Kingdom" url="uk" />
+          <CardLink title="Denmark" url="dk" />
+        </div>
       </Section>
-
-      {Links.map((group, i) => (
-        <Section key={i} darker={i % 2 === 0 ? false : true} width="wider">
-          <h2 className="text-louder">{group.groupName}</h2>
-          <p className="text-speak">{group.groupDescription}</p>
-
-          <div className={classes.linkList}>
-            {group.groupLinks.map(link => (
-              <CardLink key={link.title} {...link} />
-            ))}
-          </div>
-        </Section>
-      ))}
     </Layout>
   )
 }

@@ -10,6 +10,7 @@ import ArfcnList from '@components/MobileNetworking/ArfcnList'
 
 import EARFCNs from '@data/ArfcnData/DK/EARFCNs'
 import NRARFCNs from '@data/ArfcnData/DK/NRARFCNs'
+import Breadcrumbs from '@components/Design/Breadcrumbs'
 
 function DKArfcnListPage({ location }) {
   return (
@@ -20,6 +21,15 @@ function DKArfcnListPage({ location }) {
           A partial dataset of Danish mobile network frequencies by their NR/EARFCN.
         </p>
       </Hero>
+
+      <Breadcrumbs
+        data={[
+          { t: 'Home', url: '/' },
+          { t: 'Mobile networking', url: '/mobile-networking' },
+          { t: 'Denmark', url: '/mobile-networking/dk' },
+          { t: 'ARFCN list', url: '/mobile-networking/dk/arfcn-list' },
+        ]}
+      />
 
       <ArfcnListIntro />
 

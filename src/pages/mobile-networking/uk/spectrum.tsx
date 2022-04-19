@@ -10,8 +10,9 @@ import { AllBands } from '@data/SpectrumAllocation/GB/Bands'
 import { SpectrumMap } from '@components/BlogComponents/MdxComponents'
 
 import bandNumberToName from '@functions/bandNumberToName'
+import Breadcrumbs from '@components/Design/Breadcrumbs'
 
-function SpectrumAllocationPage({ location }) {
+function GBSpectrumAllocationPage({ location }) {
   return (
     <Layout
       location={location}
@@ -24,6 +25,15 @@ function SpectrumAllocationPage({ location }) {
           A visualisation of spectrum allocation across the UK, per operator and radio access technology.
         </p>
       </Hero>
+
+      <Breadcrumbs
+        data={[
+          { t: 'Home', url: '/' },
+          { t: 'Mobile networking', url: '/mobile-networking' },
+          { t: 'United Kingdom', url: '/mobile-networking/uk' },
+          { t: 'Mobile spectrum allocation', url: '/mobile-networking/uk/spectrum' },
+        ]}
+      />
 
       <Section>
         <h2 className="text-louder">How does allocation work?</h2>
@@ -64,4 +74,4 @@ function SpectrumAllocationPage({ location }) {
   )
 }
 
-export default SpectrumAllocationPage
+export default GBSpectrumAllocationPage

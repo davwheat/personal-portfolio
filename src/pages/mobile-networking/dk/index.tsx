@@ -9,6 +9,7 @@ import Colors from '@data/colors.json'
 import Breakpoints from '@data/breakpoints'
 
 import { makeStyles } from '@material-ui/styles'
+import Breadcrumbs from '@components/Design/Breadcrumbs'
 
 interface ILinkGroup {
   groupName: string
@@ -24,7 +25,7 @@ interface ILink {
 
 const Links: ILinkGroup[] = [
   {
-    groupName: 'Denmark',
+    groupName: 'Datasets',
     groupLinks: [
       {
         title: 'NR/EARFCN list',
@@ -55,15 +56,23 @@ function MobileNetworkingPage({ location }) {
   return (
     <Layout
       location={location}
-      title="Global mobile networks"
+      title="Mobile networking in Denmark"
       description="Non-UK mobile networking tools and datasets maintained as part of my hobby."
     >
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
-        <h1 className="text-shout">Global mobile networks</h1>
+        <h1 className="text-shout">Mobile networking in Denmark</h1>
         <p role="doc-subtitle" className="text-loud">
-          Non-UK mobile networking tools and datasets maintained as part of my hobby.
+          Danish mobile networking tools, resources and datasets maintained as part of my hobby.
         </p>
       </Hero>
+
+      <Breadcrumbs
+        data={[
+          { t: 'Home', url: '/' },
+          { t: 'Mobile networking', url: '/mobile-networking' },
+          { t: 'Denmark', url: '/mobile-networking/dk' },
+        ]}
+      />
 
       {Links.map((group, i) => (
         <Section key={i} darker={i % 2 === 0 ? false : true} width="wider">

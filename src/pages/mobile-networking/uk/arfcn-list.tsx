@@ -10,6 +10,7 @@ import ArfcnList from '@components/MobileNetworking/ArfcnList'
 
 import EARFCNs from '@data/ArfcnData/GB/EARFCNs'
 import NRARFCNs from '@data/ArfcnData/GB/NRARFCNs'
+import Breadcrumbs from '@components/Design/Breadcrumbs'
 
 function GBArfcnListPage({ location }) {
   return (
@@ -20,6 +21,15 @@ function GBArfcnListPage({ location }) {
           A mostly complete dataset of UK mobile network data carriers by their NR/EARFCN.
         </p>
       </Hero>
+
+      <Breadcrumbs
+        data={[
+          { t: 'Home', url: '/' },
+          { t: 'Mobile networking', url: '/mobile-networking' },
+          { t: 'United Kingdom', url: '/mobile-networking/uk' },
+          { t: 'ARFCN list', url: '/mobile-networking/uk/arfcn-list' },
+        ]}
+      />
 
       <ArfcnListIntro />
 
