@@ -1,16 +1,13 @@
 import React from 'react'
 
-import Colors from '@data/colors.json'
-
 import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
-
-import { AllBands } from '@data/SpectrumAllocation/GB/Bands'
-import { SpectrumMap } from '@components/BlogComponents/MdxComponents'
-
-import bandNumberToName from '@functions/bandNumberToName'
 import Breadcrumbs from '@components/Design/Breadcrumbs'
+import AllSpectrumMaps from '@components/MobileNetworking/AllSpectrumMaps'
+
+import Colors from '@data/colors.json'
+import { AllBands } from '@data/SpectrumAllocation/GB/Bands'
 
 function GBSpectrumAllocationPage({ location }) {
   return (
@@ -53,23 +50,7 @@ function GBSpectrumAllocationPage({ location }) {
         </p>
       </Section>
 
-      <Section width="wider">
-        <h2 className="text-louder">Frequency deployment</h2>
-
-        {AllBands.map((bandData, i) => {
-          return (
-            <React.Fragment key={bandData.band}>
-              <h3 id={`band-${bandData.band}`} className="text-loud">
-                Band {bandData.band}
-              </h3>
-              <SpectrumMap
-                data={bandData.data}
-                caption={`UK spectrum deployment for Band ${bandData.band} (${bandNumberToName(bandData.band)})`}
-              />
-            </React.Fragment>
-          )
-        })}
-      </Section>
+      <AllSpectrumMaps locationName="UK" bandsData={AllBands} />
     </Layout>
   )
 }
