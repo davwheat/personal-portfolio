@@ -26,6 +26,7 @@ interface ILink {
 const Links: ILinkGroup[] = [
   {
     groupName: 'Datasets',
+    groupDescription: 'A variety of Danish mobile networking related datasets hosted by me.',
     groupLinks: [
       {
         title: 'NR/EARFCN list',
