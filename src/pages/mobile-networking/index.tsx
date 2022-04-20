@@ -44,7 +44,7 @@ function MobileNetworkingPage({ location }) {
     <Layout
       location={location}
       title="Mobile networking"
-      description="Non-UK mobile networking tools and datasets maintained as part of my hobby."
+      description="Tools, datasets and various resources I have collected for mobile networking around the globe."
     >
       <Hero firstElement size="huge" color={Colors.primaryRed}>
         <h1 className="text-shout">Mobile networking</h1>
