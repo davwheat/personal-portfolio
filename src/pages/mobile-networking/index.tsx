@@ -4,12 +4,14 @@ import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
 import CardLink from '@components/MobileNetworking/CardLink'
+import Breadcrumbs from '@components/Design/Breadcrumbs'
+
+import countryCodeToFlag from '@functions/countryCodeToFlag'
 
 import Colors from '@data/colors.json'
 import Breakpoints from '@data/breakpoints'
 
 import { makeStyles } from '@material-ui/styles'
-import Breadcrumbs from '@components/Design/Breadcrumbs'
 
 interface ILinkGroup {
   groupName: string
@@ -33,6 +35,13 @@ const useStyles = makeStyles({
 
     [Breakpoints.downTo.tablet]: {
       '--columns': 2,
+    },
+
+    '& img.emoji': {
+      display: 'inline-block',
+      height: '1em',
+      width: 'auto',
+      verticalAlign: '-0.1em',
     },
   },
 })
@@ -65,8 +74,9 @@ function MobileNetworkingPage({ location }) {
         <p className="text-speak">List of all countries which I have mobile networking related information and pages about on this website.</p>
 
         <div className={classes.linkList}>
-          <CardLink title="United Kingdom" url="uk" />
-          <CardLink title="Denmark" url="dk" />
+          <CardLink title={<>{countryCodeToFlag('gb')} United Kingdom</>} description="United Kingdom" url="uk" />
+          <CardLink title={<>{countryCodeToFlag('dk')} Denmark</>} description="Danmark" url="dk" />
+          <CardLink title={<>{countryCodeToFlag('de')} Germany</>} description="Deutschland" url="de" />
         </div>
       </Section>
     </Layout>
