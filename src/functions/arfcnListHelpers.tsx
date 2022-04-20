@@ -61,12 +61,21 @@ export function createFuse(dataset: ArfcnDataItem<string>[], sortByFilterRelevan
 }
 
 export function sortArfcnData(data: ArfcnDataItem<string>[], sort: ISort) {
-  const isAlpha = typeof data[0][sort.column] === 'string'
   const invert = sort.direction === 'desc' ? -1 : 1
 
+  // Sort appropriately based on alpha or numeric
+  // Backup sort is based on ARFCN to maintain consistent list order of equal values
   return data.sort((a, b) => {
-    if (isAlpha) return invert * (a[sort.column] as string).localeCompare(b[sort.column] as string)
-    else return invert * (a[sort.column] as number) - (b[sort.column] as number)
+    let a1 = a[sort.column]
+    let b1 = b[sort.column]
+
+    if (Array.isArray(a1)) a1 = a1[0]
+    if (Array.isArray(b1)) b1 = b1[0]
+
+    const isAlpha = typeof a1 === 'string'
+
+    if (isAlpha) return invert * ((a1 as string).localeCompare(b1 as string) || a.arfcn - b.arfcn)
+    else return invert * ((a1 as number) - (b1 as number) || a.arfcn - b.arfcn)
   })
 }
 
