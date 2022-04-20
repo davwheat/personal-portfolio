@@ -83,7 +83,7 @@ const B8: SimpleArfcnDataItem<DENetworkOperator>[] = [
     arfcn: 3500,
     bandwidth: [5, 6.5],
     operator: 'O2 DE',
-    description: 'Standard B8 deployment. Sometimes (deprecated) 6.5 MHz (signalled as 10 MHz, but not allocating all RBs).',
+    description: 'Standard B8 deployment. Old sites sometimes 6.5 MHz, signalled as 10 MHz (missing RBs)',
   },
   {
     arfcn: 3600,
