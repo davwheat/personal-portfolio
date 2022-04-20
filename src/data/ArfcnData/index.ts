@@ -9,7 +9,7 @@ export interface ArfcnDataItem<CountryOperators extends string> {
   /**
    * Bandwidth in MHz
    */
-  bandwidth?: number
+  bandwidth?: number | number[]
 }
 
 export interface SimpleArfcnDataItem<Country extends string = string> extends Omit<ArfcnDataItem<Country>, 'band'> {}
