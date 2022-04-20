@@ -32,6 +32,11 @@ const Links: ILinkGroup[] = [
         description: 'A list of Danish mobile network frequencies by their NRARFCNs and EARFCNs.',
         url: '/mobile-networking/dk/arfcn-list',
       },
+      {
+        title: 'Spectrum allocation',
+        description: 'A visualisation of spectrum allocation for mobile networks within Denmark.',
+        url: '/mobile-networking/dk/spectrum',
+      },
     ],
   },
 ]

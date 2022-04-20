@@ -88,6 +88,18 @@ export const OwnerColorMap: Record<string, IColorPair> = {
     back: '#ff7c69',
     front: '#000',
   },
+  '3 DK': {
+    back: '#f37423',
+    front: '#000',
+  },
+  TT: {
+    back: '#663989',
+    front: '#fff',
+  },
+  TDC: {
+    back: '#006cb7',
+    front: '#fff',
+  },
 }
 
 function round(num: number): number {
