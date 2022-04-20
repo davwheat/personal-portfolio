@@ -304,6 +304,14 @@ function SpectrumMapItem({ allocation, onClick, isSelected }: ISpectrumMapItemPr
   )
 }
 
+function formatFrequency(freq: number, hideUnits: boolean = false) {
+  if (freq >= 10_000) {
+    return `${round(freq) / 1000}` + (hideUnits ? '' : ' GHz')
+  }
+
+  return `${round(freq)}` + (hideUnits ? '' : ' MHz')
+}
+
 function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
   const classes = useSpectrumMapDetailsStyles()
   const { owner, ownerLongName, details, freqStart, freqEnd, type, pairedWith, arfcns, uarfcns, earfcns, nrarfcns } = allocation
@@ -321,7 +329,7 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
 
       <dt>Bandwidth:</dt>
       <dd>
-        {round(freqEnd - freqStart)} MHz ({round(freqStart)} &ndash; {round(freqEnd)} MHz)
+        {formatFrequency(freqEnd - freqStart)} ({formatFrequency(freqStart, true)} &ndash; {formatFrequency(freqEnd)})
       </dd>
 
       <dt>Spectrum type:</dt>
@@ -329,7 +337,8 @@ function SpectrumMapDetails({ allocation }: ISpectrumMapDetailsProps) {
         {getSpectrumTypeDescription(type)}
         {pairedWith && (
           <>
-            , paired with {round(pairedWith.freqStart)} &ndash; {round(pairedWith.freqEnd)} MHz of {getSpectrumTypeDescription(pairedWith.type)}
+            , paired with {formatFrequency(pairedWith.freqStart, true)} &ndash; {formatFrequency(pairedWith.freqEnd)} of{' '}
+            {getSpectrumTypeDescription(pairedWith.type)}
           </>
         )}
       </dd>
