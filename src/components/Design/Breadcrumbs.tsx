@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
-import Section from './Section'
+import { makeStyles } from '@material-ui/core'
 
-import { useLocation } from '@reach/router'
+import Section from '@components/Design/Section'
 import Link from '@components/Links/Link'
 import ButtonLink from '@components/Links/ButtonLink'
-import { makeStyles } from '@material-ui/core'
 
 export interface IBreadcrumb {
   /**
@@ -39,7 +38,6 @@ const useStyles = makeStyles({
 
 export default function Breadcrumbs({ data }: IBreadcrumbsProps) {
   const classes = useStyles()
-  const location = useLocation()
   const breadcrumbsToDisplay: (IBreadcrumb | null)[] = []
 
   const [breadcrumbsExpanded, setBreadcrumbsExpanded] = useState(false)
@@ -95,7 +93,7 @@ export default function Breadcrumbs({ data }: IBreadcrumbsProps) {
             '@type': 'ListItem',
             position: i,
             item: {
-              '@id': new URL(crumb.url, location.href).href,
+              '@id': 'https://davwheat.dev' + crumb.url,
               name: crumb.t,
             },
           })),
