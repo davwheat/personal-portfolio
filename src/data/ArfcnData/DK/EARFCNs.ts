@@ -87,7 +87,7 @@ const B7: SimpleArfcnDataItem<DKNetworkOperator>[] = [
 const B8: SimpleArfcnDataItem<DKNetworkOperator>[] = [
   {
     arfcn: 3500,
-    bandwidth: 20,
+    bandwidth: 10,
     operator: 'Telia-Telenor',
     description: 'Standard B8 deployment',
   },
