@@ -4,7 +4,7 @@ import Section from '@components/Design/Section'
 
 export default function ArfcnListIntro() {
   return (
-    <Section usePadding darker>
+    <Section>
       <h2 className="text-louder">Intro</h2>
 
       <p className="text-speak">

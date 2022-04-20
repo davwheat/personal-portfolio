@@ -1,23 +1,27 @@
 import bandNumberToFrequency from './bandNumberToFrequency'
 
 const bandNames = {
-  1: 'IMT',
-  3: 'DCS',
-  7: 'IMT-E',
-  8: 'GSM',
-  20: 'EU Digital Dividend',
-  28: 'APT',
-  29: 'SDL',
-  32: 'L-Band SDL',
-  38: 'IMT-E',
-  40: 'S-Band',
-  46: 'LAA',
-  67: 'EU SDL',
-  77: 'C-Band',
-  78: 'C-Band',
-  79: 'C-Band',
+  B1: 'IMT',
+  B3: 'DCS',
+  B7: 'IMT-E',
+  B8: 'GSM',
+  B20: 'EU Digital Dividend',
+  B28: 'APT',
+  B29: 'SDL',
+  B32: 'L-Band SDL',
+  B38: 'IMT-E',
+  B40: 'S-Band',
+  B46: 'LAA',
+  B67: 'EU SDL',
+  n77: 'C-Band',
+  n78: 'C-Band',
+  n79: 'C-Band',
+  n257: 'mmWave LMDS',
+  n258: 'mmWave K-band',
 }
 
-export default function BandToName(band: number): string {
+export default function bandNumberToName(band: number | string): string {
+  if (typeof band === 'string') Object.keys(bandNames).includes(band) || (band = parseInt(band.substring(1)))
+
   return bandNames[band] ? `${bandNumberToFrequency(band)} MHz ${bandNames[band]}` : `${bandNumberToFrequency(band)}`
 }

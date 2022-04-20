@@ -28,12 +28,6 @@ const B1: SimpleArfcnDataItem<DKNetworkOperator>[] = [
     operator: 'Telia-Telenor',
     description: 'Standard B1 deployment',
   },
-  {
-    arfcn: 550,
-    bandwidth: null,
-    operator: 'Telia-Telenor',
-    description: 'Deprecated B1 deployment before U21 refarm',
-  },
 ]
 
 const B3: SimpleArfcnDataItem<DKNetworkOperator>[] = [
@@ -93,7 +87,7 @@ const B7: SimpleArfcnDataItem<DKNetworkOperator>[] = [
 const B8: SimpleArfcnDataItem<DKNetworkOperator>[] = [
   {
     arfcn: 3500,
-    bandwidth: 20,
+    bandwidth: 10,
     operator: 'Telia-Telenor',
     description: 'Standard B8 deployment',
   },

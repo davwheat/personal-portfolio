@@ -40,12 +40,6 @@ const useStyles = makeStyles({
     marginLeft: '-50vw',
     left: '50%',
   },
-  widerInner: {
-    maxWidth: 960,
-    margin: 'auto',
-    paddingLeft: 24,
-    paddingRight: 24,
-  },
   darkBg: {
     background: Colors.lightGrey,
     paddingTop: 36,
@@ -56,12 +50,18 @@ const useStyles = makeStyles({
     marginLeft: '-50vw',
     left: '50%',
 
-    '& > div': {
+    '& > div:not($widerInner)': {
       maxWidth: 720,
       margin: 'auto',
       paddingLeft: 24,
       paddingRight: 24,
     },
+  },
+  widerInner: {
+    maxWidth: 960,
+    margin: 'auto',
+    paddingLeft: 24,
+    paddingRight: 24,
   },
 })
 

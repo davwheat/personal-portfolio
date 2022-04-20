@@ -32,7 +32,7 @@ const n28: SimpleArfcnDataItem<DKNetworkOperator>[] = [
     arfcn: 155050,
     bandwidth: 15,
     operator: 'TDC',
-    description: '15 MHz n28 deployment',
+    description: '15 MHz n28 deployment. Base nationwide 5G NR layer.',
   },
 ]
 

@@ -39,7 +39,24 @@ export function getBandPrefix(rat: SupportedArfcnListRats): string | null {
 export function createFuse(dataset: ArfcnDataItem<string>[], sortByFilterRelevance: boolean) {
   return new Fuse(dataset, {
     shouldSort: sortByFilterRelevance,
-    keys: [{ name: 'arfcn', weight: 5 }, { name: 'band', weight: 4 }, 'operator', 'bandwidth', { name: 'description', weight: 2 }],
+    threshold: 0.2,
+    ignoreLocation: true,
+    keys: [
+      {
+        name: 'arfcn',
+        weight: 100,
+      },
+      {
+        name: 'band',
+        weight: 25,
+      },
+      'operator',
+      'bandwidth',
+      {
+        name: 'description',
+        weight: 10,
+      },
+    ],
   })
 }
 

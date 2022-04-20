@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { Chip, makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 
 import Link from '../Links/Link'
 
 import clsx from 'clsx'
 import generateTransitions from '@functions/generateTransitions'
 
-interface Props {
+interface ICardLinkProps {
   title: string
-  description: string
+  description?: string
   url: string
 }
 
@@ -21,6 +21,7 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     padding: CARD_PADDING,
     position: 'relative',
+    flexGrow: 1,
   },
 
   header: {
@@ -70,21 +71,28 @@ const useStyles = makeStyles({
   spring: {
     flexGrow: 1,
   },
+
+  headingNoMargin: {
+    marginBottom: 0,
+  },
 })
 
-function CardLink({ title, description, url }: Props) {
+function CardLink({ title, description, url }: ICardLinkProps) {
   const classes = useStyles()
 
   return (
     <Link className={classes.link} href={url}>
       <article className={classes.card}>
         <header className={classes.header}>
-          <h3 className={clsx('text-loud', classes.heading)}>{title}</h3>
+          <h3 className={clsx('text-loud', classes.heading, !description && classes.headingNoMargin)}>{title}</h3>
         </header>
 
-        <div aria-hidden className={classes.spring} />
-
-        <p className="text-speak">{description}</p>
+        {description && (
+          <>
+            <div aria-hidden className={classes.spring} />
+            <p className="text-speak">{description}</p>
+          </>
+        )}
       </article>
       <div aria-hidden="true" className={classes.arrow} />
     </Link>

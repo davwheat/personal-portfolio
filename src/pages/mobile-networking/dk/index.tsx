@@ -23,6 +23,24 @@ interface ILink {
   url: string
 }
 
+const Links: ILinkGroup[] = [
+  {
+    groupName: 'Datasets',
+    groupLinks: [
+      {
+        title: 'NR/EARFCN list',
+        description: 'A list of Danish mobile network frequencies by their NRARFCNs and EARFCNs.',
+        url: '/mobile-networking/dk/arfcn-list',
+      },
+      {
+        title: 'Spectrum allocation',
+        description: 'A visualisation of spectrum allocation for mobile networks within Denmark.',
+        url: '/mobile-networking/dk/spectrum',
+      },
+    ],
+  },
+]
+
 const useStyles = makeStyles({
   linkList: {
     marginTop: 24,
@@ -43,13 +61,13 @@ function MobileNetworkingPage({ location }) {
   return (
     <Layout
       location={location}
-      title="Mobile networking"
+      title="Mobile networking in Denmark"
       description="Non-UK mobile networking tools and datasets maintained as part of my hobby."
     >
-      <Hero firstElement size="huge" color={Colors.primaryRed}>
-        <h1 className="text-shout">Mobile networking</h1>
+      <Hero firstElement size="huge" color={Colors.primaryBlue}>
+        <h1 className="text-shout">Mobile networking in Denmark</h1>
         <p role="doc-subtitle" className="text-loud">
-          Tools, datasets and various resources for mobile networking worldwide.
+          Danish mobile networking tools, resources and datasets maintained as part of my hobby.
         </p>
       </Hero>
 
@@ -57,18 +75,22 @@ function MobileNetworkingPage({ location }) {
         data={[
           { t: 'Home', url: '/' },
           { t: 'Mobile networking', url: '/mobile-networking' },
+          { t: 'Denmark', url: '/mobile-networking/dk' },
         ]}
       />
 
-      <Section width="wider">
-        <h2 className="text-louder">Countries</h2>
-        <p className="text-speak">List of all countries which I have mobile networking related information and pages about on this website.</p>
+      {Links.map((group, i) => (
+        <Section key={i} darker={i % 2 === 0 ? false : true} width="wider">
+          <h2 className="text-louder">{group.groupName}</h2>
+          <p className="text-speak">{group.groupDescription}</p>
 
-        <div className={classes.linkList}>
-          <CardLink title="United Kingdom" url="uk" />
-          <CardLink title="Denmark" url="dk" />
-        </div>
-      </Section>
+          <div className={classes.linkList}>
+            {group.groupLinks.map(link => (
+              <CardLink key={link.title} {...link} />
+            ))}
+          </div>
+        </Section>
+      ))}
     </Layout>
   )
 }

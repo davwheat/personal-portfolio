@@ -1,20 +1,22 @@
 const bandFreqs = {
-  1: 2100,
-  3: 1800,
-  7: 2300,
-  8: 900,
-  20: 800,
-  28: 700,
-  29: 700,
-  32: 1500,
-  38: 2600,
-  40: 2600,
-  67: 700,
-  77: 3700,
-  78: 3500,
-  79: 4700,
+  B1: 2100,
+  B3: 1800,
+  B7: 2300,
+  B8: 900,
+  B20: 800,
+  B28: 700,
+  B29: 700,
+  B32: 1500,
+  B38: 2600,
+  B40: 2600,
+  B67: 700,
+  n77: 3700,
+  n78: 3500,
+  n79: 4700,
 }
 
-export default function BandToName(band: number): number {
+export default function bandNumberToFrequency(band: number | string): number {
+  if (typeof band === 'string') Object.keys(bandFreqs).includes(band) || (band = parseInt(band.substring(1)))
+
   return bandFreqs[band] ?? -1
 }

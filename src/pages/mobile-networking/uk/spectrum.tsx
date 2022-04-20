@@ -1,17 +1,15 @@
 import React from 'react'
 
-import Colors from '@data/colors.json'
-
 import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
+import Breadcrumbs from '@components/Design/Breadcrumbs'
+import AllSpectrumMaps from '@components/MobileNetworking/AllSpectrumMaps'
 
-import { AllBands } from '@data/SpectrumAllocation/Bands'
-import { SpectrumMap } from '@components/BlogComponents/MdxComponents'
+import Colors from '@data/colors.json'
+import { AllBands } from '@data/SpectrumAllocation/GB/Bands'
 
-import bandNumberToName from '@functions/bandNumberToName'
-
-function SpectrumAllocationPage({ location }) {
+function GBSpectrumAllocationPage({ location }) {
   return (
     <Layout
       location={location}
@@ -24,6 +22,15 @@ function SpectrumAllocationPage({ location }) {
           A visualisation of spectrum allocation across the UK, per operator and radio access technology.
         </p>
       </Hero>
+
+      <Breadcrumbs
+        data={[
+          { t: 'Home', url: '/' },
+          { t: 'Mobile networking', url: '/mobile-networking' },
+          { t: 'United Kingdom', url: '/mobile-networking/uk' },
+          { t: 'Mobile spectrum allocation', url: '/mobile-networking/uk/spectrum' },
+        ]}
+      />
 
       <Section>
         <h2 className="text-louder">How does allocation work?</h2>
@@ -43,25 +50,9 @@ function SpectrumAllocationPage({ location }) {
         </p>
       </Section>
 
-      <Section width="wider">
-        <h2 className="text-louder">Frequency deployment</h2>
-
-        {AllBands.map((bandData, i) => {
-          return (
-            <React.Fragment key={bandData.band}>
-              <h3 id={`band-${bandData.band}`} className="text-loud">
-                Band {bandData.band}
-              </h3>
-              <SpectrumMap
-                data={bandData.data}
-                caption={`UK spectrum deployment for Band ${bandData.band} (${bandNumberToName(bandData.band)})`}
-              />
-            </React.Fragment>
-          )
-        })}
-      </Section>
+      <AllSpectrumMaps locationName="UK" bandsData={AllBands} />
     </Layout>
   )
 }
 
-export default SpectrumAllocationPage
+export default GBSpectrumAllocationPage
