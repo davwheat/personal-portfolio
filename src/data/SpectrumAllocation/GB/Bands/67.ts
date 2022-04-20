@@ -1,6 +1,6 @@
 import type { ISpectrumAllocation } from '@components/BlogComponents/MdxComponents'
 
-const DLStart = 1452
+const DLStart = 738
 
 const Band67: ISpectrumAllocation[] = [
   {
