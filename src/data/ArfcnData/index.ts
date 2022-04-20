@@ -1,5 +1,6 @@
 export type GBNetworkOperator = 'O2' | 'Vodafone' | 'EE' | 'Three' | 'Three (UK Broadband)'
 export type DKNetworkOperator = 'TDC' | '3 DK' | 'Telia-Telenor'
+export type DENetworkOperator = 'Vodafone DE' | 'O2 DE' | 'Telekom'
 
 export interface ArfcnDataItem<CountryOperators extends string> {
   band: number
