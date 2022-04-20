@@ -1,4 +1,4 @@
-import { ISpectrumAllocation } from '@components/BlogComponents/MdxComponents'
+import { mapBandAndData } from '@data/SpectrumAllocation'
 
 import Band1 from './1'
 import Band3 from './3'
@@ -12,22 +12,18 @@ import Band40 from './40'
 import Band67 from './67'
 import Band78 from './78'
 
-function mapBand(number: number, data: ISpectrumAllocation[]) {
-  return { band: number, data }
-}
-
 const AllBands = [
-  mapBand(1, Band1),
-  mapBand(3, Band3),
-  mapBand(7, Band7),
-  mapBand(8, Band8),
-  mapBand(20, Band20),
-  mapBand(28, Band28),
-  mapBand(32, Band32),
-  mapBand(38, Band38),
-  mapBand(40, Band40),
-  mapBand(67, Band67),
-  mapBand(78, Band78),
+  mapBandAndData('B1', Band1),
+  mapBandAndData('B3', Band3),
+  mapBandAndData('B7', Band7),
+  mapBandAndData('B8', Band8),
+  mapBandAndData('B20', Band20),
+  mapBandAndData('B28', Band28),
+  mapBandAndData('B32', Band32),
+  mapBandAndData('B38', Band38),
+  mapBandAndData('B40', Band40),
+  mapBandAndData('B67', Band67),
+  mapBandAndData('n78', Band78),
 ]
 
 export { AllBands }
