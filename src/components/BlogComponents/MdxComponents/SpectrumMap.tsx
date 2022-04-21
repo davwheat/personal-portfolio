@@ -100,6 +100,14 @@ export const OwnerColorMap: Record<string, IColorPair> = {
     back: '#006cb7',
     front: '#fff',
   },
+  Telekom: {
+    back: '#e2007a',
+    front: '#fff',
+  },
+  '1&1': {
+    back: '#174195',
+    front: '#fff',
+  },
 }
 
 function round(num: number): number {

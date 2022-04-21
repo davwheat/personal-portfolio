@@ -4,7 +4,6 @@ import Section from '@components/Design/Section'
 import Hero from '@components/Design/Hero'
 import Layout from '@components/Layout'
 import CardLink from '@components/MobileNetworking/CardLink'
-import Link from '@components/Links/Link'
 
 import Colors from '@data/colors.json'
 import Breakpoints from '@data/breakpoints'
@@ -27,17 +26,17 @@ interface ILink {
 const Links: ILinkGroup[] = [
   {
     groupName: 'Datasets',
-    groupDescription: 'A variety of UK mobile networking related datasets hosted by me.',
+    groupDescription: 'A variety of German mobile networking related datasets hosted by me.',
     groupLinks: [
       {
         title: 'NR/EARFCN list',
-        description: 'A list of UK mobile network frequencies by their NRARFCNs and EARFCNs.',
-        url: '/mobile-networking/uk/arfcn-list',
+        description: 'A list of German mobile network frequencies by their NRARFCNs and EARFCNs.',
+        url: '/mobile-networking/de/arfcn-list',
       },
       {
         title: 'Spectrum allocation',
-        description: 'A visualisation of spectrum allocation for mobile networks within the UK.',
-        url: '/mobile-networking/uk/spectrum',
+        description: 'A visualisation of spectrum allocation for mobile networks within Germany.',
+        url: '/mobile-networking/de/spectrum',
       },
     ],
   },
@@ -63,13 +62,13 @@ function MobileNetworkingPage({ location }) {
   return (
     <Layout
       location={location}
-      title="Mobile networking in the UK"
-      description="A collection of UK mobile networking tools and datasets maintained as part of my hobby."
+      title="Mobile networking in Germany"
+      description="A collection of German mobile networking tools and datasets maintained as part of my hobby."
     >
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
-        <h1 className="text-shout">Mobile networking in the UK</h1>
+        <h1 className="text-shout">Mobile networking in Germany</h1>
         <p role="doc-subtitle" className="text-loud">
-          A collection of UK mobile networking tools and datasets maintained as part of my hobby.
+          A collection of German mobile networking tools and datasets maintained as part of my hobby.
         </p>
       </Hero>
 
@@ -77,7 +76,7 @@ function MobileNetworkingPage({ location }) {
         data={[
           { t: 'Home', url: '/' },
           { t: 'Mobile networking', url: '/mobile-networking' },
-          { t: 'United Kingdom', url: '/mobile-networking/uk' },
+          { t: 'Germany', url: '/mobile-networking/de' },
         ]}
       />
 

@@ -156,7 +156,7 @@ export type SupportedArfcnListRats = 'lte' | 'nr'
 
 export interface IArfcnListProps {
   heading: string
-  ratData: Record<SupportedArfcnListRats, ArfcnDataItem<string>[]>
+  ratData: Partial<Record<SupportedArfcnListRats, ArfcnDataItem<string>[]>>
 }
 
 function ArfcnList({ heading, ratData }: IArfcnListProps) {
@@ -241,7 +241,9 @@ function ArfcnList({ heading, ratData }: IArfcnListProps) {
             {filteredData.map(earfcn => (
               <tr key={earfcn.arfcn}>
                 <td>{earfcn.arfcn}</td>
-                <td>{earfcn.bandwidth ? `${earfcn.bandwidth} MHz` : 'Unknown'}</td>
+                <td>
+                  {earfcn.bandwidth ? `${Array.isArray(earfcn.bandwidth) ? earfcn.bandwidth.join(', ') : earfcn.bandwidth} MHz` : 'Unknown'}
+                </td>
                 <td>
                   {getBandPrefix(selectedRat)}
                   {earfcn.band}

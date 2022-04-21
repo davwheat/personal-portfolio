@@ -26,6 +26,7 @@ interface ILink {
 const Links: ILinkGroup[] = [
   {
     groupName: 'Datasets',
+    groupDescription: 'A variety of Danish mobile networking related datasets hosted by me.',
     groupLinks: [
       {
         title: 'NR/EARFCN list',
@@ -62,7 +63,7 @@ function MobileNetworkingPage({ location }) {
     <Layout
       location={location}
       title="Mobile networking in Denmark"
-      description="Non-UK mobile networking tools and datasets maintained as part of my hobby."
+      description="A collection of Danish mobile networking tools and datasets maintained as part of my hobby."
     >
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
         <h1 className="text-shout">Mobile networking in Denmark</h1>
