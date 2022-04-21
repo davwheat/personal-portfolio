@@ -9,7 +9,7 @@ import AllSpectrumMaps from '@components/MobileNetworking/AllSpectrumMaps'
 import Colors from '@data/colors.json'
 import { AllBands } from '@data/SpectrumAllocation/DE/Bands'
 
-function GBSpectrumAllocationPage({ location }) {
+function DESpectrumAllocationPage({ location }) {
   return (
     <Layout
       location={location}
@@ -17,9 +17,9 @@ function GBSpectrumAllocationPage({ location }) {
       description="A visualisation of spectrum allocation across Germany, per operator and radio access technology."
     >
       <Hero firstElement size="huge" color={Colors.primaryBlue}>
-        <h1 className="text-shout">UK mobile spectrum allocation</h1>
+        <h1 className="text-shout">German mobile spectrum allocation</h1>
         <p role="doc-subtitle" className="text-loud">
-          A visualisation of spectrum allocation across the UK, per operator and radio access technology.
+          A visualisation of spectrum allocation across Germany, per operator and radio access technology.
         </p>
       </Hero>
 
@@ -32,27 +32,9 @@ function GBSpectrumAllocationPage({ location }) {
         ]}
       />
 
-      <Section>
-        <h2 className="text-louder">How does allocation work?</h2>
-
-        <p className="text-speak">
-          Mobile networks use a variety of frequencies to transmit and receive data between the network's nodes and end devices (UEs). These
-          frequencies are usually auctioned by regulatory bodies, such as Ofcom in the UK, and operators are bound by license terms set out by
-          the&nbsp;licensor.
-        </p>
-        <p className="text-speak">
-          These licenses dictate a large variety of info, such as: areas where the license is valid, the maximum transmit power permitted, limits
-          on what the spectrum may be used for, terms for license renewal, and much&nbsp;more.
-        </p>
-        <p className="text-speak">
-          The UK's spectrum share is rather varied, with many networks being in posession of much larger amounts of spectrum compared to others,
-          which can have a significant impact on their ability to provide consistent experiences to&nbsp;customers.
-        </p>
-      </Section>
-
-      <AllSpectrumMaps locationName="UK" bandsData={AllBands} />
+      <AllSpectrumMaps locationName="German" bandsData={AllBands} />
     </Layout>
   )
 }
 
-export default GBSpectrumAllocationPage
+export default DESpectrumAllocationPage
