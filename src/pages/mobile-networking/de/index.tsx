@@ -33,11 +33,11 @@ const Links: ILinkGroup[] = [
         description: 'A list of German mobile network frequencies by their NRARFCNs and EARFCNs.',
         url: '/mobile-networking/de/arfcn-list',
       },
-      // {
-      //   title: 'Spectrum allocation',
-      //   description: 'A visualisation of spectrum allocation for mobile networks within Germany.',
-      //   url: '/mobile-networking/de/spectrum',
-      // },
+      {
+        title: 'Spectrum allocation',
+        description: 'A visualisation of spectrum allocation for mobile networks within Germany.',
+        url: '/mobile-networking/de/spectrum',
+      },
     ],
   },
 ]
