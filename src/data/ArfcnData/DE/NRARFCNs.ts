@@ -9,14 +9,14 @@ function mapListToBand(band: number, list: SimpleArfcnDataItem<DENetworkOperator
   })
 }
 
-// const n1: SimpleArfcnDataItem<DKNetworkOperator>[] = [
-//   {
-//     arfcn: 423411,
-//     bandwidth: 10,
-//     operator: '3 DK',
-//     description: 'E/// 10 MHz DSS n1 deployment',
-//   },
-// ]
+const n1: SimpleArfcnDataItem<DENetworkOperator>[] = [
+  {
+    arfcn: 431070,
+    bandwidth: 10,
+    operator: 'Telekom',
+    description: '10 MHz DSS n1 deployment',
+  },
+]
 
 // const n3: SimpleArfcnDataItem<DKNetworkOperator>[] = [
 //   {
@@ -36,32 +36,50 @@ function mapListToBand(band: number, list: SimpleArfcnDataItem<DENetworkOperator
 //   },
 // ]
 
-// const n78: SimpleArfcnDataItem<DKNetworkOperator>[] = [
-//   {
-//     arfcn: 630048,
-//     bandwidth: 100,
-//     operator: 'TDC',
-//     description: 'E/// 100 MHz n78 deployment',
-//   },
-//   {
-//     arfcn: 636768,
-//     bandwidth: 100,
-//     operator: '3 DK',
-//     description: 'E/// 100 MHz standard n78 deployment',
-//   },
-//   {
-//     arfcn: 647328,
-//     bandwidth: 100,
-//     operator: 'Telia-Telenor',
-//     description: '100 MHz shared n78 deployment',
-//   },
-// ]
+const n78: SimpleArfcnDataItem<DENetworkOperator>[] = [
+  {
+    arfcn: 628800,
+    bandwidth: 90,
+    operator: 'Vodafone DE',
+    description: 'n78 deployment',
+  },
+  {
+    arfcn: 629952,
+    bandwidth: 90,
+    operator: 'Vodafone DE',
+    description: 'n78 deployment',
+  },
+  {
+    arfcn: 631968,
+    bandwidth: 90,
+    operator: 'Vodafone DE',
+    description: 'n78 deployment',
+  },
+  {
+    arfcn: 633312,
+    bandwidth: 50,
+    operator: '1&1',
+    description: 'n78 deployment',
+  },
+  {
+    arfcn: 638304,
+    bandwidth: 70,
+    operator: 'O2 DE',
+    description: 'n78 deployment',
+  },
+  {
+    arfcn: 641760,
+    bandwidth: 90,
+    operator: 'Telekom',
+    description: 'n78 deployment',
+  },
+]
 
 const NRARFCNs: ArfcnDataItem<DENetworkOperator>[] = [
-  // ...mapListToBand(1, n1),
+  ...mapListToBand(1, n1),
+  ...mapListToBand(78, n78),
   // ...mapListToBand(3, n3),
   // ...mapListToBand(28, n28),
-  // ...mapListToBand(78, n78),
 ]
 
 export default NRARFCNs

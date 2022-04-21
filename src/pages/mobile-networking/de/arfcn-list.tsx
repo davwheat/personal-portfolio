@@ -9,7 +9,7 @@ import ArfcnListIntro from '@components/MobileNetworking/ArfcnListIntro'
 import ArfcnList from '@components/MobileNetworking/ArfcnList'
 
 import EARFCNs from '@data/ArfcnData/DE/EARFCNs'
-// import NRARFCNs from '@data/ArfcnData/DE/NRARFCNs'
+import NRARFCNs from '@data/ArfcnData/DE/NRARFCNs'
 
 function DEArfcnListPage({ location }) {
   return (
@@ -35,7 +35,7 @@ function DEArfcnListPage({ location }) {
       <ArfcnList
         heading="German ARFCN table"
         ratData={{
-          // nr: NRARFCNs,
+          nr: NRARFCNs,
           lte: EARFCNs,
         }}
       />
