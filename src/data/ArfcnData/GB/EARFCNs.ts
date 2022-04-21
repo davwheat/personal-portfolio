@@ -233,6 +233,12 @@ const B28: SimpleArfcnDataItem[] = [
 
 const B32: SimpleArfcnDataItem[] = [
   {
+    arfcn: 10195,
+    bandwidth: 20,
+    operator: 'Three',
+    description: 'Rare 10 MHz B32 deployment - downlink only (SDL)',
+  },
+  {
     arfcn: 10220,
     bandwidth: 20,
     operator: 'Three',
