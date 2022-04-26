@@ -16,7 +16,7 @@ const Band32: ISpectrumAllocation[] = [
     freqStart: DLStart + 20,
     freqEnd: DLStart + 40,
     type: 'sdl',
-    earfcns: [10220],
+    earfcns: [10195, 10220],
     details: ['Supplemental downlink (must be aggregated with another carrier)'],
   },
 ]
