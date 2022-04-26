@@ -307,12 +307,7 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
       })
 
   const appropriateHighlightedFrequencies = highlightedFrequencies
-    ?.filter(r => {
-      if (r.startFreq > minMhz && r.startFreq < maxMhz) return true
-      if (r.endFreq > minMhz && r.endFreq < maxMhz) return true
-
-      return false
-    })
+    ?.filter(r => r.startFreq <= maxMhz && r.endFreq >= minMhz)
     .map(r => {
       r.startFreq = Math.max(r.startFreq, minMhz)
       r.endFreq = Math.min(r.endFreq, maxMhz)
@@ -337,18 +332,19 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
         </div>
         {isSpectrumHighlighted && (
           <div className={classes.highlightMap} aria-label="List of highlighted spectrum">
-            {appropriateHighlightedFrequencies.map(r => {
+            {appropriateHighlightedFrequencies.map((r, i) => {
               const startColumn = Math.floor(((r.startFreq - minMhz) * 100_000) / HERTZ_ACCURACY)
               const columnCount = Math.floor(((r.endFreq - r.startFreq) * 100_000) / HERTZ_ACCURACY)
 
               return (
                 <div
+                  key={`${r.startFreq}_${r.endFreq}_${i}`}
                   className={classes.spectrumHighlight}
                   aria-label={`Highlighted: ${formatFrequency(r.startFreq)} to ${formatFrequency(r.endFreq)}`}
                   style={
                     {
-                      '--start-col': startColumn,
-                      '--span-col': columnCount,
+                      '--start-col': startColumn + 1,
+                      '--span-col': columnCount + 1,
                     } as any
                   }
                 />
