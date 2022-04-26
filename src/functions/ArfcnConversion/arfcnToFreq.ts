@@ -113,5 +113,3 @@ export function arfcnToFreq(rat: 'lte' | 'nr' | 'umts' | 'gsm', arfcn: number, t
     return data[`${type}FreqLow`] + 0.1 * (arfcn - data[`${type}ArfcnOffset`])
   }
 }
-
-window.__a = arfcnToFreq
