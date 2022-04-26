@@ -305,7 +305,6 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
           }
         }
       })
-  console.log(highlightedFrequencies)
 
   const appropriateHighlightedFrequencies = highlightedFrequencies
     ?.filter(r => {
