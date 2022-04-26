@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles'
 import clsx from 'clsx'
 import Colors from '@data/colors.json'
 import Breakpoints from '@data/breakpoints'
+import { arfcnToFreq } from '@functions/ArfcnConversion'
 
 export interface IColorPair {
   back: string
@@ -47,10 +48,23 @@ export interface ISpectrumAllocation {
   nrarfcns?: number[]
 }
 
+interface IHighlightedSpectrumARFCN {
+  rat: 'nr' | 'lte' | 'umts' | 'gsm'
+  startArfcn: number
+  endArfcn: number
+}
+
+interface IHighlightedSpectrumFrequency {
+  startFreq: number
+  endFreq: number
+}
+
+export type HighlightedSpectrum = IHighlightedSpectrumARFCN | IHighlightedSpectrumFrequency
 export interface ISpectrumMapProps {
   caption?: string
   note?: string
   data: ISpectrumAllocation[]
+  spectrumHighlight?: HighlightedSpectrum[]
 }
 
 export interface ISpectrumMapItemProps {
@@ -158,6 +172,15 @@ const useSpectrumMapStyles = makeStyles({
     overflowX: 'auto',
     justifyItems: 'stretch',
   },
+  highlightMap: {
+    marginTop: 4,
+    padding: 4,
+    display: 'grid',
+    gridTemplateColumns: 'repeat(var(--sections), minmax(min-content, 1fr))',
+    minWidth: '100%',
+    overflowX: 'auto',
+    justifyItems: 'stretch',
+  },
   spectrumInfo: {
     marginTop: 12,
   },
@@ -179,6 +202,12 @@ const useSpectrumMapStyles = makeStyles({
     [Breakpoints.downTo.tablet]: {
       display: 'none',
     },
+  },
+  spectrumHighlight: {
+    height: 6,
+    background: Colors.primaryRed,
+    gridColumn: 'var(--start-col) / span var(--span-col)',
+    position: 'relative',
   },
 })
 
@@ -248,7 +277,7 @@ const useSpectrumMapDetailsStyles = makeStyles({
   },
 })
 
-export function SpectrumMap({ caption, data, note }: ISpectrumMapProps) {
+export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectrumMapProps) {
   const classes = useSpectrumMapStyles()
 
   const minMhz = Math.min(...data.map(a => a.freqStart))
@@ -258,6 +287,39 @@ export function SpectrumMap({ caption, data, note }: ISpectrumMapProps) {
   const sortedData = data.sort((a, b) => a.freqStart - b.freqStart)
 
   const [selectedSpectrumBlock, setSelectedSpectrumBlock] = useState<ISpectrumAllocation>(null)
+
+  const isSpectrumHighlighted = !!spectrumHighlight && Array.isArray(spectrumHighlight)
+  const highlightedFrequencies: IHighlightedSpectrumFrequency[] = !isSpectrumHighlighted
+    ? undefined
+    : spectrumHighlight.map(r => {
+        if ('startFreq' in r && 'endFreq' in r) {
+          return {
+            startFreq: r.startFreq,
+            endFreq: r.endFreq,
+          }
+        } else {
+          // Need to convert from ARFCN
+          return {
+            startFreq: arfcnToFreq(r.rat, r.startArfcn, 'dl'),
+            endFreq: arfcnToFreq(r.rat, r.endArfcn, 'dl'),
+          }
+        }
+      })
+  console.log(highlightedFrequencies)
+
+  const appropriateHighlightedFrequencies = highlightedFrequencies
+    ?.filter(r => {
+      if (r.startFreq > minMhz && r.startFreq < maxMhz) return true
+      if (r.endFreq > minMhz && r.endFreq < maxMhz) return true
+
+      return false
+    })
+    .map(r => {
+      r.startFreq = Math.max(r.startFreq, minMhz)
+      r.endFreq = Math.min(r.endFreq, maxMhz)
+
+      return r
+    })
 
   return (
     <figure className={classes.root} style={{ '--sections': gridColumns } as any}>
@@ -274,10 +336,31 @@ export function SpectrumMap({ caption, data, note }: ISpectrumMapProps) {
             />
           ))}
         </div>
+        {isSpectrumHighlighted && (
+          <div className={classes.highlightMap} aria-label="List of highlighted spectrum">
+            {appropriateHighlightedFrequencies.map(r => {
+              const startColumn = Math.floor(((r.startFreq - minMhz) * 100_000) / HERTZ_ACCURACY)
+              const columnCount = Math.floor(((r.endFreq - r.startFreq) * 100_000) / HERTZ_ACCURACY)
+
+              return (
+                <div
+                  className={classes.spectrumHighlight}
+                  aria-label={`Highlighted: ${formatFrequency(r.startFreq)} to ${formatFrequency(r.endFreq)}`}
+                  style={
+                    {
+                      '--start-col': startColumn,
+                      '--span-col': columnCount,
+                    } as any
+                  }
+                />
+              )
+            })}
+          </div>
+        )}
 
         <div className={classes.scale}>
-          <span className="text-whisper">{round(minMhz)} MHz</span>
-          <span className="text-whisper">{round(maxMhz)} MHz</span>
+          <span className="text-whisper">{formatFrequency(minMhz)}</span>
+          <span className="text-whisper">{formatFrequency(maxMhz)}</span>
         </div>
 
         <div aria-live="polite" className={classes.spectrumInfo}>
@@ -318,7 +401,7 @@ function SpectrumMapItem({ allocation, onClick, isSelected }: ISpectrumMapItemPr
       }
     >
       <p className="text-center">{owner}</p>
-      <p className="text-center text-whisper">{round(bandwidthMhz)} MHz</p>
+      <p className="text-center text-whisper">{formatFrequency(bandwidthMhz)}</p>
       <p className="sr-only">Click for more spectrum info</p>
     </button>
   )
