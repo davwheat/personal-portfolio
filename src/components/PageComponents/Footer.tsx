@@ -64,10 +64,11 @@ const useStyles = makeStyles({
   },
 })
 
-const Footer: React.FC = () => {
+export default function Footer() {
   const classes = useStyles()
   const {
     siteBuildMetadata,
+    gitCommit,
   }: {
     siteBuildMetadata: {
       /**
@@ -75,11 +76,20 @@ const Footer: React.FC = () => {
        */
       buildTime: string
     }
+    gitCommit: {
+      /**
+       * Latest git commit hash at build-time
+       */
+      hash: string
+    }
   } = useStaticQuery(
     graphql`
-      query {
+      {
         siteBuildMetadata {
           buildTime(formatString: "YYYY-MM-DD HH:mm z")
+        }
+        gitCommit(latest: { eq: true }) {
+          hash
         }
       }
     `,
@@ -101,7 +111,13 @@ const Footer: React.FC = () => {
                 Learn more about Cloudflare analytics
               </a>
             </p>
-            <p className="text-whisper">Last updated {siteBuildMetadata.buildTime}.</p>
+            <p className="text-whisper">
+              Last updated {siteBuildMetadata.buildTime} (
+              <a href={`https://github.com/davwheat/personal-portfolio/commit/${gitCommit.hash}`} rel="noopener noreferrer">
+                <code className="code">{gitCommit.hash.substring(0, 6)}</code>
+              </a>
+              ).
+            </p>
           </div>
 
           <SocialButtons />
@@ -133,10 +149,8 @@ const useBulletStyles = makeStyles({
   },
 })
 
-const BulletSeparator: React.FC = () => {
+function BulletSeparator() {
   const classes = useBulletStyles()
 
   return <span className={classes.separator}>•</span>
 }
-
-export default Footer
