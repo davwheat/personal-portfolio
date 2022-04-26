@@ -17,7 +17,7 @@ interface ArfcnCalcData {
   ulArfcnOffset: number
 }
 
-const earfcnCalcData: Record<number, ArfcnCalcData> = {
+export const earfcnCalcData: Record<number, ArfcnCalcData> = {
   1: {
     dlFreqLow: 2100,
     ulFreqLow: 1920,
