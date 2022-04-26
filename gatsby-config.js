@@ -162,5 +162,6 @@ module.exports = {
         filter: (node, getNode) => node.frontmatter.tags !== 'exempt',
       },
     },
+    `gatsby-source-local-git`,
   ],
 }

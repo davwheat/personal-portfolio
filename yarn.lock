@@ -2531,6 +2531,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kwsites/file-exists@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@kwsites/file-exists@npm:1.1.1"
+  dependencies:
+    debug: ^4.1.1
+  checksum: 4ff945de7293285133aeae759caddc71e73c4a44a12fac710fdd4f574cce2671a3f89d8165fdb03d383cfc97f3f96f677d8de3c95133da3d0e12a123a23109fe
+  languageName: node
+  linkType: hard
+
+"@kwsites/promise-deferred@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@kwsites/promise-deferred@npm:1.1.1"
+  checksum: 07455477a0123d9a38afb503739eeff2c5424afa8d3dbdcc7f9502f13604488a4b1d9742fc7288832a52a6422cf1e1c0a1d51f69a39052f14d27c9a0420b6629
+  languageName: node
+  linkType: hard
+
 "@matejmazur/react-katex@npm:^3.1.3":
   version: 3.1.3
   resolution: "@matejmazur/react-katex@npm:3.1.3"
@@ -6883,7 +6899,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.3.4":
+"debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -9442,6 +9458,17 @@ __metadata:
   peerDependencies:
     gatsby: ^4.0.0-next
   checksum: 22698f3d79fbefc66a6cd4c836339ed33ac0af925f5885cc50b408fc0da815d1dae4cc3990fc7bf0db86c207cf2580a829433539d204c9d543f0905ced7426b5
+  languageName: node
+  linkType: hard
+
+"gatsby-source-local-git@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "gatsby-source-local-git@npm:1.3.0"
+  dependencies:
+    simple-git: ^3.5.0
+  peerDependencies:
+    gatsby: ^2.0.0 || ^3.0.0 || ^4.0.0
+  checksum: f4a9d44c47fdba20b2b3d29e1e6e891dbefedbdc4824b0e95e404c6f68da8f2e806a3813dae2233b4faeba9da0f9afa936ec33e59ee9a4b6e5e1dcf68c0fda8b
   languageName: node
   linkType: hard
 
@@ -14340,6 +14367,7 @@ __metadata:
     gatsby-remark-images: ^6.12.1
     gatsby-remark-static-images: ^1.2.1
     gatsby-source-filesystem: ^4.12.1
+    gatsby-source-local-git: ^1.3.0
     gatsby-transformer-sharp: ^4.12.1
     get-best-contrast-color: ^0.3.1
     gh-pages: ^3.2.3
@@ -16474,6 +16502,17 @@ __metadata:
     once: ^1.3.1
     simple-concat: ^1.0.0
   checksum: e4132fd27cf7af230d853fa45c1b8ce900cb430dd0a3c6d3829649fe4f2b26574c803698076c4006450efb0fad2ba8c5455fbb5755d4b0a5ec42d4f12b31d27e
+  languageName: node
+  linkType: hard
+
+"simple-git@npm:^3.5.0":
+  version: 3.7.1
+  resolution: "simple-git@npm:3.7.1"
+  dependencies:
+    "@kwsites/file-exists": ^1.1.1
+    "@kwsites/promise-deferred": ^1.1.1
+    debug: ^4.3.3
+  checksum: df5361e892cadf73f0bfad2b34f3609809465c4ba1c8f3f95b2650e8a40c366c78a1a99c5e4f0eafc2acd33a85a9660d834690bb6331ef11bc1c064f526cd4a8
   languageName: node
   linkType: hard
 
