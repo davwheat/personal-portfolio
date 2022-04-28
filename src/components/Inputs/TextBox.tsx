@@ -15,6 +15,7 @@ interface IProps {
   label: string
   onInput: (val: string) => void
   placeholder?: string
+  helpText?: React.ReactChild
 }
 
 const useStyles = makeStyles({
@@ -61,11 +62,16 @@ const useStyles = makeStyles({
       cursor: 'pointer',
     },
   },
+  helpText: {
+    marginTop: 4,
+    marginBottom: 0,
+  },
 })
 
-export default function TextBox({ label, onInput, type = 'text', className, defaultValue = '', placeholder }: IProps) {
+export default function TextBox({ label, onInput, type = 'text', className, defaultValue = '', placeholder, helpText }: IProps) {
   const [value, setValue] = useState(defaultValue)
   const id = useMemo(() => nanoid(), [])
+  const helpTextId = useMemo(() => nanoid(), [])
   const classes = useStyles()
 
   return (
@@ -84,9 +90,16 @@ export default function TextBox({ label, onInput, type = 'text', className, defa
           }}
           value={value}
           placeholder={placeholder}
+          aria-describedby={helpText ? helpTextId : undefined}
         />
         {type === 'search' && <SearchIcon className={classes.searchIcon} />}
       </div>
+
+      {helpText && (
+        <p id={helpTextId} className={clsx('text-whisper', classes.helpText)}>
+          {helpText}
+        </p>
+      )}
     </label>
   )
 }
