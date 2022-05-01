@@ -3,10 +3,12 @@ import { earfcnCalcData } from './arfcnToFreq'
 export function arfcnToBand(rat: 'lte' | 'nr' | 'umts' | 'gsm', arfcn: number, type: 'dl' | 'ul'): number | null {
   if (rat === 'lte') {
     const [band] =
-      Object.entries(earfcnCalcData).find(([band, data]) => {
-        const maxArfcn = data[`${type}ArfcnOffset`] + (data[`${type}FreqHigh`] - data[`${type}FreqLow`]) / 0.1
+      Object.entries(earfcnCalcData).find(([_, v]) => {
+        if (!(`${type}FreqLow` in v)) return false
 
-        return arfcn >= data[`${type}ArfcnOffset`] && arfcn <= maxArfcn
+        const bw = v[`${type}FreqHigh`] - v[`${type}FreqLow`]
+
+        return arfcn >= v[`${type}ArfcnOffset`] && arfcn < v[`${type}ArfcnOffset`] + 10 * bw
       }) ?? []
 
     if (!band) return null
