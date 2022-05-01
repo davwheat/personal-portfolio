@@ -9,13 +9,50 @@ import clsx from 'clsx'
 import Colors from '@data/colors.json'
 
 interface IProps {
+  /**
+   * The type associated with the input element in the outputted HTML.
+   */
   type?: 'text' | 'email' | 'password' | 'search'
+  /**
+   * Class for the outer-most element of the component (`<label>`).
+   */
   className?: string
+  /**
+   * The default value used to populate the input field.
+   */
   defaultValue?: string
+  /**
+   * A textual label to display on-screen.
+   */
   label: string
+  /**
+   * An optional label to override the standard label, read only to screenreaders.
+   */
+  screenReaderLabel?: string
+  /**
+   * Callback triggered when text is inputted to the text input.
+   */
   onInput: (val: string) => void
+  /**
+   * Optional input placeholder.
+   */
   placeholder?: string
+  /**
+   * Optional helper text which appears under the textbox. Correctly linked via `aria-describedby`.
+   */
   helpText?: React.ReactChild
+  /**
+   * An optional element to display at the start of the input field.
+   *
+   * If used to show units, for example, you should set an appropriate `screenReaderLabel` as these adornments are hidden to screenreaders.
+   */
+  startAdornment?: React.ReactChild
+  /**
+   * An optional element to display at the end of the input field.
+   *
+   * If used to show units, for example, you should set an appropriate `screenReaderLabel` as these adornments are hidden to screenreaders.
+   */
+  endAdornment?: React.ReactChild
 }
 
 const useStyles = makeStyles({
@@ -25,33 +62,35 @@ const useStyles = makeStyles({
     },
   },
   inputWrapper: {
+    display: 'flex',
+    alignItems: 'center',
     marginTop: 8,
     position: 'relative',
+    background: 'white',
+
+    border: '2px solid black',
+
+    '&:focus-within': {
+      borderColor: Colors.primaryRed,
+    },
+  },
+  startAppendix: {
+    paddingLeft: 8,
+  },
+  endAppendix: {
+    paddingRight: 8,
   },
   searchIcon: {
-    position: 'absolute',
-    left: 8,
-    top: 8,
+    marginLeft: 8,
   },
   input: {
     padding: '6px 8px',
-
-    '&[type="search"]': {
-      paddingLeft: 36,
-    },
-
+    border: 'none',
     font: 'inherit',
-    border: '2px solid black',
-
     width: '100%',
 
     '&:focus': {
-      borderColor: Colors.primaryRed,
       outline: 'none',
-
-      '& + $searchIcon': {
-        color: Colors.primaryRed,
-      },
     },
 
     '&::-webkit-search-cancel-button': {
@@ -68,17 +107,35 @@ const useStyles = makeStyles({
   },
 })
 
-export default function TextBox({ label, onInput, type = 'text', className, defaultValue = '', placeholder, helpText }: IProps) {
+export default function TextBox({
+  label,
+  screenReaderLabel,
+  onInput,
+  type = 'text',
+  className,
+  defaultValue = '',
+  placeholder,
+  helpText,
+  startAdornment: startAppendix,
+  endAdornment: endAppendix,
+  ...attrs
+}: IProps) {
   const [value, setValue] = useState(defaultValue)
   const id = useMemo(() => nanoid(), [])
   const helpTextId = useMemo(() => nanoid(), [])
   const classes = useStyles()
 
   return (
-    <label htmlFor={id} className={clsx(classes.inputLabel, className)}>
+    <label htmlFor={id} className={clsx(classes.inputLabel, className)} aria-label={screenReaderLabel}>
       <span className="text-speak-up">{label}</span>
 
       <div className={classes.inputWrapper}>
+        {startAppendix && (
+          <span aria-hidden="true" className={classes.startAppendix}>
+            {startAppendix}
+          </span>
+        )}
+        {type === 'search' && <SearchIcon role="presentation" className={classes.searchIcon} />}
         <input
           type={type}
           id={id}
@@ -91,8 +148,13 @@ export default function TextBox({ label, onInput, type = 'text', className, defa
           value={value}
           placeholder={placeholder}
           aria-describedby={helpText ? helpTextId : undefined}
+          {...attrs}
         />
-        {type === 'search' && <SearchIcon className={classes.searchIcon} />}
+        {endAppendix && (
+          <span aria-hidden="true" className={classes.endAppendix}>
+            {endAppendix}
+          </span>
+        )}
       </div>
 
       {helpText && (
