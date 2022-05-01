@@ -176,15 +176,6 @@ const useSpectrumMapStyles = makeStyles({
     overflowX: 'auto',
     justifyItems: 'stretch',
   },
-  highlightMap: {
-    marginTop: 4,
-    padding: 4,
-    display: 'grid',
-    gridTemplateColumns: 'repeat(var(--sections), minmax(min-content, 1fr))',
-    minWidth: '100%',
-    overflowX: 'auto',
-    justifyItems: 'stretch',
-  },
   spectrumInfo: {
     marginTop: 12,
   },
@@ -208,6 +199,7 @@ const useSpectrumMapStyles = makeStyles({
     },
   },
   spectrumHighlight: {
+    marginTop: 8,
     height: 6,
     background: Colors.primaryRed,
     gridColumn: 'var(--start-col) / span var(--span-col)',
@@ -333,10 +325,8 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
               onClick={() => setSelectedSpectrumBlock(allocation)}
             />
           ))}
-        </div>
-        {isSpectrumHighlighted && (
-          <div className={classes.highlightMap} aria-label="List of highlighted spectrum">
-            {appropriateHighlightedFrequencies.map((r, i) => {
+          {isSpectrumHighlighted &&
+            appropriateHighlightedFrequencies.map((r, i) => {
               const startColumn = Math.floor(((r.startFreq - minMhz) * 100_000) / HERTZ_ACCURACY)
               const columnCount = Math.floor(((r.endFreq - r.startFreq) * 100_000) / HERTZ_ACCURACY)
 
@@ -347,15 +337,14 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
                   aria-label={`Highlighted: ${formatFrequency(r.startFreq)} to ${formatFrequency(r.endFreq)}`}
                   style={
                     {
-                      '--start-col': startColumn + 1,
-                      '--span-col': columnCount + 1,
+                      '--start-col': Math.max(startColumn + 1, 1),
+                      '--span-col': Math.max(columnCount, 1),
                     } as any
                   }
                 />
               )
             })}
-          </div>
-        )}
+        </div>
 
         <div className={classes.scale}>
           <span className="text-whisper">{formatFrequency(minMhz)}</span>
