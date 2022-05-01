@@ -8,6 +8,7 @@ const bandNames = {
   B20: 'EU Digital Dividend',
   B28: 'APT',
   B29: 'SDL',
+  B31: 'NMT',
   B32: 'L-Band SDL',
   B38: 'IMT-E',
   B40: 'S-Band',
@@ -23,5 +24,9 @@ const bandNames = {
 export default function bandNumberToName(band: number | string): string {
   if (typeof band === 'string') Object.keys(bandNames).includes(band) || (band = parseInt(band.substring(1)))
 
-  return bandNames[band] ? `${bandNumberToFrequency(band)} MHz ${bandNames[band]}` : `${bandNumberToFrequency(band)}`
+  const freq = bandNumberToFrequency(band)
+
+  if (freq === -1) return ''
+
+  return bandNames[band] ? `${freq} MHz ${bandNames[band]}` : `${freq}`
 }

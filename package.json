@@ -21,7 +21,7 @@
     "clsx": "^1.1.1",
     "dayjs": "^1.11.1",
     "fuse.js": "^6.5.3",
-    "gatsby": "^4.13.0",
+    "gatsby": "^4.13.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-canonical-urls": "^4.13.0",
     "gatsby-plugin-catch-links": "^4.13.0",
@@ -53,7 +53,7 @@
     "mdi-react": "^8.3.1",
     "nanoid": "^3.3.3",
     "preact": "^10.7.1",
-    "preact-render-to-string": "^5.1.21",
+    "preact-render-to-string": "^5.2.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -75,7 +75,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "gh-pages": "^3.2.3",
     "prettier": "^2.6.2",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.4"
   },
   "keywords": [
     "gatsby"

@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import clsx from 'clsx'
 import Colors from '@data/colors.json'
 import Breakpoints from '@data/breakpoints'
 import { arfcnToFreq } from '@functions/ArfcnConversion'
+import { nanoid } from 'nanoid'
 
 export interface IColorPair {
   back: string
@@ -71,6 +72,7 @@ export interface ISpectrumMapItemProps {
   allocation: ISpectrumAllocation
   isSelected: boolean
   onClick: (allocation: ISpectrumAllocation) => void
+  descId: string
 }
 
 export interface ISpectrumMapDetailsProps {
@@ -113,6 +115,10 @@ export const OwnerColorMap: Record<string, IColorPair> = {
   TDC: {
     back: '#006cb7',
     front: '#fff',
+  },
+  Cibicom: {
+    back: '#1abbec',
+    front: '#000',
   },
   Telekom: {
     back: '#e2007a',
@@ -172,15 +178,6 @@ const useSpectrumMapStyles = makeStyles({
     overflowX: 'auto',
     justifyItems: 'stretch',
   },
-  highlightMap: {
-    marginTop: 4,
-    padding: 4,
-    display: 'grid',
-    gridTemplateColumns: 'repeat(var(--sections), minmax(min-content, 1fr))',
-    minWidth: '100%',
-    overflowX: 'auto',
-    justifyItems: 'stretch',
-  },
   spectrumInfo: {
     marginTop: 12,
   },
@@ -204,6 +201,7 @@ const useSpectrumMapStyles = makeStyles({
     },
   },
   spectrumHighlight: {
+    marginTop: 8,
     height: 6,
     background: Colors.primaryRed,
     gridColumn: 'var(--start-col) / span var(--span-col)',
@@ -225,6 +223,7 @@ const useSpectrumMapItemStyles = makeStyles({
 
     '&:not(:focus-visible)': {
       outline: `2px solid #000`,
+      outlineOffset: -1,
     },
 
     cursor: 'pointer',
@@ -279,6 +278,9 @@ const useSpectrumMapDetailsStyles = makeStyles({
 
 export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectrumMapProps) {
   const classes = useSpectrumMapStyles()
+  const {
+    current: { descId },
+  } = useRef({ descId: nanoid() })
 
   const minMhz = Math.min(...data.map(a => a.freqStart))
   const maxMhz = Math.max(...data.map(a => a.freqEnd))
@@ -327,12 +329,11 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
               isSelected={allocation === selectedSpectrumBlock}
               allocation={allocation}
               onClick={() => setSelectedSpectrumBlock(allocation)}
+              descId={descId}
             />
           ))}
-        </div>
-        {isSpectrumHighlighted && (
-          <div className={classes.highlightMap} aria-label="List of highlighted spectrum">
-            {appropriateHighlightedFrequencies.map((r, i) => {
+          {isSpectrumHighlighted &&
+            appropriateHighlightedFrequencies.map((r, i) => {
               const startColumn = Math.floor(((r.startFreq - minMhz) * 100_000) / HERTZ_ACCURACY)
               const columnCount = Math.floor(((r.endFreq - r.startFreq) * 100_000) / HERTZ_ACCURACY)
 
@@ -343,22 +344,21 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
                   aria-label={`Highlighted: ${formatFrequency(r.startFreq)} to ${formatFrequency(r.endFreq)}`}
                   style={
                     {
-                      '--start-col': startColumn + 1,
-                      '--span-col': columnCount + 1,
+                      '--start-col': Math.max(startColumn + 1, 1),
+                      '--span-col': Math.max(columnCount, 1),
                     } as any
                   }
                 />
               )
             })}
-          </div>
-        )}
+        </div>
 
         <div className={classes.scale}>
           <span className="text-whisper">{formatFrequency(minMhz)}</span>
           <span className="text-whisper">{formatFrequency(maxMhz)}</span>
         </div>
 
-        <div aria-live="polite" className={classes.spectrumInfo}>
+        <div aria-live="polite" id={descId} className={classes.spectrumInfo}>
           {selectedSpectrumBlock !== null && <SpectrumMapDetails allocation={selectedSpectrumBlock} />}
         </div>
       </div>
@@ -374,7 +374,7 @@ export function SpectrumMap({ caption, data, note, spectrumHighlight }: ISpectru
   )
 }
 
-function SpectrumMapItem({ allocation, onClick, isSelected }: ISpectrumMapItemProps) {
+function SpectrumMapItem({ allocation, onClick, isSelected, descId }: ISpectrumMapItemProps) {
   const classes = useSpectrumMapItemStyles()
   const { owner, details, freqStart, freqEnd, type, pairedWith } = allocation
   const color = allocation.colorOverride || getOwnerColor(owner)
@@ -385,6 +385,7 @@ function SpectrumMapItem({ allocation, onClick, isSelected }: ISpectrumMapItemPr
   return (
     <button
       data-selected={isSelected}
+      aria-describedby={isSelected ? descId : undefined}
       onClick={() => onClick(allocation)}
       className={classes.itemRoot}
       style={

@@ -6,6 +6,7 @@ import Band7 from './7'
 import Band8 from './8'
 import Band20 from './20'
 import Band28 from './28'
+import Band31 from './31'
 import Band32_75_76 from './32_75_76'
 import Band38 from './38'
 import Band40 from './40'
@@ -20,6 +21,7 @@ const AllBands = [
   mapBandAndData('B8', Band8),
   mapBandAndData('B20', Band20),
   mapBandAndData('B28', Band28),
+  mapBandAndData('B31', Band31),
   mapBandAndData(['B32', 'B75', 'B76'], Band32_75_76),
   mapBandAndData('B38', Band38),
   mapBandAndData('B40', Band40),
