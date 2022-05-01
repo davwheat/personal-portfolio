@@ -221,6 +221,7 @@ const useSpectrumMapItemStyles = makeStyles({
 
     '&:not(:focus-visible)': {
       outline: `2px solid #000`,
+      outlineOffset: -1,
     },
 
     cursor: 'pointer',
