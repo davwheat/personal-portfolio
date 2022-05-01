@@ -29,7 +29,7 @@ type ArfcnCalcData = DLArfcnCalcData | ULArfcnCalcData | (DLArfcnCalcData & ULAr
 
 export const earfcnCalcData: Record<number, ArfcnCalcData> = {
   1: {
-    dlFreqLow: 2100,
+    dlFreqLow: 2110,
     dlFreqHigh: 2170,
     ulFreqLow: 1920,
     ulFreqHigh: 1980,
