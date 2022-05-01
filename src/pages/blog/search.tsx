@@ -115,7 +115,7 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
       </Hero>
 
       <Section darker usePadding>
-        <TextBox label="Search" placeholder="Start typing..." onInput={query => setSearchState(v => ({ ...v, query }))} />
+        <TextBox type="search" label="Search" placeholder="Start typing..." onInput={query => setSearchState(v => ({ ...v, query }))} />
       </Section>
 
       <Section width="wider">
