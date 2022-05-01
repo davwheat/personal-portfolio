@@ -21,6 +21,7 @@ interface ISearchResultDocument {
   title: string
   tags: string[]
   description: string
+  path: string
 }
 
 interface ISearchState {
@@ -119,13 +120,17 @@ export default function BlogSearch({ data, location }: PageProps<IBlogSearchData
       </Section>
 
       <Section width="wider">
-        <p className={clsx('text-speak-up', classes.resultCount)}>
+        <p aria-live="polite" role="status" className={clsx('text-speak-up', classes.resultCount)}>
           {results.length} {results.length !== 1 ? 'results' : 'result'} found
         </p>
 
-        {query.trim() === '' && <p className="text-center text-loud">Please enter a search query.</p>}
+        {query.trim() === '' && (
+          <p role="status" className="text-center text-loud">
+            Please enter a search query.
+          </p>
+        )}
 
-        <ul className={classes.list}>
+        <ul aria-live="polite" className={classes.list}>
           {results.map(result => (
             <ResultItem key={result.id} title={result.title} path={`/blog/${result.path}`} />
           ))}
@@ -180,7 +185,7 @@ function ResultItem({ title, path }) {
 
   return (
     <li className={classes.root}>
-      <Link href={path} className={classes.linkItem}>
+      <Link role="article" href={path} className={classes.linkItem}>
         <span>{title}</span>
       </Link>
     </li>
