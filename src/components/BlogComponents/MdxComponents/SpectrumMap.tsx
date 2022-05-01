@@ -114,6 +114,10 @@ export const OwnerColorMap: Record<string, IColorPair> = {
     back: '#006cb7',
     front: '#fff',
   },
+  Cibicom: {
+    back: '#1abbec',
+    front: '#000',
+  },
   Telekom: {
     back: '#e2007a',
     front: '#fff',
