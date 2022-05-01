@@ -4,11 +4,10 @@ import { useMemo, useState } from 'react'
 import { nanoid } from 'nanoid'
 import SearchIcon from 'mdi-react/SearchIcon'
 import { makeStyles } from '@material-ui/styles'
-import generateTransitions from '@functions/generateTransitions'
 import clsx from 'clsx'
 import Colors from '@data/colors.json'
 
-interface IProps {
+interface IProps extends Omit<React.HTMLAttributes<HTMLInputElement>, 'onInput'> {
   /**
    * The type associated with the input element in the outputted HTML.
    */
