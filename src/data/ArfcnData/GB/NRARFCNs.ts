@@ -69,6 +69,15 @@ const n3: SimpleArfcnDataItem[] = [
   },
 ]
 
+const n7: SimpleArfcnDataItem[] = [
+  {
+    arfcn: 529490,
+    bandwidth: 15,
+    operator: 'EE',
+    description: 'n7 NR only trial deployment',
+  },
+]
+
 const n8: SimpleArfcnDataItem[] = [
   {
     arfcn: 188450,
