@@ -27,6 +27,7 @@ const Band7: ISpectrumAllocation[] = [
       freqEnd: ULStart + 35,
     },
     earfcns: [3029, 3026],
+    nrarfcns: [529490],
     details: ["Tertiary B7 carrier, accessed via BT's ownership of EE", '3026 used for EE B7 on small cells.'],
   },
   {
