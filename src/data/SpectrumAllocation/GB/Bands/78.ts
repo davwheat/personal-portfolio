@@ -51,7 +51,7 @@ const Band78: ISpectrumAllocation[] = [
     freqStart: Start + 280,
     freqEnd: Start + 380,
     type: 'tdd',
-    nrarfcns: [640548],
+    nrarfcns: [640548, 641376],
   },
   {
     owner: 'EE',
