@@ -209,7 +209,13 @@ const n78: SimpleArfcnDataItem[] = [
     arfcn: 640548,
     bandwidth: 100,
     operator: 'Three',
-    description: 'Standard n78 deployment - all deployments in 100 MHz block (even if only 40-90 MHz bandwidth)',
+    description: 'Standard n78 deployment - vast majority of cells within 100 MHz block (even if only 40-90 MHz bandwidth)',
+  },
+  {
+    arfcn: 641376,
+    bandwidth: 100,
+    operator: 'Three',
+    description: 'Rare 100 MHz n78 deployment',
   },
 ]
 
