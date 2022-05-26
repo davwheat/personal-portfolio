@@ -28,7 +28,11 @@ const Band7: ISpectrumAllocation[] = [
     },
     earfcns: [3029, 3026],
     nrarfcns: [529490],
-    details: ["Tertiary B7 carrier, accessed via BT's ownership of EE", '3026 used for EE B7 on small cells.'],
+    details: [
+      "Tertiary B7 carrier, accessed via BT's ownership of EE",
+      '3026 used for EE B7 on small cells.',
+      'In use for initial EE n7 deployment at 15 MHz, to increase to 30 MHz then 50 MHz in the future.',
+    ],
   },
   {
     owner: 'EE',

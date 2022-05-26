@@ -77,7 +77,11 @@ const Band3: ISpectrumAllocation[] = [
       freqEnd: ULStart + 61.6,
     },
     earfcns: [1761, 1815],
-    details: ['EARFCN 1815 split across this and next block.'],
+    nrarfcns: [],
+    details: [
+      'EARFCN 1815 split across this and next block.',
+      'Used in conjuction with the next spectrum block for rural n3 20 MHz deployment.',
+    ],
   },
   {
     owner: 'EE',
@@ -91,7 +95,10 @@ const Band3: ISpectrumAllocation[] = [
     },
     earfcns: [1815],
     nrarfcns: [374190, 374210, 374280],
-    details: ['EARFCN 1815 split across this and previous block.'],
+    details: [
+      'EARFCN 1815 split across this and previous block.',
+      "Used on its own for EE's n3 10 MHz deployment, or in conjuction with the previous block for rural n3 20 MHz deployment.",
+    ],
   },
 ]
 
