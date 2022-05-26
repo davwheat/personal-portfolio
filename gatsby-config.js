@@ -159,7 +159,7 @@ module.exports = {
         copySerializationToFile: 'fuse-search-data',
 
         // Optional filter to limit indexed nodes
-        filter: (node, getNode) => node.frontmatter.tags !== 'exempt',
+        filter: (node, getNode) => !node.frontmatter.archived && !node.frontmatter.draft,
       },
     },
     `gatsby-source-local-git`,
