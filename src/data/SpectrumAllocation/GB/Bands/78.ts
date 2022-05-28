@@ -42,7 +42,7 @@ const Band78: ISpectrumAllocation[] = [
     freqStart: Start + 240,
     freqEnd: Start + 280,
     type: 'tdd',
-    nrarfcns: [636334, 636344, 636384],
+    nrarfcns: [636334, 636344, 636384, 636960],
   },
   {
     owner: 'Three',
