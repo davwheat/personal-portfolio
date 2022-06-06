@@ -221,7 +221,7 @@ const n78: SimpleArfcnDataItem[] = [
     arfcn: 641376,
     bandwidth: 100,
     operator: 'Three',
-    description: 'Rare 100 MHz n78 deployment',
+    description: 'New E/// 100 MHz n78 deployment',
   },
 ]
 
