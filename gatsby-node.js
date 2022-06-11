@@ -9,8 +9,6 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 
 const BlogArticlesPerPage = 16
 
-const WORDS_PER_MINUTE = 80
-
 /**
  * Customise webpack config.
  */
@@ -51,6 +49,7 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
 exports.createPages = async inp => {
   await createBlogArticles(inp)
   await createBlogListing(inp)
+  await createRedirects(inp)
 }
 
 /**
@@ -151,4 +150,43 @@ async function createBlogListing({ actions, graphql, reporter }) {
     redirectInBrowser: true,
     isPermanent: true,
   })
+}
+
+/**
+ * Create redirects.
+ */
+async function createRedirects({ actions: { createRedirect } }) {
+  const mobileNetworkRedirects = getMobileNetworkRedirects()
+
+  mobileNetworkRedirects.forEach(r => createRedirect(r))
+}
+
+function getMobileNetworkRedirects() {
+  const pages = [
+    '',
+    '/uk',
+    '/uk/arfcn-list',
+    '/uk/spectrum',
+    '/dk',
+    '/dk/arfcn-list',
+    '/dk/spectrum',
+    '/de',
+    '/de/arfcn-list',
+    '/de/spectrum',
+  ].map(p => `/mobile-networking${p}`)
+
+  const newPages = pages.map(page => {
+    let p = page
+
+    p = p.replace(/\/uk($|\/)/, '/gb/')
+    p = p.replace(/\/mobile-networking($|\/)/, '/')
+
+    return p
+  })
+
+  return pages.map((p, i) => ({
+    fromPath: p,
+    toPath: newPages[i],
+    isPermanent: true,
+  }))
 }
