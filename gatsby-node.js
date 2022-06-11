@@ -181,7 +181,7 @@ function getMobileNetworkRedirects() {
     p = p.replace(/\/uk($|\/)/, '/gb/')
     p = p.replace(/\/mobile-networking($|\/)/, '/')
 
-    return p
+    return 'https://mastdatabase.co.uk' + p
   })
 
   return pages.map((p, i) => ({
