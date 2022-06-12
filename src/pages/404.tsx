@@ -11,7 +11,7 @@ import ButtonLink from '../components/Links/ButtonLink'
 const Links = [
   { text: 'Home Page', url: '/' },
   { text: 'My projects', url: '/my-projects' },
-  { text: 'Networking', url: '/mobile-networking' },
+  { text: 'Networking', url: 'https://mastdatabase.co.uk' },
   { text: 'Blog', url: '/blog' },
 ]
 

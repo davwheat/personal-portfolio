@@ -127,7 +127,7 @@ export default function Footer() {
           <Link href="/">Home</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/my-projects">My projects</Link>
-          <Link href="/mobile-networking">Networking</Link>
+          <Link href="https://mastdatabase.co.uk">Networking</Link>
           <a href="https://github.com/davwheat" rel="noopener noreferrer">
             My GitHub
           </a>
