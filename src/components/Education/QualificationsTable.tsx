@@ -16,14 +16,14 @@ const Education: Qualification[] = [
     year: '2022',
   },
   {
-    courseName: 'BTEC L3 Ext Cert - Computing',
+    courseName: 'BTEC L3 Extended Certificate in Computing',
     grade: 'DS*',
     isPredicted: false,
-    gradeTooltip: 'Distinction star',
+    gradeTooltip: 'Distinction Star',
     year: '2022',
   },
   {
-    courseName: 'BTEC L3 Cert - Business',
+    courseName: 'BTEC L3 Certificate in Business',
     grade: 'DS',
     isPredicted: false,
     gradeTooltip: 'Distinction',
