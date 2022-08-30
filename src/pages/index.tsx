@@ -117,10 +117,13 @@ const IndexPage = ({ location }) => {
 
       <Section>
         <h2 className="text-louder">Qualifications</h2>
+
         <p className="text-speak">
-          As a current student, I haven't completed all of my qualifications at the moment, so some of the courses below show my current
-          (predicted) grades as opposed to my actual&nbsp;grades.
+          I am currently on a Level 6 Degree Apprenticeship in Software Engineering for Thales UK Underwater Systems, working towards a BSc
+          Digital Technology Solutions.
         </p>
+        <p className="text-speak">I was awarded my UK A-levels results between 2021 and 2022, with GCSEs being issued in 2020.</p>
+
         <QualificationsTable className={classes.eduTable} />
       </Section>
     </Layout>
