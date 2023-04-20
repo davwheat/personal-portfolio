@@ -36,7 +36,7 @@
     "gatsby-plugin-react-head": "https://github.com/davwheat/gatsby-plugin-react-head",
     "gatsby-plugin-react-svg": "^3.1.0",
     "gatsby-plugin-remove-console": "^0.0.2",
-    "gatsby-plugin-sharp": "^4.22.0",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-plugin-sitemap": "^5.22.0",
     "gatsby-plugin-webpack-size": "^2.0.1",
     "gatsby-react-router-scroll": "^5.22.0",
