@@ -248,7 +248,7 @@ export default function CoverageResourceBlocksDiagram() {
       lastUe = randomUe
 
       if (!abortController.signal.aborted && isVisible) {
-        timeoutKey = setTimeout(() => begin(), speed)
+        timeoutKey = window.setTimeout(() => begin(), speed)
       }
     }
 
@@ -312,7 +312,7 @@ export default function CoverageResourceBlocksDiagram() {
             aria-hidden="true"
             role="presentation"
             className={classes.diagramContainer}
-            style={{ '--coverage-size': frequencyBand.coverageSize }}
+            style={{ '--coverage-size': frequencyBand.coverageSize } as any}
           >
             <div className={classes.coverageCircle} />
 
@@ -331,11 +331,13 @@ export default function CoverageResourceBlocksDiagram() {
                   data-total={count}
                   data-this={i}
                   data-distance={distance}
-                  style={{
-                    '--total': count,
-                    '--this': i,
-                    '--distance': distance,
-                  }}
+                  style={
+                    {
+                      '--total': count,
+                      '--this': i,
+                      '--distance': distance,
+                    } as any
+                  }
                   ref={element => (phoneElementsRef.current[distance][i] = element)}
                 >
                   <PhoneIcon />
@@ -351,9 +353,9 @@ export default function CoverageResourceBlocksDiagram() {
             <p className="text-whisper-up">
               Throughput and RBs per UE are theoretical. Throughput calculated with 256 QAM and 1x1{' '}
               <abbr data-tooltip aria-label="Single-input, single-output">
-                SiSo
+                SISO
               </abbr>
-              . Both assume all UEs have 100% network usages.
+              . Both assume all UEs have 100% network usage.
             </p>
           </footer>
         </>
