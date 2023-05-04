@@ -12,8 +12,6 @@ const prodPlugins = !__IS_DEV__
         },
       },
       `gatsby-plugin-sitemap`,
-      // Fixed hot reload in dev
-      `gatsby-plugin-preact`,
     ]
   : []
 
