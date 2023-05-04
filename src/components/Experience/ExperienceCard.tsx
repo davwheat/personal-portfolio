@@ -41,7 +41,26 @@ const ExperienceCard: React.FC<Props> = ({ data }) => {
       <h3 className={clsx(classes.title, 'text-loud')}>
         <Link href={data.organisationSite}>{data.organisation}</Link>
       </h3>
-      <p className={clsx(classes.subtitle, 'text-whisper-loud')}>{data.description}</p>
+      <p className={clsx(classes.subtitle, 'text-whisper-loud')}>
+        {data.yearStart}{data.yearStart !== data.yearEnd && <> &ndash; {data.yearEnd ?? 'present'}</>}
+        {/* bullet point */}
+        &nbsp;
+        <span
+          role="presentation"
+          style={{
+            display: 'inline-block',
+            lineHeight: 1,
+            width: 4,
+            height: 4,
+            borderRadius: 9999,
+            background: 'currentColor',
+            verticalAlign: '0.2em',
+            margin: '0 4px',
+          }}
+        />
+        &nbsp;
+        {data.description}
+      </p>
 
       <p className={clsx(classes.description, 'text-speak')}>
         As <strong>{data.role}</strong>, I have&hellip;
