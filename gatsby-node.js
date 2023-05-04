@@ -46,6 +46,7 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
     },
   })
 }
+
 exports.createPages = async inp => {
   await createBlogArticles(inp)
   await createBlogListing(inp)
