@@ -5,6 +5,19 @@ import Breakpoints from '../../data/breakpoints'
 
 const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
   {
+    organisation: 'Thales UK',
+    organisationSite: 'https://www.thalesgroup.com/en',
+    description: 'Defence technology: sonar',
+    role: 'a software engineer apprentice',
+    yearStart: 2022,
+    projects: [
+      'Implemented a new operating system for S2087 sonar',
+      'Investigated and fixed issues with the new OS',
+      'Ensured feature parity with previous versions',
+      'Engaged with stakeholders to ensure requirements are met',
+    ],
+  },
+  {
     organisation: 'Blomstra',
     organisationSite: 'https://blomstra.net',
     description: 'Managed Flarum hosting, and custom development',
