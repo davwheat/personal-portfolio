@@ -38,7 +38,6 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
         '@functions': path.resolve(__dirname, 'src/functions'),
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@templates': path.resolve(__dirname, 'src/templates'),
-        '@blog': path.resolve(__dirname, 'src/components/BlogComponents/MdxComponents'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),
       },
     },
@@ -89,22 +88,39 @@ function getMobileNetworkRedirects() {
 }
 
 function getBlogRedirects() {
-  const articles = [
-    '2021/07/18/welcome',
-    '2021/07/20/introduction-to-4g-and-lte',
-    '2021/07/24/lte-bands-and-duplex-modes',
-    '2021/08/04/mast-sectorisation-radiation-and-deployment-patterns',
-    '2021/08/21/ofdm-subcarriers-rb-in-4g-lte-and-5g',
-    '2021/10/11/speed-differences-high-low-frequencies',
-    '2021/12/22/lte-mimo',
-    '2022/01/24/o2-beacon-3-orion',
-    '2022/04/19/ee-nr-ca',
-  ]
+  // const articles = [
+  //   '2021/07/18/welcome',
+  //   '2021/07/20/introduction-to-4g-and-lte',
+  //   '2021/07/24/lte-bands-and-duplex-modes',
+  //   '2021/08/04/mast-sectorisation-radiation-and-deployment-patterns',
+  //   '2021/08/21/ofdm-subcarriers-rb-in-4g-lte-and-5g',
+  //   '2021/10/11/speed-differences-high-low-frequencies',
+  //   '2021/12/22/lte-mimo',
+  //   '2022/01/24/o2-beacon-3-orion',
+  //   '2022/04/19/ee-nr-ca',
+  // ]
 
-  return articles.map(a => ({
-    fromPath: `/blog/${a}`,
-    toPath: `https://mastdatabase.co.uk/blog/${a}`,
-    isPermanent: true,
-    statusCode: 308,
-  }))
+  // const staticRedirects = [
+  //   {
+  //     fromPath: '/blog',
+  //     toPath: 'https://mastdatabase.co.uk/blog',
+  //     isPermanent: true,
+  //     statusCode: 308,
+  //   },
+  //   {
+  //     fromPath: '/blog/:page',
+  //     toPath: 'https://mastdatabase.co.uk/blog/:page',
+  //     isPermanent: true,
+  //     statusCode: 308,
+  //   },
+  // ]
+
+  return [
+    {
+      fromPath: `/blog/*`,
+      toPath: `https://mastdatabase.co.uk/blog/*`,
+      isPermanent: true,
+      statusCode: 308,
+    },
+  ]
 }

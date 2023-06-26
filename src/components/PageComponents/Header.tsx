@@ -267,7 +267,7 @@ function Header() {
           <Link href="/">Home</Link>
           <Link href="/my-projects">My projects</Link>
           <Link href="https://mastdatabase.co.uk">Networking</Link>
-          <Link href="/blog">Blog</Link>
+          <Link href="https://mastdatabase.co.uk/blog">Blog</Link>
         </nav>
       </div>
     </header>

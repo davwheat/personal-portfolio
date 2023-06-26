@@ -125,7 +125,7 @@ export default function Footer() {
 
         <nav className={classes.nav}>
           <Link href="/">Home</Link>
-          <Link href="/blog">Blog</Link>
+          <Link href="https://mastdatabase.co.uk/blog">Blog</Link>
           <Link href="/my-projects">My projects</Link>
           <Link href="https://mastdatabase.co.uk">Networking</Link>
           <a href="https://github.com/davwheat" rel="noopener noreferrer">

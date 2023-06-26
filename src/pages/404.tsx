@@ -12,7 +12,7 @@ const Links = [
   { text: 'Home Page', url: '/' },
   { text: 'My projects', url: '/my-projects' },
   { text: 'Networking', url: 'https://mastdatabase.co.uk' },
-  { text: 'Blog', url: '/blog' },
+  { text: 'Blog', url: 'https://mastdatabase.co.uk/blog' },
 ]
 
 const NotFoundPage = ({ location }) => (
