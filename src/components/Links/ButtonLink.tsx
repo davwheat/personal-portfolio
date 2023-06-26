@@ -22,6 +22,7 @@ const useStyles = makeStyles({
 interface Props {
   className?: string
   onClick: React.MouseEventHandler<HTMLButtonElement>
+  children: React.ReactNode
 }
 
 const ButtonLink: React.FC<Props> = ({ children, className, onClick, ...props }) => {
