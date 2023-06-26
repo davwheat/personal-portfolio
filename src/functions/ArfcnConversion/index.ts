@@ -1,1 +1,0 @@
-export { arfcnToFreq } from './arfcnToFreq'

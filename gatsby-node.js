@@ -7,8 +7,6 @@
 const path = require('path')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 
-const BlogArticlesPerPage = 16
-
 /**
  * Customise webpack config.
  */
@@ -48,118 +46,15 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
 }
 
 exports.createPages = async inp => {
-  await createBlogArticles(inp)
-  await createBlogListing(inp)
   await createRedirects(inp)
-}
-
-/**
- * Create blog article pages.
- */
-async function createBlogArticles({ actions, graphql, reporter }) {
-  const { createRedirect } = actions
-
-  const result = await graphql(`
-    {
-      allMdx {
-        nodes {
-          frontmatter {
-            redirect_from
-            path
-          }
-
-          id
-        }
-      }
-    }
-  `)
-
-  if (result.errors) {
-    reporter.panic('failed to create posts ', result.errors)
-  }
-  const pages = result.data.allMdx.nodes
-
-  pages.forEach((page, i) => {
-    const { frontmatter, id } = page
-
-    // Create all redirects that are defined in frontmatter
-    if (frontmatter.redirect_from) {
-      if (Array.isArray(frontmatter.redirect_from)) {
-        frontmatter.redirect_from.forEach(redirect => {
-          createRedirect({
-            fromPath: `/blog/${redirect}`,
-            toPath: `/blog/${frontmatter.path}`,
-            redirectInBrowser: true,
-            isPermanent: true,
-          })
-        })
-      } else {
-        throw new Error('`redirect_from` in MDX frontmatter must either be an array of paths, or not defined')
-      }
-    }
-
-    actions.createPage({
-      path: `/blog/${frontmatter.path}`,
-      component: path.resolve(`./src/templates/blog-article/BlogPageTemplate.tsx`),
-
-      context: { id, page: Math.ceil((i + 1) / BlogArticlesPerPage) },
-    })
-  })
-}
-
-/**
- * Create blog listings.
- */
-async function createBlogListing({ actions, graphql, reporter }) {
-  const { createPage, createRedirect } = actions
-  const result = await graphql(
-    `
-      {
-        allMdx(sort: { fields: [frontmatter___created_at], order: DESC }, filter: { frontmatter: { archived: { ne: true } } }) {
-          nodes {
-            id
-          }
-        }
-      }
-    `,
-  )
-
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-
-  const posts = result.data.allMdx.nodes
-  const numPages = Math.ceil(posts.length / BlogArticlesPerPage)
-
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: path.resolve('./src/templates/blog-article/BlogArticlesList.tsx'),
-      context: {
-        limit: BlogArticlesPerPage,
-        skip: i * BlogArticlesPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
-  })
-
-  createRedirect({
-    fromPath: `/blog/1`,
-    toPath: `/blog`,
-    redirectInBrowser: true,
-    isPermanent: true,
-  })
 }
 
 /**
  * Create redirects.
  */
 async function createRedirects({ actions: { createRedirect } }) {
-  const mobileNetworkRedirects = getMobileNetworkRedirects()
-
-  mobileNetworkRedirects.forEach(r => createRedirect(r))
+  getMobileNetworkRedirects().forEach(r => createRedirect(r))
+  getBlogRedirects().forEach(r => createRedirect(r))
 }
 
 function getMobileNetworkRedirects() {
@@ -189,5 +84,27 @@ function getMobileNetworkRedirects() {
     fromPath: p,
     toPath: newPages[i],
     isPermanent: true,
+    statusCode: 308,
+  }))
+}
+
+function getBlogRedirects() {
+  const articles = [
+    '2021/07/18/welcome',
+    '2021/07/20/introduction-to-4g-and-lte',
+    '2021/07/24/lte-bands-and-duplex-modes',
+    '2021/08/04/mast-sectorisation-radiation-and-deployment-patterns',
+    '2021/08/21/ofdm-subcarriers-rb-in-4g-lte-and-5g',
+    '2021/10/11/speed-differences-high-low-frequencies',
+    '2021/12/22/lte-mimo',
+    '2022/01/24/o2-beacon-3-orion',
+    '2022/04/19/ee-nr-ca',
+  ]
+
+  return articles.map(a => ({
+    fromPath: `/blog/${a}`,
+    toPath: `https://mastdatabase.co.uk/blog/${a}`,
+    isPermanent: true,
+    statusCode: 308,
   }))
 }

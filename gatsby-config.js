@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     ...prodPlugins,
-
+    'gatsby-plugin-cloudflare-pages',
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
@@ -77,7 +77,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-webpack-bundle-analyser-v2`,
-    `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -89,76 +88,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-less`,
-
-    // Blog plugins
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        defaultLayouts: {
-          default: require.resolve('./src/templates/blog-article/BlogPageTemplate.tsx'),
-        },
-        remarkPlugins: [require(`remark-math`), [require(`remark-twemoji`), { isReact: true }]],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: `heading-link`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 575,
-              wrapperStyle: () => 'max-height: 80vh; overflow: hidden;',
-              backgroundColor: 'transparent',
-              linkImagesToOriginal: true,
-              quality: 80,
-              withWebp: true,
-              withAvif: true,
-            },
-          },
-          `gatsby-remark-static-images`,
-          `gatsby-remark-copy-linked-files`,
-        ],
-      },
-    },
-    `gatsby-plugin-catch-links`,
-    `gatsby-plugin-meta-redirect`,
-    {
-      resolve: `@ssfbank/gatsby-plugin-search-fusejs`,
-      options: {
-        resolvers: {
-          Mdx: {
-            title: node => node.frontmatter.title,
-            description: node => node.frontmatter.description,
-            tags: node => (Array.isArray(node.frontmatter.tags) ? node.frontmatter.tags : [node.frontmatter.tags]),
-            path: node => node.frontmatter.path,
-          },
-        },
-
-        // pass on fuse specific constructor options: https://fusejs.io/api/options.html
-        fuseOptions: {
-          keys: [`title`, `tags`, `description`], // Mandatory
-          ignoreLocation: true,
-          treshold: 0.4,
-          minMatchCharLength: 2,
-        },
-
-        // if you want a copy of the serialized data structure into the public folder for external or lazy-loaded clientside consumption
-        // will be put in ./public folder and will end up as ./public/fuse-search-data.json
-        copySerializationToFile: 'fuse-search-data',
-
-        // Optional filter to limit indexed nodes
-        filter: (node, getNode) => !node.frontmatter.archived && !node.frontmatter.draft,
-      },
-    },
     `gatsby-source-local-git`,
   ],
 }

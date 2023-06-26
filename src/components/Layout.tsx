@@ -21,13 +21,14 @@ const useStyles = makeStyles({
   },
 })
 
-interface Props {
+interface LayoutProps {
   title: string
   description?: string
   location: LocationContext
+  children: React.ReactNode
 }
 
-const Layout: React.FC<Props> = ({ children, title, description, location }) => {
+function Layout({ children, title, description, location }: LayoutProps) {
   const classes = useStyles()
 
   return (

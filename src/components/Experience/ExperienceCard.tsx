@@ -42,8 +42,8 @@ const ExperienceCard: React.FC<Props> = ({ data }) => {
         <Link href={data.organisationSite}>{data.organisation}</Link>
       </h3>
       <p className={clsx(classes.subtitle, 'text-whisper-loud')}>
-        {data.yearStart}
-        {data.yearStart !== data.yearEnd && <> &ndash; {data.yearEnd ?? 'present'}</>}
+        {data.startDate}
+        {data.startDate !== data.endDate && <> &ndash; {data.endDate ?? 'present'}</>}
         {/* bullet point */}
         &nbsp;
         <span
