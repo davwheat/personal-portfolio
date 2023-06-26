@@ -227,7 +227,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Header: React.FC = () => {
+function Header() {
   const classes = useStyles()
 
   const navbarRef = useRef<HTMLDivElement>(null)
