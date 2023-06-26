@@ -1,7 +1,7 @@
 {
   "name": "personal-portfolio",
   "private": true,
-  "description": "The personal website, blog, and portfolio of David Wheatley (@davwheat)",
+  "description": "The personal website and portfolio of David Wheatley.",
   "version": "0.1.0",
   "author": {
     "name": "David Wheatley",
