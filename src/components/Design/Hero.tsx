@@ -83,15 +83,16 @@ const useStyles = makeStyles({
   },
 })
 
-interface Props {
+interface HeroProps {
   color?: string
   size?: 'small' | 'normal' | 'large' | 'huge'
   firstElement?: boolean
   className?: string
   innerClassName?: string
+  children: React.ReactNode
 }
 
-const Hero: React.FC<Props> = ({ children, color = '#000', size = 'normal', firstElement = false, className, innerClassName }) => {
+function Hero({ children, color = '#000', size = 'normal', firstElement = false, className, innerClassName }: HeroProps) {
   const classes = useStyles()
 
   return (
