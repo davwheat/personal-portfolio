@@ -117,6 +117,12 @@ function getBlogRedirects() {
 
   return [
     {
+      fromPath: `/blog`,
+      toPath: `https://mastdatabase.co.uk/blog`,
+      isPermanent: true,
+      statusCode: 308,
+    },
+    {
       fromPath: `/blog/*`,
       toPath: `https://mastdatabase.co.uk/blog/*`,
       isPermanent: true,
