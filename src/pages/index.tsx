@@ -122,7 +122,8 @@ const IndexPage = ({ location }) => {
           I am currently on a level 6 degree apprenticeship with Raileasy and the University of Warwick, working towards a BSc Digital Technology
           Solutions (Software Engineering).
         </p>
-        <p className="text-speak">I was awarded my UK A-levels and BTEC qualifications (above) in 2021 and 2022.</p>
+
+        <p className="text-speak">I was awarded my UK A-levels and BTEC qualifications in 2021 and 2022.</p>
 
         <QualificationsTable className={classes.eduTable} />
       </Section>
