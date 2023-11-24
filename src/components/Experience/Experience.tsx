@@ -5,8 +5,8 @@ import Breakpoints from '../../data/breakpoints'
 
 const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
   {
-    organisation: 'Raileasy',
-    organisationSite: 'https://www.raileasy.co.uk/',
+    organisation: 'Raileasy (TrainSplit)',
+    organisationSite: 'https://trainsplit.com/',
     description: 'Public Transport Ticketing',
     role: 'an Android app developer',
     startDate: 'Jul 2023',
@@ -14,6 +14,7 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
       'Used Kotlin and Jetpack Compose for our app',
       'Started working towards feature parity with existing iOS app',
       'Performed regular tests across many real devices to ensure compatibility',
+      'Used industry knowledge to answer complex customer support queries',
       'Continued my apprenticeship with the Univerity of Warwick',
     ],
   },
