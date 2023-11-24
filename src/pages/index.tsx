@@ -119,10 +119,10 @@ const IndexPage = ({ location }) => {
         <h2 className="text-louder">Qualifications</h2>
 
         <p className="text-speak">
-          I am currently on a Level 6 Degree Apprenticeship in Software Engineering for Thales UK Underwater Systems, working towards a BSc
-          Digital Technology Solutions.
+          I am currently on a level 6 degree apprenticeship with Raileasy and the University of Warwick, working towards a BSc Digital Technology
+          Solutions (Software Engineering).
         </p>
-        <p className="text-speak">I was awarded my UK A-levels results between 2021 and 2022, with GCSEs being issued in 2020.</p>
+        <p className="text-speak">I was awarded my UK A-levels and BTEC qualifications (above) in 2021 and 2022.</p>
 
         <QualificationsTable className={classes.eduTable} />
       </Section>
