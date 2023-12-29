@@ -15,7 +15,7 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
       'Started working towards feature parity with existing iOS app',
       'Performed regular tests across many real devices to ensure compatibility',
       'Used industry knowledge to answer complex customer support queries',
-      'Continued my apprenticeship with the Univerity of Warwick',
+      'Continued my apprenticeship with the University of Warwick',
     ],
   },
   {
