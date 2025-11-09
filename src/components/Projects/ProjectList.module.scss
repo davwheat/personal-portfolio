@@ -1,0 +1,11 @@
+@import '@/styles/breakpoints.scss';
+
+.container {
+  display: grid;
+  gap: 24px;
+  margin-top: 16px;
+
+  @include upTo(640px) {
+    gap: 16px;
+  }
+}

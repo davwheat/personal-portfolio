@@ -1,0 +1,27 @@
+// Breakpoint values
+$tablet: 640px;
+$desktopSmall: 768px;
+$bigPhone: 500px;
+$phone: 400px;
+
+// Media query mixins
+@mixin upTo($breakpoint) {
+  @media (max-width: $breakpoint - 1px) {
+    @content;
+  }
+}
+
+@mixin downTo($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin between($breakpoint1, $breakpoint2) {
+  $min: min($breakpoint1, $breakpoint2);
+  $max: max($breakpoint1, $breakpoint2);
+
+  @media (min-width: $min) and (max-width: $max - 1px) {
+    @content;
+  }
+}

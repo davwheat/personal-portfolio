@@ -1,0 +1,97 @@
+@import '@/styles/breakpoints.scss';
+
+.hero {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  background: var(--color-text);
+  color: var(--color-background);
+  overflow: hidden;
+}
+
+.heroInner {
+  width: 100%;
+  margin: auto;
+  max-width: 1000px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  & p,
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    margin-bottom: 0.1em;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @include upTo(768px) {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  @include upTo(400px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.firstElement {
+  margin-top: -24px;
+}
+
+.heroSmall {
+  .heroInner {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    @include upTo(768px) {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.heroNormal {
+  .heroInner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @include upTo(768px) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+}
+
+.heroLarge {
+  .heroInner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+
+    @include upTo(768px) {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }
+}
+
+.heroHuge {
+  .heroInner {
+    padding-top: 72px;
+    padding-bottom: 72px;
+
+    @include upTo(768px) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+  }
+}

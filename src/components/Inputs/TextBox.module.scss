@@ -1,0 +1,38 @@
+@import '@/styles/transitions.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  padding: 8px 12px;
+  font-family: var(--font-family);
+  font-size: 1em;
+  @include transition('all');
+
+  &:focus {
+    outline: 2px solid var(--color-primary-blue);
+    outline-offset: 2px;
+    border-color: var(--color-primary-blue);
+
+    &:not(:focus-visible) {
+      outline: none;
+      border-color: var(--color-border);
+    }
+  }
+
+  &:hover {
+    border-color: var(--color-gray);
+  }
+}
+
+.label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-text);
+}

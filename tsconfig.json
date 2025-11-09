@@ -1,14 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ESNext" /* or at least ES2015 */,
-    "module": "ESNext" /* or at least ES2015 */,
-    "lib": ["dom", "ES2020"] /* <-- required! */,
-    "jsx": "react" /* <-- required! */,
-    "moduleResolution": "node" /* <-- required! */,
-    "allowJs": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "./dist", // not actually used
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    /* Next.js specific */
+    "incremental": true,
     "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
@@ -18,8 +25,12 @@
       "@types/*": ["../@types/*", "../node_modules/@types/*"],
       "@css/*": ["css/*"],
       "@templates/*": ["templates/*"],
-      "@hooks/*": ["hooks/*"]
-    }
+      "@hooks/*": ["hooks/*"],
+      "@/*": ["./*"]
+    },
+    "allowJs": true,
+    "strict": false
   },
-  "exclude": ["node_modules", "build", "scripts", "acceptance-tests", "webpack", "jest", "src/setupTests.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".next", "out"]
 }

@@ -1,0 +1,67 @@
+@import '@/styles/breakpoints.scss';
+
+.pageSection {
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  @include downTo(768px) {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+}
+
+.pad {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include downTo(768px) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.fullWidth {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+
+.fullWidthInner {
+  padding: 0 8px;
+}
+
+.wider {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+
+.darkBg {
+  background: var(--color-light-gray);
+  padding-top: 36px;
+  padding-bottom: 36px;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+
+  & > div:not(.widerInner) {
+    max-width: 720px;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.widerInner {
+  max-width: 960px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}

@@ -1,16 +1,9 @@
 import React from 'react'
 
-import { Link as GatsbyLink } from 'gatsby'
+import NextLink from 'next/link'
 
-import { makeStyles } from '@material-ui/core'
 import clsx from 'clsx'
-
-const useStyles = makeStyles({
-  link: {
-    fontWeight: 700,
-    textDecoration: 'underline',
-  },
-})
+import styles from './Link.module.scss'
 
 export interface ILinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
@@ -28,10 +21,8 @@ function isExternalLink(url: string): boolean {
 }
 
 const Link = ({ href, children, className, internal, ...props }: ILinkProps) => {
-  const classes = useStyles()
-
   const linkProps = {
-    className: clsx(classes.link, className),
+    className: clsx(styles.link, className),
     ...props,
   }
 
@@ -44,9 +35,9 @@ const Link = ({ href, children, className, internal, ...props }: ILinkProps) => 
   }
 
   return (
-    <GatsbyLink to={href} {...linkProps}>
+    <NextLink href={href} {...linkProps}>
       {children}
-    </GatsbyLink>
+    </NextLink>
   )
 }
 

@@ -1,8 +1,7 @@
 import React, { useMemo, useState } from 'react'
 
 import { nanoid } from 'nanoid'
-import { makeStyles } from '@material-ui/core'
-import generateTransitions from '../../functions/generateTransitions'
+import styles from './Checkbox.module.scss'
 
 interface Props {
   label: string
@@ -11,88 +10,46 @@ interface Props {
    * If provided, the `checked` state will be managed by the parent component.
    */
   checked?: boolean
-  disabled?: boolean
-  className?: string
+  /**
+   * Only used in uncontrolled mode.
+   * @default false
+   */
+  defaultChecked?: boolean
 }
 
-const SIZE = 24
-const BORDER_SIZE = 2
-const INNER_PADDING = 4
-const TICK_WEIGHT = 4
-
-const useStyles = makeStyles({
-  checkbox: {
-    verticalAlign: 'middle',
-    position: 'relative',
-    cursor: 'pointer',
-    zIndex: 2,
-    visibility: 'hidden',
-    height: SIZE,
-    width: SIZE,
-    marginRight: 8,
-    '&::before, &::after': {
-      visibility: 'visible',
-    },
-    '&::before': {
-      content: '""',
-      display: 'inline-block',
-      border: `${BORDER_SIZE}px solid currentColor`,
-      height: SIZE,
-      width: SIZE,
-      background: '#fff',
-    },
-    '&::after': {
-      content: '""',
-      display: 'inline-block',
-      position: 'absolute',
-      left: '50%',
-      top: '50%',
-      transform: 'translate(-50%, calc(-50% - 1px)) rotate(45deg)',
-      transformOrigin: 'center',
-      width: (SIZE - BORDER_SIZE - INNER_PADDING - TICK_WEIGHT) * (3 / 5),
-      height: SIZE - BORDER_SIZE - INNER_PADDING - TICK_WEIGHT,
-      borderRight: `${TICK_WEIGHT}px solid currentColor`,
-      borderBottom: `${TICK_WEIGHT}px solid currentColor`,
-      opacity: 0,
-      ...generateTransitions('opacity', 'short'),
-    },
-    '&:checked::after': {
-      opacity: 1,
-    },
-
-    '&[disabled]': {
-      '&, & + $label': {
-        cursor: 'not-allowed',
-      },
-    },
-  },
-  label: {
-    WebkitUserSelect: 'none',
-    userSelect: 'none',
-    cursor: 'pointer',
-    verticalAlign: 'middle',
-  },
-})
-
-function Checkbox({ label, onChange, checked, disabled, className }: Props) {
+const Checkbox: React.ForwardRefRenderFunction<HTMLInputElement, Props> = (
+  { label, onChange, checked, defaultChecked = false, ...props },
+  ref,
+) => {
   const id = useMemo(() => nanoid(), [])
-  const classes = useStyles()
+  const [uncontrolledChecked, setUncontrolledChecked] = useState(defaultChecked)
+
+  const isControlled = checked !== undefined
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isControlled) {
+      setUncontrolledChecked(e.target.checked)
+    }
+
+    onChange?.(e)
+  }
 
   return (
-    <div className={className}>
+    <div className={styles.container}>
       <input
-        disabled={disabled}
-        className={classes.checkbox}
+        ref={ref}
         id={id}
-        checked={typeof checked !== 'undefined' ? checked : undefined}
-        onChange={onChange}
         type="checkbox"
+        checked={isControlled ? checked : uncontrolledChecked}
+        onChange={handleChange}
+        className={styles.input}
+        {...props}
       />
-      <label className={classes.label} htmlFor={id}>
+      <label htmlFor={id} className={styles.label}>
         {label}
       </label>
     </div>
   )
 }
 
-export default React.memo(Checkbox)
+export default React.forwardRef(Checkbox)

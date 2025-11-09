@@ -1,7 +1,7 @@
 import React from 'react'
 import ExperienceCard from './ExperienceCard'
-import { makeStyles } from '@material-ui/core'
-import Breakpoints from '../../data/breakpoints'
+import Breakpoints from '@data/breakpoints'
+import styles from './Experience.module.scss'
 
 const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
   {
@@ -39,6 +39,7 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
     description: 'Managed Flarum hosting, and custom development',
     role: 'a full-stack web developer',
     startDate: 'Oct 2021',
+    endDate: 'Oct 2022',
     projects: [
       'Worked to project briefs to deliver new Flarum features',
       'Created and upgraded existing open-source Flarum extensions',
@@ -52,6 +53,7 @@ const ExperienceData: ReadonlyArray<ExperienceDataEntry> = [
     description: 'Open source, extensible forum framework',
     role: 'a front-end web developer',
     startDate: 'Feb 2021',
+    endDate: 'Oct 2022',
     projects: [
       'Improved accessibility',
       'Replaced old JS libraries with newer and native methods',
@@ -99,29 +101,9 @@ export type ExperienceDataEntry = {
   endDate?: string
 }
 
-const useStyles = makeStyles({
-  list: {
-    marginTop: 24,
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: 16,
-
-    width: '85vw',
-    maxWidth: 1000,
-    marginLeft: '50%',
-    transform: 'translateX(-50%)',
-
-    [Breakpoints.upTo.tablet]: {
-      gridTemplateColumns: '1fr',
-    },
-  },
-})
-
 const Experience: React.FC = () => {
-  const classes = useStyles()
-
   return (
-    <div className={classes.list}>
+    <div className={styles.container}>
       {ExperienceData.map(entry => (
         <ExperienceCard data={entry} key={`${entry.organisation}__${entry.role}`} />
       ))}

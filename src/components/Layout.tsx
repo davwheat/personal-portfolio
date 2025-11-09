@@ -4,45 +4,25 @@ import Header from './PageComponents/Header'
 import Footer from './PageComponents/Footer'
 import SEO from './SEO'
 
-import { makeStyles, ThemeProvider } from '@material-ui/styles'
-import theme from '../theme'
-
-import type { LocationContext } from '@gatsbyjs/reach-router'
-import { ScrollContext } from 'gatsby-react-router-scroll'
-
-const useStyles = makeStyles({
-  mainContent: {
-    maxWidth: 768,
-    margin: 'auto',
-    paddingLeft: 24,
-    paddingRight: 24,
-    flex: '1',
-    width: '100%',
-  },
-})
+import styles from './Layout.module.scss'
 
 interface LayoutProps {
   title: string
   description?: string
-  location: LocationContext
   children: React.ReactNode
 }
 
-function Layout({ children, title, description, location }: LayoutProps) {
-  const classes = useStyles()
-
+function Layout({ children, title, description }: LayoutProps) {
   return (
-    <ScrollContext location={location}>
-      <ThemeProvider theme={theme}>
-        <SEO title={title} description={description} />
+    <>
+      <SEO title={title} description={description} />
 
-        <Header />
+      <Header />
 
-        <main className={classes.mainContent}>{children}</main>
+      <main className={styles.mainContent}>{children}</main>
 
-        <Footer />
-      </ThemeProvider>
-    </ScrollContext>
+      <Footer />
+    </>
   )
 }
 

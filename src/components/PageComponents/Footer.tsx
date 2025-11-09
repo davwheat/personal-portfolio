@@ -1,103 +1,17 @@
 import React from 'react'
 
-import Link from '../Links/Link'
-import SocialButtons from '../SocialButtons'
-
-import { makeStyles } from '@material-ui/core'
-import { graphql, useStaticQuery } from 'gatsby'
-import Breakpoints from '@data/breakpoints'
-
-const useStyles = makeStyles({
-  container: {
-    background: '#000',
-    color: '#fff',
-    padding: '48px 0',
-    marginTop: 24,
-  },
-  content: {
-    maxWidth: 960,
-    margin: 'auto',
-    padding: '0 24px',
-  },
-  topContainer: {
-    display: 'flex',
-
-    [Breakpoints.upTo.desktopSmall]: {
-      flexDirection: 'column',
-    },
-  },
-  about: {
-    marginRight: 16,
-    '& p': {
-      paddingBottom: 4,
-    },
-
-    [Breakpoints.upTo.desktopSmall]: {
-      marginRight: 0,
-      marginBottom: 12,
-    },
-  },
-  nav: {
-    marginTop: 24,
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    marginBottom: -8,
-
-    '& a': {
-      padding: '8px 16px',
-      textDecoration: 'none',
-      display: 'inline-block',
-      borderRight: '1px #ccc solid',
-      borderLeft: '1px #ccc solid',
-      marginBottom: 8,
-      fontWeight: 400,
-      '&:not(:first-child)': {
-        marginLeft: -1,
-      },
-      '&:hover, &:focus, &:active': {
-        background: '#fff',
-        color: '#000',
-        borderColor: '#000',
-      },
-    },
-  },
-})
+import Link from '@components/Links/Link'
+import SocialButtons from '@components/SocialButtons'
+import styles from './Footer.module.scss'
 
 export default function Footer() {
-  const classes = useStyles()
-  const {
-    siteBuildMetadata,
-    gitCommit,
-  }: {
-    siteBuildMetadata: {
-      /**
-       * String date/time formatted as YYYY-MM-DD HH:mm
-       */
-      buildTime: string
-    }
-    gitCommit: {
-      /**
-       * Latest git commit hash at build-time
-       */
-      hash: string
-    }
-  } = useStaticQuery(graphql`
-    {
-      siteBuildMetadata {
-        buildTime(formatString: "YYYY-MM-DD HH:mm z")
-      }
-      gitCommit(latest: { eq: true }) {
-        hash
-      }
-    }
-  `)
+  const buildTime = new Date().toLocaleString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 
   return (
-    <footer className={classes.container}>
-      <main className={classes.content}>
-        <section className={classes.topContainer}>
-          <div className={classes.about}>
+    <footer className={styles.container}>
+      <main className={styles.content}>
+        <section className={styles.topContainer}>
+          <div className={styles.about}>
             <p className="text-speak-up">&copy; {new Date().getFullYear()} David Wheatley</p>
             <p className="text-whisper">
               <a href="https://github.com/davwheat/personal-portfolio" rel="noopener noreferrer">
@@ -109,19 +23,13 @@ export default function Footer() {
                 Learn more about Cloudflare analytics
               </a>
             </p>
-            <p className="text-whisper">
-              Last updated {siteBuildMetadata.buildTime} (
-              <a href={`https://github.com/davwheat/personal-portfolio/commit/${gitCommit.hash}`} rel="noopener noreferrer">
-                <code className="code">{gitCommit.hash.substring(0, 6)}</code>
-              </a>
-              ).
-            </p>
+            <p className="text-whisper">Last updated {buildTime}.</p>
           </div>
 
           <SocialButtons />
         </section>
 
-        <nav className={classes.nav}>
+        <nav className={styles.nav}>
           <Link href="/">Home</Link>
           <Link href="https://mastdatabase.co.uk/blog">Blog</Link>
           <Link href="/my-projects">My projects</Link>
@@ -135,20 +43,6 @@ export default function Footer() {
   )
 }
 
-const useBulletStyles = makeStyles({
-  separator: {
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    transformOrigin: 'center',
-    transform: 'scale(2)',
-    marginLeft: 8,
-    marginRight: 8,
-    color: '#fff',
-  },
-})
-
 function BulletSeparator() {
-  const classes = useBulletStyles()
-
-  return <span className={classes.separator}>•</span>
+  return <span className={styles.separator}>•</span>
 }

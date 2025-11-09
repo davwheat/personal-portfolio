@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+
+  & a {
+    padding: 8px 16px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9375em;
+    transition: all 200ms ease-out;
+
+    &:hover,
+    &:focus {
+      background: var(--color-background);
+      color: var(--color-text);
+    }
+  }
+}
+@import '@/styles/breakpoints.scss';
+
+.container {
+  display: grid;
+  gap: 32px;
+  margin-top: 16px;
+
+  @include upTo(640px) {
+    gap: 24px;
+  }
+}

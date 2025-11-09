@@ -1,0 +1,77 @@
+@import '@/styles/breakpoints.scss';
+
+.card {
+  border: 2px solid var(--color-border);
+  padding: 24px;
+  position: relative;
+
+  @include upTo(640px) {
+    padding: 16px;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 16px;
+
+  @include upTo(500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 1.125em;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.875em;
+  color: var(--color-gray);
+  margin-top: 4px;
+}
+
+.dateRange {
+  white-space: nowrap;
+  font-size: 0.875em;
+  color: var(--color-gray);
+  text-align: right;
+
+  @include upTo(500px) {
+    text-align: left;
+  }
+}
+
+.description {
+  margin: 12px 0 0 0;
+  font-size: 0.9375em;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.projects {
+  margin-top: 12px;
+  padding-left: 20px;
+
+  li {
+    margin: 8px 0;
+    font-size: 0.9375em;
+    color: var(--color-text);
+  }
+}
+
+.link {
+  color: var(--color-primary-blue);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: var(--color-primary-red);
+  }
+}

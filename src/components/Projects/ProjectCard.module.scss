@@ -1,0 +1,80 @@
+$CARD_PADDING: 16px;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--color-border);
+  padding: $CARD_PADDING;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  gap: 8px;
+}
+
+.heading {
+  flex-grow: 1;
+}
+
+.categories {
+  justify-self: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+  margin-top: -4px;
+}
+
+.chip {
+  font-family: var(--font-family);
+  transition:
+    background 300ms ease-out,
+    color 300ms ease-out;
+  background: var(--color-light-gray);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+.links {
+  justify-self: flex-end;
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: -$CARD_PADDING;
+  margin-bottom: -$CARD_PADDING;
+  margin-right: -$CARD_PADDING;
+}
+
+.link {
+  padding: $CARD_PADDING;
+  flex: 1;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background: var(--color-text);
+    color: var(--color-background);
+  }
+}
+
+.spring {
+  flex-grow: 1;
+}
+
+.image {
+  margin: 12px -$CARD_PADDING $CARD_PADDING;
+  max-width: 600px;
+}
+
+.typeChip {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  color: var(--color-background);
+  background: var(--chip-bg);
+  border: none;
+  padding: 8px;
+}

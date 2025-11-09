@@ -50,6 +50,12 @@ typings/
 # Optional REPL history
 .node_repl_history
 
+# Next.js specific
+.next/
+out/
+.env.local
+.env.*.local
+.env
 # Output of 'npm pack'
 *.tgz
 

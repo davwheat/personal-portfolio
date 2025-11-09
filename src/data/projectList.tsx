@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { StaticImage } from 'gatsby-plugin-image'
-
 export type ProjectType = 'Web' | 'Mobile' | 'API' | 'Desktop'
 export const AllTech = [
   'Gatsby',
@@ -36,8 +34,6 @@ interface ImageProps {
   className: string
 }
 
-const IMAGE_INTRINSIC_WIDTH = 600
-
 const projectList: ReadonlyArray<Project> = [
   {
     title: 'Railway Announcements Generator',
@@ -45,13 +41,7 @@ const projectList: ReadonlyArray<Project> = [
     description:
       'Generate announcements for a variety of UK rail networks. Patched together from 100s of recordings, and all assembled client-side.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/rail-announcements.png"
-        placeholder="blurred"
-        alt="Screenshot of Railway Announcements Generator in use"
-      />
+      <img className={className} src="/images/projects/rail-announcements.png" alt="Screenshot of Railway Announcements Generator in use" />
     ),
     links: {
       live: 'https://rail-announcements.davwheat.dev/',
@@ -65,13 +55,7 @@ const projectList: ReadonlyArray<Project> = [
     description:
       'A UK railway dot-matrix platform indicator simulator, built using React and Gatsby, with a REST API for fetching data from the National Rail API.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/rail-dot-matrix.png"
-        placeholder="blurred"
-        alt="Screenshot of Rail Dot Matrix in use"
-      />
+      <img className={className} src="/images/projects/rail-dot-matrix.png" alt="Screenshot of Rail Dot Matrix in use" />
     ),
     links: {
       live: 'https://raildotmatrix.davwheat.dev/',
@@ -85,11 +69,9 @@ const projectList: ReadonlyArray<Project> = [
     description:
       'An app created for Techway Solutions Ltd to speed up their leakage testing and certification process. Supports exporting test certificates to PDF.',
     ImageComponent: ({ className }) => (
-      <StaticImage
+      <img
         className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/techway-leakage-app.png"
-        placeholder="blurred"
+        src="/images/projects/techway-leakage-app.png"
         alt="Promotional banner. Icon on left showing rounded rectangle with air moving through it and a check mark. Title: Flue Gas Leakage Test Calculator. Subtitle: Easily perform Class B and C flue gas leakage tests."
       />
     ),
@@ -104,13 +86,7 @@ const projectList: ReadonlyArray<Project> = [
     description:
       'Public API for everything related to Flarum extensions. Includes fetching badges to show if your extension supports the latest version of Flarum, to fetching extension icons.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/flarum-badge-api.png"
-        placeholder="blurred"
-        alt="Screenshot of Flarum Badge API documentation"
-      />
+      <img className={className} src="/images/projects/flarum-badge-api.png" alt="Screenshot of Flarum Badge API documentation" />
     ),
     links: {
       live: 'http://docs.flarum-badge-api.davwheat.dev/',
@@ -123,15 +99,7 @@ const projectList: ReadonlyArray<Project> = [
     type: 'Web',
     description:
       "A recreation of the Sky+ electronic program guide on the web. Pulls in real-time listings from Sky's programme listings API used for Sky Q.",
-    ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/sky-web-epg.png"
-        placeholder="blurred"
-        alt="Screenshot of Sky Web EPG"
-      />
-    ),
+    ImageComponent: ({ className }) => <img className={className} src="/images/projects/sky-web-epg.png" alt="Screenshot of Sky Web EPG" />,
     links: {
       live: 'https://sky-epg.davwheat.dev/',
       vcs: 'https://github.com/davwheat/sky-plus-web-simulator',
@@ -143,13 +111,7 @@ const projectList: ReadonlyArray<Project> = [
     type: 'Web',
     description: 'Open source framework for creating modern forums. Pioneering accessibility and modern styling and development techniques.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/flarum-discuss.png"
-        placeholder="blurred"
-        alt="Screenshot of Flarum's official community forum"
-      />
+      <img className={className} src="/images/projects/flarum-discuss.png" alt="Screenshot of Flarum's official community forum" />
     ),
     links: {
       live: 'https://discuss.flarum.org/',
@@ -162,13 +124,7 @@ const projectList: ReadonlyArray<Project> = [
     type: 'Mobile',
     description: 'Ever wondered why the ticket barriers have told you to "seek assistance"? This app will tell you why.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/gateline-errors.png"
-        placeholder="blurred"
-        alt="Screenshot of the app in use"
-      />
+      <img className={className} src="/images/projects/gateline-errors.png" alt="Screenshot of the app in use" />
     ),
     links: {
       live: 'https://play.google.com/store/apps/details?id=dev.davwheat.railway.gateline_errors',
@@ -180,15 +136,7 @@ const projectList: ReadonlyArray<Project> = [
     title: 'giffgaff for Wear OS',
     type: 'Mobile',
     description: 'Unofficial open-source app which displays key information about your giffgaff account on your Wear OS smartwatch.',
-    ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/giffgaff-wear.png"
-        placeholder="blurred"
-        alt="Screenshot of the watch app"
-      />
-    ),
+    ImageComponent: ({ className }) => <img className={className} src="/images/projects/giffgaff-wear.png" alt="Screenshot of the watch app" />,
     links: {
       live: 'https://play.google.com/store/apps/details?id=dev.davwheat.giffgaff.wearable',
       vcs: 'https://github.com/davwheat/giffgaff-for-wear-os',
@@ -200,13 +148,7 @@ const projectList: ReadonlyArray<Project> = [
     type: 'Web',
     description: 'Unofficial open-source website that interfaces with the giffgaff community API to pull in the latest service updates.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/giffgaff-status.png"
-        placeholder="blurred"
-        alt="Screenshot of giffgaffstatus.com"
-      />
+      <img className={className} src="/images/projects/giffgaff-status.png" alt="Screenshot of giffgaffstatus.com" />
     ),
     links: {
       live: 'https://giffgaffstatus.com',
@@ -220,13 +162,7 @@ const projectList: ReadonlyArray<Project> = [
     description:
       'Open-source website to track the World Cup of Train Operators run by Geoff Marshall. Partnered with the respective API, it pulls the latest poll data from Twitter. Created in partnership with Kishan Singh.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/world-cup-of-train-operators.png"
-        placeholder="blurred"
-        alt="Screenshot of the World Cup of TOCs"
-      />
+      <img className={className} src="/images/projects/world-cup-of-train-operators.png" alt="Screenshot of the World Cup of TOCs" />
     ),
     links: {
       live: 'https://toccup.davwheat.dev',
@@ -240,13 +176,7 @@ const projectList: ReadonlyArray<Project> = [
     description:
       "Open-source API to pull data about the latest World Cup of TOCs polls from Geoff Marshall's Twitter account. Created in partnership with Kishan Singh.",
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/world-cup-of-train-operators-api.png"
-        placeholder="blurred"
-        alt="Screenshot of a response from the API"
-      />
+      <img className={className} src="/images/projects/world-cup-of-train-operators-api.png" alt="Screenshot of a response from the API" />
     ),
     links: {
       live: 'https://toccup.davwheat.dev',
@@ -260,13 +190,7 @@ const projectList: ReadonlyArray<Project> = [
     description:
       "Open-source API which serves data about all available liveries in Project Mega Pack for the Project Mega Pack Manager. It's used by over 85000 people, and generates 140 TB of traffic per month. Created in collaboration with Jaap Rodenburg.",
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/project-mega-pack-api.png"
-        placeholder="blurred"
-        alt="Screenshot of a response from the API"
-      />
+      <img className={className} src="/images/projects/project-mega-pack-api.png" alt="Screenshot of a response from the API" />
     ),
     links: {
       live: 'https://www.projectmegapack.com',
@@ -280,13 +204,7 @@ const projectList: ReadonlyArray<Project> = [
     description:
       "Open-source Electron app which provides management (browsing, installation, and removal) of liveries in Project Mega Pack. It's used by over 85000 people, and generates 140 TB of traffic per month. Created in collaboration with Jaap Rodenburg.",
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/project-mega-pack-manager.png"
-        placeholder="blurred"
-        alt="Screenshot of the Project Mega Pack Manager"
-      />
+      <img className={className} src="/images/projects/project-mega-pack-manager.png" alt="Screenshot of the Project Mega Pack Manager" />
     ),
     links: {
       live: 'https://www.projectmegapack.com',
@@ -298,15 +216,7 @@ const projectList: ReadonlyArray<Project> = [
     title: 'Boris Briefing Bingo',
     type: 'Web',
     description: "Online bingo board to play along with during Boris Johnson's Coronavirus Press Briefings.",
-    ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/boris-bingo.png"
-        placeholder="blurred"
-        alt="Screenshot of borisbingo.com"
-      />
-    ),
+    ImageComponent: ({ className }) => <img className={className} src="/images/projects/boris-bingo.png" alt="Screenshot of borisbingo.com" />,
     links: {
       live: 'https://borisbingo.com',
       vcs: 'https://github.com/davwheat/boris-johnson-covid-bingo',
@@ -319,11 +229,9 @@ const projectList: ReadonlyArray<Project> = [
     description:
       'A version of "Let me Google that for you", without ads or trackers, and that actually uses Google along with other search engines.',
     ImageComponent: ({ className }) => (
-      <StaticImage
+      <img
         className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/let-me-really-google-that-for-you.png"
-        placeholder="blurred"
+        src="/images/projects/let-me-really-google-that-for-you.png"
         alt="Screenshot of Let me REALLY Google that for you"
       />
     ),
@@ -337,15 +245,7 @@ const projectList: ReadonlyArray<Project> = [
     title: 'BHASVIC B-Mag',
     type: 'Web',
     description: 'A customised content management system for my sixth-form college for publishing magazine articles, built with Flarum.',
-    ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/b-mag.png"
-        placeholder="blurred"
-        alt="Screenshot of B-Mag"
-      />
-    ),
+    ImageComponent: ({ className }) => <img className={className} src="/images/projects/b-mag.png" alt="Screenshot of B-Mag" />,
     links: {
       live: 'https://b-mag.bhasvic.ac.uk/',
       vcs: 'https://github.com/BHASVIC',
@@ -357,13 +257,7 @@ const projectList: ReadonlyArray<Project> = [
     type: 'Web',
     description: 'A website filled with mobile networking resources for the UK and the rest of the world.',
     ImageComponent: ({ className }) => (
-      <StaticImage
-        className={className}
-        width={IMAGE_INTRINSIC_WIDTH}
-        src="../assets/images/projects/mastdatabase.co.uk.png"
-        placeholder="blurred"
-        alt="Screenshot of mastdatabase.co.uk"
-      />
+      <img className={className} src="/images/projects/mastdatabase.co.uk.png" alt="Screenshot of mastdatabase.co.uk" />
     ),
     links: {
       live: 'https://mastdatabase.co.uk/',

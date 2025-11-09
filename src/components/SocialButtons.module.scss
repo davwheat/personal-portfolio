@@ -1,0 +1,35 @@
+@import '@/styles/breakpoints.scss';
+
+.container {
+  display: flex;
+  gap: 16px;
+
+  @include upTo(640px) {
+    flex-direction: column;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: var(--color-background);
+  text-decoration: none;
+  transition: all 150ms ease-out;
+
+  &:hover,
+  &:focus {
+    background: var(--color-background);
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,89 +1,16 @@
 import React from 'react'
 
-import { Chip, makeStyles } from '@material-ui/core'
+import Link from '@components/Links/Link'
 
-import Link from '../Links/Link'
-
-import generateTransitions from '../../functions/generateTransitions'
-import sortDescending from '../../functions/sortDescending'
+import sortDescending from '@functions/sortDescending'
 import clsx from 'clsx'
+import styles from './ProjectCard.module.scss'
 
-import type { Project, ProjectType } from '../../data/projectList'
+import type { Project, ProjectType } from '@data/projectList'
 
 interface Props {
   project: Project
 }
-
-const CARD_PADDING = 16 as const
-
-const useStyles = makeStyles({
-  card: {
-    display: 'flex',
-    flexDirection: 'column',
-    border: '2px solid black',
-    padding: CARD_PADDING,
-    position: 'relative',
-  },
-  header: {
-    display: 'flex',
-    gap: 8,
-  },
-  heading: {
-    flexGrow: 1,
-  },
-  categories: {
-    justifySelf: 'flex-end',
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: 4,
-    marginBottom: 8,
-    marginTop: -4,
-  },
-  chip: {
-    fontFamily: "'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-    ...generateTransitions(['background', 'color']),
-  },
-  links: {
-    justifySelf: 'flex-end',
-    marginTop: 8,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    marginLeft: -CARD_PADDING,
-    marginBottom: -CARD_PADDING,
-    marginRight: -CARD_PADDING,
-  },
-  link: {
-    padding: CARD_PADDING,
-    flex: 1,
-    textAlign: 'center',
-    '&:hover, &:focus': {
-      background: '#000',
-      color: '#fff',
-    },
-  },
-  spring: {
-    flexGrow: 1,
-  },
-  image: {
-    marginLeft: -CARD_PADDING,
-    marginRight: -CARD_PADDING,
-    marginTop: 12,
-    marginBottom: CARD_PADDING,
-  },
-  typeChip: {
-    fontFamily: "'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-    textTransform: 'uppercase',
-    fontWeight: 'bold',
-    borderRadius: 4,
-    color: '#fff',
-    background: 'var(--chip-bg)',
-    border: 'none',
-    '& > *': {
-      padding: 8,
-    },
-  },
-})
 
 function typeToColor(type?: ProjectType) {
   switch (type) {
@@ -102,38 +29,43 @@ function typeToColor(type?: ProjectType) {
 
 const ProjectCard: React.FC<Props> = ({ project }) => {
   const { title, description, links, tech, type, ImageComponent } = project
-  const classes = useStyles()
 
   const sortedTech = [...tech].sort(sortDescending)
 
   return (
-    <article className={classes.card}>
-      <header className={classes.header}>
-        <h3 className={clsx('text-loud', classes.heading)}>{title}</h3>
-        <Chip className={classes.typeChip} component="p" label={type} style={{ '--chip-bg': typeToColor(type) } as unknown} />
+    <article className={styles.card}>
+      <header className={styles.header}>
+        <h3 className={clsx('text-loud', styles.heading)}>{title}</h3>
+        <span className={styles.typeChip} style={{ '--chip-bg': typeToColor(type) } as React.CSSProperties}>
+          {type}
+        </span>
       </header>
 
-      <div className={classes.categories}>
+      <div className={styles.categories}>
         {sortedTech.map(category => {
-          return <Chip color="secondary" size="small" className={clsx(classes.chip)} variant={'default'} label={category} key={category} />
+          return (
+            <span key={category} className={styles.chip}>
+              {category}
+            </span>
+          )
         })}
       </div>
 
-      {ImageComponent && <ImageComponent className={classes.image} />}
+      {ImageComponent && <ImageComponent className={styles.image} />}
 
-      <div aria-hidden className={classes.spring} />
+      <div aria-hidden className={styles.spring} />
 
       <p className="text-speak">{description}</p>
 
       {links && (
-        <div className={classes.links}>
+        <div className={styles.links}>
           {links.live && (
-            <Link className={classes.link} href={links.live}>
+            <Link className={styles.link} href={links.live}>
               View live
             </Link>
           )}
           {links.vcs && (
-            <Link className={classes.link} href={links.vcs}>
+            <Link className={styles.link} href={links.vcs}>
               GitHub
             </Link>
           )}

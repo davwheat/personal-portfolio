@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 
-import { makeStyles } from '@material-ui/core'
-
 import Section from '@components/Design/Section'
 import Link from '@components/Links/Link'
 import ButtonLink from '@components/Links/ButtonLink'
+import styles from './Breadcrumbs.module.scss'
 
 export interface IBreadcrumb {
   /**
@@ -21,23 +20,7 @@ export interface IBreadcrumbsProps {
   data: IBreadcrumb[]
 }
 
-const useStyles = makeStyles({
-  listRoot: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    margin: 0,
-    padding: 0,
-  },
-
-  separator: {
-    margin: '0 8px',
-    WebkitUserSelect: 'none',
-    userSelect: 'none',
-  },
-})
-
 export default function Breadcrumbs({ data }: IBreadcrumbsProps) {
-  const classes = useStyles()
   const breadcrumbsToDisplay: (IBreadcrumb | null)[] = []
 
   const [breadcrumbsExpanded, setBreadcrumbsExpanded] = useState(false)
@@ -53,13 +36,9 @@ export default function Breadcrumbs({ data }: IBreadcrumbsProps) {
   return (
     <Section width="wider" darker usePadding>
       <nav aria-label="Breadcrumbs">
-        <ol className={classes.listRoot}>
+        <ol className={styles.nav}>
           {breadcrumbsToDisplay.map((crumb, index) => {
-            const separator = index < breadcrumbsToDisplay.length - 1 && (
-              <span className={classes.separator} aria-hidden="true">
-                /
-              </span>
-            )
+            const separator = index < breadcrumbsToDisplay.length - 1 && <span aria-hidden="true">/</span>
 
             if (crumb === null) {
               return (
@@ -83,22 +62,6 @@ export default function Breadcrumbs({ data }: IBreadcrumbsProps) {
           })}
         </ol>
       </nav>
-
-      {/* JSON-LD breadcrumb data for crawlers */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: data.map((crumb, i) => ({
-            '@type': 'ListItem',
-            position: i,
-            item: {
-              '@id': 'https://davwheat.dev' + crumb.url,
-              name: crumb.t,
-            },
-          })),
-        })}
-      </script>
     </Section>
   )
 }

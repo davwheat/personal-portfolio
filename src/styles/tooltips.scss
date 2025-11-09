@@ -5,9 +5,9 @@
 // Tooltips
 // ------------------------------------
 
-@tooltip-bg: rgba(0, 0, 0, 0.9);
-@tooltip-color: #fff;
-@zindex-tooltip: 10000;
+$tooltip-bg: rgba(0, 0, 0, 0.9);
+$tooltip-color: #fff;
+$zindex-tooltip: 10000;
 
 // This fixes an issue in iOS where `:hover` is not handled on a tap
 @media (any-hover: none) {
@@ -19,25 +19,25 @@
 
 // General tooltip selector
 [data-tooltip][aria-label]:not([aria-label='']) {
-  @tooltip-arrow-width: 8px;
-  @tooltip-arrow-height: 6px;
+  $tooltip-arrow-width: 8px;
+  $tooltip-arrow-height: 6px;
 
   // Transform while tooltip not shown
-  .preVisibleTransform(@x: -50%, @y: 8px, @x2: -50%, @y2: 0) {
+  @mixin preVisibleTransform($x: -50%, $y: 8px, $x2: -50%, $y2: 0) {
     &::before,
     &::after {
-      transform: translate(@x, @y);
+      transform: translate($x, $y);
 
       // Don't do slide animation if user has selected reduced motion
       // in their OS
       @media (prefers-reduced-motion: reduce) {
-        transform: translate(@x2, @y2);
+        transform: translate($x2, $y2);
       }
     }
   }
 
   // Transform while tooltip shown
-  .visibleTransform(@x: -50%, @y: 0) {
+  @mixin visibleTransform($x: -50%, $y: 0) {
     // Tooltip is visible
     &:hover,
     &:not([data-tooltip-nofocus]):focus,
@@ -45,39 +45,31 @@
     &[data-tooltip-visible] {
       &::before,
       &::after {
-        transform: translate(@x, @y);
+        transform: translate($x, $y);
       }
     }
   }
 
   //#region ARROWS
 
-  .arrow() {
-    width: @tooltip-arrow-width;
-    height: @tooltip-arrow-height;
-
+  @mixin arrow($direction: 'down') {
+    width: $tooltip-arrow-width;
+    height: $tooltip-arrow-height;
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-  }
 
-  .arrow(@direction) when (@direction = 'right') {
-    width: @tooltip-arrow-height;
-    height: @tooltip-arrow-width;
-
-    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-  }
-
-  .arrow(@direction) when (@direction = 'left') {
-    width: @tooltip-arrow-height;
-    height: @tooltip-arrow-width;
-
-    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
-  }
-
-  .arrow(@direction) when (@direction = 'up') {
-    width: @tooltip-arrow-width;
-    height: @tooltip-arrow-height;
-
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    @if $direction == 'right' {
+      width: $tooltip-arrow-height;
+      height: $tooltip-arrow-width;
+      clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    } @else if $direction == 'left' {
+      width: $tooltip-arrow-height;
+      height: $tooltip-arrow-width;
+      clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+    } @else if $direction == 'up' {
+      width: $tooltip-arrow-width;
+      height: $tooltip-arrow-height;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    }
   }
 
   //#endregion
@@ -105,7 +97,7 @@
     white-space: nowrap;
     padding: 4px 8px;
     border-radius: 4px;
-    color: @tooltip-color;
+    color: $tooltip-color;
     height: auto;
 
     // Make as wide as possible
@@ -113,10 +105,10 @@
     // Max 200px
     max-width: 200px;
     // Or use 300px/100% of viewport width, whichever is smaller
-    max-width: ~'min(300px, 100vw)';
+    max-width: min(300px, 100vw);
 
     left: 50%;
-    bottom: ~'calc(100% + @{tooltip-arrow-height})';
+    bottom: calc(100% + #{$tooltip-arrow-height});
 
     // Nicely handle tooltips that would be wider than 200px
     overflow-wrap: normal;
@@ -130,7 +122,7 @@
     display: block;
     content: '';
 
-    .arrow();
+    @include arrow();
 
     // Center arrow horizontally over component
     left: 50%;
@@ -140,8 +132,8 @@
   &::before,
   &::after {
     position: absolute;
-    background: @tooltip-bg;
-    z-index: @zindex-tooltip;
+    background: $tooltip-bg;
+    z-index: $zindex-tooltip;
 
     // Prevent tooltip showing when hovering over pseudoelement
     pointer-events: none;
@@ -154,8 +146,8 @@
     font-weight: normal;
   }
 
-  .preVisibleTransform();
-  .visibleTransform();
+  @include preVisibleTransform();
+  @include visibleTransform();
 
   &[data-tooltip-position='left'] {
     &::before {
@@ -166,16 +158,16 @@
     }
 
     &::after {
-      right: ~'calc(100% - @{tooltip-arrow-height})';
+      right: calc(100% - #{$tooltip-arrow-height});
       top: 50%;
       left: initial;
       bottom: initial;
 
-      .arrow('right');
+      @include arrow('right');
     }
 
-    .preVisibleTransform(0, -50%, -8px, -50%);
-    .visibleTransform(-8px, -50%);
+    @include preVisibleTransform(0, -50%, -8px, -50%);
+    @include visibleTransform(-8px, -50%);
   }
 
   &[data-tooltip-position='right'] {
@@ -187,21 +179,21 @@
     }
 
     &::after {
-      left: ~'calc(100% - @{tooltip-arrow-height})';
+      left: calc(100% - #{$tooltip-arrow-height});
       top: 50%;
       // left: initial;
       bottom: initial;
 
-      .arrow('left');
+      @include arrow('left');
     }
 
-    .preVisibleTransform(0, -50%, 8px, -50%);
-    .visibleTransform(8px, -50%);
+    @include preVisibleTransform(0, -50%, 8px, -50%);
+    @include visibleTransform(8px, -50%);
   }
 
   &[data-tooltip-position='bottom'] {
     &::before {
-      top: ~'calc(100% + @{tooltip-arrow-height})';
+      top: calc(100% + #{$tooltip-arrow-height});
       // top: 100%;
       // top: 50%;
       // left: initial;
@@ -209,14 +201,14 @@
     }
 
     &::after {
-      top: ~'calc(100%)';
+      top: calc(100%);
       // left: initial;
       bottom: initial;
 
-      .arrow('up');
+      @include arrow('up');
     }
 
-    .preVisibleTransform(-50%, -8px, -50%, 0);
-    .visibleTransform(-50%, 0);
+    @include preVisibleTransform(-50%, -8px, -50%, 0);
+    @include visibleTransform(-50%, 0);
   }
 }

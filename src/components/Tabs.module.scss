@@ -1,0 +1,61 @@
+@import '@/styles/breakpoints.scss';
+
+.nav {
+  display: grid;
+  margin: 0;
+  margin-bottom: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+
+  @include between(400px, 500px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+  }
+
+  @include upTo(400px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+  }
+}
+
+.tab {
+  padding: 16px;
+  color: var(--color-text);
+  text-align: center;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  border: none;
+  background: none;
+
+  @include upTo(400px) {
+    padding: 12px;
+  }
+
+  &[aria-selected]:not([aria-selected='false']) {
+    background: var(--color-text);
+    color: var(--color-background);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &:hover::after {
+    border: 2px solid var(--color-text);
+  }
+
+  &:focus {
+    outline: 4px solid var(--color-primary-blue);
+
+    &:not(:focus-visible) {
+      outline: none;
+    }
+  }
+}

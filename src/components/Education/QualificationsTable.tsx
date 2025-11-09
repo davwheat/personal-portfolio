@@ -74,11 +74,11 @@ const QualificationsTable: React.FC<Props> = ({ className }) => {
             </tr>
           ))}
         </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan={3}>P - predicted result (still studying)</td>
-          </tr>
-        </tfoot>
+        {/*<tfoot>*/}
+        {/*  <tr>*/}
+        {/*    <td colSpan={3}>P - predicted result (still studying)</td>*/}
+        {/*  </tr>*/}
+        {/*</tfoot>*/}
       </table>
     </div>
   )

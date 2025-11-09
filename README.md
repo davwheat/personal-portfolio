@@ -2,4 +2,4 @@
 
 This repo contains my personal website, hosted on Cloudflare Pages.
 
-It uses React with Gatsby as the static site generator.
+It uses React with Next.js as the framework for static site generation.

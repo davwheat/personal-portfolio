@@ -1,0 +1,18 @@
+// Transition durations (in milliseconds, converted to seconds for CSS)
+$duration-fast: 150ms;
+$duration-normal: 300ms;
+$duration-slow: 500ms;
+
+// Transition mixin
+@mixin transition($properties: all, $duration: $duration-normal, $timing: ease-out, $delay: 0) {
+  transition: $properties $duration $timing $delay;
+}
+
+// Common transitions
+@mixin transition-fast($properties: all) {
+  @include transition($properties, $duration-fast);
+}
+
+@mixin transition-slow($properties: all) {
+  @include transition($properties, $duration-slow);
+}
